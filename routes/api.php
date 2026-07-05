@@ -107,8 +107,10 @@ Route::middleware('auth:sanctum')->group(function (): void {
         Route::get('/connections', [RevolutController::class, 'listConnections']);
         Route::get('/connections/{connection}/accounts', [RevolutController::class, 'getAccounts'])->middleware('throttle:30,1');
         Route::post('/connections/{connection}/sync', [RevolutController::class, 'syncTransactions'])->middleware('throttle:10,1');
-        Route::post('/connections/{connection}/pay', [RevolutController::class, 'sendPayment'])->middleware('throttle:30,1');
-        Route::post('/connections/{connection}/bulk-pay', [RevolutController::class, 'sendBulkPayment'])->middleware('throttle:10,1');
+        // Money-movement: also require the payments:write token ability so a
+        // read-scoped Sanctum token can't send payments.
+        Route::post('/connections/{connection}/pay', [RevolutController::class, 'sendPayment'])->middleware(['throttle:30,1', 'ability:payments:write']);
+        Route::post('/connections/{connection}/bulk-pay', [RevolutController::class, 'sendBulkPayment'])->middleware(['throttle:10,1', 'ability:payments:write']);
         Route::delete('/connections/{connection}', [RevolutController::class, 'removeConnection']);
     });
 

@@ -13,6 +13,7 @@ use App\Services\WiseService;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
@@ -28,7 +29,7 @@ class WiseController extends Controller
     {
         try {
             $state = Str::random(40);
-            $request->session()->put('wise_oauth_state', $state);
+            Cache::put($this->stateCacheKey($request), $state, now()->addMinutes(10));
 
             $authorizationUrl = $this->wiseService->getAuthorizationUrl($state);
 
@@ -64,9 +65,10 @@ class WiseController extends Controller
             ], 400);
         }
 
-        // Verify OAuth state to prevent CSRF
-        $sessionState = $request->session()->pull('wise_oauth_state');
-        if (! $sessionState || ! hash_equals($sessionState, $state ?? '')) {
+        // Verify OAuth state (CSRF). Stashed in the cache under the authenticated
+        // user by redirectToWise() — api routes have no session store.
+        $expected = Cache::pull($this->stateCacheKey($request));
+        if ($expected === null || ! hash_equals($expected, $state ?? '')) {
             Log::warning('Wise OAuth state mismatch', [
                 'user_id' => $request->user()?->id,
             ]);
@@ -391,5 +393,10 @@ class WiseController extends Controller
             'bounced_back', 'funds_refunded' => 'failed',
             default => 'posted',
         };
+    }
+
+    private function stateCacheKey(Request $request): string
+    {
+        return 'wise_oauth_state:'.$request->user()->id;
     }
 }

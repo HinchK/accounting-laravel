@@ -22,6 +22,7 @@ data:
   QUEUE_CONNECTION: redis
   SESSION_DRIVER: redis
   SESSION_SECURE_COOKIE: "true"
+  SESSION_ENCRYPT: "true"
   REDIS_HOST: accounting-redis
   REDIS_PORT: "6379"
   BROADCAST_DRIVER: reverb
