@@ -9,6 +9,7 @@ use App\Models\BankConnection;
 use App\Models\User;
 use Firebase\JWT\JWT;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Queue;
@@ -54,7 +55,7 @@ class PlaidWebhookControllerTest extends TestCase
             'alg' => 'ES256',
         ];
 
-        \Illuminate\Support\Facades\Cache::flush(); // JWK is cached by kid — isolate across the suite
+        Cache::flush(); // JWK is cached by kid — isolate across the suite
 
         $this->user = User::factory()->create();
         $this->connection = BankConnection::factory()->create([
