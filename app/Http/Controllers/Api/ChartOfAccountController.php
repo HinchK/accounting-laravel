@@ -88,6 +88,8 @@ class ChartOfAccountController extends Controller
 
     private function authorizeOwner(Request $request, Account $account): void
     {
-        abort_unless($account->team_id === $request->user()->current_team_id, 403);
+        // ?? -1 so a tenantless caller (null current_team_id) never matches a
+        // null-team_id account — null === null would otherwise pass.
+        abort_unless((int) $account->team_id === ($request->user()->current_team_id ?? -1), 403);
     }
 }

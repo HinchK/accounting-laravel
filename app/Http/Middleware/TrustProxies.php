@@ -12,10 +12,17 @@ class TrustProxies extends Middleware
     /**
      * The trusted proxies for this application.
      *
+     * '*' trusts the immediate upstream (the k8s ingress / load balancer) so
+     * getClientIp() and the request scheme resolve from X-Forwarded-* instead
+     * of collapsing every request to the ingress pod IP — without which
+     * rate-limit-by-IP buckets are shared across all users. Safe only because
+     * the app is always deployed behind a trusted proxy.
+     * ponytail: pin to the ingress CIDR if the app is ever exposed directly.
+     *
      * @var array<int, string>|string|null
      */
     #[\Override]
-    protected $proxies;
+    protected $proxies = '*';
 
     /**
      * The headers that should be used to detect proxies.

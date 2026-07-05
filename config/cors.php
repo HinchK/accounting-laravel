@@ -21,9 +21,13 @@ return [
 
     'allowed_methods' => ['*'],
 
-    // Comma-separated allow-list via env; defaults to '*' so dev isn't broken.
-    // Credentials are off (see supports_credentials), so '*' stays low-risk.
-    'allowed_origins' => explode(',', (string) env('CORS_ALLOWED_ORIGINS', '*')),
+    // Comma-separated allow-list via env. Fails CLOSED: an unset var yields an
+    // empty list (no cross-origin site allowed) rather than '*'. Set
+    // CORS_ALLOWED_ORIGINS to the real app origin(s) in each deployed env.
+    // Same-origin requests are unaffected by CORS, so local dev still works.
+    'allowed_origins' => array_values(array_filter(
+        explode(',', (string) env('CORS_ALLOWED_ORIGINS', ''))
+    )),
 
     'allowed_origins_patterns' => [],
 

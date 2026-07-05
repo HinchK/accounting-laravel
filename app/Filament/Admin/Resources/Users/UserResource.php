@@ -76,4 +76,12 @@ class UserResource extends Resource
     {
         return static::getModel()::count();
     }
+
+    // Defence-in-depth: the admin panel gate (User::canAccessPanel) already
+    // blocks non-admins, but guard the Users resource itself so role edits
+    // stay admin-only even if the panel gate ever regresses.
+    public static function canAccess(): bool
+    {
+        return filament()->auth()->user()?->hasRole(['super_admin', 'admin']) ?? false;
+    }
 }

@@ -16,7 +16,7 @@ class BillController extends Controller
 {
     public function index(Request $request): LengthAwarePaginator
     {
-        return Bill::where('team_id', $request->user()->current_team_id)
+        return Bill::where('team_id', $request->user()->current_team_id ?? -1)
             ->latest()
             ->paginate(25);
     }
@@ -88,6 +88,7 @@ class BillController extends Controller
 
     private function authorizeTeam(Request $request, Bill $bill): void
     {
-        abort_unless((int) $bill->team_id === (int) $request->user()->current_team_id, 403);
+        // ?? -1 so a tenantless caller never matches a null-team_id row.
+        abort_unless((int) $bill->team_id === ($request->user()->current_team_id ?? -1), 403);
     }
 }

@@ -13,6 +13,7 @@ use App\Services\RevolutService;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
@@ -28,7 +29,7 @@ class RevolutController extends Controller
     {
         try {
             $state = Str::random(40);
-            $request->session()->put('revolut_oauth_state', $state);
+            Cache::put($this->stateCacheKey($request), $state, now()->addMinutes(10));
 
             $authorizationUrl = $this->revolutService->getAuthorizationUrl($state);
 
@@ -64,9 +65,10 @@ class RevolutController extends Controller
             ], 400);
         }
 
-        // Verify OAuth state to prevent CSRF
-        $sessionState = $request->session()->pull('revolut_oauth_state');
-        if (! $sessionState || ! hash_equals($sessionState, $state ?? '')) {
+        // Verify OAuth state (CSRF). Stashed in the cache under the authenticated
+        // user by redirectToRevolut() — api routes have no session store.
+        $expected = Cache::pull($this->stateCacheKey($request));
+        if ($expected === null || ! hash_equals($expected, $state ?? '')) {
             Log::warning('Revolut OAuth state mismatch', [
                 'user_id' => $request->user()?->id,
             ]);
@@ -335,6 +337,10 @@ class RevolutController extends Controller
     public function sendPayment(Request $request, BankConnection $connection): JsonResponse
     {
         $request->validate([
+            // Client-supplied idempotency key. Reused verbatim as Revolut's
+            // request_id so a retry returns the SAME payment instead of a second
+            // transfer (prevents double-spend on network retry / double-submit).
+            'idempotency_key' => 'required|string|max:40',
             'account_id' => 'required|string',
             'receiver' => 'required|array',
             'receiver.counterparty_id' => 'required_without:receiver.account_id|string|nullable',
@@ -359,7 +365,20 @@ class RevolutController extends Controller
                 ], 400);
             }
 
+            // Atomically claim the idempotency key. ponytail: best-effort 24h dup
+            // guard; Revolut's request_id (below) is the authoritative dedup, so a
+            // legit retry with the same key never double-spends. Forgotten on
+            // failure so a corrected retry can proceed.
+            $guardKey = 'revolut_pay:'.$connection->id.':'.$request->input('idempotency_key');
+            if (! Cache::add($guardKey, true, now()->addHours(24))) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Duplicate payment: idempotency_key already used',
+                ], 409);
+            }
+
             $paymentData = $request->only(['account_id', 'receiver', 'amount', 'currency', 'reference']);
+            $paymentData['request_id'] = $request->input('idempotency_key');
 
             $result = $this->revolutService->sendPayment($connection, $paymentData);
 
@@ -369,6 +388,9 @@ class RevolutController extends Controller
                 'payment' => $result,
             ], 201);
         } catch (Exception $e) {
+            if (isset($guardKey)) {
+                Cache::forget($guardKey);
+            }
             Log::error('Failed to send Revolut payment', [
                 'connection_id' => $connection->id,
                 'error' => $e->getMessage(),
@@ -387,6 +409,8 @@ class RevolutController extends Controller
     public function sendBulkPayment(Request $request, BankConnection $connection): JsonResponse
     {
         $request->validate([
+            // See sendPayment: idempotency key guards against a duplicate batch.
+            'idempotency_key' => 'required|string|max:40',
             'title' => 'required|string|max:255',
             'schedule_for' => 'nullable|date_format:Y-m-d',
             'payments' => 'required|array|min:1',
@@ -414,6 +438,16 @@ class RevolutController extends Controller
                 ], 400);
             }
 
+            // Best-effort dup guard (payment-drafts require separate approval
+            // before money moves, so double-submit only risks a duplicate draft).
+            $guardKey = 'revolut_bulkpay:'.$connection->id.':'.$request->input('idempotency_key');
+            if (! Cache::add($guardKey, true, now()->addHours(24))) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Duplicate bulk payment: idempotency_key already used',
+                ], 409);
+            }
+
             $result = $this->revolutService->sendBulkPayment(
                 $connection,
                 $request->input('title'),
@@ -427,6 +461,9 @@ class RevolutController extends Controller
                 'payment_draft' => $result,
             ], 201);
         } catch (Exception $e) {
+            if (isset($guardKey)) {
+                Cache::forget($guardKey);
+            }
             Log::error('Failed to send Revolut bulk payment', [
                 'connection_id' => $connection->id,
                 'error' => $e->getMessage(),
@@ -516,5 +553,10 @@ class RevolutController extends Controller
         }
 
         return 'uncategorized';
+    }
+
+    private function stateCacheKey(Request $request): string
+    {
+        return 'revolut_oauth_state:'.$request->user()->id;
     }
 }

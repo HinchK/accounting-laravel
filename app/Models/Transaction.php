@@ -39,6 +39,8 @@ class Transaction extends Model
         'bank_connection_id',
         'category',
         'status',
+        'team_id',
+        'reconciled',
     ];
 
     #[\Override]

@@ -11,6 +11,7 @@ use App\Models\User;
 use App\Services\SageService;
 use App\Services\TeamManagementService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
 
@@ -72,10 +73,22 @@ class SageSyncTest extends TestCase
             'api.accounting.sage.com/v3.1/businesses' => Http::response(['$items' => [['id' => 'biz-xyz']]], 200),
         ]);
 
-        $response = $this->actingAs($this->user)->getJson('/api/sage/callback?code=authcode');
+        Cache::put('sage_oauth_state:'.$this->user->id, 'test-state', now()->addMinutes(10));
+
+        $response = $this->actingAs($this->user)->getJson('/api/sage/callback?code=authcode&state=test-state');
 
         $response->assertOk();
         $this->assertDatabaseHas('sage_connections', ['user_id' => $this->user->id, 'team_id' => $this->user->current_team_id, 'business_id' => 'biz-xyz', 'status' => 'active']);
+    }
+
+    public function test_callback_rejects_invalid_oauth_state(): void
+    {
+        Cache::put('sage_oauth_state:'.$this->user->id, 'the-real-state', now()->addMinutes(10));
+
+        $response = $this->actingAs($this->user)->getJson('/api/sage/callback?code=authcode&state=forged-state');
+
+        $response->assertForbidden();
+        $this->assertDatabaseCount('sage_connections', 0);
     }
 
     public function test_push_invoice_stores_remote_id(): void

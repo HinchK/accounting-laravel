@@ -43,7 +43,7 @@ class RecurringExpenseTest extends TestCase
     private function template(array $overrides = []): Expense
     {
         $user = User::factory()->create();
-        $team = Team::create([
+        $team = Team::forceCreate([
             'user_id' => $user->id,
             'name' => 'Ops',
             'personal_team' => true,
@@ -133,7 +133,8 @@ class RecurringExpenseTest extends TestCase
     public function test_generated_children_inherit_team_id(): void
     {
         $owner = User::factory()->create();
-        Team::create(['id' => 7, 'user_id' => $owner->id, 'name' => 'Acme', 'personal_team' => false]);
+        // forceCreate: id/user_id aren't mass-assignable on Team (id must never be).
+        Team::forceCreate(['id' => 7, 'user_id' => $owner->id, 'name' => 'Acme', 'personal_team' => false]);
 
         $template = $this->template([
             'team_id' => 7,

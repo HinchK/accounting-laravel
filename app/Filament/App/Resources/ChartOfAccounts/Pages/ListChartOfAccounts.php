@@ -14,6 +14,7 @@ use Filament\Facades\Filament;
 use Filament\Forms\Components\FileUpload;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\ListRecords;
+use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class ListChartOfAccounts extends ListRecords
@@ -85,8 +86,11 @@ class ListChartOfAccounts extends ListRecords
                     ->helperText('Columns: account_number, account_name, account_type, normal_balance, opening_balance, parent_number, description, is_active'),
             ])
             ->action(function (array $data, AccountCsvService $service): void {
-                $path = storage_path('app/public/'.$data['file']);
-                $result = $service->import((string) file_get_contents($path));
+                // $data['file'] is the client-supplied Livewire upload path; reject
+                // traversal and read via the disk (confined to storage/app/public)
+                // so a crafted value like ../../.env can't read arbitrary files.
+                abort_if(str_contains((string) $data['file'], '..'), 403);
+                $result = $service->import((string) Storage::disk('public')->get($data['file']));
 
                 $notification = Notification::make()
                     ->title("Imported: {$result['created']} created, {$result['updated']} updated");
