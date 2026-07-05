@@ -26,6 +26,9 @@ class JournalEntry extends Model
         'counterparty_team_id',
         'approval_status',
         'rejection_reason',
+        'team_id',
+        'user_id',
+        'is_posted',
     ];
 
     #[\Override]

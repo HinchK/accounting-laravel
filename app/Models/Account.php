@@ -28,6 +28,11 @@ class Account extends Model
         'industry_type',
         'is_active',
         'allow_manual_entry',
+        'user_id',
+        'team_id',
+        'qbo_id',
+        'qbo_sync_token',
+        'xero_id',
     ];
 
     #[\Override]

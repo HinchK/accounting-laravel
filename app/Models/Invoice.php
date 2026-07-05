@@ -48,6 +48,10 @@ class Invoice extends Model
         'notes',
         'team_id',
         'journal_entry_id',
+        'qbo_id',
+        'qbo_sync_token',
+        'xero_id',
+        'sage_id',
     ];
 
     #[\Override]

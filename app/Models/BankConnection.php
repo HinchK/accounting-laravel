@@ -24,6 +24,16 @@ class BankConnection extends Model
         'wise_token_expires_at',
         'status',
         'last_synced_at',
+        // Tenancy + provider credentials set server-side on OAuth connect.
+        // Token/credential columns are encrypted casts (+ $hidden).
+        'user_id',
+        'team_id',
+        'plaid_access_token',
+        'revolut_access_token',
+        'revolut_refresh_token',
+        'wise_access_token',
+        'wise_refresh_token',
+        'credentials',
     ];
 
     #[\Override]

@@ -26,7 +26,7 @@ class JournalEntryPeriodCloseTest extends TestCase
 
     private function makeTeam(?string $lockedBefore): Team
     {
-        return Team::create([
+        return Team::forceCreate([
             'user_id' => $this->user->id,
             'name' => 'Books Team',
             'personal_team' => false,

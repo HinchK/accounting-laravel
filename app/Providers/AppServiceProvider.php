@@ -44,8 +44,13 @@ class AppServiceProvider extends ServiceProvider
 
     private function configureModels(): void
     {
-        Model::shouldBeStrict();
-        Model::unguard();
+        // Enforce mass-assignment protection ($fillable/$guarded) in every env.
+        // Global unguard() was removed — it disabled that protection app-wide, so
+        // a stray Model::create($request->all()) could set team_id/user_id/etc.
+        // Strict mode (which makes a discarded non-fillable key throw instead of
+        // silently drop) stays on only outside production, so prod degrades
+        // gracefully instead of 500ing on a stale $fillable.
+        Model::shouldBeStrict(! $this->app->isProduction());
         Model::automaticallyEagerLoadRelationships();
     }
 

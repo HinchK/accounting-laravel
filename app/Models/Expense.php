@@ -35,6 +35,8 @@ class Expense extends Model
         'recurrence_start',
         'recurrence_end',
         'last_generated',
+        'user_id',
+        'team_id',
     ];
 
     #[\Override]

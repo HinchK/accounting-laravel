@@ -51,6 +51,9 @@ class Bill extends Model
         'recurrence_start',
         'recurrence_end',
         'last_generated',
+        'qbo_id',
+        'qbo_sync_token',
+        'xero_id',
     ];
 
     #[\Override]

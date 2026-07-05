@@ -24,7 +24,9 @@ class Payment extends Model
         'payment_amount',
         'qbo_id',
         'qbo_sync_token',
+        'xero_id',
         'journal_entry_id',
+        'team_id',
     ];
 
     protected $casts = [
