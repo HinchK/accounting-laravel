@@ -6,8 +6,11 @@ namespace App\Services;
 
 use App\Models\BankConnection;
 use Exception;
+use Firebase\JWT\JWK;
+use Firebase\JWT\JWT;
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\RequestException;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
@@ -327,34 +330,115 @@ class PlaidService
      */
     public function verifyWebhookSignature(string $bodyJson, array $headers): bool
     {
-        $verificationKey = config('services.plaid.webhook_verification_key');
+        // Plaid signs webhooks with a per-message JWS (ES256) in the
+        // Plaid-Verification header, NOT a shared HMAC secret. The JWT is signed
+        // with a rotating key fetched from /webhook_verification_key/get by kid,
+        // and its request_body_sha256 claim binds it to this exact body.
+        $jwt = $this->extractVerificationHeader($headers);
 
-        // If no verification key is configured, log warning and reject
-        if (empty($verificationKey)) {
-            Log::warning('Plaid webhook verification key not configured - rejecting webhook');
-
-            return false;
-        }
-
-        // Get signature from headers (Plaid sends it as 'Plaid-Verification' header)
-        $signature = $headers['plaid-verification'] ?? $headers['Plaid-Verification'] ?? null;
-
-        // Headers from $request->headers->all() return arrays; extract the first value
-        if (is_array($signature)) {
-            $signature = $signature[0] ?? null;
-        }
-
-        if (empty($signature)) {
-            Log::warning('Plaid webhook signature missing from headers');
+        if ($jwt === null) {
+            Log::warning('Plaid webhook: missing Plaid-Verification header');
 
             return false;
         }
 
-        // Compute HMAC-SHA256 signature
-        $computedSignature = hash_hmac('sha256', $bodyJson, (string) $verificationKey, true);
-        $computedSignatureBase64 = base64_encode($computedSignature);
+        try {
+            $segments = explode('.', $jwt);
 
-        // Use hash_equals for timing-safe comparison
-        return hash_equals($computedSignatureBase64, $signature);
+            if (count($segments) !== 3) {
+                return false;
+            }
+
+            $header = json_decode($this->base64UrlDecode($segments[0]), true);
+
+            // Only ES256 is ever accepted — never 'none'/HS* (algorithm-confusion).
+            if (! is_array($header) || ($header['alg'] ?? null) !== 'ES256' || empty($header['kid'])) {
+                Log::warning('Plaid webhook: unexpected JWT header (alg/kid)');
+
+                return false;
+            }
+
+            $jwk = $this->plaidVerificationKey((string) $header['kid']);
+
+            if ($jwk === null) {
+                return false;
+            }
+
+            // Verifies the ES256 signature against Plaid's public key. Throws on
+            // any tamper/mismatch → caught below and rejected.
+            JWT::$leeway = 60; // tolerate minor clock skew on iat
+            $claims = JWT::decode($jwt, JWK::parseKey($jwk, 'ES256'));
+
+            // Replay guard: Plaid JWTs carry iat; reject anything older than 5 min.
+            $iat = (int) ($claims->iat ?? 0);
+
+            if ($iat <= 0 || (now()->timestamp - $iat) > 300) {
+                Log::warning('Plaid webhook: stale or missing iat');
+
+                return false;
+            }
+
+            // Bind the token to THIS body: the JWT claims the sha256 of the raw body.
+            $expected = $claims->request_body_sha256 ?? null;
+
+            return is_string($expected) && hash_equals($expected, hash('sha256', $bodyJson));
+        } catch (\Throwable $e) {
+            Log::warning('Plaid webhook signature verification failed', ['error' => $e->getMessage()]);
+
+            return false;
+        }
+    }
+
+    private function extractVerificationHeader(array $headers): ?string
+    {
+        $value = $headers['plaid-verification'] ?? $headers['Plaid-Verification'] ?? null;
+
+        // $request->headers->all() returns each header as an array of values.
+        if (is_array($value)) {
+            $value = $value[0] ?? null;
+        }
+
+        return is_string($value) && $value !== '' ? $value : null;
+    }
+
+    /**
+     * Fetch (and cache by kid) the JWK Plaid signs webhooks with. Only a
+     * successful fetch is cached, so a transient outage doesn't poison it.
+     * ponytail: 24h TTL per kid; a rotated key arrives under a new kid and
+     * fetches fresh on its first webhook.
+     *
+     * @return array<string, mixed>|null
+     */
+    private function plaidVerificationKey(string $kid): ?array
+    {
+        $cacheKey = "plaid_jwk:{$kid}";
+        $cached = Cache::get($cacheKey);
+
+        if (is_array($cached)) {
+            return $cached;
+        }
+
+        $response = Http::timeout(10)->post("{$this->baseUrl}/webhook_verification_key/get", [
+            'client_id' => $this->clientId,
+            'secret' => $this->secret,
+            'key_id' => $kid,
+        ]);
+
+        $jwk = $response->successful() ? $response->json('key') : null;
+
+        if (! is_array($jwk)) {
+            Log::warning('Plaid webhook: could not fetch verification key', ['kid' => $kid]);
+
+            return null;
+        }
+
+        Cache::put($cacheKey, $jwk, now()->addHours(24));
+
+        return $jwk;
+    }
+
+    private function base64UrlDecode(string $data): string
+    {
+        return (string) base64_decode(strtr($data, '-_', '+/'), true);
     }
 }

@@ -276,10 +276,11 @@ class PlaidServiceTest extends TestCase
             && $request['options']['account_ids'] === ['acc_123', 'acc_456']);
     }
 
-    public function test_verify_webhook_signature_with_valid_signature(): void
+    public function test_verify_webhook_signature_rejects_legacy_hmac(): void
     {
-        Config::set('services.plaid.webhook_verification_key', 'test_secret_key');
-
+        // The old shared-secret HMAC scheme is no longer accepted — only Plaid's
+        // per-message ES256 JWS is (valid-JWT path covered end-to-end in
+        // PlaidWebhookControllerTest). A legacy HMAC signature must be rejected.
         $bodyJson = '{"webhook_type":"TRANSACTIONS","webhook_code":"SYNC_UPDATES_AVAILABLE"}';
         $signature = base64_encode(hash_hmac('sha256', $bodyJson, 'test_secret_key', true));
 
@@ -287,7 +288,7 @@ class PlaidServiceTest extends TestCase
             'Plaid-Verification' => $signature,
         ]);
 
-        $this->assertTrue($result);
+        $this->assertFalse($result);
     }
 
     public function test_verify_webhook_signature_with_invalid_signature(): void
