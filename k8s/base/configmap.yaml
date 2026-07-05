@@ -10,6 +10,7 @@ data:
   APP_ENV: production
   APP_DEBUG: "false"
   APP_URL: "https://accounting.example.com"
+  CORS_ALLOWED_ORIGINS: "https://accounting.example.com"
   LOG_CHANNEL: stack
   LOG_LEVEL: warning
   DB_CONNECTION: mysql
@@ -20,6 +21,7 @@ data:
   CACHE_DRIVER: redis
   QUEUE_CONNECTION: redis
   SESSION_DRIVER: redis
+  SESSION_SECURE_COOKIE: "true"
   REDIS_HOST: accounting-redis
   REDIS_PORT: "6379"
   BROADCAST_DRIVER: reverb

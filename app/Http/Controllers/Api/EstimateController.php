@@ -16,7 +16,7 @@ class EstimateController extends Controller
 {
     public function index(Request $request): LengthAwarePaginator
     {
-        return Estimate::where('team_id', $request->user()->current_team_id)
+        return Estimate::where('team_id', $request->user()->current_team_id ?? -1)
             ->latest()
             ->paginate(25);
     }
@@ -88,6 +88,7 @@ class EstimateController extends Controller
 
     private function authorizeTeam(Request $request, Estimate $estimate): void
     {
-        abort_unless((int) $estimate->team_id === (int) $request->user()->current_team_id, 403);
+        // ?? -1 so a tenantless caller never matches a null-team_id row.
+        abort_unless((int) $estimate->team_id === ($request->user()->current_team_id ?? -1), 403);
     }
 }

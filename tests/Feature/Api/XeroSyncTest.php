@@ -11,6 +11,7 @@ use App\Models\XeroConnection;
 use App\Services\TeamManagementService;
 use App\Services\XeroService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
 
@@ -72,10 +73,22 @@ class XeroSyncTest extends TestCase
             'api.xero.com/connections' => Http::response([['tenantId' => 'tenant-xyz']], 200),
         ]);
 
-        $response = $this->actingAs($this->user)->getJson('/api/xero/callback?code=authcode');
+        Cache::put('xero_oauth_state:'.$this->user->id, 'test-state', now()->addMinutes(10));
+
+        $response = $this->actingAs($this->user)->getJson('/api/xero/callback?code=authcode&state=test-state');
 
         $response->assertOk();
         $this->assertDatabaseHas('xero_connections', ['user_id' => $this->user->id, 'team_id' => $this->user->current_team_id, 'tenant_id' => 'tenant-xyz', 'status' => 'active']);
+    }
+
+    public function test_callback_rejects_invalid_oauth_state(): void
+    {
+        Cache::put('xero_oauth_state:'.$this->user->id, 'the-real-state', now()->addMinutes(10));
+
+        $response = $this->actingAs($this->user)->getJson('/api/xero/callback?code=authcode&state=forged-state');
+
+        $response->assertForbidden();
+        $this->assertDatabaseCount('xero_connections', 0);
     }
 
     public function test_push_invoice_stores_remote_id(): void

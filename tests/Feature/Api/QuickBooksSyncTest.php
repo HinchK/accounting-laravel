@@ -11,6 +11,7 @@ use App\Models\User;
 use App\Services\QuickBooksService;
 use App\Services\TeamManagementService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
 
@@ -60,6 +61,8 @@ class QuickBooksSyncTest extends TestCase
             ], 200),
         ]);
 
+        Cache::put('qbo_oauth_state:'.$this->user->id, 'xyz', now()->addMinutes(10));
+
         $response = $this->actingAs($this->user)
             ->getJson('/api/qbo/callback?code=auth_code_123&realmId=4620816365&state=xyz');
 
@@ -74,6 +77,17 @@ class QuickBooksSyncTest extends TestCase
         $connection = QboConnection::first();
         $this->assertSame('access-test-token', $connection->access_token);
         $this->assertSame('refresh-test-token', $connection->refresh_token);
+    }
+
+    public function test_callback_rejects_invalid_oauth_state(): void
+    {
+        Cache::put('qbo_oauth_state:'.$this->user->id, 'the-real-state', now()->addMinutes(10));
+
+        $response = $this->actingAs($this->user)
+            ->getJson('/api/qbo/callback?code=auth_code_123&realmId=4620816365&state=forged-state');
+
+        $response->assertForbidden();
+        $this->assertDatabaseCount('qbo_connections', 0);
     }
 
     public function test_push_invoice_creates_qbo_invoice_and_stores_remote_id(): void

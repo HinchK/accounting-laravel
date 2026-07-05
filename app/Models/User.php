@@ -110,7 +110,16 @@ class User extends Authenticatable implements FilamentUser, HasDefaultTenant, Ha
     public function canAccessPanel(Panel $panel): bool
     {
         // Staff reach only the staff panels — never the customer/vendor portals.
-        return in_array($panel->getId(), ['admin', 'app'], true) && $this->hasVerifiedEmail();
+        // The admin panel additionally requires an admin role: without this a
+        // self-registered verified user could open /admin/users and grant
+        // themselves super_admin (privilege escalation → full takeover).
+        if (! $this->hasVerifiedEmail()) {
+            return false;
+        }
+
+        return $panel->getId() === 'admin'
+            ? $this->hasRole(['super_admin', 'admin'])
+            : $panel->getId() === 'app';
     }
 
     public function canAccessFilament(): bool

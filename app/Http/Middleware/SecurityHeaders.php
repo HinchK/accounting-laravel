@@ -28,12 +28,16 @@ class SecurityHeaders
             'max-age=31536000; includeSubDomains',
         );
 
-        if (app()->isProduction()) {
+        // Emit CSP on real deployments (production + staging), not just prod —
+        // staging must not run header-less. Excludes local/testing.
+        if (in_array(app()->environment(), ['production', 'staging'], true)) {
             // ponytail: nonce was minted but never shared with Blade, so it
             // protected nothing. Rely on 'self' instead of faking a nonce.
             $csp = implode('; ', [
                 "default-src 'self'",
                 "script-src 'self'",
+                // ponytail: 'unsafe-inline' required by Filament/Livewire inline
+                // styles; upgrade path is per-request style nonces/hashes.
                 "style-src 'self' 'unsafe-inline'",
                 "img-src 'self' data: https:",
                 "font-src 'self' data:",

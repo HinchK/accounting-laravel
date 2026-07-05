@@ -9,6 +9,7 @@ use App\Models\QboConnection;
 use App\Services\QuickBooksService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
 
 class QboController extends Controller
@@ -25,14 +26,18 @@ class QboController extends Controller
         return (int) (auth()->user()->current_team_id ?? -1);
     }
 
+    private function stateCacheKey(Request $request): string
+    {
+        return 'qbo_oauth_state:'.$request->user()->id;
+    }
+
     /**
      * Begin the OAuth 2.0 flow — return the Intuit authorization URL for the client to open.
      */
-    public function connect(): JsonResponse
+    public function connect(Request $request): JsonResponse
     {
-        // ponytail: state is not persisted server-side; this endpoint is Sanctum-authenticated
-        // so the CSRF surface is small. Persist + verify state if connect ever becomes public.
         $state = Str::random(40);
+        Cache::put($this->stateCacheKey($request), $state, now()->addMinutes(10));
 
         return response()->json([
             'authorization_url' => $this->qbo->getAuthorizationUrl($state),
@@ -48,6 +53,11 @@ class QboController extends Controller
             'code' => ['required', 'string'],
             'realmId' => ['required', 'string'],
         ]);
+
+        // Verify OAuth state (CSRF / auth-code injection). Stashed in the cache
+        // under the authenticated user by connect() — api routes have no session.
+        $expected = Cache::pull($this->stateCacheKey($request));
+        abort_if($expected === null || ! hash_equals($expected, (string) $request->input('state')), 403, 'Invalid OAuth state');
 
         $connection = $this->qbo->handleCallback(
             (int) $request->user()->id,

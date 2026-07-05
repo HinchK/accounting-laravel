@@ -16,7 +16,7 @@ class InvoiceController extends Controller
 {
     public function index(Request $request): LengthAwarePaginator
     {
-        return Invoice::where('team_id', $request->user()->current_team_id)
+        return Invoice::where('team_id', $request->user()->current_team_id ?? -1)
             ->latest()
             ->paginate(25);
     }
@@ -39,11 +39,14 @@ class InvoiceController extends Controller
             'invoice_date' => 'required|date',
             'due_date' => 'sometimes|nullable|date',
             'total_amount' => 'required|numeric',
-            'payment_status' => 'required|string',
             'notes' => 'sometimes|nullable|string',
         ]);
 
         $validated['team_id'] = $teamId;
+        // Force the initial status server-side: a client must not be able to
+        // create an invoice already marked 'paid'. It is recomputed from
+        // recorded payments (see Invoice::recomputePaymentStatus).
+        $validated['payment_status'] = 'pending';
 
         $invoice = Invoice::create($validated);
 
@@ -89,6 +92,8 @@ class InvoiceController extends Controller
 
     private function authorizeTeam(Request $request, Invoice $invoice): void
     {
-        abort_unless((int) $invoice->team_id === (int) $request->user()->current_team_id, 403);
+        // ?? -1 so a tenantless caller (null current_team_id) never matches a
+        // null-team_id row — (int) null === (int) null would be 0 === 0 = true.
+        abort_unless((int) $invoice->team_id === ($request->user()->current_team_id ?? -1), 403);
     }
 }
