@@ -1,6 +1,10 @@
-<?php // src/app/Models/ForecastScenarioLine.php
+<?php
+
+// src/app/Models/ForecastScenarioLine.php
 declare(strict_types=1);
+
 namespace App\Models;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -15,5 +19,8 @@ class ForecastScenarioLine extends Model
     #[\Override]
     protected $casts = ['adjustment_pct' => 'decimal:2'];
 
-    public function scenario(): BelongsTo { return $this->belongsTo(ForecastScenario::class, 'forecast_scenario_id'); }
+    public function scenario(): BelongsTo
+    {
+        return $this->belongsTo(ForecastScenario::class, 'forecast_scenario_id');
+    }
 }

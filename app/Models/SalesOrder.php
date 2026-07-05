@@ -1,6 +1,10 @@
-<?php // src/app/Models/SalesOrder.php
+<?php
+
+// src/app/Models/SalesOrder.php
 declare(strict_types=1);
+
 namespace App\Models;
+
 use App\Traits\IsTenantModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -41,11 +45,33 @@ class SalesOrder extends Model
         });
     }
 
-    public function customer(): BelongsTo { return $this->belongsTo(Customer::class); }
-    public function estimate(): BelongsTo { return $this->belongsTo(Estimate::class, 'estimate_id', 'estimate_id'); }
-    public function items(): HasMany { return $this->hasMany(SalesOrderItem::class); }
-    public function invoice(): HasOne { return $this->hasOne(Invoice::class, 'sales_order_id'); }
+    public function customer(): BelongsTo
+    {
+        return $this->belongsTo(Customer::class);
+    }
 
-    public function confirm(): void { $this->update(['status' => 'confirmed']); }
-    public function cancel(): void { $this->update(['status' => 'cancelled']); }
+    public function estimate(): BelongsTo
+    {
+        return $this->belongsTo(Estimate::class, 'estimate_id', 'estimate_id');
+    }
+
+    public function items(): HasMany
+    {
+        return $this->hasMany(SalesOrderItem::class);
+    }
+
+    public function invoice(): HasOne
+    {
+        return $this->hasOne(Invoice::class, 'sales_order_id');
+    }
+
+    public function confirm(): void
+    {
+        $this->update(['status' => 'confirmed']);
+    }
+
+    public function cancel(): void
+    {
+        $this->update(['status' => 'cancelled']);
+    }
 }

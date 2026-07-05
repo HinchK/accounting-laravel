@@ -7,6 +7,7 @@ namespace Tests\Feature\Api;
 use App\Models\Account;
 use App\Models\JournalEntry;
 use App\Models\User;
+use App\Services\TeamManagementService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -22,7 +23,7 @@ class JournalEntryApiTest extends TestCase
     {
         parent::setUp();
         $this->user = User::factory()->create();
-        $this->teamId = app(\App\Services\TeamManagementService::class)
+        $this->teamId = app(TeamManagementService::class)
             ->createPersonalTeamForUser($this->user)->id;
         $this->user = $this->user->fresh();
     }

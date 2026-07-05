@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests\Feature\Approval;
 
 use App\Models\ApprovalRequest;
+use App\Models\ApprovalRule;
 use App\Models\ApprovalStep;
 use App\Models\User;
 use App\Notifications\ApprovalRequestedNotification;
@@ -37,7 +38,7 @@ class ApprovalNotificationTest extends TestCase
             'team_id' => $teamId,
             'approvable_type' => 'Bill',
             'approvable_id' => 1,
-            'rule_id' => \App\Models\ApprovalRule::create([
+            'rule_id' => ApprovalRule::create([
                 'team_id' => $teamId,
                 'approvable_type' => 'Bill',
                 'min_amount' => 0,

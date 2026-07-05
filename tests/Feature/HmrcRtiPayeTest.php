@@ -8,6 +8,7 @@ use App\Models\Company;
 use App\Models\HmrcPayeSubmission;
 use App\Services\HmrcAuthService;
 use App\Services\HmrcRtiPayeService;
+use GuzzleHttp\Promise\PromiseInterface;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
@@ -107,7 +108,7 @@ class HmrcRtiPayeTest extends TestCase
     }
 
     /** A well-formed HMRC RTI XML envelope carrying a correlation id. */
-    private function fakeRtiResponse(): \GuzzleHttp\Promise\PromiseInterface
+    private function fakeRtiResponse(): PromiseInterface
     {
         return Http::response(
             '<?xml version="1.0" encoding="UTF-8"?>'

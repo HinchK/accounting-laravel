@@ -50,7 +50,7 @@ class ApprovalServiceTest extends TestCase
         $bill->submitForApproval();
         $step = $bill->approvalRequest()->first()->steps()->first();
 
-        $this->expectException(\App\Exceptions\ApprovalDeniedException::class);
+        $this->expectException(ApprovalDeniedException::class);
         app(ApprovalService::class)->approve($step, $intruder);
     }
 

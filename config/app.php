@@ -7,6 +7,8 @@ use App\Providers\AuthServiceProvider;
 use App\Providers\EventServiceProvider;
 use App\Providers\Filament\AdminPanelProvider;
 use App\Providers\Filament\AppPanelProvider;
+use App\Providers\Filament\CustomerPanelProvider;
+use App\Providers\Filament\VendorPanelProvider;
 use App\Providers\FortifyServiceProvider;
 use App\Providers\JetstreamServiceProvider;
 use App\Providers\RouteServiceProvider;
@@ -180,8 +182,8 @@ return [
         EventServiceProvider::class,
         AdminPanelProvider::class,
         AppPanelProvider::class,
-        App\Providers\Filament\CustomerPanelProvider::class,
-        App\Providers\Filament\VendorPanelProvider::class,
+        CustomerPanelProvider::class,
+        VendorPanelProvider::class,
         RouteServiceProvider::class,
 
         TeamServiceProvider::class,

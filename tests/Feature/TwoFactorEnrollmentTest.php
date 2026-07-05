@@ -38,7 +38,7 @@ class TwoFactorEnrollmentTest extends TestCase
 
         // A valid TOTP from the authenticator app completes enrolment.
         $secret = decrypt($user->two_factor_secret);
-        $code = (new Google2FA())->getCurrentOtp(is_string($secret) ? $secret : '');
+        $code = (new Google2FA)->getCurrentOtp(is_string($secret) ? $secret : '');
 
         $page->set('twoFactorCode', $code)->call('confirmTwoFactor');
 

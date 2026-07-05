@@ -1,10 +1,15 @@
-<?php // 2026_07_05_100001_create_sales_orders_table.php
+<?php
+
+// 2026_07_05_100001_create_sales_orders_table.php
 declare(strict_types=1);
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-return new class extends Migration {
-    public function up(): void {
+
+return new class extends Migration
+{
+    public function up(): void
+    {
         Schema::create('sales_orders', function (Blueprint $t): void {
             $t->id();
             $t->foreignId('customer_id')->nullable()->constrained('customers')->nullOnDelete();
@@ -20,5 +25,9 @@ return new class extends Migration {
             $t->timestamps();
         });
     }
-    public function down(): void { Schema::dropIfExists('sales_orders'); }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('sales_orders');
+    }
 };

@@ -1,5 +1,8 @@
-<?php // src/tests/Feature/Forecast/ForecastServiceTest.php
+<?php
+
+// src/tests/Feature/Forecast/ForecastServiceTest.php
 declare(strict_types=1);
+
 namespace Tests\Feature\Forecast;
 
 use App\Models\Account;
@@ -24,7 +27,7 @@ class ForecastServiceTest extends TestCase
         $revenue = Account::factory()->create(['team_id' => $teamId, 'account_type' => 'revenue']);
         $expense = Account::factory()->create(['team_id' => $teamId, 'account_type' => 'expense']);
         foreach ([100, 200, 300] as $i => $amt) {
-            Transaction::create(['account_id' => $revenue->id, 'transaction_date' => "2026-0".($i + 1)."-01", 'amount' => $amt]);
+            Transaction::create(['account_id' => $revenue->id, 'transaction_date' => '2026-0'.($i + 1).'-01', 'amount' => $amt]);
         }
         Transaction::create(['account_id' => $expense->id, 'transaction_date' => '2026-01-01', 'amount' => 50]);
     }

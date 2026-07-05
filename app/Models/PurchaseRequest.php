@@ -1,5 +1,7 @@
 <?php
+
 declare(strict_types=1);
+
 namespace App\Models;
 
 use App\Concerns\Approvable;
@@ -49,7 +51,18 @@ class PurchaseRequest extends Model
         return (float) $this->total_amount;
     }
 
-    public function supplier(): BelongsTo { return $this->belongsTo(Supplier::class, 'supplier_id', 'supplier_id'); }
-    public function items(): HasMany { return $this->hasMany(PurchaseRequestItem::class); }
-    public function purchaseOrder(): HasOne { return $this->hasOne(PurchaseOrder::class, 'purchase_request_id'); }
+    public function supplier(): BelongsTo
+    {
+        return $this->belongsTo(Supplier::class, 'supplier_id', 'supplier_id');
+    }
+
+    public function items(): HasMany
+    {
+        return $this->hasMany(PurchaseRequestItem::class);
+    }
+
+    public function purchaseOrder(): HasOne
+    {
+        return $this->hasOne(PurchaseOrder::class, 'purchase_request_id');
+    }
 }
