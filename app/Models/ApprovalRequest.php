@@ -12,7 +12,9 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 class ApprovalRequest extends Model
 {
     public const STATUS_PENDING = 'pending';
+
     public const STATUS_APPROVED = 'approved';
+
     public const STATUS_REJECTED = 'rejected';
 
     #[\Override]

@@ -56,7 +56,7 @@ class EscalateApprovalsJobTest extends TestCase
         // Force the deadline into the past so the job picks it up.
         $step->forceFill(['deadline_at' => now()->subDay()])->save();
 
-        (new EscalateApprovalsJob())->handle();
+        (new EscalateApprovalsJob)->handle();
 
         $step->refresh();
         $this->assertSame(ApprovalStep::STATUS_ESCALATED, $step->status);
@@ -93,7 +93,7 @@ class EscalateApprovalsJobTest extends TestCase
         $step = $bill->approvalRequest()->first()->steps()->first();
         $this->assertNull($step->deadline_at, 'no deadline_days on the rule means no deadline');
 
-        (new EscalateApprovalsJob())->handle();
+        (new EscalateApprovalsJob)->handle();
 
         $this->assertSame(ApprovalStep::STATUS_PENDING, $step->fresh()->status);
     }

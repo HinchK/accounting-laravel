@@ -1,5 +1,8 @@
-<?php // src/tests/Feature/Procurement/PurchaseRequestTenancyTest.php
+<?php
+
+// src/tests/Feature/Procurement/PurchaseRequestTenancyTest.php
 declare(strict_types=1);
+
 namespace Tests\Feature\Procurement;
 
 use App\Models\PurchaseRequest;
