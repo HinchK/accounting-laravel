@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\BankAccountBalance;
 use App\Models\BankConnection;
 use App\Models\BankFeedTransaction;
+use App\Models\OutboundPayment;
 use App\Models\Transaction;
 use App\Services\RevolutService;
 use Exception;
@@ -377,16 +378,53 @@ class RevolutController extends Controller
                 ], 409);
             }
 
-            $paymentData = $request->only(['account_id', 'receiver', 'amount', 'currency', 'reference']);
-            $paymentData['request_id'] = $request->input('idempotency_key');
+            // Route through the maker-checker approval flow. Below the ApprovalRule
+            // threshold it auto-approves and the SendApprovedOutboundPayment listener
+            // fires the send inline; above threshold it waits for a second approver
+            // (surfaced in the PendingApprovals page). The actual Revolut call — with
+            // idempotency_key as request_id — happens in that listener.
+            $payment = OutboundPayment::create([
+                'team_id' => $connection->team_id,
+                'bank_connection_id' => $connection->id,
+                'requested_by' => $request->user()->id,
+                'account_id' => $request->input('account_id'),
+                'receiver' => $request->input('receiver'),
+                'amount' => $request->input('amount'),
+                'currency' => $request->input('currency'),
+                'reference' => $request->input('reference'),
+                'idempotency_key' => $request->input('idempotency_key'),
+                'status' => OutboundPayment::STATUS_PENDING_APPROVAL,
+                'approval_status' => 'draft',
+            ]);
 
-            $result = $this->revolutService->sendPayment($connection, $paymentData);
+            $payment->submitForApproval();
+            $payment->refresh();
 
+            if ($payment->status === OutboundPayment::STATUS_SENT) {
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Payment sent successfully',
+                    'payment' => $payment->result,
+                ], 201);
+            }
+
+            if ($payment->status === OutboundPayment::STATUS_FAILED) {
+                Cache::forget($guardKey); // allow a corrected retry
+                Log::error('Revolut payment failed to send', ['payment_id' => $payment->id]);
+
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Payment failed to send',
+                ], 500);
+            }
+
+            // Above threshold: awaiting a second approver before it sends.
             return response()->json([
                 'success' => true,
-                'message' => 'Payment sent successfully',
-                'payment' => $result,
-            ], 201);
+                'message' => 'Payment queued for approval',
+                'payment_id' => $payment->id,
+                'status' => $payment->status,
+            ], 202);
         } catch (Exception $e) {
             if (isset($guardKey)) {
                 Cache::forget($guardKey);

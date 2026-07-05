@@ -35,6 +35,16 @@ class ApprovalService
             return false;
         }
 
+        // Maker != checker: whoever requested an approvable may not approve it.
+        // Only approvables that record a requester (e.g. OutboundPayment) carry
+        // requested_by; isset() is false (never throws) for those that don't.
+        $approvable = $request->approvable;
+
+        if ($approvable !== null && isset($approvable->requested_by)
+            && (int) $approvable->requested_by === (int) $user->getKey()) {
+            return false;
+        }
+
         if (! in_array($step->status, [ApprovalStep::STATUS_PENDING, ApprovalStep::STATUS_ESCALATED], true)) {
             return false;
         }

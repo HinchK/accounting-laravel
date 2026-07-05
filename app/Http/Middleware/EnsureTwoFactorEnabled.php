@@ -57,10 +57,11 @@ class EnsureTwoFactorEnabled
      */
     protected function shouldEnforce(User $user): bool
     {
-        // ponytail: OFF by default — the EditProfile page has no 2FA enrolment form
-        // yet, so enforcing without it would redirect-loop admins into a lockout.
-        // Ships dormant; flip config('accounting.enforce_2fa') once enrolment UI lands.
-        if (! config('accounting.enforce_2fa', false)) {
+        // ON by default (config/accounting.php). The EditProfile page has the 2FA
+        // enrolment form and onAllowedRoute() keeps it reachable, so an un-enrolled
+        // admin is redirected to enrol, not locked out. Deploys opt out with
+        // ACCOUNTING_ENFORCE_2FA=false.
+        if (! config('accounting.enforce_2fa', true)) {
             return false;
         }
 

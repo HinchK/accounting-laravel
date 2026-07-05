@@ -21,5 +21,9 @@ return [
     | page isn't wired yet, so enabling this without it would lock admins out.
     | Flip to true once the enrolment form ships.
     */
-    'enforce_2fa' => env('ACCOUNTING_ENFORCE_2FA', false),
+    // Mandatory 2FA for privileged (super_admin/admin) users by default. The
+    // EnsureTwoFactorEnabled middleware gracefully redirects an un-enrolled user
+    // to the enrolment UI rather than locking them out. Override per deploy with
+    // ACCOUNTING_ENFORCE_2FA=false.
+    'enforce_2fa' => env('ACCOUNTING_ENFORCE_2FA', true),
 ];
