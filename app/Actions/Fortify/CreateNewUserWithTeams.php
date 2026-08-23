@@ -45,6 +45,5 @@ class CreateNewUserWithTeams implements CreatesNewUsers
     {
         $teamManagementService = app(TeamManagementService::class);
         $teamManagementService->assignUserToDefaultTeam($user);
-        $teamManagementService->createPersonalTeamForUser($user);
     }
 }

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Services;
 
-use App\Models\Team;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Liberu\Foundation\Organizations\Models\Team;
 
 /**
  * Team provisioning. Guarantees every user owns exactly one personal team,
