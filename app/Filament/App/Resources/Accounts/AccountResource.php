@@ -18,7 +18,6 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class AccountResource extends Resource
 {
@@ -62,9 +61,9 @@ class AccountResource extends Resource
                     ->sortable(),
                 TextColumn::make('account_type'),
                 TextColumn::make('balance'),
-                BelongsTo::make('user')
+                TextColumn::make('user.name')
                     ->label('User')
-                    ->relationship('user', 'name'),
+                    ->searchable(),
                 TextColumn::make('category.name')
                     ->label('Category')
                     ->searchable()

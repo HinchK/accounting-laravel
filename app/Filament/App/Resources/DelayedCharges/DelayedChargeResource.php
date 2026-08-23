@@ -58,7 +58,7 @@ class DelayedChargeResource extends Resource
                             ->default(now()),
 
                         Select::make('account_id')
-                            ->relationship('account', 'name')
+                            ->relationship('account', 'account_name')
                             ->label('Income Account')
                             ->searchable()
                             ->preload(),

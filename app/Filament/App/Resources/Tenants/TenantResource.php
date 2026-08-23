@@ -7,7 +7,7 @@ namespace App\Filament\App\Resources\Tenants;
 use App\Filament\App\Resources\Tenants\Pages\CreateTenant;
 use App\Filament\App\Resources\Tenants\Pages\EditTenant;
 use App\Filament\App\Resources\Tenants\Pages\ListTenants;
-use App\Models\Tenant;
+use App\Models\Team;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -18,7 +18,7 @@ use Filament\Tables\Table;
 class TenantResource extends Resource
 {
     #[\Override]
-    protected static ?string $model = Tenant::class;
+    protected static ?string $model = Team::class;
 
     #[\Override]
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-rectangle-stack';

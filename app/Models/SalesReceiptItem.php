@@ -74,6 +74,6 @@ class SalesReceiptItem extends Model
      */
     public function account(): BelongsTo
     {
-        return $this->belongsTo(Account::class, 'account_id', 'account_id');
+        return $this->belongsTo(Account::class, 'account_id', 'id');
     }
 }

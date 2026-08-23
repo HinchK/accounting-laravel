@@ -50,7 +50,7 @@ class VendorCreditResource extends Resource
                 Section::make('Credit Information')
                     ->schema([
                         Select::make('vendor_id')
-                            ->relationship('vendor', 'vendor_first_name')
+                    ->relationship('vendor', 'name')
                             ->required()
                             ->searchable()
                             ->preload(),
@@ -99,7 +99,7 @@ class VendorCreditResource extends Resource
                             ->relationship()
                             ->schema([
                                 Select::make('account_id')
-                                    ->relationship('account', 'name')
+                                    ->relationship('account', 'account_name')
                                     ->searchable()
                                     ->preload(),
                                 TextInput::make('description')
@@ -209,7 +209,7 @@ class VendorCreditResource extends Resource
                     ->searchable()
                     ->sortable(),
 
-                TextColumn::make('vendor.vendor_first_name')
+                TextColumn::make('vendor.name')
                     ->label('Vendor')
                     ->searchable()
                     ->sortable(),

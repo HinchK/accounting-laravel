@@ -32,6 +32,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
+            ->brandName('Liberu Accounting')
             ->login()
             ->colors(app(ThemeColors::class)->forSite())
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')

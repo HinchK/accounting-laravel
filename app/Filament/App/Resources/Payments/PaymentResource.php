@@ -37,7 +37,7 @@ class PaymentResource extends Resource
         return $schema
             ->components([
                 Select::make('invoice_id')
-                    ->relationship('invoice', 'invoice_id')
+                    ->relationship('invoice', 'invoice_number')
                     ->label('Invoice'),
                 DatePicker::make('payment_date')->label('Payment Date'),
                 TextInput::make('payment_amount')

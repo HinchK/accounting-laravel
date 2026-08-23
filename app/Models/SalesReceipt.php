@@ -93,7 +93,7 @@ class SalesReceipt extends Model
      */
     public function customer(): BelongsTo
     {
-        return $this->belongsTo(Customer::class, 'customer_id', 'customer_id');
+        return $this->belongsTo(Customer::class, 'customer_id', 'id');
     }
 
     /**
@@ -109,7 +109,7 @@ class SalesReceipt extends Model
      */
     public function depositAccount(): BelongsTo
     {
-        return $this->belongsTo(Account::class, 'deposit_to_account_id', 'account_id');
+        return $this->belongsTo(Account::class, 'deposit_to_account_id', 'id');
     }
 
     /**

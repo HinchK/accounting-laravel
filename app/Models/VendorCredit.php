@@ -120,7 +120,7 @@ class VendorCredit extends Model
      */
     public function vendor(): BelongsTo
     {
-        return $this->belongsTo(Vendor::class, 'vendor_id', 'id');
+        return $this->belongsTo(Vendor::class, 'vendor_id', 'vendor_id');
     }
 
     /**

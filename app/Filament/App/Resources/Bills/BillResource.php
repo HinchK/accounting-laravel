@@ -47,7 +47,7 @@ class BillResource extends Resource
         return $schema
             ->components([
                 Select::make('vendor_id')
-                    ->relationship('vendor', 'vendor_first_name')
+                    ->relationship('vendor', 'name')
                     ->required()
                     ->searchable()
                     ->preload(),
@@ -89,7 +89,7 @@ class BillResource extends Resource
                     ->relationship()
                     ->schema([
                         Select::make('account_id')
-                            ->relationship('account', 'name')
+                            ->relationship('account', 'account_name')
                             ->searchable()
                             ->preload(),
                         TextInput::make('description')
@@ -150,7 +150,7 @@ class BillResource extends Resource
                     ->searchable()
                     ->sortable(),
 
-                TextColumn::make('vendor.vendor_first_name')
+                TextColumn::make('vendor.name')
                     ->label('Vendor')
                     ->searchable()
                     ->sortable(),
