@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace App\Services;
 
+use App\Models\Team;
 use App\Models\User;
+use Liberu\Foundation\Organizations\Models\Team as FoundationTeam;
 use Illuminate\Support\Facades\DB;
-use Liberu\Foundation\Organizations\Models\Team;
 
 /**
  * Team provisioning. Guarantees every user owns exactly one personal team,
@@ -27,9 +28,11 @@ class TeamManagementService
     public function createPersonalTeamForUser(User $user): Team
     {
         return DB::transaction(function () use ($user): Team {
-            $team = $user->ownedTeams()->where('personal_team', true)->first();
+            $ownedTeam = $user->ownedTeams()->where('personal_team', true)->first();
 
-            if (! $team instanceof Team) {
+            if ($ownedTeam instanceof FoundationTeam) {
+                $team = Team::findOrFail($ownedTeam->getKey());
+            } else {
                 $team = Team::forceCreate([
                     'user_id' => $user->getKey(),
                     'name' => explode(' ', (string) $user->name)[0]."'s Team",

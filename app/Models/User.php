@@ -144,7 +144,7 @@ class User extends Authenticatable implements ConnectedAccountOwner, FilamentUse
             return $this->hasAdminAccess();
         }
 
-        return true;
+        return $panel->getId() === 'app';
     }
 
     /**
