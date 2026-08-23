@@ -35,7 +35,7 @@ use Illuminate\Support\Str;
 */
 
 Route::middleware('auth:sanctum')->group(function (): void {
-    Route::get('/user', fn (Request $request) => $request->user());
+    Route::get('/user', fn (Request $request) => $request->user()->makeVisible('email'));
 
     Route::apiResource('transactions', TransactionController::class);
 
