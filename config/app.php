@@ -111,6 +111,13 @@ return [
 
     'fallback_locale' => 'en',
 
+    'supported_locales' => [
+        'en' => 'English',
+        'es' => 'Español',
+        'fr' => 'Français',
+        'de' => 'Deutsch',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Faker Locale
