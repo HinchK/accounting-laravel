@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\PortalAccessController;
+use Filament\Facades\Filament;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', fn (): Factory|\Illuminate\Contracts\View\View => view('home'))->name('home');
+
+Route::middleware('auth')->get('/dashboard', function (): \Illuminate\Http\RedirectResponse {
+    $user = request()->user();
+
+    if ($user->hasRoleInAnyTeam('super_admin')) {
+        $team = $user->getDefaultTenant(Filament::getPanel('admin'));
+
+        return redirect()->to('/admin/'.($team?->getKey() ?? ''));
+    }
+
+    return redirect()->route('filament.app.pages.dashboard');
+});
 
 // Portal access (customer + vendor): signed-link set-password + forgot. The
 // guard is fixed per route via defaults('guard', ...) — never from user input.
