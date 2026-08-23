@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: accounting
+  name: boilerplate-laravel
   labels:
-    name: accounting
-    app: accounting-laravel
+    name: boilerplate-laravel
+    app: liberu-boilerplate

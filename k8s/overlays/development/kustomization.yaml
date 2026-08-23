@@ -2,26 +2,27 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - ../../base
+- ../../base
+
+namespace: boilerplate-dev
 
 patches:
-  - patch: |-
-      - op: replace
-        path: /spec/replicas
-        value: 1
-    target:
-      kind: Deployment
-      name: accounting-app
-  - patch: |-
-      - op: replace
-        path: /data/APP_ENV
-        value: local
-      - op: replace
-        path: /data/APP_DEBUG
-        value: "true"
-      - op: replace
-        path: /data/LOG_LEVEL
-        value: debug
-    target:
-      kind: ConfigMap
-      name: accounting-config
+- patch: |-
+    - op: replace
+      path: /spec/replicas
+      value: 1
+  target:
+    kind: Deployment
+    name: boilerplate-laravel
+
+configMapGenerator:
+- name: boilerplate-config
+  behavior: merge
+  literals:
+  - APP_ENV=development
+  - APP_DEBUG=true
+  - LOG_LEVEL=debug
+
+images:
+- name: ghcr.io/liberusoftware/boilerplate-laravel
+  newTag: develop

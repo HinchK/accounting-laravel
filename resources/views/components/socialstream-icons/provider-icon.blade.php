@@ -1,37 +1,37 @@
 <div class="text-gray-900">
     @switch($provider)
-        @case('bitbucket')
+        @case(\JoelButcher\Socialstream\Providers::bitbucket())
             <x-socialstream-icons.bitbucket {{ $attributes }} />
             @break
 
-        @case('facebook')
+        @case (JoelButcher\Socialstream\Providers::facebook())
             <x-socialstream-icons.facebook {{$attributes}} />
             @break
 
-        @case('github')
+        @case (JoelButcher\Socialstream\Providers::github())
             <x-socialstream-icons.github {{$attributes}} />
             @break
 
-        @case('gitlab')
+        @case (JoelButcher\Socialstream\Providers::gitlab())
             <x-socialstream-icons.gitlab {{$attributes}} />
             @break
 
-        @case('google')
+        @case (JoelButcher\Socialstream\Providers::google())
             <x-socialstream-icons.google {{$attributes}} />
             @break
 
-        @case('linkedin')
-        @case('linkedinOpenId')
+        @case (JoelButcher\Socialstream\Providers::linkedin())
+        @case (JoelButcher\Socialstream\Providers::linkedinOpenId())
             <x-socialstream-icons.linkedin {{$attributes}} />
             @break
 
-        @case('slack')
+        @case (JoelButcher\Socialstream\Providers::slack())
             <x-socialstream-icons.slack {{$attributes}} />
             @break
 
-        @case('twitterOAuth1')
-        @case('twitterOAuth2')
-        @case('twitter')
+        @case (JoelButcher\Socialstream\Providers::twitterOAuth1())
+        @case (JoelButcher\Socialstream\Providers::twitterOAuth2())
+        @case (JoelButcher\Socialstream\Providers::twitter())
             <x-socialstream-icons.twitter {{$attributes}} />
             @break
     @endswitch

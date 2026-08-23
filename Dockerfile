@@ -159,13 +159,6 @@ COPY --chown=${USER}:${USER} .docker/start-container /usr/local/bin/start-contai
 # Copy environment file
 COPY --chown=${USER}:${USER} .env.example ./.env
 
-# Force safe production defaults. Dotenv does not overwrite real OS env vars,
-# so a deploy that injects env (k8s configmap) still wins; but a bare
-# `docker run` with no env no longer boots on the baked .env.example's
-# APP_DEBUG=true (which would leak stack traces / env / DB creds via the error page).
-ENV APP_ENV=production \
-    APP_DEBUG=false
-
 RUN chmod +x /usr/local/bin/start-container && \
     cat .docker/utilities.sh >> ~/.bashrc
 
