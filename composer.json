@@ -296,6 +296,7 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
+            "Liberu\\AccountingSdk\\": "sdk/src/",
             "Liberu\\Themes\\Base\\": "themes/base/src/",
             "Liberu\\Themes\\ClearSignal\\": "themes/clear-signal/src/",
             "Liberu\\Themes\\Dark\\": "themes/dark/src/",
