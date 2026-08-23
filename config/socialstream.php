@@ -1,34 +1,70 @@
 <?php
 
+declare(strict_types=1);
 use JoelButcher\Socialstream\Features;
 use JoelButcher\Socialstream\Providers;
 
 return [
-    'guard' => 'web', // used if Fortify is not installed
+
+    /*
+    |--------------------------------------------------------------------------
+    | Socialstream Middleware
+    |--------------------------------------------------------------------------
+    */
+
     'middleware' => ['web'],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Socialstream Prompt
+    |--------------------------------------------------------------------------
+    */
+
     'prompt' => 'Or Login Via',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Socialstream Providers
+    |--------------------------------------------------------------------------
+    |
+    | All providers enabled. twitter-oauth-1 is excluded because OAuth 1.0
+    | requires live credentials even for redirect and cannot be tested without
+    | real API keys.
+    |
+    */
+
     'providers' => [
-        Providers::github(),
-        Providers::google(),
+        Providers::bitbucket(),
         Providers::facebook(),
+        Providers::github(),
+        Providers::gitlab(),
+        Providers::google(),
+        Providers::linkedin(),
+        Providers::linkedinOpenId(),
+        Providers::slack(),
         Providers::twitterOAuth2(),
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Socialstream Component
+    |--------------------------------------------------------------------------
+    */
+
+    'component' => null,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Features
+    |--------------------------------------------------------------------------
+    */
+
     'features' => [
-        // Features::generateMissingEmails(),
-        // Features::createAccountOnFirstLogin(),
-        // Features::globalLogin(),
-        // Features::authExistingUnlinkedUsers(),
         Features::rememberSession(),
         Features::providerAvatars(),
-        Features::refreshOAuthTokens(),
+        Features::generateMissingEmails(),
+        Features::createAccountOnFirstLogin(),
+        Features::globalLogin(),
     ],
-    'home' => '/dashboard',
-    'redirects' => [
-        'login' => '/dashboard',
-        'register' => '/dashboard',
-        'login-failed' => '/login',
-        'registration-failed' => '/register',
-        'provider-linked' => '/user/profile',
-        'provider-link-failed' => '/user/profile',
-    ],
+
 ];

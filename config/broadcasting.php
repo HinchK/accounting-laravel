@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
 
     /*
@@ -11,11 +13,11 @@ return [
     | framework when an event needs to be broadcast. You may set this to
     | any of the connections defined in the "connections" array below.
     |
-    | Supported: "reverb", "pusher", "ably", "redis", "log", "null"
+    | Supported: "pusher", "ably", "redis", "log", "null"
     |
     */
 
-    'default' => env('BROADCAST_CONNECTION', 'null'),
+    'default' => env('BROADCAST_DRIVER', 'log'),
 
     /*
     |--------------------------------------------------------------------------
@@ -23,7 +25,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Here you may define all of the broadcast connections that will be used
-    | to broadcast events to other systems or over WebSockets. Samples of
+    | to broadcast events to other systems or over websockets. Samples of
     | each available type of connection are provided inside this array.
     |
     */
@@ -41,9 +43,7 @@ return [
                 'scheme' => env('REVERB_SCHEME', 'https'),
                 'useTLS' => env('REVERB_SCHEME', 'https') === 'https',
             ],
-            'client_options' => [
-                // Guzzle client options: https://docs.guzzlephp.org/en/stable/request-options.html
-            ],
+            'client_options' => [],
         ],
 
         'pusher' => [
@@ -67,6 +67,11 @@ return [
         'ably' => [
             'driver' => 'ably',
             'key' => env('ABLY_KEY'),
+        ],
+
+        'redis' => [
+            'driver' => 'redis',
+            'connection' => 'default',
         ],
 
         'log' => [

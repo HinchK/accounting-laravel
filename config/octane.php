@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Laravel\Octane\Contracts\OperationTerminated;
 use Laravel\Octane\Events\RequestHandled;
 use Laravel\Octane\Events\RequestReceived;
@@ -11,7 +13,6 @@ use Laravel\Octane\Events\TickTerminated;
 use Laravel\Octane\Events\WorkerErrorOccurred;
 use Laravel\Octane\Events\WorkerStarting;
 use Laravel\Octane\Events\WorkerStopping;
-use Laravel\Octane\Listeners\CloseMonologHandlers;
 use Laravel\Octane\Listeners\CollectGarbage;
 use Laravel\Octane\Listeners\DisconnectFromDatabases;
 use Laravel\Octane\Listeners\EnsureUploadedFilesAreValid;
@@ -115,7 +116,7 @@ return [
         ],
 
         WorkerStopping::class => [
-            CloseMonologHandlers::class,
+            //
         ],
     ],
 
@@ -186,8 +187,8 @@ return [
     'watch' => [
         'app',
         'bootstrap',
-        'config/**/*.php',
-        'database/**/*.php',
+        'config',
+        'database',
         'public/**/*.php',
         'resources/**/*.php',
         'routes',
