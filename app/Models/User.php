@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -24,7 +25,6 @@ use Laravel\Sanctum\HasApiTokens;
 use Liberu\Foundation\Identity\Socialstream\Contracts\ConnectedAccountOwner;
 use Liberu\Foundation\Observability\Contracts\ObservabilityActor;
 use Liberu\Foundation\Organizations\Contracts\OrganizationActor;
-use Liberu\Foundation\Organizations\Models\Team;
 use Liberu\Foundation\RolesPermissions\Contracts\PrivilegedActor;
 use Liberu\Foundation\RolesPermissions\Services\AnyTeamRoleLookup;
 use Liberu\Foundation\Search\Concerns\Searchable;
@@ -61,6 +61,16 @@ class User extends Authenticatable implements ConnectedAccountOwner, FilamentUse
     use Searchable;
     use SetsProfilePhotoFromUrl;
     use TwoFactorAuthenticatable;
+
+    /**
+     * Teams owned by this user.
+     *
+     * @return HasMany<Team>
+     */
+    public function ownedTeams(): HasMany
+    {
+        return $this->hasMany(Team::class);
+    }
 
     /**
      * The attributes that are mass assignable.

@@ -7,7 +7,6 @@ namespace App\Services;
 use App\Models\Team;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
-use Liberu\Foundation\Organizations\Models\Team as FoundationTeam;
 
 /**
  * Team provisioning. Guarantees every user owns exactly one personal team,
@@ -28,11 +27,9 @@ class TeamManagementService
     public function createPersonalTeamForUser(User $user): Team
     {
         return DB::transaction(function () use ($user): Team {
-            $ownedTeam = $user->ownedTeams()->where('personal_team', true)->first();
+            $team = $user->ownedTeams()->where('personal_team', true)->first();
 
-            if ($ownedTeam instanceof FoundationTeam) {
-                $team = Team::findOrFail($ownedTeam->getKey());
-            } else {
+            if (! $team instanceof Team) {
                 $team = Team::forceCreate([
                     'user_id' => $user->getKey(),
                     'name' => explode(' ', (string) $user->name)[0]."'s Team",

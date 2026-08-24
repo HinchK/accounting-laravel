@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Laravel\Jetstream\Events\TeamCreated;
 use Laravel\Jetstream\Events\TeamDeleted;
@@ -56,6 +58,39 @@ class Team extends JetstreamTeam
             'vonage_key' => 'encrypted',
             'vonage_secret' => 'encrypted',
         ];
+    }
+
+    /**
+     * The user who owns the team.
+     *
+     * @return BelongsTo<User, self>
+     */
+    public function owner(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    /**
+     * Users who belong to the team.
+     *
+     * @return BelongsToMany<User, self>
+     */
+    public function users(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'team_user')
+            ->withPivot('role')
+            ->withTimestamps()
+            ->as('membership');
+    }
+
+    /**
+     * Pending invitations for the team.
+     *
+     * @return HasMany<TeamInvitation>
+     */
+    public function teamInvitations(): HasMany
+    {
+        return $this->hasMany(TeamInvitation::class);
     }
 
     public function categories(): HasMany

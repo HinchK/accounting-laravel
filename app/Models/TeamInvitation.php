@@ -6,7 +6,6 @@ namespace App\Models;
 
 use App\Traits\IsTenantModel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Laravel\Jetstream\Jetstream;
 use Laravel\Jetstream\TeamInvitation as JetstreamTeamInvitation;
 
 class TeamInvitation extends JetstreamTeamInvitation
@@ -29,6 +28,6 @@ class TeamInvitation extends JetstreamTeamInvitation
     #[\Override]
     public function team(): BelongsTo
     {
-        return $this->belongsTo(Jetstream::teamModel());
+        return $this->belongsTo(Team::class);
     }
 }
