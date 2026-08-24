@@ -98,7 +98,7 @@ class Transaction extends Model
      */
     public function currency(): BelongsTo
     {
-        return $this->belongsTo(Currency::class);
+        return $this->belongsTo(Currency::class, 'currency_id', 'currency_id');
     }
 
     /**
