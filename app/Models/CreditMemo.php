@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Models;
 
 use App\Concerns\HasDocuments;
+use App\Contracts\Documentable;
 use App\Traits\IsTenantModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -16,7 +17,7 @@ use Illuminate\Support\Collection;
  * @property-read TaxRate|null $taxRate
  * @property-read Collection<int, CreditMemoItem> $items
  */
-class CreditMemo extends Model
+class CreditMemo extends Model implements Documentable
 {
     use HasDocuments;
     use HasFactory, SoftDeletes;

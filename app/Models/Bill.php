@@ -8,6 +8,7 @@ use App\Concerns\Approvable;
 use App\Concerns\HasDocuments;
 use App\Concerns\Recurring;
 use App\Contracts\ApprovableRecord;
+use App\Contracts\Documentable;
 use App\Traits\IsTenantModel;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -22,7 +23,7 @@ use Illuminate\Support\Collection;
  * @property-read TaxRate|null $taxRate
  * @property-read Collection<int, BillItem> $items
  */
-class Bill extends Model implements ApprovableRecord
+class Bill extends Model implements ApprovableRecord, Documentable
 {
     use Approvable;
     use HasDocuments;

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Models;
 
 use App\Concerns\HasDocuments;
+use App\Contracts\Documentable;
 use App\Traits\IsTenantModel;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -20,7 +21,7 @@ use Illuminate\Support\Collection;
  * @property-read Collection<int, EstimateItem> $items
  * @property-read Invoice|null $invoice
  */
-class Estimate extends Model
+class Estimate extends Model implements Documentable
 {
     use HasDocuments;
     use HasFactory, SoftDeletes;

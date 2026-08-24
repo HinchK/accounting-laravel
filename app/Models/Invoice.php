@@ -8,6 +8,7 @@ use App\Concerns\Approvable;
 use App\Concerns\HasDocuments;
 use App\Concerns\Recurring;
 use App\Contracts\ApprovableRecord;
+use App\Contracts\Documentable;
 use App\Traits\IsTenantModel;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
@@ -25,7 +26,7 @@ use Illuminate\Support\Collection;
  * @property \Illuminate\Support\Carbon|null $last_reminder_sent_at
  * @property-read Collection<int, TimeEntry> $timeEntries
  */
-class Invoice extends Model implements ApprovableRecord
+class Invoice extends Model implements ApprovableRecord, Documentable
 {
     use Approvable;
     use HasDocuments;

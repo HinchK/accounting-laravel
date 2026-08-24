@@ -28,7 +28,7 @@ class Document extends Model
         parent::boot();
         static::creating(function (Document $document): void {
             if (empty($document->team_id)) {
-                $document->team_id = $document->documentable?->team_id ?? auth()->user()?->currentTeam?->getKey();
+                $document->team_id = $document->documentable->team_id ?? auth()->user()?->currentTeam?->getKey();
             }
         });
     }
@@ -38,6 +38,9 @@ class Document extends Model
         return $this->morphTo();
     }
 
+    /**
+     * @return HasMany<DocumentVersion, $this>
+     */
     public function versions(): HasMany
     {
         return $this->hasMany(DocumentVersion::class);

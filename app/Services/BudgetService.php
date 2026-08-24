@@ -38,7 +38,7 @@ class BudgetService
             $percentageUsed = $this->calculatePercentageUsed($actualAmount, $budget->planned_amount);
 
             return [
-                'account_name' => $account?->account_name ?? 'Unknown',
+                'account_name' => $account->account_name ?? 'Unknown',
                 'planned_amount' => $budget->planned_amount,
                 'actual_amount' => $actualAmount,
                 'forecast_amount' => $budget->forecast_amount,
