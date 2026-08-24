@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c67dc7fe6a5ce9452e9214022d9807c0",
+    "content-hash": "ed3ab50b64974bcd18eab498dc57461c",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -6929,6 +6929,155 @@
                 "MIT"
             ],
             "description": "Livewire 4 presentation adapter for Liberu Accounting Core.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-business-workflow-reconciliation",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/liberu-business-workflow-reconciliation",
+                "reference": "a790ec2ded6cea0ead16f19821ec217ebe9d47c9"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-manager": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\BusinessWorkflowReconciliation\\BusinessWorkflowReconciliationServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "liberu-business-workflow-reconciliation"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\BusinessWorkflowReconciliation\\": "src/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Cross-product workflow run registry and recovery-safe reconciliation.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-executive-insights",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/liberu-executive-insights",
+                "reference": "eaa651e9434dac4683c01c0570b3253fd8f678a5"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-manager": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\ExecutiveInsights\\ExecutiveInsightsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "liberu-executive-insights"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\ExecutiveInsights\\": "src/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Governed Liberu cross-product metrics, lineage, and decision snapshots.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-liberu-platform-orchestration",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/liberu-platform-orchestration",
+                "reference": "388ee3db32a53c5970af3c5d5290a331bd70a94b"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-manager": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\PlatformOrchestration\\PlatformOrchestrationServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "liberu-platform-orchestration"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\PlatformOrchestration\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Liberu\\PlatformOrchestration\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Provider-neutral Liberu platform composition and lifecycle orchestration.",
             "transport-options": {
                 "symlink": true,
                 "relative": true

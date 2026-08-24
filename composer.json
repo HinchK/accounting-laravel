@@ -40,6 +40,27 @@
             }
         },
         {
+            "type": "path",
+            "url": "modules/liberu-platform-orchestration",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/liberu-executive-insights",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/liberu-business-workflow-reconciliation",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
             "type": "vcs",
             "url": "https://github.com/liberusoftware/composer-installer.git"
         },
@@ -237,6 +258,9 @@
         "liberusoftware/module-accounting-core-api": "^1.0",
         "liberusoftware/module-accounting-core-filament": "^1.0",
         "liberusoftware/module-accounting-core-livewire": "^1.0",
+        "liberusoftware/module-liberu-platform-orchestration": "^1.0",
+        "liberusoftware/module-liberu-executive-insights": "^1.0",
+        "liberusoftware/module-liberu-business-workflow-reconciliation": "^1.0",
         "php": "^8.5",
         "barryvdh/laravel-dompdf": "^3.1",
         "bezhansalleh/filament-shield": "~4.0",
