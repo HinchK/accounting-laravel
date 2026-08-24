@@ -39,7 +39,7 @@ class SyncPlaidTransactions extends Command
         }
 
         if ($connectionId) {
-            return $this->syncConnection($connectionId);
+            return $this->syncConnection((int) $connectionId);
         }
 
         return $this->syncAllConnections();

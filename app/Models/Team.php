@@ -13,6 +13,10 @@ use Laravel\Jetstream\Events\TeamDeleted;
 use Laravel\Jetstream\Events\TeamUpdated;
 use Laravel\Jetstream\Team as JetstreamTeam;
 
+/**
+ * @property int $user_id
+ * @property string|null $vonage_from
+ */
 class Team extends JetstreamTeam
 {
     use HasFactory;

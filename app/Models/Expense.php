@@ -12,6 +12,9 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+/**
+ * @property int|null $team_id
+ */
 class Expense extends Model
 {
     use Approvable;

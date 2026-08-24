@@ -15,6 +15,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/**
+ * @property int|null $team_id
+ * @property Customer|null $customer
+ * @property \Illuminate\Support\Carbon|null $last_reminder_sent_at
+ */
 class Invoice extends Model
 {
     use Approvable;
@@ -64,14 +69,15 @@ class Invoice extends Model
         'recurrence_end' => 'date',
         'last_generated' => 'date',
         'approved_at' => 'datetime',
+        'last_reminder_sent_at' => 'datetime',
     ];
 
-    public function customer()
+    public function customer(): BelongsTo
     {
         return $this->belongsTo(Customer::class);
     }
 
-    public function vendor()
+    public function vendor(): BelongsTo
     {
         return $this->belongsTo(Vendor::class);
     }

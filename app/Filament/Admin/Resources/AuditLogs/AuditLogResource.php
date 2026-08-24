@@ -52,6 +52,7 @@ class AuditLogResource extends Resource
                         'created' => 'success',
                         'updated' => 'warning',
                         'deleted' => 'danger',
+                        default => 'gray',
                     }),
                 TextColumn::make('auditable_type')
                     ->label('Record Type')

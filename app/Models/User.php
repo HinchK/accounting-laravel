@@ -16,15 +16,18 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Gate;
 use JoelButcher\Socialstream\HasConnectedAccounts;
 use JoelButcher\Socialstream\SetsProfilePhotoFromUrl;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
+use Laravel\Jetstream\Jetstream;
 use Laravel\Sanctum\HasApiTokens;
 use Liberu\Foundation\Identity\Socialstream\Contracts\ConnectedAccountOwner;
 use Liberu\Foundation\Observability\Contracts\ObservabilityActor;
 use Liberu\Foundation\Organizations\Contracts\OrganizationActor;
+use Liberu\Foundation\Organizations\Models\Team as FoundationTeam;
 use Liberu\Foundation\RolesPermissions\Contracts\PrivilegedActor;
 use Liberu\Foundation\RolesPermissions\Services\AnyTeamRoleLookup;
 use Liberu\Foundation\Search\Concerns\Searchable;
@@ -65,11 +68,17 @@ class User extends Authenticatable implements ConnectedAccountOwner, FilamentUse
     /**
      * Teams owned by this user.
      *
-     * @return HasMany<Team>
+     * @return HasMany<Team, $this>
      */
     public function ownedTeams(): HasMany
     {
         return $this->hasMany(Team::class);
+    }
+
+    public function canCreateTeams(): bool
+    {
+        return Jetstream::userHasTeamFeatures($this)
+            && Gate::forUser($this)->check('create', Jetstream::newTeamModel());
     }
 
     /**
@@ -145,7 +154,7 @@ class User extends Authenticatable implements ConnectedAccountOwner, FilamentUse
 
     public function canAccessTenant(Model $tenant): bool
     {
-        return $tenant instanceof Team && $this->belongsToTeam($tenant);
+        return $tenant instanceof FoundationTeam && $this->belongsToTeam($tenant);
     }
 
     public function canAccessPanel(Panel $panel): bool

@@ -42,7 +42,7 @@ class SendPaymentReminders extends Command
                 $invoice->reminders_sent++;
                 $invoice->last_reminder_sent_at = now();
                 $invoice->save();
-                $this->info("Reminder sent for Invoice #{$invoice->invoice_id}");
+                $this->info("Reminder sent for Invoice #{$invoice->id}");
             }
         }
     }

@@ -161,6 +161,8 @@ class ExpenseResource extends Resource
 
     public static function getNavigationBadge(): ?string
     {
-        return static::getModel()::where('approval_status', 'pending')->count() ?: null;
+        $count = static::getModel()::where('approval_status', 'pending')->count();
+
+        return $count > 0 ? (string) $count : null;
     }
 }
