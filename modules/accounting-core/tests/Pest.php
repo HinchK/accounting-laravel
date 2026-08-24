@@ -1,5 +1,5 @@
 <?php
 
-use Liberu\PackageTestbench\PackageTestCase;
+use Liberu\Accounting\Core\Tests\TestCase;
 
-pest()->extend(PackageTestCase::class)->in('Unit');
+pest()->extend(TestCase::class)->in('Unit');

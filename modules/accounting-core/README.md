@@ -16,4 +16,4 @@ PHP 8.5 · Laravel 13 · Composer 2 · MIT
 
 ## Scope
 
-The remaining Accounting Core capabilities—books, fiscal calendars, numbering, defaults, policies, and domain events—are being added behind this same independently versioned boundary. No presentation adapter may bypass these domain rules.
+The package also owns books, fiscal calendars, numbering sequences, defaults, policies, and the legal-entity creation event behind this independently versioned boundary. No presentation adapter may bypass these domain rules.

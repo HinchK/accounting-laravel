@@ -1,0 +1,16 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Liberu\Accounting\Core\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class AccountingPolicy extends Model
+{
+    protected $table = 'accounting_policies';
+
+    protected $fillable = ['book_id', 'key', 'value'];
+
+    protected $casts = ['value' => 'array'];
+}
