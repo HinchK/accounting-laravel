@@ -8,6 +8,12 @@ use App\Traits\IsTenantModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property int $company_id
+ * @property string|null $company_name
+ * @property string|null $company_email
+ * @property string|null $hmrc_paye_reference
+ */
 class Company extends Model
 {
     use HasFactory;
