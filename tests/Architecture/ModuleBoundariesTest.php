@@ -131,10 +131,35 @@ it('lets Composer own every module and theme autoload boundary', function () {
     $root = dirname(__DIR__, 2);
     $composer = json_decode(file_get_contents($root.'/composer.json'), true, flags: JSON_THROW_ON_ERROR);
 
-    expect(array_filter(array_keys($composer['autoload']['psr-4']), fn (string $namespace) => str_starts_with($namespace, 'Liberu\\')))->toBe([]);
+    $rootOwnedNamespaces = array_values(array_filter(
+        array_keys($composer['autoload']['psr-4']),
+        fn (string $namespace): bool => str_starts_with($namespace, 'Liberu\\'),
+    ));
+
+    expect($rootOwnedNamespaces)->toBe([
+        'Liberu\\AccountingSdk\\',
+        'Liberu\\Themes\\Base\\',
+        'Liberu\\Themes\\ClearSignal\\',
+        'Liberu\\Themes\\Dark\\',
+        'Liberu\\Themes\\DefaultTheme\\',
+    ]);
+
+    foreach ($rootOwnedNamespaces as $namespace) {
+        expect($composer['autoload']['psr-4'][$namespace])->toStartWith(
+            in_array($namespace, ['Liberu\\AccountingSdk\\'], true) ? 'sdk/' : 'themes/',
+        );
+    }
 
     foreach (array_merge(glob($root.'/modules/*/composer.json') ?: [], glob($root.'/themes/*/composer.json') ?: []) as $packageFile) {
         $package = json_decode(file_get_contents($packageFile), true, flags: JSON_THROW_ON_ERROR);
+
+        // Themes are root-owned adapters: their source is intentionally loaded from
+        // themes/* while the host selects the active theme at runtime. Modules remain
+        // Composer requirements and are resolved from their published packages.
+        if (str_starts_with($package['name'], 'liberusoftware/theme-')) {
+            continue;
+        }
+
         expect($composer['require'])->toHaveKey($package['name']);
     }
 });

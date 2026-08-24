@@ -9,6 +9,7 @@ use App\Models\BankConnection;
 use App\Models\User;
 use Firebase\JWT\JWT;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
@@ -124,7 +125,7 @@ class PlaidWebhookControllerTest extends TestCase
 
     public function test_dispatches_sync_job_for_transactions_update(): void
     {
-        Queue::fake();
+        Bus::fake();
 
         $this->postSigned([
             'webhook_type' => 'TRANSACTIONS',
@@ -132,7 +133,7 @@ class PlaidWebhookControllerTest extends TestCase
             'item_id' => $this->connection->plaid_item_id,
         ]);
 
-        Queue::assertPushed(SyncPlaidTransactionsJob::class, fn ($job): bool => $job->connectionId === $this->connection->id);
+        Bus::assertDispatched(SyncPlaidTransactionsJob::class, fn (SyncPlaidTransactionsJob $job): bool => $job->connectionId === $this->connection->id);
     }
 
     public function test_handles_item_error(): void
