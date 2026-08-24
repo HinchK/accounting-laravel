@@ -8,10 +8,14 @@ use App\Services\ExchangeRateService;
 use App\Traits\IsTenantModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Collection;
 
 /**
  * @property int|null $team_id
  * @property string|null $xero_id
+ * @property string|null $normal_balance
+ * @property-read Collection<int, self> $children
  */
 class Account extends Model
 {
@@ -91,7 +95,10 @@ class Account extends Model
         return $this->hasMany(Account::class, 'parent_id');
     }
 
-    public function transactions()
+    /**
+     * @return HasMany<Transaction, $this>
+     */
+    public function transactions(): HasMany
     {
         return $this->hasMany(Transaction::class);
     }

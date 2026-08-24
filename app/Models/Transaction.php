@@ -101,6 +101,14 @@ class Transaction extends Model
         return $this->belongsTo(Currency::class);
     }
 
+    /**
+     * @return BelongsTo<Account, $this>
+     */
+    public function account(): BelongsTo
+    {
+        return $this->belongsTo(Account::class);
+    }
+
     public function debitAccount()
     {
         return $this->belongsTo(Account::class, 'debit_account_id');
