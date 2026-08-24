@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * @property-read HmrcSubmission|null $hmrcSubmission
+ * @property-read Company|null $company
  */
 class HmrcCorporationTaxSubmission extends Model
 {
@@ -53,6 +54,9 @@ class HmrcCorporationTaxSubmission extends Model
 
     /**
      * Get the company that owns the corporation tax submission.
+     */
+    /**
+     * @return BelongsTo<Company, $this>
      */
     public function company(): BelongsTo
     {
