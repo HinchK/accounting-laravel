@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Filament\App\Resources\BankConnections\Pages;
 
 use App\Filament\App\Resources\BankConnections\BankConnectionResource;
+use App\Models\BankConnection;
 use App\Services\PlaidService;
 use Exception;
 use Filament\Actions;
@@ -12,6 +13,9 @@ use Filament\Actions\Action;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\ViewRecord;
 
+/**
+ * @property-read BankConnection $record
+ */
 class ViewBankConnection extends ViewRecord
 {
     #[\Override]

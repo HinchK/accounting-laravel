@@ -18,6 +18,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property float|string $amount
  * @property string|null $description
  * @property bool $is_indirect
+ * @property string|null $approval_status
+ * @property int|null $approved_by
  * @property-read User|null $user
  */
 class Expense extends Model implements ApprovableRecord
