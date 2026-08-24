@@ -2,6 +2,7 @@
 
 namespace Liberu\Foundation\Search\Services;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Liberu\Foundation\Search\Registry\SearcherRegistry;
 
@@ -13,7 +14,7 @@ class SearchService
      * Search users with advanced filters.
      *
      * @param  array<string, mixed>  $filters
-     * @return LengthAwarePaginator<int, User>
+     * @return LengthAwarePaginator<int, Model>
      */
     public function searchUsers(array $filters): LengthAwarePaginator
     {
@@ -24,12 +25,20 @@ class SearchService
             $searchTerm = $this->toString($filters['query']);
             $query->search($searchTerm);
 
-            // Exact identity matches should precede substring matches. This keeps
-            // public search deterministic when the authenticated user's generated
-            // name happens to contain the requested term.
+            // Rank exact and prefix identity matches ahead of later substrings.
+            // This keeps public search deterministic when the authenticated user's
+            // generated name happens to contain the requested term.
             $query->orderByRaw(
-                'case when lower(name) = lower(?) then 0 when lower(email) = lower(?) then 1 else 2 end',
-                [$searchTerm, $searchTerm],
+                <<<'SQL'
+                    case
+                        when lower(name) = lower(?) then 0
+                        when lower(email) = lower(?) then 1
+                        when lower(name) like lower(?) then 2
+                        when lower(email) like lower(?) then 3
+                        else 4
+                    end
+                    SQL,
+                [$searchTerm, $searchTerm, $searchTerm.'%', $searchTerm.'%'],
             );
         }
 
@@ -61,6 +70,7 @@ class SearchService
         $orderBy = $this->toString($filters['order_by'] ?? 'created_at');
         $orderDirection = ($filters['order_direction'] ?? 'desc') === 'asc' ? 'asc' : 'desc';
         $query->orderBy($orderBy, $orderDirection);
+        $query->orderBy($query->getModel()->getQualifiedKeyName());
 
         return $query->paginate($this->toInt($filters['per_page'] ?? 15));
     }
