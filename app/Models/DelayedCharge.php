@@ -22,8 +22,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $charge_date
  * @property string $description
  * @property int $quantity
- * @property decimal $unit_price
- * @property decimal $amount
+ * @property float|string $unit_price
+ * @property float|string $amount
  * @property int|null $invoice_id
  * @property string $status
  */

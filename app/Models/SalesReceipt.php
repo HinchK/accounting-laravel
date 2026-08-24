@@ -85,7 +85,7 @@ class SalesReceipt extends Model
         $lastReceipt = self::orderBy('sales_receipt_id', 'desc')->first();
         $nextNumber = $lastReceipt ? ((int) substr((string) $lastReceipt->sales_receipt_number, 3)) + 1 : 1;
 
-        return 'SR-'.str_pad($nextNumber, 6, '0', STR_PAD_LEFT);
+        return 'SR-'.str_pad((string) $nextNumber, 6, '0', STR_PAD_LEFT);
     }
 
     /**
@@ -98,6 +98,9 @@ class SalesReceipt extends Model
 
     /**
      * Get the tax rate for the sales receipt
+     */
+    /**
+     * @return BelongsTo<TaxRate, $this>
      */
     public function taxRate(): BelongsTo
     {

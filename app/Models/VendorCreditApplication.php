@@ -7,6 +7,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 
 /**
  * Vendor Credit Application Model
@@ -16,8 +17,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int $application_id
  * @property int $vendor_credit_id
  * @property int $bill_id
- * @property decimal $amount_applied
- * @property date $application_date
+ * @property float|string $amount_applied
+ * @property Carbon $application_date
  */
 class VendorCreditApplication extends Model
 {

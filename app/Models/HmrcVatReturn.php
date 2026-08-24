@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+/**
+ * @property-read HmrcSubmission|null $hmrcSubmission
+ */
 class HmrcVatReturn extends Model
 {
     use HasFactory;
@@ -61,6 +64,9 @@ class HmrcVatReturn extends Model
 
     /**
      * Get the HMRC submission for this VAT return.
+     */
+    /**
+     * @return BelongsTo<HmrcSubmission, $this>
      */
     public function hmrcSubmission(): BelongsTo
     {

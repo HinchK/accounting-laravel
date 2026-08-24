@@ -52,11 +52,6 @@ class InventoryItem extends Model
         return $this->hasMany(InventoryTransaction::class);
     }
 
-    public function adjustments()
-    {
-        return $this->hasMany(InventoryAdjustment::class);
-    }
-
     public function updateQuantity($change): void
     {
         $this->current_quantity += $change;
