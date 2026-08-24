@@ -22,6 +22,7 @@ use Illuminate\Support\Collection;
  * @property \Illuminate\Support\Carbon|null $due_date
  * @property-read TaxRate|null $taxRate
  * @property-read Collection<int, BillItem> $items
+ * @property string|null $xero_id
  */
 class Bill extends Model implements ApprovableRecord, Documentable
 {

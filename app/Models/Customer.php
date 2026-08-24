@@ -12,6 +12,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+/**
+ * @property string|null $qbo_id
+ */
 class Customer extends Authenticatable implements FilamentUser
 {
     use HasFactory, Notifiable;

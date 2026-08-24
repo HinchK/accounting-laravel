@@ -81,7 +81,7 @@ class QuickBooksService
                 'DetailType' => 'SalesItemLineDetail',
                 'SalesItemLineDetail' => ['ItemRef' => ['value' => '1']],
             ]],
-            'CustomerRef' => ['value' => (string) ($invoice->customer?->qbo_id ?? $invoice->customer_id ?? '1')],
+            'CustomerRef' => ['value' => (string) ($invoice->customer->qbo_id ?? $invoice->customer_id ?? '1')],
         ];
 
         if ($invoice->qbo_id) {
@@ -253,7 +253,7 @@ class QuickBooksService
 
         $payload = [
             'TotalAmt' => (float) $payment->payment_amount,
-            'CustomerRef' => ['value' => (string) ($invoice?->customer_id ?? '1')],
+            'CustomerRef' => ['value' => (string) ($invoice->customer_id ?? '1')],
         ];
 
         if ($invoice?->qbo_id) {
