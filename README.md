@@ -129,6 +129,10 @@ Coverage is generated as Clover XML and enforced in CI for the host application:
 php artisan test --coverage --coverage-clover=coverage.xml --min=100
 ```
 
+The complete release gate is available as `scripts/verify-release` (or
+`composer verify`). It fails when coverage, static analysis, dependency audits,
+asset builds, Docker Compose, or Kubernetes validation cannot be completed.
+
 The live coverage report is published to [Codecov](https://codecov.io/gh/liberusoftware/accounting-erp-laravel). Package coverage is measured by each package's own test workflow.
 
 ### Publishing the component repositories
