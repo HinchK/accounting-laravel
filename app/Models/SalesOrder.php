@@ -55,6 +55,9 @@ class SalesOrder extends Model
         return $this->belongsTo(Estimate::class, 'estimate_id', 'estimate_id');
     }
 
+    /**
+     * @return HasMany<SalesOrderItem, $this>
+     */
     public function items(): HasMany
     {
         return $this->hasMany(SalesOrderItem::class);

@@ -9,6 +9,7 @@ use App\Traits\IsTenantModel;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Collection;
@@ -77,7 +78,10 @@ class Estimate extends Model
         return $this->belongsTo(TaxRate::class, 'tax_rate_id', 'tax_rate_id');
     }
 
-    public function items()
+    /**
+     * @return HasMany<EstimateItem, $this>
+     */
+    public function items(): HasMany
     {
         return $this->hasMany(EstimateItem::class, 'estimate_id', 'estimate_id');
     }
