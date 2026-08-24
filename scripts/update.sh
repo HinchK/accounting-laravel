@@ -32,22 +32,13 @@ cd "$root"
 composer validate --strict
 composer update --with-all-dependencies --no-interaction
 
-if [[ -f package-lock.json ]]; then
-    command -v npm >/dev/null || { printf 'npm is required.\n' >&2; exit 1; }
-    npm update
-    npm run build
-fi
-
-if composer run-script --list | grep -qE '^  test '; then
-    composer test
-elif [[ -x vendor/bin/pest ]]; then
-    vendor/bin/pest
-fi
+[[ -x scripts/verify-release ]] || { printf 'scripts/verify-release is required.\n' >&2; exit 1; }
+scripts/verify-release
 
 [[ "$release" == "true" ]] || { printf 'Updates validated. Review and commit the worktree changes.\n'; exit 0; }
 [[ "$version" =~ ^v?[0-9]+\.[0-9]+\.[0-9]+([.-][0-9A-Za-z.-]+)?$ ]] || { printf 'Release must be a semantic version.\n' >&2; exit 2; }
 command -v gh >/dev/null || { printf 'gh is required to create a release.\n' >&2; exit 1; }
-tag="${version#v}"
+tag="v${version#v}"
 git diff --quiet && git diff --cached --quiet || { git add -A; git commit -m "Release $tag"; }
 git tag -a "$tag" -m "Release $tag"
 git push origin HEAD
