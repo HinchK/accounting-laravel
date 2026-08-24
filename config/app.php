@@ -12,7 +12,6 @@ use App\Providers\Filament\VendorPanelProvider;
 use App\Providers\FortifyServiceProvider;
 use App\Providers\JetstreamServiceProvider;
 use App\Providers\RouteServiceProvider;
-use App\Providers\TeamServiceProvider;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
@@ -193,7 +192,6 @@ return [
         VendorPanelProvider::class,
         RouteServiceProvider::class,
 
-        TeamServiceProvider::class,
         JetstreamServiceProvider::class,
         FortifyServiceProvider::class,
     ])->toArray(),

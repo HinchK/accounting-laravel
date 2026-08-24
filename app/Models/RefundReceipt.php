@@ -25,11 +25,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $refund_date
  * @property string $payment_method
  * @property string|null $reference_number
- * @property decimal $subtotal_amount
- * @property decimal $tax_amount
- * @property decimal $total_amount
+ * @property float|string $subtotal_amount
+ * @property float|string $tax_amount
+ * @property float|string $total_amount
  * @property string|null $reason
  * @property string $status
+ * @property-read SalesReceipt|null $salesReceipt
  */
 class RefundReceipt extends Model
 {
@@ -90,7 +91,7 @@ class RefundReceipt extends Model
         $lastRefund = self::orderBy('refund_receipt_id', 'desc')->first();
         $nextNumber = $lastRefund ? ((int) substr((string) $lastRefund->refund_receipt_number, 3)) + 1 : 1;
 
-        return 'RR-'.str_pad($nextNumber, 6, '0', STR_PAD_LEFT);
+        return 'RR-'.str_pad((string) $nextNumber, 6, '0', STR_PAD_LEFT);
     }
 
     /**

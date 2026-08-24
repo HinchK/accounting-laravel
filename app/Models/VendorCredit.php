@@ -22,11 +22,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $vendor_credit_number
  * @property string $credit_date
  * @property int|null $bill_id
- * @property decimal $subtotal_amount
- * @property decimal $tax_amount
- * @property decimal $total_amount
- * @property decimal $amount_applied
- * @property decimal $amount_remaining
+ * @property float|string $subtotal_amount
+ * @property float|string $tax_amount
+ * @property float|string $total_amount
+ * @property float|string $amount_applied
+ * @property float|string $amount_remaining
+ * @property-read TaxRate|null $taxRate
  * @property string $reason
  * @property string $status
  */
@@ -112,7 +113,7 @@ class VendorCredit extends Model
         $lastCredit = self::orderBy('vendor_credit_id', 'desc')->first();
         $nextNumber = $lastCredit ? ((int) substr((string) $lastCredit->vendor_credit_number, 3)) + 1 : 1;
 
-        return 'VC-'.str_pad($nextNumber, 6, '0', STR_PAD_LEFT);
+        return 'VC-'.str_pad((string) $nextNumber, 6, '0', STR_PAD_LEFT);
     }
 
     /**

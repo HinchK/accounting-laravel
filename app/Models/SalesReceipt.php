@@ -24,9 +24,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property int|null $tax_rate_id
  * @property string $payment_method
  * @property string|null $reference_number
- * @property decimal $subtotal_amount
- * @property decimal $tax_amount
- * @property decimal $total_amount
+ * @property float|string $subtotal_amount
+ * @property float|string $tax_amount
+ * @property float|string $total_amount
  * @property string|null $notes
  * @property string $status
  */

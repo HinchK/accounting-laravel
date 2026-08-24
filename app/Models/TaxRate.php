@@ -7,6 +7,7 @@ namespace App\Models;
 use App\Traits\IsTenantModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class TaxRate extends Model
 {
@@ -45,7 +46,10 @@ class TaxRate extends Model
         return $taxableAmount * ($this->rate / 100);
     }
 
-    public function invoices()
+    /**
+     * @return HasMany<Invoice, $this>
+     */
+    public function invoices(): HasMany
     {
         return $this->hasMany(Invoice::class);
     }
