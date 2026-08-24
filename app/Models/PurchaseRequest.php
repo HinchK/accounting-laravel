@@ -57,6 +57,9 @@ class PurchaseRequest extends Model implements ApprovableRecord
         return $this->belongsTo(Supplier::class, 'supplier_id', 'supplier_id');
     }
 
+    /**
+     * @return HasMany<PurchaseRequestItem, $this>
+     */
     public function items(): HasMany
     {
         return $this->hasMany(PurchaseRequestItem::class);
