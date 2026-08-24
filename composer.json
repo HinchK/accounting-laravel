@@ -116,6 +116,16 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-policies-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-policies-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/liberu-platform-orchestration",
             "options": {
                 "symlink": true
@@ -347,6 +357,8 @@
         "liberusoftware/module-accounting-periods-livewire": "^1.0",
         "liberusoftware/module-accounting-policies": "^1.0",
         "liberusoftware/module-accounting-policies-api": "^1.0",
+        "liberusoftware/module-accounting-policies-filament": "^1.0",
+        "liberusoftware/module-accounting-policies-livewire": "^1.0",
         "liberusoftware/module-liberu-platform-orchestration": "^1.0",
         "liberusoftware/module-liberu-executive-insights": "^1.0",
         "liberusoftware/module-liberu-business-workflow-reconciliation": "^1.0",

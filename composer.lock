@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5f3cb4d259640f8c27af59f673962026",
+    "content-hash": "eb31a4aea149d413bda810c6c9490979",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7551,6 +7551,82 @@
                 "MIT"
             ],
             "description": "Authenticated API adapter for accounting policy rules.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-policies-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-policies-filament",
+                "reference": "8977f4a29abbf31e69507823d3388f4315e44b47"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-policies": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PoliciesFilament\\AccountingPoliciesFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-policies-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PoliciesFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament adapter for accounting policy rules.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-policies-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-policies-livewire",
+                "reference": "e64dcc06c440007e777a79c106130026487e38a2"
+            },
+            "require": {
+                "liberusoftware/module-accounting-policies": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PoliciesLivewire\\AccountingPoliciesLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-policies-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PoliciesLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire adapter for accounting policy rules.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
