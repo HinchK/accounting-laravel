@@ -7,6 +7,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property-read TaxRate|null $taxRate
+ */
 class BillItem extends Model
 {
     use HasFactory;

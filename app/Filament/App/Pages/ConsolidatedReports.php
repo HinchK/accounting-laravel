@@ -22,6 +22,9 @@ use Illuminate\Support\Facades\Auth;
  * period and see combined / eliminations / consolidated P&L, balance sheet, and
  * cash flow. A user only sees groups that include a team they belong to.
  */
+/**
+ * @property-read Schema $form
+ */
 class ConsolidatedReports extends Page
 {
     #[\Override]

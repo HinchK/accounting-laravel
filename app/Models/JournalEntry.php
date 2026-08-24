@@ -9,6 +9,7 @@ use App\Contracts\ApprovableRecord;
 use App\Traits\IsTenantModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 
@@ -101,7 +102,10 @@ class JournalEntry extends Model implements ApprovableRecord
         return $this->belongsTo(User::class, 'approved_by');
     }
 
-    public function lines()
+    /**
+     * @return HasMany<JournalEntryLine, $this>
+     */
+    public function lines(): HasMany
     {
         return $this->hasMany(JournalEntryLine::class);
     }

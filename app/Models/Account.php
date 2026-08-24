@@ -95,7 +95,10 @@ class Account extends Model
         return $this->belongsTo(Account::class, 'parent_id');
     }
 
-    public function children()
+    /**
+     * @return HasMany<Account, $this>
+     */
+    public function children(): HasMany
     {
         return $this->hasMany(Account::class, 'parent_id');
     }
