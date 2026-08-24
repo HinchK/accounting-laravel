@@ -1,0 +1,4 @@
+<?php
+use Illuminate\Support\Facades\Route;
+use Liberu\Accounting\GeneralLedgerApi\Http\Controllers\GeneralLedgerController;
+Route::middleware('auth:sanctum')->prefix('api/v1/accounting/general-ledger')->group(function(): void { Route::get('/',[GeneralLedgerController::class,'index']);Route::post('/',[GeneralLedgerController::class,'store']);Route::get('/balances',[GeneralLedgerController::class,'balances']);Route::get('/{journal}',[GeneralLedgerController::class,'show']);Route::post('/{journal}/post',[GeneralLedgerController::class,'post']);Route::post('/{journal}/reverse',[GeneralLedgerController::class,'reverse']);Route::delete('/{journal}',[GeneralLedgerController::class,'destroy']); });

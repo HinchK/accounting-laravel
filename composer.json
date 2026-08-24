@@ -126,6 +126,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-general-ledger",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-general-ledger-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-general-ledger-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-general-ledger-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/liberu-platform-orchestration",
             "options": {
                 "symlink": true
@@ -359,6 +379,10 @@
         "liberusoftware/module-accounting-policies-api": "^1.0",
         "liberusoftware/module-accounting-policies-filament": "^1.0",
         "liberusoftware/module-accounting-policies-livewire": "^1.0",
+        "liberusoftware/module-accounting-general-ledger": "^1.0",
+        "liberusoftware/module-accounting-general-ledger-api": "^1.0",
+        "liberusoftware/module-accounting-general-ledger-filament": "^1.0",
+        "liberusoftware/module-accounting-general-ledger-livewire": "^1.0",
         "liberusoftware/module-liberu-platform-orchestration": "^1.0",
         "liberusoftware/module-liberu-executive-insights": "^1.0",
         "liberusoftware/module-liberu-business-workflow-reconciliation": "^1.0",

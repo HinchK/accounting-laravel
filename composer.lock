@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb31a4aea149d413bda810c6c9490979",
+    "content-hash": "66a4223e7d861385097420b3d6601bf8",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7319,6 +7319,161 @@
                 "MIT"
             ],
             "description": "Livewire 4 adapter for accounting financial master data.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-general-ledger",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-general-ledger",
+                "reference": "cd987dfce72961479b134a62a8014d47a50d3aae"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-accounting-chart-of-accounts": "^1.0",
+                "liberusoftware/module-accounting-core": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\GeneralLedger\\GeneralLedgerServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-general-ledger"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\GeneralLedger\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Journals, balanced postings, reversals, corrections, allocations, accruals, prepayments, and balances.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-general-ledger-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-general-ledger-api",
+                "reference": "e4d621e7946c40469cb954dfe682da455c435e42"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "laravel/sanctum": "^4.0",
+                "liberusoftware/module-accounting-general-ledger": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\GeneralLedgerApi\\GeneralLedgerApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-general-ledger-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\GeneralLedgerApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Authenticated API adapter for the accounting general ledger.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-general-ledger-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-general-ledger-filament",
+                "reference": "35ac846f49ceb601595bc6824056ed29d0621b60"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-general-ledger": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\GeneralLedgerFilament\\GeneralLedgerFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-general-ledger-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\GeneralLedgerFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament adapter for the accounting general ledger.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-general-ledger-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-general-ledger-livewire",
+                "reference": "508a05e8a7d2f590e11d4edad9b12fdcfdf15a1c"
+            },
+            "require": {
+                "liberusoftware/module-accounting-general-ledger": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\GeneralLedgerLivewire\\GeneralLedgerLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-general-ledger-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\GeneralLedgerLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire adapter for the accounting general ledger.",
             "transport-options": {
                 "symlink": true,
                 "relative": true

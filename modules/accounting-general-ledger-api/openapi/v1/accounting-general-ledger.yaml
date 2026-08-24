@@ -1,0 +1,8 @@
+openapi: 3.1.0
+info: {title: accounting general ledger API, version: 1.0.0}
+paths:
+  /api/v1/accounting/general-ledger:
+    get: {operationId: accounting.general.ledger.list, responses: {'200': {description: Authorized journals}}}
+    post: {operationId: accounting.general.ledger.create, responses: {'201': {description: Journal created}}}
+  /api/v1/accounting/general-ledger/{id}/post: {post: {operationId: accounting.general.ledger.post, responses: {'200': {description: Journal posted}}}}
+  /api/v1/accounting/general-ledger/{id}/reverse: {post: {operationId: accounting.general.ledger.reverse, responses: {'200': {description: Journal reversed}}}}
