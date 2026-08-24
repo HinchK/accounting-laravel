@@ -25,6 +25,7 @@ use Illuminate\Support\Collection;
  * @property Customer|null $customer
  * @property \Illuminate\Support\Carbon|null $last_reminder_sent_at
  * @property-read Collection<int, TimeEntry> $timeEntries
+ * @property-read Team|null $team
  */
 class Invoice extends Model implements ApprovableRecord, Documentable
 {

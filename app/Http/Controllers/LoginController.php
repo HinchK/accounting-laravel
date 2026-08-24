@@ -15,7 +15,7 @@ class LoginController extends Controller
 {
     public function showLoginForm(): Factory|View
     {
-        return view('loginv');
+        return app(Factory::class)->make('loginv');
     }
 
     public function login(Request $request)

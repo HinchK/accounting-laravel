@@ -8,6 +8,9 @@ use App\Traits\IsTenantModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property string $valuation_method
+ */
 class InventoryItem extends Model
 {
     use HasFactory;
