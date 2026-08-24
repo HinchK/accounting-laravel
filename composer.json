@@ -41,6 +41,81 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-chart-of-accounts",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-chart-of-accounts-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-chart-of-accounts-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-chart-of-accounts-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/module-manager",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-financial-master-data",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-financial-master-data-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-financial-master-data-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-financial-master-data-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-periods",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-periods-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-periods-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-periods-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-policies",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-policies-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/liberu-platform-orchestration",
             "options": {
                 "symlink": true
@@ -258,6 +333,20 @@
         "liberusoftware/module-accounting-core-api": "^1.0",
         "liberusoftware/module-accounting-core-filament": "^1.0",
         "liberusoftware/module-accounting-core-livewire": "^1.0",
+        "liberusoftware/module-accounting-chart-of-accounts": "^1.0",
+        "liberusoftware/module-accounting-chart-of-accounts-api": "^1.0",
+        "liberusoftware/module-accounting-chart-of-accounts-filament": "^1.0",
+        "liberusoftware/module-accounting-chart-of-accounts-livewire": "^1.0",
+        "liberusoftware/module-accounting-financial-master-data": "^1.0",
+        "liberusoftware/module-accounting-financial-master-data-api": "^1.0",
+        "liberusoftware/module-accounting-financial-master-data-filament": "^1.0",
+        "liberusoftware/module-accounting-financial-master-data-livewire": "^1.0",
+        "liberusoftware/module-accounting-periods": "^1.0",
+        "liberusoftware/module-accounting-periods-api": "^1.0",
+        "liberusoftware/module-accounting-periods-filament": "^1.0",
+        "liberusoftware/module-accounting-periods-livewire": "^1.0",
+        "liberusoftware/module-accounting-policies": "^1.0",
+        "liberusoftware/module-accounting-policies-api": "^1.0",
         "liberusoftware/module-liberu-platform-orchestration": "^1.0",
         "liberusoftware/module-liberu-executive-insights": "^1.0",
         "liberusoftware/module-liberu-business-workflow-reconciliation": "^1.0",

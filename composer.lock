@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ed3ab50b64974bcd18eab498dc57461c",
+    "content-hash": "5f3cb4d259640f8c27af59f673962026",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -3049,16 +3049,16 @@
         },
         {
             "name": "guzzlehttp/uri-template",
-            "version": "v2.0.0",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/uri-template.git",
-                "reference": "516c3bf2af176c532d5b59b3430292f7e9ecccb1"
+                "reference": "7a466ad606491eb6528c717482f7cca77f1851f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/uri-template/zipball/516c3bf2af176c532d5b59b3430292f7e9ecccb1",
-                "reference": "516c3bf2af176c532d5b59b3430292f7e9ecccb1",
+                "url": "https://api.github.com/repos/guzzle/uri-template/zipball/7a466ad606491eb6528c717482f7cca77f1851f3",
+                "reference": "7a466ad606491eb6528c717482f7cca77f1851f3",
                 "shasum": ""
             },
             "require": {
@@ -3115,7 +3115,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/uri-template/issues",
-                "source": "https://github.com/guzzle/uri-template/tree/v2.0.0"
+                "source": "https://github.com/guzzle/uri-template/tree/v2.0.1"
             },
             "funding": [
                 {
@@ -3131,7 +3131,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-20T13:40:43+00:00"
+            "time": "2026-08-24T17:13:02+00:00"
         },
         {
             "name": "kirschbaum-development/eloquent-power-joins",
@@ -6733,6 +6733,201 @@
             "time": "2026-08-07T14:25:31+00:00"
         },
         {
+            "name": "liberusoftware/module-accounting-chart-of-accounts",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-chart-of-accounts",
+                "reference": "0750666ffc9ad9e58d61ae8c53cb952cb46cd34e"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-accounting-core": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ChartOfAccounts\\ChartOfAccountsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-chart-of-accounts"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ChartOfAccounts\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ChartOfAccounts\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Provider-neutral chart of accounts, hierarchy, controls, templates, and lifecycle rules.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-chart-of-accounts-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-chart-of-accounts-api",
+                "reference": "eb238f666fa778d940d9d4bd5dedd296c3cc4970"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "laravel/sanctum": "^4.0",
+                "liberusoftware/module-accounting-chart-of-accounts": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ChartOfAccountsApi\\ChartOfAccountsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-chart-of-accounts-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ChartOfAccountsApi\\": "src/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Authenticated API adapter for the accounting chart of accounts.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-chart-of-accounts-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-chart-of-accounts-filament",
+                "reference": "a36019d00fec3d50e68245aef424f17c8828f25a"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/module-accounting-chart-of-accounts": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ChartOfAccountsFilament\\ChartOfAccountsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-chart-of-accounts-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ChartOfAccountsFilament\\": "src/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 adapter for the accounting chart of accounts.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-chart-of-accounts-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-chart-of-accounts-livewire",
+                "reference": "7eab6622bc7e564b061d95ca5752655917abf2e8"
+            },
+            "require": {
+                "liberusoftware/module-accounting-chart-of-accounts": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ChartOfAccountsLivewire\\ChartOfAccountsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-chart-of-accounts-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ChartOfAccountsLivewire\\": "src/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 adapter for the accounting chart of accounts.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "liberusoftware/module-accounting-core",
             "version": "1.0.0",
             "dist": {
@@ -6935,6 +7130,433 @@
             }
         },
         {
+            "name": "liberusoftware/module-accounting-financial-master-data",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-financial-master-data",
+                "reference": "417d21d8a998b5fbc9a82ce0af39328c4516b647"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-accounting-core": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\FinancialMasterData\\FinancialMasterDataServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-financial-master-data"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\FinancialMasterData\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Liberu\\Accounting\\FinancialMasterData\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Provider-neutral accounting customers, suppliers, items, tax profiles, payment terms, addresses, and bank references.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-financial-master-data-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-financial-master-data-api",
+                "reference": "00f696a0e15e975ffdaa67eccf9042b3061f42a5"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "laravel/sanctum": "^4.0",
+                "liberusoftware/module-accounting-financial-master-data": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\FinancialMasterDataApi\\FinancialMasterDataApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-financial-master-data-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\FinancialMasterDataApi\\": "src/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Authenticated API adapter for accounting financial master data.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-financial-master-data-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-financial-master-data-filament",
+                "reference": "5a4606b8ae63a7fe39e48fd063cfd7bc8fc01226"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/module-accounting-financial-master-data": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\FinancialMasterDataFilament\\FinancialMasterDataFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-financial-master-data-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\FinancialMasterDataFilament\\": "src/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 adapter for accounting financial master data.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-financial-master-data-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-financial-master-data-livewire",
+                "reference": "decc6f0df8564057f280e95afc0b9d01c7d6a0fc"
+            },
+            "require": {
+                "liberusoftware/module-accounting-financial-master-data": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.5",
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\FinancialMasterDataLivewire\\FinancialMasterDataLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-financial-master-data-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\FinancialMasterDataLivewire\\": "src/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 adapter for accounting financial master data.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-periods",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-periods",
+                "reference": "9d35197268201ceae5ef9db85113442eed1fec82"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-accounting-core": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\Periods\\AccountingPeriodsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-periods"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\Periods\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting period states, posting controls, locks, reopen approval, and evidence.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-periods-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-periods-api",
+                "reference": "f27df1b472270f6e3da03dd225b17df962072d92"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "laravel/sanctum": "^4.0",
+                "liberusoftware/module-accounting-periods": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PeriodsApi\\AccountingPeriodsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-periods-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PeriodsApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Authenticated API adapter for accounting periods.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-periods-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-periods-filament",
+                "reference": "07cbd7c8e9282b6be0ca01f9cf81101232e2ce0f"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-periods": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PeriodsFilament\\AccountingPeriodsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-periods-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PeriodsFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament adapter for accounting periods.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-periods-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-periods-livewire",
+                "reference": "4640b61a97192d8bed9970ed8d2b8d0b9fb0524c"
+            },
+            "require": {
+                "liberusoftware/module-accounting-periods": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PeriodsLivewire\\AccountingPeriodsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-periods-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PeriodsLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire adapter for accounting periods.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-policies",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-policies",
+                "reference": "a0d95cfb174b2ce32dd1ea801024fc39343091ac"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-accounting-core": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\Policies\\AccountingPoliciesServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-policies"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\Policies\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Effective-dated accounting recognition, capitalization, depreciation, FX, tax, rounding, write-off, materiality, and approval rules.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-policies-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-policies-api",
+                "reference": "ccdc8b002311507e2081eebd7a3b05cb8233a127"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "laravel/sanctum": "^4.0",
+                "liberusoftware/module-accounting-policies": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PoliciesApi\\AccountingPoliciesApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-policies-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PoliciesApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Authenticated API adapter for accounting policy rules.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "liberusoftware/module-liberu-business-workflow-reconciliation",
             "version": "1.0.0",
             "dist": {
@@ -7086,16 +7708,10 @@
         {
             "name": "liberusoftware/module-manager",
             "version": "1.4.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/liberusoftware/module-module-manager.git",
-                "reference": "688fc9c01008bfd5258afa2a78587c48804ec2e7"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/liberusoftware/module-module-manager/zipball/688fc9c01008bfd5258afa2a78587c48804ec2e7",
-                "reference": "688fc9c01008bfd5258afa2a78587c48804ec2e7",
-                "shasum": ""
+                "type": "path",
+                "url": "modules/module-manager",
+                "reference": "76751f3258301dbc8af28c2b962fc5d1b254eced"
             },
             "require": {
                 "composer/semver": "^3.4",
@@ -7132,11 +7748,10 @@
                 "MIT"
             ],
             "description": "Deterministic manifest discovery and runtime enablement for Liberu modules.",
-            "support": {
-                "source": "https://github.com/liberusoftware/module-module-manager/tree/1.4.2",
-                "issues": "https://github.com/liberusoftware/module-module-manager/issues"
-            },
-            "time": "2026-08-07T14:25:25+00:00"
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "liberusoftware/module-manager-filament",
@@ -17152,23 +17767,23 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v5.6.4",
+            "version": "v5.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "416df702837983f8d5ff48c9c3fee4f5f57b980b"
+                "reference": "301c07936b16d88628b126b01d082ba153cf4c40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/416df702837983f8d5ff48c9c3fee4f5f57b980b",
-                "reference": "416df702837983f8d5ff48c9c3fee4f5f57b980b",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/301c07936b16d88628b126b01d082ba153cf4c40",
+                "reference": "301c07936b16d88628b126b01d082ba153cf4c40",
                 "shasum": ""
             },
             "require": {
                 "ext-pcre": "*",
-                "graham-campbell/result-type": "^1.1.4",
+                "graham-campbell/result-type": "^1.2",
                 "php": "^7.2.5 || ^8.0",
-                "phpoption/phpoption": "^1.9.5",
+                "phpoption/phpoption": "^1.10",
                 "symfony/polyfill-ctype": "^1.26",
                 "symfony/polyfill-mbstring": "^1.26",
                 "symfony/polyfill-php80": "^1.26"
@@ -17212,7 +17827,7 @@
                     "homepage": "https://github.com/vlucas"
                 }
             ],
-            "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
+            "description": "Loads environment variables from `.env` to `$_ENV` and `$_SERVER` automagically, and optionally to `getenv()`.",
             "keywords": [
                 "dotenv",
                 "env",
@@ -17220,7 +17835,7 @@
             ],
             "support": {
                 "issues": "https://github.com/vlucas/phpdotenv/issues",
-                "source": "https://github.com/vlucas/phpdotenv/tree/v5.6.4"
+                "source": "https://github.com/vlucas/phpdotenv/tree/v5.7.0"
             },
             "funding": [
                 {
@@ -17232,7 +17847,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-06T19:11:50+00:00"
+            "time": "2026-08-24T18:07:49+00:00"
         },
         {
             "name": "voku/portable-ascii",

@@ -6,6 +6,7 @@ namespace Liberu\Accounting\Core\Tests;
 
 use Illuminate\Events\Dispatcher;
 use Illuminate\Events\EventServiceProvider;
+use Illuminate\Database\DatabaseServiceProvider;
 use Liberu\PackageTestbench\PackageTestCase;
 
 abstract class TestCase extends PackageTestCase
@@ -15,6 +16,18 @@ abstract class TestCase extends PackageTestCase
         parent::setUp();
 
         $this->app->instance('events', new Dispatcher($this->app));
+    }
+
+    protected function defineEnvironment($app): void
+    {
+        parent::defineEnvironment($app);
+
+        $app['config']->set('database.default', 'testing');
+        $app['config']->set('database.connections.testing', [
+            'driver' => 'sqlite',
+            'database' => ':memory:',
+            'prefix' => '',
+        ]);
     }
 
     /**
@@ -27,6 +40,7 @@ abstract class TestCase extends PackageTestCase
     protected function getPackageProviders($app): array
     {
         return [
+            DatabaseServiceProvider::class,
             EventServiceProvider::class,
             ...parent::getPackageProviders($app),
         ];
