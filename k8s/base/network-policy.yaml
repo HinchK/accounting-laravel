@@ -1,14 +1,14 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: boilerplate-network-policy
-  namespace: boilerplate-laravel
+  name: accounting-erp-network-policy
+  namespace: accounting-erp-laravel
   labels:
-    app: boilerplate-laravel
+    app: accounting-erp-laravel
 spec:
   podSelector:
     matchLabels:
-      app: boilerplate-laravel
+      app: accounting-erp-laravel
   policyTypes:
   - Ingress
   - Egress
@@ -25,7 +25,7 @@ spec:
   - from:
     - podSelector:
         matchLabels:
-          app: boilerplate-laravel
+          app: accounting-erp-laravel
     ports:
     - protocol: TCP
       port: 8000
@@ -44,7 +44,7 @@ spec:
   - to:
     - podSelector:
         matchLabels:
-          app: boilerplate-laravel
+          app: accounting-erp-laravel
   - to: []
     ports:
     - protocol: TCP

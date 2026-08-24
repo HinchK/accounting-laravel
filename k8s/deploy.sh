@@ -8,9 +8,10 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m'
 
-NAMESPACE="${NAMESPACE:-boilerplate-laravel}"
+NAMESPACE="${NAMESPACE:-accounting-erp-laravel}"
 ENVIRONMENT="${ENVIRONMENT:-production}"
-DOMAIN="${DOMAIN:-boilerplate.example.com}"
+DOMAIN="${DOMAIN:-accounting.example.com}"
+IMAGE_TAG="${IMAGE_TAG:-}"
 APP_KEY="${APP_KEY:-}"
 DB_PASSWORD="${DB_PASSWORD:-}"
 DB_ROOT_PASSWORD="${DB_ROOT_PASSWORD:-}"
@@ -26,12 +27,17 @@ command -v kubectl >/dev/null 2>&1 || { error "kubectl not installed"; exit 1; }
 [ -z "$APP_KEY" ]          && { error "APP_KEY is required (php artisan key:generate --show)"; exit 1; }
 [ -z "$DB_PASSWORD" ]      && { error "DB_PASSWORD is required"; exit 1; }
 [ -z "$DB_ROOT_PASSWORD" ] && { error "DB_ROOT_PASSWORD is required"; exit 1; }
+[ "$ENVIRONMENT" = "production" ] && [ -z "$IMAGE_TAG" ] && { error "IMAGE_TAG is required for production deployments"; exit 1; }
+if [ "$ENVIRONMENT" = "production" ] && [[ ! "$IMAGE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+    error "IMAGE_TAG must be a semantic version tag such as v2.0.0"
+    exit 1
+fi
 
 info "Creating namespace: $NAMESPACE"
 kubectl create namespace "$NAMESPACE" --dry-run=client -o yaml | kubectl apply -f -
 
 info "Updating secrets..."
-kubectl create secret generic boilerplate-secrets \
+kubectl create secret generic accounting-erp-secrets \
     --from-literal=APP_KEY="$APP_KEY" \
     --from-literal=DB_USERNAME="liberu" \
     --from-literal=DB_PASSWORD="$DB_PASSWORD" \
@@ -41,14 +47,20 @@ kubectl create secret generic boilerplate-secrets \
     --dry-run=client -o yaml | kubectl apply -f -
 
 info "Deploying to $ENVIRONMENT..."
-kubectl apply -k "k8s/overlays/$ENVIRONMENT"
+if [ "$ENVIRONMENT" = "production" ]; then
+    kubectl kustomize "k8s/overlays/$ENVIRONMENT" \
+        | sed "s#ghcr.io/liberusoftware/accounting-erp-laravel:v2.0.0#ghcr.io/liberusoftware/accounting-erp-laravel:${IMAGE_TAG}#g" \
+        | kubectl apply -f -
+else
+    kubectl apply -k "k8s/overlays/$ENVIRONMENT"
+fi
 
 info "Waiting for deployment..."
 kubectl wait --for=condition=available --timeout=300s \
-    deployment/boilerplate-laravel -n "$NAMESPACE" || warn "Timeout waiting for deployment"
+    deployment/accounting-erp-laravel -n "$NAMESPACE" || warn "Timeout waiting for deployment"
 
 info "Deployment complete!"
 echo ""
 echo "  Status:  kubectl get pods -n $NAMESPACE"
-echo "  Logs:    kubectl logs -n $NAMESPACE -l app=boilerplate-laravel"
+echo "  Logs:    kubectl logs -n $NAMESPACE -l app=accounting-erp-laravel"
 echo "  URL:     https://$DOMAIN"

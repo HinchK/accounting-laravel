@@ -5,7 +5,7 @@ resources:
 - ../../base
 - hpa.yaml
 
-namespace: boilerplate-laravel
+namespace: accounting-erp-laravel
 
 patches:
 - patch: |-
@@ -14,10 +14,10 @@ patches:
       value: 3
   target:
     kind: Deployment
-    name: boilerplate-laravel
+    name: accounting-erp-laravel
 
 configMapGenerator:
-- name: boilerplate-config
+- name: accounting-erp-config
   behavior: merge
   literals:
   - APP_ENV=production
@@ -25,5 +25,5 @@ configMapGenerator:
   - LOG_LEVEL=warning
 
 images:
-- name: ghcr.io/liberusoftware/boilerplate-laravel
-  newTag: latest
+- name: ghcr.io/liberusoftware/accounting-erp-laravel
+  newTag: v2.0.0
