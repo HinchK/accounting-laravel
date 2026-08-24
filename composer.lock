@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66a4223e7d861385097420b3d6601bf8",
+    "content-hash": "cab657e6965a493e41b77a824a775096",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7124,6 +7124,160 @@
                 "MIT"
             ],
             "description": "Livewire 4 presentation adapter for Liberu Accounting Core.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-dimensions-and-tracking",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-dimensions-and-tracking",
+                "reference": "728db9318b28daea90fa7c1589914ae89c79f467"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-accounting-core": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\Dimensions\\DimensionsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-dimensions-and-tracking"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\Dimensions\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting dimensions, tracking values, validation, allocations, and dimensional balances.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-dimensions-and-tracking-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-dimensions-and-tracking-api",
+                "reference": "dda60d11adea8b2ad2ed430471fc288d6e5bfcc4"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "laravel/sanctum": "^4.0",
+                "liberusoftware/module-accounting-dimensions-and-tracking": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\DimensionsApi\\DimensionsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-dimensions-and-tracking-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\DimensionsApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Authenticated API adapter for accounting dimensions and tracking.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-dimensions-and-tracking-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-dimensions-and-tracking-filament",
+                "reference": "cdcd0f90f3e4f3a053bb893888ea5fea9875c9ef"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-dimensions-and-tracking": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\DimensionsFilament\\DimensionsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-dimensions-and-tracking-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\DimensionsFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament adapter for accounting dimensions and tracking.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-dimensions-and-tracking-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-dimensions-and-tracking-livewire",
+                "reference": "c873d31b472e25b3140163700ad7c24fab2f5201"
+            },
+            "require": {
+                "liberusoftware/module-accounting-dimensions-and-tracking": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\DimensionsLivewire\\DimensionsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-dimensions-and-tracking-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\DimensionsLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire adapter for accounting dimensions and tracking.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
