@@ -21,7 +21,16 @@ class SearchService
 
         // Search by name or email
         if (! empty($filters['query'])) {
-            $query->search($this->toString($filters['query']));
+            $searchTerm = $this->toString($filters['query']);
+            $query->search($searchTerm);
+
+            // Exact identity matches should precede substring matches. This keeps
+            // public search deterministic when the authenticated user's generated
+            // name happens to contain the requested term.
+            $query->orderByRaw(
+                'case when lower(name) = lower(?) then 0 when lower(email) = lower(?) then 1 else 2 end',
+                [$searchTerm, $searchTerm],
+            );
         }
 
         // Filter by role. `role()` is Spatie's HasRoles scope, which this package
