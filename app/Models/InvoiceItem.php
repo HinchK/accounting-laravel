@@ -10,6 +10,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * A line item on a customer invoice. Mirrors BillItem.
+ *
+ * @property-read Invoice|null $invoice
+ * @property-read TaxRate|null $taxRate
  */
 class InvoiceItem extends Model
 {

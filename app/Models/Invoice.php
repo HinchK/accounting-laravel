@@ -19,6 +19,7 @@ use Illuminate\Support\Collection;
 
 /**
  * @property int|null $team_id
+ * @property int $invoice_id
  * @property Customer|null $customer
  * @property \Illuminate\Support\Carbon|null $last_reminder_sent_at
  * @property-read Collection<int, TimeEntry> $timeEntries

@@ -11,7 +11,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Collection;
 
+/**
+ * @property int|null $team_id
+ * @property-read TaxRate|null $taxRate
+ * @property-read Collection<int, EstimateItem> $items
+ * @property-read Invoice|null $invoice
+ */
 class Estimate extends Model
 {
     use HasDocuments;
