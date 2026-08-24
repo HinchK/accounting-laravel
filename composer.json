@@ -5,8 +5,9 @@
     "description": "Liberu Accounting application built on the Liberu Laravel foundation.",
     "keywords": [
         "laravel",
-        "framework",
-        "boilerplate"
+        "accounting",
+        "erp",
+        "framework"
     ],
     "license": "MIT",
     "repositories": [

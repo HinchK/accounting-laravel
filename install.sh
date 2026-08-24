@@ -1,5 +1,5 @@
 #!/bin/bash
-# Installation script for the boilerplate-laravel project.
+# Installation script for the accounting-erp-laravel project.
 #
 # This script provides installation options for Standalone, Docker, or Kubernetes deployments.
 # It handles composer and npm installations with fallback logic and error checking.

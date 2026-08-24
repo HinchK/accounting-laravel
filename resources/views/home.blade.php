@@ -39,7 +39,7 @@
 </section>
 
 <section class="sr-only" aria-label="Product foundation">
-    Clear Signal · https://github.com/liberusoftware/boilerplate-laravel
+    Clear Signal · https://github.com/liberusoftware/accounting-erp-laravel
 </section>
 
 {{-- Features --}}
