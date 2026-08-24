@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d339c3900aa0f01e72c1d0dfddefc49f",
+    "content-hash": "6662cafcacf255bd9ef8d9d16652e119",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -8092,6 +8092,161 @@
                 "MIT"
             ],
             "description": "Livewire adapter for accounting policy rules.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-sales-invoicing",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-sales-invoicing",
+                "reference": "4711d0f630c2b9aee317597800af2402ba9b1ccc"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-accounting-core": "^1.0",
+                "liberusoftware/module-accounting-financial-master-data": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SalesInvoicing\\SalesInvoicingServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-sales-invoicing"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SalesInvoicing\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Draft, approved, final sales invoices with lines, tax, discounts, deposits, recurring sources, branding, delivery, and immutability.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-sales-invoicing-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-sales-invoicing-api",
+                "reference": "be244fad3ae20e912530f92f4ff35dcbdf10f9d1"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "laravel/sanctum": "^4.0",
+                "liberusoftware/module-accounting-sales-invoicing": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SalesInvoicingApi\\SalesInvoicingApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-sales-invoicing-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SalesInvoicingApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Authenticated API adapter for accounting sales invoicing.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-sales-invoicing-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-sales-invoicing-filament",
+                "reference": "a7dd703bc4d962fa146e3dec87bbcbf22f8b5417"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-sales-invoicing": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SalesInvoicingFilament\\SalesInvoicingFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-sales-invoicing-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SalesInvoicingFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament adapter for accounting sales invoicing.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-sales-invoicing-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-sales-invoicing-livewire",
+                "reference": "27c8943adb20e7364afdb83d06e07791099523ed"
+            },
+            "require": {
+                "liberusoftware/module-accounting-sales-invoicing": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SalesInvoicingLivewire\\SalesInvoicingLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-sales-invoicing-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SalesInvoicingLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire adapter for accounting sales invoicing.",
             "transport-options": {
                 "symlink": true,
                 "relative": true

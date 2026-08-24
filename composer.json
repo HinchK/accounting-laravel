@@ -186,6 +186,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-sales-invoicing",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-sales-invoicing-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-sales-invoicing-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-sales-invoicing-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/liberu-platform-orchestration",
             "options": {
                 "symlink": true
@@ -431,6 +451,10 @@
         "liberusoftware/module-accounting-financial-statements-api": "^1.0",
         "liberusoftware/module-accounting-financial-statements-filament": "^1.0",
         "liberusoftware/module-accounting-financial-statements-livewire": "^1.0",
+        "liberusoftware/module-accounting-sales-invoicing": "^1.0",
+        "liberusoftware/module-accounting-sales-invoicing-api": "^1.0",
+        "liberusoftware/module-accounting-sales-invoicing-filament": "^1.0",
+        "liberusoftware/module-accounting-sales-invoicing-livewire": "^1.0",
         "liberusoftware/module-liberu-platform-orchestration": "^1.0",
         "liberusoftware/module-liberu-executive-insights": "^1.0",
         "liberusoftware/module-liberu-business-workflow-reconciliation": "^1.0",
