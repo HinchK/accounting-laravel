@@ -40,8 +40,6 @@ foreach ($config['components'] ?? [] as $component) {
     }
 }
 
-$rootComposer = json_decode((string) file_get_contents($root.'/composer.json'), true, 512, JSON_THROW_ON_ERROR);
-$packages[(string) $rootComposer['name']] = (string) $config['repository'];
 $packages += $config['additionalPackages'] ?? [];
 ksort($packages);
 
@@ -55,7 +53,7 @@ foreach ($packages as $package => $repository) {
 
     $existing = request("https://repo.packagist.org/p2/{$package}.json");
     $endpoint = $existing['status'] === 200 ? 'update-package' : 'create-package';
-    $payload = $endpoint === 'update-package' ? ['repository' => ['url' => $repositoryUrl]] : ['repository' => $repositoryUrl];
+    $payload = ['repository' => $repositoryUrl];
     $response = request(
         "https://packagist.org/api/{$endpoint}",
         json_encode($payload, JSON_THROW_ON_ERROR),

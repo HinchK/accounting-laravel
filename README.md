@@ -133,25 +133,25 @@ The live coverage report is published to [Codecov](https://codecov.io/gh/liberus
 
 ### Publishing the component repositories
 
-The publishing helper derives repository names from directory names, using
-`module-` for entries in `modules/` and `theme-` for entries in `themes/`. It
-also handles this complete application repository as `accounting-erp-laravel`.
+The package fleet derives repository names from directory names, using
+`module-` for entries in `modules/` and `theme-` for entries in `themes/`.
+The host application remains `accounting-erp-laravel` and is not submitted as
+a Composer package.
 
 ```bash
-# Inspect all mappings without changing GitHub
-scripts/publish-components
+# Inspect the independently released repositories
+scripts/fleet status
 
-# Create any missing public repositories in the organisation
-scripts/publish-components --create
+# Clone any missing component repositories into the fleet workspace
+scripts/fleet clone
 
-# After committing the complete worktree, split and push every component plus the meta repository
-scripts/publish-components --push
+# Run a package command across the fleet
+scripts/fleet run 'vendor/bin/pest'
 ```
 
-Publishing requires authenticated `gh` and `git` access to the organisation.
-Push mode deliberately refuses a dirty worktree because subtree splits can only
-publish committed content. Existing repositories are updated without force, so
-non-fast-forward histories must be reconciled explicitly rather than overwritten.
+Fleet operations require authenticated `git` access to the organisation. Package
+repositories are the source of truth; the host application is deliberately not
+mirrored into them.
 
 After the repositories are public, register every Composer package on Packagist:
 
@@ -159,7 +159,7 @@ After the repositories are public, register every Composer package on Packagist:
 # Verify all package-to-repository mappings without submitting
 php scripts/submit-packagist.php --dry-run
 
-# Obtain the MAIN API token from packagist.org/profile, then bulk register the packages
+# Obtain the MAIN API token from packagist.org/profile, then refresh the packages
 export PACKAGIST_USERNAME='your-packagist-username'
 export PACKAGIST_API_TOKEN='your-packagist-api-token'
 php scripts/submit-packagist.php
