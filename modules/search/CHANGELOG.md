@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Rank exact and prefix user-search matches ahead of later substring matches and add a
+  deterministic primary-key tie-breaker for stable pagination.
+- Correct the generic paginator PHPDoc so the package's standalone static analysis does not
+  reference an application-owned `User` class.
+
 ## 1.3.0 - 2026-08-06
 
 - The demo-shaped `searchPosts()`/`searchGroups()` leave for `search-demo`. `searchAll()` now
