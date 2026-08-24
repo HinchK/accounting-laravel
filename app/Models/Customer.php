@@ -8,6 +8,7 @@ use App\Traits\IsTenantModel;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -49,7 +50,10 @@ class Customer extends Authenticatable implements FilamentUser
         'remember_token',
     ];
 
-    public function invoices()
+    /**
+     * @return HasMany<Invoice, $this>
+     */
+    public function invoices(): HasMany
     {
         return $this->hasMany(Invoice::class, 'customer_id');
     }

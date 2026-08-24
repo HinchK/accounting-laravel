@@ -6,7 +6,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 
+/**
+ * @property-read Currency|null $fromCurrency
+ * @property-read Currency|null $toCurrency
+ * @property Carbon $date
+ */
 class ExchangeRate extends Model
 {
     use HasFactory;
@@ -28,12 +35,18 @@ class ExchangeRate extends Model
         'date' => 'date',
     ];
 
-    public function fromCurrency()
+    /**
+     * @return BelongsTo<Currency, $this>
+     */
+    public function fromCurrency(): BelongsTo
     {
         return $this->belongsTo(Currency::class, 'from_currency_id');
     }
 
-    public function toCurrency()
+    /**
+     * @return BelongsTo<Currency, $this>
+     */
+    public function toCurrency(): BelongsTo
     {
         return $this->belongsTo(Currency::class, 'to_currency_id');
     }
