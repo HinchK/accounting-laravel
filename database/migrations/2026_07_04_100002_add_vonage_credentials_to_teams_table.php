@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Schema;
 
 // Team-level Vonage (SMS) sending account. Encrypted at rest via the model cast;
 // the columns are plain text so the ciphertext fits (encrypted values are long).
-return new class extends Migration
+return new class() extends Migration
 {
     public function up(): void
     {

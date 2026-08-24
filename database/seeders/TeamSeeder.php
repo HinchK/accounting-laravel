@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Team;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class TeamSeeder extends Seeder
 {

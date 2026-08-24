@@ -18,7 +18,7 @@ class FinancialStatementServiceTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->service = new FinancialStatementService;
+        $this->service = new FinancialStatementService();
     }
 
     public function test_profit_and_loss_returns_expected_keys(): void

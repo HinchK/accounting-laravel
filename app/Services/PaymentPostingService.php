@@ -41,7 +41,7 @@ class PaymentPostingService
                 return $existing instanceof JournalEntry ? $existing : throw new RuntimeException('Payment linked to a missing journal entry.');
             }
 
-            $entry = new JournalEntry;
+            $entry = new JournalEntry();
             $entry->forceFill([
                 'entry_date' => $payment->payment_date,
                 'entry_type' => 'general',

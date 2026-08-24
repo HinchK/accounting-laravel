@@ -44,7 +44,7 @@ class TenantProvisioningService
                 // team_id + user_id are NOT fillable and there is no auth() in the command/ops
                 // context; set them explicitly so every account is team-scoped and owned.
                 // normal_balance is intentionally left unset — Account's creating hook derives it.
-                (new Account)->forceFill([
+                (new Account())->forceFill([
                     'account_number' => $number,
                     'account_name' => $name,
                     'account_type' => $type,

@@ -33,7 +33,7 @@ class ImportFailedNotification extends Notification implements ShouldQueue
     {
         $id = (string) $this->statement->getKey();
 
-        return (new MailMessage)
+        return (new MailMessage())
             ->subject('Bank statement import failed')
             ->line("The import for bank statement #{$id} failed.")
             ->line("Error: {$this->error}");

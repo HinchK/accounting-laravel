@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Schema;
  * silently under-taxing every document. This adds the missing columns and
  * backfills existing rows to active so live rates start taxing correctly.
  */
-return new class extends Migration
+return new class() extends Migration
 {
     public function up(): void
     {

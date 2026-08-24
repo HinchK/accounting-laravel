@@ -18,7 +18,7 @@ class ModuleManagerTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->manager = new ModuleManager;
+        $this->manager = new ModuleManager();
     }
 
     public function test_all_returns_collection(): void

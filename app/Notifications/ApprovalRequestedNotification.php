@@ -53,7 +53,7 @@ class ApprovalRequestedNotification extends Notification implements ShouldQueue
     {
         $subject = "Approval required for {$this->step->request->approvable_type} #{$this->step->request->approvable_id}";
 
-        return (new MailMessage)
+        return (new MailMessage())
             ->subject($subject)
             ->greeting("Hello {$notifiable->name}")
             ->line($subject);

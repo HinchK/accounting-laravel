@@ -81,7 +81,7 @@ class DoubleEntryValidatorTest extends TestCase
         // lines === null -> legacy branch reads request() input
         request()->merge(['debit_amount' => 250.00, 'credit_amount' => 250.00]);
 
-        $validator = new DoubleEntryValidator;
+        $validator = new DoubleEntryValidator();
 
         $this->assertTrue($validator->passes('debit_amount', 250.00));
     }
@@ -90,7 +90,7 @@ class DoubleEntryValidatorTest extends TestCase
     {
         request()->merge(['debit_amount' => 250.00, 'credit_amount' => 100.00]);
 
-        $validator = new DoubleEntryValidator;
+        $validator = new DoubleEntryValidator();
 
         $this->assertFalse($validator->passes('debit_amount', 250.00));
     }

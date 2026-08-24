@@ -26,7 +26,7 @@ class TaxFormTest extends TestCase
 
     public function test_tax_summary_accessor_defaults_to_empty_array_when_form_data_null(): void
     {
-        $form = new TaxForm;
+        $form = new TaxForm();
 
         $this->assertSame([], $form->tax_summary);
     }

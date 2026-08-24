@@ -25,7 +25,7 @@ class NotificationSettingsTest extends TestCase
         $this->actingAs($user);
         $this->useAppPanelTenant($team);
 
-        $page = new TeamNotificationSettings;
+        $page = new TeamNotificationSettings();
         $page->data = [
             'vonage_key' => 'pubkey123',
             'vonage_secret' => 'secret-xyz',
@@ -53,7 +53,7 @@ class NotificationSettingsTest extends TestCase
 
         $team->forceFill(['vonage_key' => 'keep-key', 'vonage_secret' => 'keep-secret'])->save();
 
-        $page = new TeamNotificationSettings;
+        $page = new TeamNotificationSettings();
         $page->data = ['vonage_key' => '', 'vonage_secret' => '', 'vonage_from' => 'NewSender'];
         $page->save();
 
@@ -81,7 +81,7 @@ class NotificationSettingsTest extends TestCase
         $user = User::factory()->create();
         $this->actingAs($user);
 
-        $page = new NotificationSettings;
+        $page = new NotificationSettings();
         $page->data = [
             'phone' => '+15551234567',
             'mail_enabled' => true,
@@ -98,7 +98,7 @@ class NotificationSettingsTest extends TestCase
         $this->assertTrue($pref->sms_enabled);
 
         // Second save updates the same row instead of inserting another.
-        $update = new NotificationSettings;
+        $update = new NotificationSettings();
         $update->data = [
             'phone' => '+19998887777',
             'mail_enabled' => false,

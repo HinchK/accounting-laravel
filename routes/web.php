@@ -5,6 +5,7 @@ declare(strict_types=1);
 use App\Http\Controllers\PortalAccessController;
 use Filament\Facades\Filament;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', fn (): Factory|\Illuminate\Contracts\View\View => view('home'))->name('home');
 
-Route::middleware('auth')->get('/dashboard', function (): \Illuminate\Http\RedirectResponse {
+Route::middleware('auth')->get('/dashboard', function (): RedirectResponse {
     $user = request()->user();
 
     if ($user->hasRoleInAnyTeam('super_admin')) {

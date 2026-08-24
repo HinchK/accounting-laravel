@@ -263,7 +263,7 @@ class ModuleManager
         }
 
         try {
-            $module = new $moduleClass;
+            $module = new $moduleClass();
         } catch (\Throwable $e) {
             Log::warning("Failed instantiating module {$moduleClass}: ".$e->getMessage());
 
@@ -297,7 +297,7 @@ class ModuleManager
                 public function __construct(private string $innerClass)
                 {
                     if (class_exists($innerClass)) {
-                        $this->inner = new $innerClass;
+                        $this->inner = new $innerClass();
                     }
 
                     try {

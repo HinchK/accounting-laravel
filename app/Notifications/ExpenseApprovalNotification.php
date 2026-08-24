@@ -37,7 +37,7 @@ class ExpenseApprovalNotification extends Notification implements ShouldQueue
             ? 'Your expense has been approved.'
             : 'Your expense has been rejected.';
 
-        return (new MailMessage)
+        return (new MailMessage())
             ->subject("Expense {$this->status}")
             ->greeting("Hello {$notifiable->name}")
             ->line($message)

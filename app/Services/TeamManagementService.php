@@ -6,8 +6,8 @@ namespace App\Services;
 
 use App\Models\Team;
 use App\Models\User;
-use Liberu\Foundation\Organizations\Models\Team as FoundationTeam;
 use Illuminate\Support\Facades\DB;
+use Liberu\Foundation\Organizations\Models\Team as FoundationTeam;
 
 /**
  * Team provisioning. Guarantees every user owns exactly one personal team,

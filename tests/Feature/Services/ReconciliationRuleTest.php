@@ -48,7 +48,7 @@ class ReconciliationRuleTest extends TestCase
             'is_active' => true,
         ]);
 
-        $result = (new ReconciliationService)->reconcile($bankStatement);
+        $result = (new ReconciliationService())->reconcile($bankStatement);
 
         $matching->refresh();
         $this->assertTrue($matching->reconciled);
@@ -86,7 +86,7 @@ class ReconciliationRuleTest extends TestCase
             'action_account_id' => $expenseAccount->id,
         ]);
 
-        (new ReconciliationService)->reconcile($bankStatement);
+        (new ReconciliationService())->reconcile($bankStatement);
 
         $other->refresh();
         // Heuristic self-match still reconciles it, but no rule fired so no

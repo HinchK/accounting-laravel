@@ -50,7 +50,7 @@ class VendorCreditResource extends Resource
                 Section::make('Credit Information')
                     ->schema([
                         Select::make('vendor_id')
-                    ->relationship('vendor', 'name')
+                            ->relationship('vendor', 'name')
                             ->required()
                             ->searchable()
                             ->preload(),

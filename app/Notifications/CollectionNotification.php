@@ -39,7 +39,7 @@ class CollectionNotification extends Notification implements ShouldQueue
             ->where('payment_status', 'pending')
             ->sum('total_amount');
 
-        return (new MailMessage)
+        return (new MailMessage())
             ->subject('Important: Account Status Update')
             ->greeting('Dear '.$this->customer->customer_name)
             ->line('Your account has been placed on credit hold due to overdue payments.')

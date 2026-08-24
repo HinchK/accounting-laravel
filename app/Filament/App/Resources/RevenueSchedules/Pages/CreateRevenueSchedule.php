@@ -35,7 +35,7 @@ class CreateRevenueSchedule extends CreateRecord
                 ->danger()
                 ->send();
 
-            throw new Halt;
+            throw new Halt();
         }
     }
 }

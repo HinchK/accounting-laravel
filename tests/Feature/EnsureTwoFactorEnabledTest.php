@@ -102,7 +102,7 @@ class EnsureTwoFactorEnabledTest extends TestCase
         $request = Request::create('/app', 'GET');
         $request->setRouteResolver(fn (): Route => (new Route('GET', '/app', []))->name($routeName));
 
-        return (new EnsureTwoFactorEnabled)->handle(
+        return (new EnsureTwoFactorEnabled())->handle(
             $request,
             fn (): Response => new Response('ok'),
         );

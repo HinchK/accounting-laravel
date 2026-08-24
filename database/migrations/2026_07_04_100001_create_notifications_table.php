@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Schema;
 
 // Standard Laravel notifications table. Two notifications already declare the
 // 'database' channel but the table never existed, so those sends errored.
-return new class extends Migration
+return new class() extends Migration
 {
     public function up(): void
     {

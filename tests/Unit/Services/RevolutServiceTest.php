@@ -25,7 +25,7 @@ class RevolutServiceTest extends TestCase
         Config::set('services.revolut.redirect_uri', 'https://example.com/revolut/callback');
         Config::set('services.revolut.webhook_secret', 'test_webhook_secret');
 
-        $this->service = new RevolutService;
+        $this->service = new RevolutService();
     }
 
     public function test_get_authorization_url_returns_correct_url(): void
@@ -42,7 +42,7 @@ class RevolutServiceTest extends TestCase
     public function test_get_authorization_url_uses_production_url_when_configured(): void
     {
         Config::set('services.revolut.environment', 'production');
-        $service = new RevolutService;
+        $service = new RevolutService();
 
         $url = $service->getAuthorizationUrl('state');
 
@@ -296,7 +296,7 @@ class RevolutServiceTest extends TestCase
     public function test_service_uses_production_base_url_when_configured(): void
     {
         Config::set('services.revolut.environment', 'production');
-        $service = new RevolutService;
+        $service = new RevolutService();
 
         Http::fake([
             'b2b.revolut.com/api/1.0/accounts' => Http::response([], 200),

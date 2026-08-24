@@ -15,7 +15,7 @@ class TaxRateTest extends TestCase
      */
     private function rate(float $rate, bool $active = true, bool $compound = false): TaxRate
     {
-        $r = new TaxRate;
+        $r = new TaxRate();
         $r->rate = $rate;
         $r->is_active = $active;
         $r->is_compound = $compound;

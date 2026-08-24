@@ -1,6 +1,9 @@
 <?php
+
 declare(strict_types=1);
+
 namespace Liberu\AccountingSdk\Exception;
+
 class ValidationException extends ApiException
 {
     /** @param array<string, mixed> $validationErrors */
