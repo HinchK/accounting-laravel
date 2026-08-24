@@ -19,7 +19,7 @@ class OpenApiController extends Controller
     {
         $paths = [];
 
-        foreach (Route::getRoutes() as $route) {
+        foreach (Route::getRoutes()->getRoutes() as $route) {
             $uri = $route->uri();
 
             if (! str_starts_with($uri, 'api/v1/') || str_contains($uri, 'openapi')) {
@@ -70,7 +70,7 @@ class OpenApiController extends Controller
     private function abilityOf(array $middleware): ?string
     {
         foreach ($middleware as $m) {
-            if (is_string($m) && str_starts_with($m, 'ability:')) {
+            if (str_starts_with($m, 'ability:')) {
                 return substr($m, strlen('ability:'));
             }
         }

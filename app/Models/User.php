@@ -38,6 +38,7 @@ use Spatie\Permission\Traits\HasRoles;
 /**
  * @property string|null $theme_preference
  * @property string|null $locale
+ * @property-read Team|null $currentTeam
  */
 class User extends Authenticatable implements ConnectedAccountOwner, FilamentUser, HasDefaultTenant, HasTenants, ObservabilityActor, OrganizationActor, PrivilegedActor
 {

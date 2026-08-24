@@ -9,7 +9,6 @@ use App\Models\Vendor;
 use App\Notifications\PortalAccessNotification;
 use Filament\Facades\Filament;
 use Illuminate\Contracts\View\View;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Password;
@@ -20,7 +19,7 @@ use Illuminate\Validation\Rules\Password;
  */
 class PortalAccessController extends Controller
 {
-    /** @var array<string, class-string<Model>> */
+    /** @var array<string, class-string<Customer|Vendor>> */
     private const MODELS = ['customer' => Customer::class, 'vendor' => Vendor::class];
 
     /** Email column per guard (Customer's is non-standard). */
@@ -78,7 +77,7 @@ class PortalAccessController extends Controller
      * password is set that hash changes, so a reused or leaked link 403s —
      * effectively single-use (mirrors Laravel's signed email-verification).
      */
-    private function assertLinkFresh(Request $request, Model $model): void
+    private function assertLinkFresh(Request $request, Customer|Vendor $model): void
     {
         abort_unless(
             hash_equals((string) $request->query('hash'), sha1((string) $model->getAttribute('password'))),
@@ -95,7 +94,7 @@ class PortalAccessController extends Controller
     }
 
     /**
-     * @return class-string<Model>
+     * @return class-string<Customer|Vendor>
      */
     private function modelClass(string $guard): string
     {
