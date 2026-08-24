@@ -26,6 +26,20 @@
             }
         },
         {
+            "type": "path",
+            "url": "modules/accounting-core-filament",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-core-livewire",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
             "type": "vcs",
             "url": "https://github.com/liberusoftware/composer-installer.git"
         },
@@ -221,6 +235,8 @@
     "require": {
         "liberusoftware/module-accounting-core": "^1.0",
         "liberusoftware/module-accounting-core-api": "^1.0",
+        "liberusoftware/module-accounting-core-filament": "^1.0",
+        "liberusoftware/module-accounting-core-livewire": "^1.0",
         "php": "^8.5",
         "barryvdh/laravel-dompdf": "^3.1",
         "bezhansalleh/filament-shield": "~4.0",
