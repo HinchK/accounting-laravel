@@ -351,6 +351,8 @@ class RevolutController extends Controller
             'reference' => 'required|string|max:255',
         ]);
 
+        $guardKey = 'revolut_pay:'.$connection->id.':'.$request->input('idempotency_key');
+
         try {
             if ($connection->team_id !== ($request->user()->current_team_id ?? -1)) {
                 return response()->json([
@@ -370,7 +372,6 @@ class RevolutController extends Controller
             // guard; Revolut's request_id (below) is the authoritative dedup, so a
             // legit retry with the same key never double-spends. Forgotten on
             // failure so a corrected retry can proceed.
-            $guardKey = 'revolut_pay:'.$connection->id.':'.$request->input('idempotency_key');
             if (! Cache::add($guardKey, true, now()->addHours(24))) {
                 return response()->json([
                     'success' => false,
@@ -426,9 +427,7 @@ class RevolutController extends Controller
                 'status' => $payment->status,
             ], 202);
         } catch (Exception $e) {
-            if (isset($guardKey)) {
-                Cache::forget($guardKey);
-            }
+            Cache::forget($guardKey);
             Log::error('Failed to send Revolut payment', [
                 'connection_id' => $connection->id,
                 'error' => $e->getMessage(),
@@ -461,6 +460,8 @@ class RevolutController extends Controller
             'payments.*.reference' => 'required|string|max:255',
         ]);
 
+        $guardKey = 'revolut_bulkpay:'.$connection->id.':'.$request->input('idempotency_key');
+
         try {
             if ($connection->team_id !== ($request->user()->current_team_id ?? -1)) {
                 return response()->json([
@@ -478,7 +479,6 @@ class RevolutController extends Controller
 
             // Best-effort dup guard (payment-drafts require separate approval
             // before money moves, so double-submit only risks a duplicate draft).
-            $guardKey = 'revolut_bulkpay:'.$connection->id.':'.$request->input('idempotency_key');
             if (! Cache::add($guardKey, true, now()->addHours(24))) {
                 return response()->json([
                     'success' => false,
@@ -499,9 +499,7 @@ class RevolutController extends Controller
                 'payment_draft' => $result,
             ], 201);
         } catch (Exception $e) {
-            if (isset($guardKey)) {
-                Cache::forget($guardKey);
-            }
+            Cache::forget($guardKey);
             Log::error('Failed to send Revolut bulk payment', [
                 'connection_id' => $connection->id,
                 'error' => $e->getMessage(),
@@ -540,7 +538,7 @@ class RevolutController extends Controller
 
         BankFeedTransaction::updateOrCreate(
             [
-                'transaction_id' => $transaction->id,
+                'transaction_id' => $transaction->getKey(),
                 'bank_connection_id' => $connection->id,
             ],
             [
