@@ -12,5 +12,21 @@
         "liberusoftware/analytics-contracts": "analytics-contracts",
         "liberusoftware/localization-contracts": "localization-contracts",
         "liberusoftware/composer-installer": "composer-installer"
+        ,"liberusoftware/module-liberu-platform-orchestration": "module-liberu-platform-orchestration"
+        ,"liberusoftware/module-liberu-platform-orchestration-api": "module-liberu-platform-orchestration-api"
+        ,"liberusoftware/module-liberu-platform-orchestration-filament": "module-liberu-platform-orchestration-filament"
+        ,"liberusoftware/module-liberu-platform-orchestration-livewire": "module-liberu-platform-orchestration-livewire"
+        ,"liberusoftware/module-liberu-executive-insights": "module-liberu-executive-insights"
+        ,"liberusoftware/module-liberu-executive-insights-api": "module-liberu-executive-insights-api"
+        ,"liberusoftware/module-liberu-executive-insights-filament": "module-liberu-executive-insights-filament"
+        ,"liberusoftware/module-liberu-executive-insights-livewire": "module-liberu-executive-insights-livewire"
+        ,"liberusoftware/module-liberu-business-workflow-reconciliation": "module-liberu-business-workflow-reconciliation"
+        ,"liberusoftware/module-liberu-business-workflow-reconciliation-api": "module-liberu-business-workflow-reconciliation-api"
+        ,"liberusoftware/module-liberu-business-workflow-reconciliation-filament": "module-liberu-business-workflow-reconciliation-filament"
+        ,"liberusoftware/module-liberu-business-workflow-reconciliation-livewire": "module-liberu-business-workflow-reconciliation-livewire"
+        ,"liberusoftware/module-liberu-revenue-and-care-orchestration": "module-liberu-revenue-and-care-orchestration"
+        ,"liberusoftware/module-liberu-revenue-and-care-orchestration-api": "module-liberu-revenue-and-care-orchestration-api"
+        ,"liberusoftware/module-liberu-revenue-and-care-orchestration-filament": "module-liberu-revenue-and-care-orchestration-filament"
+        ,"liberusoftware/module-liberu-revenue-and-care-orchestration-livewire": "module-liberu-revenue-and-care-orchestration-livewire"
     }
 }
