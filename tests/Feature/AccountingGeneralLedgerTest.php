@@ -6,7 +6,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Liberu\Accounting\ChartOfAccounts\Models\Account;
 use Liberu\Accounting\Core\Models\{Book,LegalEntity};
-use Liberu\Accounting\GeneralLedger\Actions\{CreateJournal,GenerateRecurringJournal,PostJournal,ReverseJournal,SaveRecurringJournal};
+use Liberu\Accounting\GeneralLedger\Actions\{CreateAccrual,CreateAllocation,CreateCorrection,CreateJournal,CreatePrepayment,GenerateRecurringJournal,PostJournal,ReverseJournal,SaveRecurringJournal};
 use Liberu\Accounting\GeneralLedger\Enums\JournalStatus;
 use Liberu\Accounting\GeneralLedger\Exceptions\InvalidJournal;
 use Liberu\Accounting\GeneralLedger\Models\JournalEntry;
@@ -60,5 +60,20 @@ class AccountingGeneralLedgerTest extends TestCase
 
         $this->assertSame('recurring', $journal->journal_type->value);
         $this->assertSame('2026-09-24', $template->fresh()->next_run_on->toDateString());
+    }
+
+    public function test_specialized_journal_actions_preserve_explicit_types_and_balance_rules(): void
+    {
+        $book = $this->book();
+        $lines = $this->lines($book);
+        $entries = [
+            app(CreateCorrection::class)->handle(['book_id' => $book->id, 'entry_date' => '2026-08-24'], $lines),
+            app(CreateAllocation::class)->handle(['book_id' => $book->id, 'entry_date' => '2026-08-24'], $lines),
+            app(CreateAccrual::class)->handle(['book_id' => $book->id, 'entry_date' => '2026-08-24'], $lines),
+            app(CreatePrepayment::class)->handle(['book_id' => $book->id, 'entry_date' => '2026-08-24'], $lines),
+        ];
+
+        $this->assertSame(['correction', 'allocation', 'accrual', 'prepayment'], array_map(fn (JournalEntry $entry): string => $entry->journal_type->value, $entries));
+        $this->assertTrue(collect($entries)->every(fn (JournalEntry $entry): bool => $entry->isBalanced()));
     }
 }
