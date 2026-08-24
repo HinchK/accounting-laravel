@@ -8,6 +8,9 @@ use App\Traits\IsTenantModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property-read Account $account
+ */
 class JournalEntryLine extends Model
 {
     use HasFactory;

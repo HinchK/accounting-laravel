@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Contracts\ApprovableRecord;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
+/**
+ * @property string $status
+ * @property int $team_id
+ * @property int $current_step
+ * @property-read ApprovableRecord|null $approvable
+ * @property-read ApprovalRule|null $rule
+ */
 class ApprovalRequest extends Model
 {
     public const STATUS_PENDING = 'pending';
@@ -28,11 +36,17 @@ class ApprovalRequest extends Model
         return $this->morphTo();
     }
 
+    /**
+     * @return HasMany<ApprovalStep, $this>
+     */
     public function steps(): HasMany
     {
         return $this->hasMany(ApprovalStep::class)->orderBy('position');
     }
 
+    /**
+     * @return BelongsTo<ApprovalRule, $this>
+     */
     public function rule(): BelongsTo
     {
         return $this->belongsTo(ApprovalRule::class, 'rule_id');

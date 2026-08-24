@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Auth;
 /**
  * Self-service page: the current user edits their own notification
  * channel preferences (mail / database / sms) and SMS phone number.
+ *
+ * @property-read Schema $form
  */
 class NotificationSettings extends Page
 {
@@ -37,9 +39,9 @@ class NotificationSettings extends Page
 
         $this->form->fill([
             'phone' => $preference?->phone,
-            'mail_enabled' => $preference?->mail_enabled ?? true,
-            'database_enabled' => $preference?->database_enabled ?? true,
-            'sms_enabled' => $preference?->sms_enabled ?? false,
+            'mail_enabled' => $preference->mail_enabled ?? true,
+            'database_enabled' => $preference->database_enabled ?? true,
+            'sms_enabled' => $preference->sms_enabled ?? false,
         ]);
     }
 

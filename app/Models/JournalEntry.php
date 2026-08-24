@@ -5,15 +5,18 @@ declare(strict_types=1);
 namespace App\Models;
 
 use App\Concerns\Approvable;
+use App\Contracts\ApprovableRecord;
 use App\Traits\IsTenantModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Collection;
 
 /**
  * @property int|null $team_id
+ * @property-read Collection<int, JournalEntryLine> $lines
  */
-class JournalEntry extends Model
+class JournalEntry extends Model implements ApprovableRecord
 {
     use Approvable;
     use HasFactory;

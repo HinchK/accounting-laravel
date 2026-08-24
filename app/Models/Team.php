@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
 use Laravel\Jetstream\Events\TeamCreated;
 use Laravel\Jetstream\Events\TeamDeleted;
 use Laravel\Jetstream\Events\TeamUpdated;
@@ -16,6 +17,7 @@ use Laravel\Jetstream\Team as JetstreamTeam;
 /**
  * @property int $user_id
  * @property string|null $vonage_from
+ * @property-read Carbon|null $books_locked_before
  */
 class Team extends JetstreamTeam
 {
@@ -24,7 +26,7 @@ class Team extends JetstreamTeam
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+     * @var list<string>
      */
     #[\Override]
     protected $fillable = [
@@ -67,7 +69,7 @@ class Team extends JetstreamTeam
     /**
      * The user who owns the team.
      *
-     * @return BelongsTo<User, self>
+     * @return BelongsTo<User, $this>
      */
     public function owner(): BelongsTo
     {
@@ -77,7 +79,7 @@ class Team extends JetstreamTeam
     /**
      * Users who belong to the team.
      *
-     * @return BelongsToMany<User, self>
+     * @return BelongsToMany<User, $this>
      */
     public function users(): BelongsToMany
     {
@@ -90,7 +92,7 @@ class Team extends JetstreamTeam
     /**
      * Pending invitations for the team.
      *
-     * @return HasMany<TeamInvitation>
+     * @return HasMany<TeamInvitation, $this>
      */
     public function teamInvitations(): HasMany
     {

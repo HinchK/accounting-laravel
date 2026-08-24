@@ -10,7 +10,19 @@ use App\Traits\IsTenantModel;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Collection;
 
+/**
+ * @property string $transaction_date
+ * @property string|null $type
+ * @property float|string $amount
+ * @property string|null $description
+ * @property int|null $team_id
+ * @property-read Currency|null $currency
+ * @property-read Collection<int, InventoryTransaction> $inventoryTransactions
+ */
 #[ObservedBy(TransactionObserver::class)]
 class Transaction extends Model
 {
@@ -81,7 +93,10 @@ class Transaction extends Model
         });
     }
 
-    public function currency()
+    /**
+     * @return BelongsTo<Currency, $this>
+     */
+    public function currency(): BelongsTo
     {
         return $this->belongsTo(Currency::class);
     }
@@ -101,7 +116,10 @@ class Transaction extends Model
         return $this->belongsToMany(Category::class);
     }
 
-    public function inventoryTransactions()
+    /**
+     * @return HasMany<InventoryTransaction, $this>
+     */
+    public function inventoryTransactions(): HasMany
     {
         return $this->hasMany(InventoryTransaction::class);
     }

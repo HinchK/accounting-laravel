@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace App\Services;
 
+use App\Models\Expense;
 use App\Models\Project;
+use App\Models\Transaction;
 
 class ProjectReportService
 {
@@ -38,13 +40,13 @@ class ProjectReportService
                 'profit_margin' => $revenue > 0 ?
                     (($revenue - ($directCosts + $indirectCosts)) / $revenue) * 100 : 0,
             ],
-            'transactions' => $transactions->map(fn ($t): array => [
+            'transactions' => $transactions->map(fn (Transaction $t): array => [
                 'date' => $t->transaction_date,
                 'type' => $t->type,
                 'amount' => $t->amount,
                 'description' => $t->description,
             ]),
-            'expenses' => $expenses->map(fn ($e): array => [
+            'expenses' => $expenses->map(fn (Expense $e): array => [
                 'date' => $e->date,
                 'amount' => $e->amount,
                 'description' => $e->description,
@@ -59,7 +61,7 @@ class ProjectReportService
             ->where('is_indirect', true)
             ->whereBetween('date', [$startDate, $endDate])
             ->get()
-            ->sum(fn ($expense) => $expense->getAllocatedAmount());
+            ->sum(fn (Expense $expense): float => $expense->getAllocatedAmount());
     }
 
     public function getBudgetVariance(Project $project, $startDate, $endDate): array

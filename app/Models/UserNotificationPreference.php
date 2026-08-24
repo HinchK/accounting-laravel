@@ -7,6 +7,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+/**
+ * @property string|null $phone
+ * @property bool $mail_enabled
+ * @property bool $database_enabled
+ * @property bool $sms_enabled
+ */
 class UserNotificationPreference extends Model
 {
     #[\Override]

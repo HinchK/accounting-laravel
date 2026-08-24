@@ -7,6 +7,7 @@ namespace App\Models;
 use App\Concerns\Approvable;
 use App\Concerns\HasDocuments;
 use App\Concerns\Recurring;
+use App\Contracts\ApprovableRecord;
 use App\Traits\IsTenantModel;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
@@ -14,13 +15,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Collection;
 
 /**
  * @property int|null $team_id
  * @property Customer|null $customer
  * @property \Illuminate\Support\Carbon|null $last_reminder_sent_at
+ * @property-read Collection<int, TimeEntry> $timeEntries
  */
-class Invoice extends Model
+class Invoice extends Model implements ApprovableRecord
 {
     use Approvable;
     use HasDocuments;

@@ -38,11 +38,17 @@ class ApprovalStep extends Model
         'escalated_at' => 'datetime',
     ];
 
+    /**
+     * @return BelongsTo<ApprovalRequest, $this>
+     */
     public function request(): BelongsTo
     {
         return $this->belongsTo(ApprovalRequest::class, 'approval_request_id');
     }
 
+    /**
+     * @return BelongsTo<User, $this>
+     */
     public function decider(): BelongsTo
     {
         return $this->belongsTo(User::class, 'decided_by');

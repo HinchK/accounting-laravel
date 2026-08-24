@@ -225,6 +225,9 @@ class User extends Authenticatable implements ConnectedAccountOwner, FilamentUse
         return $this->belongsTo(Team::class, 'current_team_id');
     }
 
+    /**
+     * @return HasOne<UserNotificationPreference, $this>
+     */
     public function notificationPreference(): HasOne
     {
         return $this->hasOne(UserNotificationPreference::class);
