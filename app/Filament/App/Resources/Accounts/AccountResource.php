@@ -43,7 +43,7 @@ class AccountResource extends Resource
                 TextInput::make('balance'),
                 Select::make('category_id')
                     ->label('Category')
-                    ->options(Category::all()->pluck('name', 'id'))
+                    ->options(Category::query()->pluck('name', 'id'))
                     ->searchable(),
             ]);
     }
