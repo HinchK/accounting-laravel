@@ -166,6 +166,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-financial-statements",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-financial-statements-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-financial-statements-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-financial-statements-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/liberu-platform-orchestration",
             "options": {
                 "symlink": true
@@ -407,6 +427,10 @@
         "liberusoftware/module-accounting-dimensions-and-tracking-api": "^1.0",
         "liberusoftware/module-accounting-dimensions-and-tracking-filament": "^1.0",
         "liberusoftware/module-accounting-dimensions-and-tracking-livewire": "^1.0",
+        "liberusoftware/module-accounting-financial-statements": "^1.0",
+        "liberusoftware/module-accounting-financial-statements-api": "^1.0",
+        "liberusoftware/module-accounting-financial-statements-filament": "^1.0",
+        "liberusoftware/module-accounting-financial-statements-livewire": "^1.0",
         "liberusoftware/module-liberu-platform-orchestration": "^1.0",
         "liberusoftware/module-liberu-executive-insights": "^1.0",
         "liberusoftware/module-liberu-business-workflow-reconciliation": "^1.0",

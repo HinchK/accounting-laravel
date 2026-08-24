@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cab657e6965a493e41b77a824a775096",
+    "content-hash": "d339c3900aa0f01e72c1d0dfddefc49f",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7473,6 +7473,162 @@
                 "MIT"
             ],
             "description": "Livewire 4 adapter for accounting financial master data.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-financial-statements",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-financial-statements",
+                "reference": "2c091b1561c2a66e36ea8cf036405b201a11704e"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-accounting-chart-of-accounts": "^1.0",
+                "liberusoftware/module-accounting-core": "^1.0",
+                "liberusoftware/module-accounting-general-ledger": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\FinancialStatements\\FinancialStatementsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-financial-statements"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\FinancialStatements\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Profit and loss, balance sheet, cash flow, equity, comparative, dimensional, and drill-through statements.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-financial-statements-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-financial-statements-api",
+                "reference": "85f4c296dd56cbaa2813f409f246fe23c0a8bc69"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "laravel/sanctum": "^4.0",
+                "liberusoftware/module-accounting-financial-statements": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\FinancialStatementsApi\\FinancialStatementsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-financial-statements-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\FinancialStatementsApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Authenticated API adapter for accounting financial statements.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-financial-statements-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-financial-statements-filament",
+                "reference": "96483c00c9de5c309602382bc7ff115d058fac20"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-financial-statements": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\FinancialStatementsFilament\\FinancialStatementsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-financial-statements-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\FinancialStatementsFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament adapter for accounting financial statements.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-financial-statements-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-financial-statements-livewire",
+                "reference": "c2e18b1ac8fe3ed632fb68100e7fbf2f50424610"
+            },
+            "require": {
+                "liberusoftware/module-accounting-financial-statements": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\FinancialStatementsLivewire\\FinancialStatementsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-financial-statements-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\FinancialStatementsLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire adapter for accounting financial statements.",
             "transport-options": {
                 "symlink": true,
                 "relative": true

@@ -1,0 +1,9 @@
+openapi: 3.1.0
+info: {title: accounting financial statements API, version: 1.0.0}
+paths:
+  /api/v1/accounting/financial-statements/profit-and-loss: {get: {operationId: accounting.financial.statements.profit_and_loss, responses: {'200': {description: Profit and loss}}}}
+  /api/v1/accounting/financial-statements/balance-sheet: {get: {operationId: accounting.financial.statements.balance_sheet, responses: {'200': {description: Balance sheet}}}}
+  /api/v1/accounting/financial-statements/cash-flow: {get: {operationId: accounting.financial.statements.cash_flow, responses: {'200': {description: Cash flow}}}}
+  /api/v1/accounting/financial-statements/changes-in-equity: {get: {operationId: accounting.financial.statements.changes_in_equity, responses: {'200': {description: Changes in equity}}}}
+  /api/v1/accounting/financial-statements/comparative: {get: {operationId: accounting.financial.statements.comparative, responses: {'200': {description: Comparative periods}}}}
+  /api/v1/accounting/financial-statements/drill-through: {get: {operationId: accounting.financial.statements.drill_through, responses: {'200': {description: Drill-through entries}}}}
