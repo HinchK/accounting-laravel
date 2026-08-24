@@ -12,6 +12,7 @@ genre, repository, component paths, prefixes, and additional Composer packages.
 
 - `setup.sh` performs a repeatable local or production install without destructive migrations.
 - `update.sh` updates dependencies and validates the project; `--release 1.2.3` commits, tags, pushes, and creates a GitHub release after successful checks.
+- `verify-release` runs the complete host release gate, including dependency audits, module/foundation checks, Pint, PHPStan, npm build/audit, tests with the 100% coverage threshold, and deployment manifest validation.
 - `submit-packagist.php` creates missing Packagist packages and refreshes existing package metadata.
 - `fleet` fans a command across the component repositories once they are the source of truth — `status`, `clone`, `run`, `commit`, and a separate `tag` that only ever acts on an explicit `--only` list. It replaced `publish-components`, which rsynced a monorepo *into* its component repositories — the opposite direction, and meaningless once those repositories are the source.
 - `set-coverage-thresholds` writes each measured figure into that package's `tests.yml`, ratcheting only upward — a package that has lost coverage keeps its threshold and is reported.
