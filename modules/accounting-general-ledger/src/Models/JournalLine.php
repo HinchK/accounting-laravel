@@ -7,6 +7,7 @@ use Liberu\Accounting\ChartOfAccounts\Models\Account;
 class JournalLine extends Model {
     protected $table='accounting_journal_lines'; protected $fillable=['journal_entry_id','account_id','debit','credit','description','dimensions'];
     protected $casts=['debit'=>'decimal:2','credit'=>'decimal:2','dimensions'=>'array'];
+    protected static function booted(): void { static::saving(function (self $line): void { if ($line->exists && $line->journalEntry()->where('status','!=','draft')->exists()) throw new \LogicException('Lines of posted or reversed journals are immutable.'); }); static::deleting(function (self $line): void { if ($line->journalEntry()->where('status','!=','draft')->exists()) throw new \LogicException('Lines of posted or reversed journals cannot be deleted.'); }); }
     public function journalEntry(): BelongsTo { return $this->belongsTo(JournalEntry::class); }
     public function account(): BelongsTo { return $this->belongsTo(Account::class); }
 }

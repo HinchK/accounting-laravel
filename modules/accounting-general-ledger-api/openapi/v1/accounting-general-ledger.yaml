@@ -6,3 +6,5 @@ paths:
     post: {operationId: accounting.general.ledger.create, responses: {'201': {description: Journal created}}}
   /api/v1/accounting/general-ledger/{id}/post: {post: {operationId: accounting.general.ledger.post, responses: {'200': {description: Journal posted}}}}
   /api/v1/accounting/general-ledger/{id}/reverse: {post: {operationId: accounting.general.ledger.reverse, responses: {'200': {description: Journal reversed}}}}
+  /api/v1/accounting/general-ledger/recurring: {post: {operationId: accounting.general.ledger.recurring.create, responses: {'201': {description: Recurring journal created}}}}
+  /api/v1/accounting/general-ledger/recurring/{id}/generate: {post: {operationId: accounting.general.ledger.recurring.generate, responses: {'201': {description: Recurring journal generated}}}}
