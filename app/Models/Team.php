@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Support\Carbon;
 use Laravel\Jetstream\Events\TeamCreated;
 use Laravel\Jetstream\Events\TeamDeleted;
@@ -17,6 +18,8 @@ use Laravel\Jetstream\Team as JetstreamTeam;
 /**
  * @property int $user_id
  * @property string|null $vonage_from
+ * @property string|null $vonage_key
+ * @property string|null $vonage_secret
  * @property-read Carbon|null $books_locked_before
  */
 class Team extends JetstreamTeam
@@ -79,7 +82,7 @@ class Team extends JetstreamTeam
     /**
      * Users who belong to the team.
      *
-     * @return BelongsToMany<User, $this>
+     * @return BelongsToMany<User, $this, Pivot, 'membership'>
      */
     public function users(): BelongsToMany
     {

@@ -6,6 +6,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property array<int, string>|null $dependencies
+ * @property array<string, mixed>|null $config
+ */
 class Module extends Model
 {
     protected $fillable = [
@@ -28,6 +32,6 @@ class Module extends Model
 
     public static function findByName(string $name): ?static
     {
-        return static::where('name', $name)->first();
+        return static::query()->where('name', $name)->first();
     }
 }

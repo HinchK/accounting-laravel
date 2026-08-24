@@ -7,6 +7,7 @@ namespace App\Services;
 use App\Models\BankStatement;
 use App\Models\ReconciliationRule;
 use App\Models\Transaction;
+use Carbon\Carbon;
 use Illuminate\Support\Collection;
 
 class ReconciliationService
@@ -112,10 +113,11 @@ class ReconciliationService
         }
 
         // Try fuzzy match within 2 days and exact amount
+        $matchDate = Carbon::parse((string) $transaction->transaction_date);
         $fuzzyMatch = $bankStatement->transactions()
             ->whereBetween('transaction_date', [
-                $transaction->transaction_date->subDays(2),
-                $transaction->transaction_date->addDays(2),
+                $matchDate->copy()->subDays(2),
+                $matchDate->copy()->addDays(2),
             ])
             ->where('amount', $transaction->amount)
             ->exists();

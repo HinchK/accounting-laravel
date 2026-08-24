@@ -14,6 +14,7 @@ use Illuminate\Notifications\Notifiable;
 
 /**
  * @property string|null $qbo_id
+ * @property int $customer_id
  */
 class Customer extends Authenticatable implements FilamentUser
 {
