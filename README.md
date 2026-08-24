@@ -126,7 +126,7 @@ The test suite exercises application behaviour, API boundaries, Filament pages, 
 Coverage is generated as Clover XML and enforced in CI for the host application:
 
 ```bash
-php artisan test --coverage --coverage-clover=coverage.xml --min=99
+php artisan test --coverage --coverage-clover=coverage.xml --min=100
 ```
 
 The live coverage report is published to [Codecov](https://codecov.io/gh/liberusoftware/accounting-erp-laravel). Package coverage is measured by each package's own test workflow.
