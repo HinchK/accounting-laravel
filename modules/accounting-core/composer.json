@@ -1,5 +1,5 @@
 {
-  "name": "liberusoftware/accounting-core",
+  "name": "liberusoftware/module-accounting-core",
   "description": "Provider-neutral legal entities, books, currencies, fiscal calendars, numbering, defaults, policies, and events.",
   "type": "liberu-module",
   "license": "MIT",

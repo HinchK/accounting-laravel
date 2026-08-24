@@ -5,7 +5,7 @@ Accounting Core is the provider-neutral boundary for legal entities and the acco
 ## Installation
 
 ```bash
-composer require liberusoftware/accounting-core
+composer require liberusoftware/module-accounting-core
 ```
 
 The package provides `Liberu\\Accounting\\Core\\AccountingCoreServiceProvider`, its module manifest, a typed accounting-basis enum, a currency-code value object, and the legal-entity migration/model. API, Filament, and Livewire adapters are separate packages and must depend on this package's public boundary.
