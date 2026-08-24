@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "accounting-core",
+  "display_name": "Accounting Core",
+  "description": "Provider-neutral accounting foundation and lifecycle rules.",
+  "version": "1.0.0",
+  "category": "capability",
+  "provider": "Liberu\\Accounting\\Core\\AccountingCoreServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-manager": "^1.0"
+    }
+  },
+  "capabilities": ["accounting.core"],
+  "default_enabled": true,
+  "features": ["Legal entities", "Books", "Accounting basis", "Currencies", "Fiscal calendars", "Numbering", "Defaults", "Policies", "Domain events"]
+}

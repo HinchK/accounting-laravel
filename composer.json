@@ -12,6 +12,13 @@
     "license": "MIT",
     "repositories": [
         {
+            "type": "path",
+            "url": "modules/accounting-core",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
             "type": "vcs",
             "url": "https://github.com/liberusoftware/composer-installer.git"
         },
@@ -205,6 +212,7 @@
         }
     ],
     "require": {
+        "liberusoftware/accounting-core": "^1.0",
         "php": "^8.5",
         "barryvdh/laravel-dompdf": "^3.1",
         "bezhansalleh/filament-shield": "~4.0",
