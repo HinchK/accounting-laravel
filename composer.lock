@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d4b1837a87911238c1ac0278a70b9f4d",
+    "content-hash": "fd4296601767eae0c3ab1b8aefa0fb30",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -8095,6 +8095,159 @@
                 "MIT"
             ],
             "description": "Livewire adapter for the accounting general ledger.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-management-reporting",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-management-reporting",
+                "reference": "44e30c55db0c7ba1e0826c46a5bad774d622e2ed"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ManagementReporting\\ManagementReportingServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-management-reporting"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ManagementReporting\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Management report packs, narratives, charts, schedules, review, delivery and archive.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-management-reporting-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-management-reporting-api",
+                "reference": "4662443f625afc81beff738167b770f34992d6c5"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-management-reporting": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ManagementReportingApi\\ManagementReportingApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-management-reporting-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ManagementReportingApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API for management reporting.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-management-reporting-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-management-reporting-filament",
+                "reference": "3e87710e91a2071e86082816ef0e121e572ed981"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-management-reporting": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ManagementReportingFilament\\ManagementReportingFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-management-reporting-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ManagementReportingFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 UI for management reporting.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-management-reporting-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-management-reporting-livewire",
+                "reference": "ad58ce1e81c24371c051b90e551e30aaac312907"
+            },
+            "require": {
+                "liberusoftware/module-accounting-management-reporting": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ManagementReportingLivewire\\ManagementReportingLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-management-reporting-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ManagementReportingLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 UI for management reporting.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
