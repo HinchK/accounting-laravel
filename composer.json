@@ -946,6 +946,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-employee-expenses",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-employee-expenses-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-employee-expenses-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-employee-expenses-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-fixed-assets",
             "options": { "symlink": true }
         },
@@ -1527,6 +1547,10 @@
         "liberusoftware/module-accounting-estimates-and-quotes-api": "^1.0",
         "liberusoftware/module-accounting-estimates-and-quotes-filament": "^1.0",
         "liberusoftware/module-accounting-estimates-and-quotes-livewire": "^1.0",
+        "liberusoftware/module-accounting-employee-expenses": "^1.0",
+        "liberusoftware/module-accounting-employee-expenses-api": "^1.0",
+        "liberusoftware/module-accounting-employee-expenses-filament": "^1.0",
+        "liberusoftware/module-accounting-employee-expenses-livewire": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals-api": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals-filament": "^1.0",

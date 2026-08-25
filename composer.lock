@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "73a55e730a3500c0ae389b2425793a63",
+    "content-hash": "a79f2264c59bd71a6b4bd429dc43ef3e",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7944,6 +7944,54 @@
                 "symlink": true,
                 "relative": true
             }
+        },
+        {
+            "name": "liberusoftware/module-accounting-employee-expenses",
+            "version": "1.0.0",
+            "dist": {"type": "path", "url": "modules/accounting-employee-expenses", "reference": "dev-local"},
+            "require": {"illuminate/database": "^13.0", "illuminate/support": "^13.0", "php": "^8.5"},
+            "type": "liberu-module",
+            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\EmployeeExpenses\\EmployeeExpensesServiceProvider"]}, "liberu": {"name": "accounting-employee-expenses"}},
+            "autoload": {"psr-4": {"Liberu\\Accounting\\EmployeeExpenses\\": "src/"}},
+            "license": ["MIT"],
+            "description": "Employee expense claims, policy checks, approvals, reimbursement and posting.",
+            "transport-options": {"symlink": true, "relative": true}
+        },
+        {
+            "name": "liberusoftware/module-accounting-employee-expenses-api",
+            "version": "1.0.0",
+            "dist": {"type": "path", "url": "modules/accounting-employee-expenses-api", "reference": "dev-local"},
+            "require": {"illuminate/http": "^13.0", "illuminate/routing": "^13.0", "liberusoftware/module-accounting-employee-expenses": "^1.0", "php": "^8.5"},
+            "type": "liberu-module",
+            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\EmployeeExpensesApi\\EmployeeExpensesApiServiceProvider"]}, "liberu": {"name": "accounting-employee-expenses-api"}},
+            "autoload": {"psr-4": {"Liberu\\Accounting\\EmployeeExpensesApi\\": "src/"}},
+            "license": ["MIT"],
+            "description": "HTTP API for employee expenses.",
+            "transport-options": {"symlink": true, "relative": true}
+        },
+        {
+            "name": "liberusoftware/module-accounting-employee-expenses-filament",
+            "version": "1.0.0",
+            "dist": {"type": "path", "url": "modules/accounting-employee-expenses-filament", "reference": "dev-local"},
+            "require": {"filament/filament": "^5.0", "liberusoftware/module-accounting-employee-expenses": "^1.0", "php": "^8.5"},
+            "type": "liberu-module",
+            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\EmployeeExpensesFilament\\EmployeeExpensesFilamentServiceProvider"]}, "liberu": {"name": "accounting-employee-expenses-filament"}},
+            "autoload": {"psr-4": {"Liberu\\Accounting\\EmployeeExpensesFilament\\": "src/"}},
+            "license": ["MIT"],
+            "description": "Filament 5 UI for employee expenses.",
+            "transport-options": {"symlink": true, "relative": true}
+        },
+        {
+            "name": "liberusoftware/module-accounting-employee-expenses-livewire",
+            "version": "1.0.0",
+            "dist": {"type": "path", "url": "modules/accounting-employee-expenses-livewire", "reference": "dev-local"},
+            "require": {"liberusoftware/module-accounting-employee-expenses": "^1.0", "livewire/livewire": "^4.0", "php": "^8.5"},
+            "type": "liberu-module",
+            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\EmployeeExpensesLivewire\\EmployeeExpensesLivewireServiceProvider"]}, "liberu": {"name": "accounting-employee-expenses-livewire"}},
+            "autoload": {"psr-4": {"Liberu\\Accounting\\EmployeeExpensesLivewire\\": "src/"}},
+            "license": ["MIT"],
+            "description": "Livewire 4 UI for employee expenses.",
+            "transport-options": {"symlink": true, "relative": true}
         },
         {
             "name": "liberusoftware/module-accounting-estimates-and-quotes",
