@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a79f2264c59bd71a6b4bd429dc43ef3e",
+    "content-hash": "dcee336f4f395521b26c4e4748cf7d87",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7944,6 +7944,54 @@
                 "symlink": true,
                 "relative": true
             }
+        },
+        {
+            "name": "liberusoftware/module-accounting-e-invoicing",
+            "version": "1.0.0",
+            "dist": {"type": "path", "url": "modules/accounting-e-invoicing", "reference": "dev-local"},
+            "require": {"illuminate/database": "^13.0", "illuminate/support": "^13.0", "php": "^8.5"},
+            "type": "liberu-module",
+            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\EInvoicing\\EInvoicingServiceProvider"]}, "liberu": {"name": "accounting-e-invoicing"}},
+            "autoload": {"psr-4": {"Liberu\\Accounting\\EInvoicing\\": "src/"}},
+            "license": ["MIT"],
+            "description": "Structured e-invoices with validation, signing, routing, delivery, archival and reconciliation.",
+            "transport-options": {"symlink": true, "relative": true}
+        },
+        {
+            "name": "liberusoftware/module-accounting-e-invoicing-api",
+            "version": "1.0.0",
+            "dist": {"type": "path", "url": "modules/accounting-e-invoicing-api", "reference": "dev-local"},
+            "require": {"illuminate/http": "^13.0", "illuminate/routing": "^13.0", "liberusoftware/module-accounting-e-invoicing": "^1.0", "php": "^8.5"},
+            "type": "liberu-module",
+            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\EInvoicingApi\\EInvoicingApiServiceProvider"]}, "liberu": {"name": "accounting-e-invoicing-api"}},
+            "autoload": {"psr-4": {"Liberu\\Accounting\\EInvoicingApi\\": "src/"}},
+            "license": ["MIT"],
+            "description": "HTTP API for e-invoicing.",
+            "transport-options": {"symlink": true, "relative": true}
+        },
+        {
+            "name": "liberusoftware/module-accounting-e-invoicing-filament",
+            "version": "1.0.0",
+            "dist": {"type": "path", "url": "modules/accounting-e-invoicing-filament", "reference": "dev-local"},
+            "require": {"filament/filament": "^5.0", "liberusoftware/module-accounting-e-invoicing": "^1.0", "php": "^8.5"},
+            "type": "liberu-module",
+            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\EInvoicingFilament\\EInvoicingFilamentServiceProvider"]}, "liberu": {"name": "accounting-e-invoicing-filament"}},
+            "autoload": {"psr-4": {"Liberu\\Accounting\\EInvoicingFilament\\": "src/"}},
+            "license": ["MIT"],
+            "description": "Filament 5 UI for e-invoicing.",
+            "transport-options": {"symlink": true, "relative": true}
+        },
+        {
+            "name": "liberusoftware/module-accounting-e-invoicing-livewire",
+            "version": "1.0.0",
+            "dist": {"type": "path", "url": "modules/accounting-e-invoicing-livewire", "reference": "dev-local"},
+            "require": {"liberusoftware/module-accounting-e-invoicing": "^1.0", "livewire/livewire": "^4.0", "php": "^8.5"},
+            "type": "liberu-module",
+            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\EInvoicingLivewire\\EInvoicingLivewireServiceProvider"]}, "liberu": {"name": "accounting-e-invoicing-livewire"}},
+            "autoload": {"psr-4": {"Liberu\\Accounting\\EInvoicingLivewire\\": "src/"}},
+            "license": ["MIT"],
+            "description": "Livewire 4 UI for e-invoicing.",
+            "transport-options": {"symlink": true, "relative": true}
         },
         {
             "name": "liberusoftware/module-accounting-employee-expenses",

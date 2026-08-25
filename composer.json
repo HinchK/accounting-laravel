@@ -966,6 +966,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-e-invoicing",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-e-invoicing-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-e-invoicing-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-e-invoicing-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-fixed-assets",
             "options": { "symlink": true }
         },
@@ -1551,6 +1571,10 @@
         "liberusoftware/module-accounting-employee-expenses-api": "^1.0",
         "liberusoftware/module-accounting-employee-expenses-filament": "^1.0",
         "liberusoftware/module-accounting-employee-expenses-livewire": "^1.0",
+        "liberusoftware/module-accounting-e-invoicing": "^1.0",
+        "liberusoftware/module-accounting-e-invoicing-api": "^1.0",
+        "liberusoftware/module-accounting-e-invoicing-filament": "^1.0",
+        "liberusoftware/module-accounting-e-invoicing-livewire": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals-api": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals-filament": "^1.0",
