@@ -13,6 +13,7 @@ final class AccountsPayableLivewireServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'accounting-accounts-payable');
+        Livewire::component('module-accounting-accounts-payable::payables', Payables::class);
         Livewire::component('module-accounting-accounts-payable-payables', Payables::class);
     }
 }
