@@ -706,6 +706,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-mileage",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-mileage-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-mileage-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-mileage-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-sales-orders",
             "options": { "symlink": true }
         },
@@ -1195,6 +1215,10 @@
         "liberusoftware/module-accounting-multi-currency-api": "^1.0",
         "liberusoftware/module-accounting-multi-currency-filament": "^1.0",
         "liberusoftware/module-accounting-multi-currency-livewire": "^1.0",
+        "liberusoftware/module-accounting-mileage": "^1.0",
+        "liberusoftware/module-accounting-mileage-api": "^1.0",
+        "liberusoftware/module-accounting-mileage-filament": "^1.0",
+        "liberusoftware/module-accounting-mileage-livewire": "^1.0",
         "liberusoftware/module-accounting-sales-orders": "^1.0",
         "liberusoftware/module-accounting-sales-orders-api": "^1.0",
         "liberusoftware/module-accounting-sales-orders-filament": "^1.0",
