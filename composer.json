@@ -746,6 +746,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-matching-intelligence",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-matching-intelligence-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-matching-intelligence-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-matching-intelligence-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-sales-orders",
             "options": { "symlink": true }
         },
@@ -1243,6 +1263,10 @@
         "liberusoftware/module-accounting-migration-framework-api": "^1.0",
         "liberusoftware/module-accounting-migration-framework-filament": "^1.0",
         "liberusoftware/module-accounting-migration-framework-livewire": "^1.0",
+        "liberusoftware/module-accounting-matching-intelligence": "^1.0",
+        "liberusoftware/module-accounting-matching-intelligence-api": "^1.0",
+        "liberusoftware/module-accounting-matching-intelligence-filament": "^1.0",
+        "liberusoftware/module-accounting-matching-intelligence-livewire": "^1.0",
         "liberusoftware/module-accounting-sales-orders": "^1.0",
         "liberusoftware/module-accounting-sales-orders-api": "^1.0",
         "liberusoftware/module-accounting-sales-orders-filament": "^1.0",
