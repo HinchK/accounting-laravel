@@ -12,6 +12,10 @@ use Liberu\Accounting\ChartOfAccounts\Enums\AccountType;
 use Liberu\Accounting\ChartOfAccounts\Enums\NormalBalance;
 use Liberu\Accounting\Core\Models\LegalEntity;
 
+/**
+ * @property bool $allow_manual_entry
+ * @property bool $is_active
+ */
 class Account extends Model
 {
     protected $table = 'accounting_chart_accounts';
