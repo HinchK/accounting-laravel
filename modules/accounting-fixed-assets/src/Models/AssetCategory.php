@@ -1,0 +1,2 @@
+<?php
+declare(strict_types=1);namespace Liberu\Accounting\FixedAssets\Models;use Illuminate\Database\Eloquent\Model;use Illuminate\Database\Eloquent\Relations\HasMany;final class AssetCategory extends Model {protected $table='accounting_fixed_asset_categories';protected $fillable=['team_id','category_ref','name','asset_account_ref','depreciation_account_ref','useful_life_months','depreciation_method','metadata'];protected $casts=['useful_life_months'=>'integer','metadata'=>'array'];public function assets():HasMany{return $this->hasMany(Asset::class,'category_id');}}
