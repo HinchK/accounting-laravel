@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a0cbb8ce4433716595c702d564032f19",
+    "content-hash": "79bffd86dae43866391272663a12a544",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -8095,6 +8095,159 @@
                 "MIT"
             ],
             "description": "Livewire adapter for the accounting general ledger.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-kpi-and-goals",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-kpi-and-goals",
+                "reference": "410e3fb7ff0b99deb966d1606c4f1eaaadd27205"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\KpiAndGoals\\KpiAndGoalsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-kpi-and-goals"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\KpiAndGoals\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Governed accounting metrics, goals, targets, thresholds, alerts, commentary and history.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-kpi-and-goals-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-kpi-and-goals-api",
+                "reference": "cbbc4d1bdc77e03fd5bb77cac40515cca61d7110"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-kpi-and-goals": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\KpiAndGoalsApi\\KpiAndGoalsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-kpi-and-goals-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\KpiAndGoalsApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API for KPI and goals.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-kpi-and-goals-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-kpi-and-goals-filament",
+                "reference": "c48bc8de04d0b7e4cc39bdbaaeaf97f2fb56997b"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-kpi-and-goals": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\KpiAndGoalsFilament\\KpiAndGoalsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-kpi-and-goals-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\KpiAndGoalsFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 UI for KPI and goals.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-kpi-and-goals-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-kpi-and-goals-livewire",
+                "reference": "8fcaad5b204ee92ce2f2494826f91ff7bd28a167"
+            },
+            "require": {
+                "liberusoftware/module-accounting-kpi-and-goals": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\KpiAndGoalsLivewire\\KpiAndGoalsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-kpi-and-goals-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\KpiAndGoalsLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 UI for KPI and goals.",
             "transport-options": {
                 "symlink": true,
                 "relative": true

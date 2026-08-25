@@ -806,6 +806,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-kpi-and-goals",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-kpi-and-goals-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-kpi-and-goals-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-kpi-and-goals-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-sales-orders",
             "options": { "symlink": true }
         },
@@ -1315,6 +1335,10 @@
         "liberusoftware/module-accounting-leases-api": "^1.0",
         "liberusoftware/module-accounting-leases-filament": "^1.0",
         "liberusoftware/module-accounting-leases-livewire": "^1.0",
+        "liberusoftware/module-accounting-kpi-and-goals": "^1.0",
+        "liberusoftware/module-accounting-kpi-and-goals-api": "^1.0",
+        "liberusoftware/module-accounting-kpi-and-goals-filament": "^1.0",
+        "liberusoftware/module-accounting-kpi-and-goals-livewire": "^1.0",
         "liberusoftware/module-accounting-sales-orders": "^1.0",
         "liberusoftware/module-accounting-sales-orders-api": "^1.0",
         "liberusoftware/module-accounting-sales-orders-filament": "^1.0",
