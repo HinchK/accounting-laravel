@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Laravel\Sanctum\Sanctum;
+use App\Models\User;
 use Liberu\Accounting\ChartOfAccounts\Models\Account;
 use Liberu\Accounting\Core\Models\{Book,LegalEntity};
 use Liberu\Accounting\FinancialStatements\Queries\StatementQuery;
@@ -40,5 +42,29 @@ class AccountingFinancialStatementsTest extends TestCase
         $this->assertSame(150.0, $sheet['total_liabilities_and_equity']);
         $this->assertSame(0.0, $comparative['comparative']['net_income']);
         $this->assertCount(2, $drillThrough);
+    }
+
+    public function test_statement_queries_reject_invalid_periods_and_dimensions(): void
+    {
+        $entity = LegalEntity::create(['name' => 'Validation Entity', 'currency_code' => 'USD']);
+        $book = Book::create(['legal_entity_id' => $entity->id, 'name' => 'Validation Book', 'code' => 'VALID', 'accounting_basis' => 'accrual']);
+        $query = app(StatementQuery::class);
+
+        $this->expectException(\Liberu\Accounting\FinancialStatements\Exceptions\InvalidStatementRequest::class);
+        $query->profitAndLoss($book->id, '2026-02-01', '2026-01-01', ['Department' => ['not-scalar']]);
+    }
+
+    public function test_authenticated_api_exposes_book_scoped_statements(): void
+    {
+        $entity = LegalEntity::create(['name' => 'API Statements Entity', 'currency_code' => 'USD']);
+        $book = Book::create(['legal_entity_id' => $entity->id, 'name' => 'API Statements Book', 'code' => 'API', 'accounting_basis' => 'accrual']);
+        Sanctum::actingAs(User::factory()->create(), ['accounting.financial-statements.read']);
+
+        $this->getJson('/api/v1/accounting/financial-statements/profit-and-loss?book_id='.$book->id.'&start_date=2026-01-01&end_date=2026-01-31')
+            ->assertOk()
+            ->assertJsonPath('data.type', 'profit_and_loss');
+
+        $this->getJson('/api/v1/accounting/financial-statements/profit-and-loss?book_id='.$book->id.'&start_date=2026-02-01&end_date=2026-01-01')
+            ->assertStatus(422);
     }
 }

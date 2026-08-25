@@ -926,6 +926,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-fixed-assets",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-fixed-assets-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-fixed-assets-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-fixed-assets-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-kpi-and-goals",
             "options": { "symlink": true }
         },
@@ -1479,6 +1499,10 @@
         "liberusoftware/module-accounting-forecasts-api": "^1.0",
         "liberusoftware/module-accounting-forecasts-filament": "^1.0",
         "liberusoftware/module-accounting-forecasts-livewire": "^1.0",
+        "liberusoftware/module-accounting-fixed-assets": "^1.0",
+        "liberusoftware/module-accounting-fixed-assets-api": "^1.0",
+        "liberusoftware/module-accounting-fixed-assets-filament": "^1.0",
+        "liberusoftware/module-accounting-fixed-assets-livewire": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals-api": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals-filament": "^1.0",
