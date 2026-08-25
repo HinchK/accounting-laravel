@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "13816e78ca29749d28bf2477f765ec4b",
+    "content-hash": "39767c37f168ede5dee1ddf29e3f585b",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -5514,7 +5514,7 @@
             "version": "1.4.2",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-activity-comments.git",
+                "url": "https://github.com/liberusoftware/module-activity-comments.git",
                 "reference": "416a1fdfb51bf5dbe331326709b44fdd7b9d3f32"
             },
             "dist": {
@@ -5569,7 +5569,7 @@
             "version": "1.0.2",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/analytics-contracts.git",
+                "url": "https://github.com/liberusoftware/analytics-contracts.git",
                 "reference": "c950ae334da15762f9b8e55777c844a3c902ab74"
             },
             "dist": {
@@ -5602,7 +5602,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-analytics-core.git",
+                "url": "https://github.com/liberusoftware/module-analytics-core.git",
                 "reference": "b302f2e18910c3589fc3497a241bd56db809da93"
             },
             "dist": {
@@ -5658,7 +5658,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-analytics-google.git",
+                "url": "https://github.com/liberusoftware/module-analytics-google.git",
                 "reference": "60d4b39b689e13557829dd5b1fbb62ebb1d589c6"
             },
             "dist": {
@@ -5713,7 +5713,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-analytics-meta.git",
+                "url": "https://github.com/liberusoftware/module-analytics-meta.git",
                 "reference": "e087a4499ec299462ebdacd574ee12e52d36cc4c"
             },
             "dist": {
@@ -5768,7 +5768,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-api-access.git",
+                "url": "https://github.com/liberusoftware/module-api-access.git",
                 "reference": "5c79a794e1e64e84efde7305bde23a1dca459168"
             },
             "dist": {
@@ -5824,7 +5824,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-application.git",
+                "url": "https://github.com/liberusoftware/module-application.git",
                 "reference": "f4fe1f694a693308398e50c3894ca266bece75ac"
             },
             "dist": {
@@ -5879,7 +5879,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-audit.git",
+                "url": "https://github.com/liberusoftware/module-audit.git",
                 "reference": "78c4f3b0f59484fd928cff4cc1c63a0e32f75857"
             },
             "dist": {
@@ -5934,7 +5934,7 @@
             "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/composer-installer.git",
+                "url": "https://github.com/liberusoftware/composer-installer.git",
                 "reference": "470e3b95f6232424c69d67e4f7dad6f3619c37c4"
             },
             "dist": {
@@ -5982,7 +5982,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-currency-context.git",
+                "url": "https://github.com/liberusoftware/module-currency-context.git",
                 "reference": "10f4df26157d7c5fee683d75f0a542c689afdd57"
             },
             "dist": {
@@ -6037,7 +6037,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-developer-experience.git",
+                "url": "https://github.com/liberusoftware/module-developer-experience.git",
                 "reference": "2a2f574430611175af6ff430d65156a56be7b657"
             },
             "dist": {
@@ -6092,7 +6092,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-feature-flags.git",
+                "url": "https://github.com/liberusoftware/module-feature-flags.git",
                 "reference": "f0701fbb929b8d5f330204b3b53c1901cec0749e"
             },
             "dist": {
@@ -6147,7 +6147,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-files-media.git",
+                "url": "https://github.com/liberusoftware/module-files-media.git",
                 "reference": "214f00cd168620fe6fa209c6669a206534129ff5"
             },
             "dist": {
@@ -6202,7 +6202,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-identity-core.git",
+                "url": "https://github.com/liberusoftware/module-identity-core.git",
                 "reference": "46d9b48899910a511285761f990a1d7f96531189"
             },
             "dist": {
@@ -6256,7 +6256,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-identity-core-filament.git",
+                "url": "https://github.com/liberusoftware/module-identity-core-filament.git",
                 "reference": "34519fdd11c96b7db55def83ef50321265b81ba8"
             },
             "dist": {
@@ -6310,7 +6310,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-identity-socialstream.git",
+                "url": "https://github.com/liberusoftware/module-identity-socialstream.git",
                 "reference": "faea00423bd97e3de696e37cb5d7cc6bafc0edf2"
             },
             "dist": {
@@ -6368,7 +6368,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-import-export.git",
+                "url": "https://github.com/liberusoftware/module-import-export.git",
                 "reference": "075032d5033056c3b4a10a010673de3d4a57159c"
             },
             "dist": {
@@ -6423,7 +6423,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-integrations.git",
+                "url": "https://github.com/liberusoftware/module-integrations.git",
                 "reference": "9569c7b2e48633fc47131a0a3533dfb7a4d516fc"
             },
             "dist": {
@@ -6478,7 +6478,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-jetstream-bridge.git",
+                "url": "https://github.com/liberusoftware/module-jetstream-bridge.git",
                 "reference": "7ba43cc22d76d231d74b3987bbb7d40dd2a0f445"
             },
             "dist": {
@@ -6535,7 +6535,7 @@
             "version": "1.0.2",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/localization-contracts.git",
+                "url": "https://github.com/liberusoftware/localization-contracts.git",
                 "reference": "7b5121caeeda07379bab2bf8ea1b3947855afed3"
             },
             "dist": {
@@ -6568,7 +6568,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-localization-core.git",
+                "url": "https://github.com/liberusoftware/module-localization-core.git",
                 "reference": "c77a5aed99bd101eeff7a7a94dde0a969a0f38ab"
             },
             "dist": {
@@ -6626,7 +6626,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-localization-core-livewire.git",
+                "url": "https://github.com/liberusoftware/module-localization-core-livewire.git",
                 "reference": "31553cab97641e83fc702974c3159de78afdcec7"
             },
             "dist": {
@@ -6681,7 +6681,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-localization-mymemory.git",
+                "url": "https://github.com/liberusoftware/module-localization-mymemory.git",
                 "reference": "bf11fef28492b3a311cb252f484205b5875c5d9e"
             },
             "dist": {
@@ -8095,6 +8095,159 @@
                 "MIT"
             ],
             "description": "Livewire adapter for the accounting general ledger.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-payment-reconciliation",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-payment-reconciliation",
+                "reference": "52adc3ec298dd6763d99d643ec817cc09f445199"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PaymentReconciliation\\PaymentReconciliationServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-payment-reconciliation"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PaymentReconciliation\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Provider-neutral payment settlement reconciliation domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-payment-reconciliation-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-payment-reconciliation-api",
+                "reference": "14d02b0591869ed0e8066e62fe22ae456a8df8d8"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-payment-reconciliation": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PaymentReconciliationApi\\PaymentReconciliationApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-payment-reconciliation-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PaymentReconciliationApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Payment reconciliation API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-payment-reconciliation-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-payment-reconciliation-filament",
+                "reference": "01473caa9bbb806a5e6039be4fec7a7d88b24b99"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-payment-reconciliation": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PaymentReconciliationFilament\\PaymentReconciliationFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-payment-reconciliation-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PaymentReconciliationFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Payment reconciliation Filament 5 adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-payment-reconciliation-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-payment-reconciliation-livewire",
+                "reference": "c6c1b071021039cb938adf3f422c5f385a24d5e3"
+            },
+            "require": {
+                "liberusoftware/module-accounting-payment-reconciliation": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PaymentReconciliationLivewire\\PaymentReconciliationLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-payment-reconciliation-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PaymentReconciliationLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Payment reconciliation Livewire 4 adapter.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
@@ -12469,7 +12622,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-module-manager-filament.git",
+                "url": "https://github.com/liberusoftware/module-module-manager-filament.git",
                 "reference": "44378fb5b6b5ea3239639f09ad51b1a8b8696026"
             },
             "dist": {
@@ -12524,7 +12677,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-notifications.git",
+                "url": "https://github.com/liberusoftware/module-notifications.git",
                 "reference": "c218aa80a8773b7feadd0a884172a88135446ef9"
             },
             "dist": {
@@ -12579,7 +12732,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-observability.git",
+                "url": "https://github.com/liberusoftware/module-observability.git",
                 "reference": "6adfdab5abf83d6f39473345822fda97f3f05ecb"
             },
             "dist": {
@@ -12635,7 +12788,7 @@
             "version": "1.5.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-organizations-teams.git",
+                "url": "https://github.com/liberusoftware/module-organizations-teams.git",
                 "reference": "12f20e83088659fe9194823d090e44358eed3a56"
             },
             "dist": {
@@ -12691,7 +12844,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-organizations-teams-filament.git",
+                "url": "https://github.com/liberusoftware/module-organizations-teams-filament.git",
                 "reference": "ce57c44ef89eb852c9c1737d65de7a9e5ffa4b76"
             },
             "dist": {
@@ -12745,7 +12898,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-profiles.git",
+                "url": "https://github.com/liberusoftware/module-profiles.git",
                 "reference": "bdf7c4cb01bf602735df5ecf01d02cbb88b659fe"
             },
             "dist": {
@@ -12800,7 +12953,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-roles-permissions.git",
+                "url": "https://github.com/liberusoftware/module-roles-permissions.git",
                 "reference": "d061b98bbe185ae966e8fe6ea4761bddf48aed9d"
             },
             "dist": {
@@ -12855,7 +13008,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-roles-permissions-filament.git",
+                "url": "https://github.com/liberusoftware/module-roles-permissions-filament.git",
                 "reference": "788117df5f64d16103ce595a42fc3506d97a16d2"
             },
             "dist": {
@@ -12910,7 +13063,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-scheduler-queues.git",
+                "url": "https://github.com/liberusoftware/module-scheduler-queues.git",
                 "reference": "fdfb3b1b3d8b9c3142fa670063da5ae116fa5c76"
             },
             "dist": {
@@ -12965,7 +13118,7 @@
             "version": "1.5.3",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-search.git",
+                "url": "https://github.com/liberusoftware/module-search.git",
                 "reference": "5cd2c62a9cce7c36c3f107ac7d26357d2a714395"
             },
             "dist": {
@@ -13021,7 +13174,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-search-api.git",
+                "url": "https://github.com/liberusoftware/module-search-api.git",
                 "reference": "73a5e71c61c7199896ea9a8d01012fa832140f5d"
             },
             "dist": {
@@ -13076,7 +13229,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-sessions-devices.git",
+                "url": "https://github.com/liberusoftware/module-sessions-devices.git",
                 "reference": "164817b59449f6930af4ff08d93c21b93368c738"
             },
             "dist": {
@@ -13131,7 +13284,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-sessions-devices-filament.git",
+                "url": "https://github.com/liberusoftware/module-sessions-devices-filament.git",
                 "reference": "91eb6d30430ad82b21dc57c68ffbaa804299d41f"
             },
             "dist": {
@@ -13185,7 +13338,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-settings.git",
+                "url": "https://github.com/liberusoftware/module-settings.git",
                 "reference": "37c18cd0aaa4d026b7adcfba859516dd7abc39aa"
             },
             "dist": {
@@ -13239,7 +13392,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-settings-filament.git",
+                "url": "https://github.com/liberusoftware/module-settings-filament.git",
                 "reference": "86ee7e6377624baca845121981e6bb8cec092ca2"
             },
             "dist": {
@@ -13297,7 +13450,7 @@
             "version": "1.4.3",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-theme-support.git",
+                "url": "https://github.com/liberusoftware/module-theme-support.git",
                 "reference": "cc7019f1d077e498ad647bb566a28ae009b2cb1e"
             },
             "dist": {
@@ -13359,7 +13512,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-theme-support-livewire.git",
+                "url": "https://github.com/liberusoftware/module-theme-support-livewire.git",
                 "reference": "8db221e424ebd0a1d9bbb61265b41878da59caeb"
             },
             "dist": {
@@ -13415,7 +13568,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-two-factor-authentication.git",
+                "url": "https://github.com/liberusoftware/module-two-factor-authentication.git",
                 "reference": "60e4cb036f76375e9814cf57ca4a32fc343301e5"
             },
             "dist": {
@@ -13470,7 +13623,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-webhooks.git",
+                "url": "https://github.com/liberusoftware/module-webhooks.git",
                 "reference": "308f905ee503c708dce8ffbb78a08c7c5b9d72bb"
             },
             "dist": {
@@ -23987,7 +24140,7 @@
             "version": "1.2.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/boilerplate-scripts.git",
+                "url": "https://github.com/liberusoftware/boilerplate-scripts.git",
                 "reference": "a7461a447049879ef30202cc0a12dfe0919fa9e2"
             },
             "dist": {

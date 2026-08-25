@@ -606,6 +606,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-payment-reconciliation",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-payment-reconciliation-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-payment-reconciliation-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-payment-reconciliation-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-sales-orders",
             "options": { "symlink": true }
         },
@@ -1075,6 +1095,10 @@
         "liberusoftware/module-accounting-sales-tax-and-gst-api": "^1.0",
         "liberusoftware/module-accounting-sales-tax-and-gst-filament": "^1.0",
         "liberusoftware/module-accounting-sales-tax-and-gst-livewire": "^1.0",
+        "liberusoftware/module-accounting-payment-reconciliation": "^1.0",
+        "liberusoftware/module-accounting-payment-reconciliation-api": "^1.0",
+        "liberusoftware/module-accounting-payment-reconciliation-filament": "^1.0",
+        "liberusoftware/module-accounting-payment-reconciliation-livewire": "^1.0",
         "liberusoftware/module-accounting-sales-orders": "^1.0",
         "liberusoftware/module-accounting-sales-orders-api": "^1.0",
         "liberusoftware/module-accounting-sales-orders-filament": "^1.0",
