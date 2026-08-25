@@ -17,7 +17,7 @@ final class MigrationQuery
             $q->where('team_id', $teamId);
         }
 
-return $q->paginate(min(max($perPage, 1), 100));
+        return $q->paginate(min(max($perPage, 1), 100));
     }
 
     public function batches(?int $teamId = null, int $perPage = 25): LengthAwarePaginator
@@ -27,7 +27,7 @@ return $q->paginate(min(max($perPage, 1), 100));
             $q->where('team_id', $teamId);
         }
 
-return $q->paginate(min(max($perPage, 1), 100));
+        return $q->paginate(min(max($perPage, 1), 100));
     }
 
     public function counts(MigrationBatch $batch): array

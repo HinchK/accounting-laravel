@@ -20,6 +20,6 @@ final class RecordFeedback
             throw new InvalidMatch('Feedback must be correct, incorrect, or partial.');
         }
 
-return DB::transaction(fn (): MatchingFeedback => MatchingFeedback::create(['suggestion_id' => $suggestion->id, 'actor_ref' => $actor, 'feedback_type' => $feedback, 'comment' => $comment]));
+        return DB::transaction(fn (): MatchingFeedback => MatchingFeedback::create(['suggestion_id' => $suggestion->id, 'actor_ref' => $actor, 'feedback_type' => $feedback, 'comment' => $comment]));
     }
 }

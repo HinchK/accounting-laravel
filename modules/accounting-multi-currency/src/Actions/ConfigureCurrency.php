@@ -18,6 +18,6 @@ final class ConfigureCurrency
             throw new InvalidCurrency('Scope, ISO currency, and supported role are required.');
         }
 
-return CurrencyProfile::updateOrCreate(['team_id' => $attributes['team_id'] ?? null, 'scope_ref' => $attributes['scope_ref'], 'role' => $role], ['currency' => $currency, 'is_active' => $attributes['is_active'] ?? true, 'metadata' => $attributes['metadata'] ?? null]);
+        return CurrencyProfile::updateOrCreate(['team_id' => $attributes['team_id'] ?? null, 'scope_ref' => $attributes['scope_ref'], 'role' => $role], ['currency' => $currency, 'is_active' => $attributes['is_active'] ?? true, 'metadata' => $attributes['metadata'] ?? null]);
     }
 }

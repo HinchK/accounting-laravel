@@ -28,7 +28,7 @@ final class CreateSalesTaxRecord
                 throw new InvalidSalesTax('Taxable base must not be negative.');
             }
 
-return SalesTaxRecord::create(array_merge($attributes, ['type' => $type, 'status' => $attributes['status'] ?? SalesTaxStatus::Draft, 'liability' => $attributes['liability'] ?? round((float) ($attributes['taxable_base'] ?? 0) * (float) ($attributes['rate'] ?? 0) / 100, 2)]));
+            return SalesTaxRecord::create(array_merge($attributes, ['type' => $type, 'status' => $attributes['status'] ?? SalesTaxStatus::Draft, 'liability' => $attributes['liability'] ?? round((float) ($attributes['taxable_base'] ?? 0) * (float) ($attributes['rate'] ?? 0) / 100, 2)]));
         });
     }
 }

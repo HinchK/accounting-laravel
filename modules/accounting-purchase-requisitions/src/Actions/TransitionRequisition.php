@@ -20,7 +20,7 @@ final class TransitionRequisition
             throw new InvalidRequisition("Cannot transition from {$requisition->status->value} to {$status->value}.");
         }
 
-return DB::transaction(function () use ($requisition, $status, $attributes): PurchaseRequisition {
+        return DB::transaction(function () use ($requisition, $status, $attributes): PurchaseRequisition {
             $data = ['status' => $status];
             if ($status === RequisitionStatus::Submitted) {
                 $data['submitted_at'] = now();

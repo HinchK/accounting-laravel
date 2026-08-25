@@ -21,7 +21,7 @@ final class CreateMigrationTemplate
                 throw new InvalidMigration('Template mapping must be an array.');
             }
 
-return MigrationTemplate::create($attributes);
+            return MigrationTemplate::create($attributes);
         });
     }
 }

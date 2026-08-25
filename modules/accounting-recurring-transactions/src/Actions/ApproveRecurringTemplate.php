@@ -17,6 +17,6 @@ final class ApproveRecurringTemplate
             throw new InvalidRecurringTransaction('Only draft recurring templates can be approved.');
         }
 
-return DB::transaction(fn (): RecurringTemplate => tap($template)->update(['status' => RecurringStatus::Active, 'approved_by' => $actorId, 'approved_at' => now()]));
+        return DB::transaction(fn (): RecurringTemplate => tap($template)->update(['status' => RecurringStatus::Active, 'approved_by' => $actorId, 'approved_at' => now()]));
     }
 }

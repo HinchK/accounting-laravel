@@ -19,7 +19,7 @@ final class MarkPayrollImport
             throw new InvalidPayrollImport('Only imported runs can be reconciled.');
         }
 
-return DB::transaction(function () use ($import, $status): PayrollImport {
+        return DB::transaction(function () use ($import, $status): PayrollImport {
             $import->update(['status' => $status, 'imported_at' => $status === ImportStatus::Imported ? now() : $import->imported_at, 'reconciled_at' => $status === ImportStatus::Reconciled ? now() : $import->reconciled_at]);
 
             return $import->refresh();

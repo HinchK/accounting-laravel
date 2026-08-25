@@ -17,7 +17,7 @@ final class HandoffProjectBilling
             throw new InvalidBilling('Cancelled billing cannot be handed off.');
         }
 
-return DB::transaction(function () use ($billing, $invoiceRef): ProjectBilling {
+        return DB::transaction(function () use ($billing, $invoiceRef): ProjectBilling {
             $billing->update(['status' => BillingStatus::HandedOff, 'invoice_ref' => $invoiceRef ?? $billing->invoice_ref]);
 
             return $billing->refresh();

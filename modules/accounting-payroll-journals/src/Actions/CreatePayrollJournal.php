@@ -30,7 +30,7 @@ final class CreatePayrollJournal
             throw new InvalidPayrollJournal('Journal reference and positive gross pay are required.');
         }
 
-return DB::transaction(function () use ($attributes, $gross, $taxes, $deductions, $benefits, $employer, $net): PayrollJournal {
+        return DB::transaction(function () use ($attributes, $gross, $taxes, $deductions, $benefits, $employer, $net): PayrollJournal {
             $row = PayrollJournal::query()->firstOrNew(['team_id' => $attributes['team_id'] ?? null, 'journal_ref' => $attributes['journal_ref']]);
             $row->fill(array_merge($attributes, ['gross_pay' => $gross, 'taxes' => $taxes, 'deductions' => $deductions, 'benefits' => $benefits, 'employer_costs' => $employer, 'net_pay' => $net, 'status' => $attributes['status'] ?? JournalStatus::Draft]));
             $row->save();

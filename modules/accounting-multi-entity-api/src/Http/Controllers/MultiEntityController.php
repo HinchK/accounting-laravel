@@ -69,7 +69,7 @@ final class MultiEntityController extends Controller
         return response()->json(['data' => $action->handle($entityBook, $data['mapping_type'], $data['source_ref'], $data['target_ref'])], 201);
     }
 
-    public function report(EntityBook $entityBook,EntityQuery $query): array
+    public function report(EntityBook $entityBook, EntityQuery $query): array
     {
         return $query->report($entityBook);
     }

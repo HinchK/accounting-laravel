@@ -32,7 +32,7 @@ final class CreateOpeningBalanceBatch
                     throw new InvalidOpeningBalance('Batch reference already exists with different source data.');
                 }
 
-return $existing->load('entries');
+                return $existing->load('entries');
             }$batch = OpeningBalanceBatch::create(array_merge($key, ['migration_date' => $attributes['migration_date'], 'currency' => isset($attributes['currency']) ? strtoupper((string) $attributes['currency']) : null, 'status' => OpeningBalanceStatus::Draft, 'source_hash' => $hash, 'idempotency_key' => $attributes['idempotency_key'] ?? null, 'requested_by' => $attributes['requested_by'] ?? null, 'metadata' => $attributes['metadata'] ?? null]));
             foreach ($entries as $entry) {
                 $type = BalanceType::tryFrom((string) ($entry['balance_type'] ?? ''));

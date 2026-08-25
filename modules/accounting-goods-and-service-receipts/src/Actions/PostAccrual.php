@@ -21,6 +21,6 @@ final class PostAccrual
             throw new InvalidReceipt('Accrual amount must be positive.');
         }
 
-return ReceiptAccrual::create(['receipt_id' => $receipt->getKey(), 'accrual_ref' => $a['accrual_ref'], 'amount' => $amount, 'currency' => strtoupper($a['currency'] ?? $receipt->currency), 'period_ref' => $a['period_ref'], 'status' => 'posted', 'posted_at' => now(), 'source_ref' => $a['source_ref'], 'metadata' => $a['metadata'] ?? null]);
+        return ReceiptAccrual::create(['receipt_id' => $receipt->getKey(), 'accrual_ref' => $a['accrual_ref'], 'amount' => $amount, 'currency' => strtoupper($a['currency'] ?? $receipt->currency), 'period_ref' => $a['period_ref'], 'status' => 'posted', 'posted_at' => now(), 'source_ref' => $a['source_ref'], 'metadata' => $a['metadata'] ?? null]);
     }
 }

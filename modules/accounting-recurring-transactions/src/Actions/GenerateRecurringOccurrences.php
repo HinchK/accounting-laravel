@@ -39,7 +39,7 @@ final class GenerateRecurringOccurrences
             $template->update(['status' => RecurringStatus::Expired]);
         }
 
-return $count;
+        return $count;
     }
 
     private function next(string $frequency, CarbonImmutable $date): string

@@ -27,7 +27,7 @@ final class IdentifyMissingItems
                 $run->update(['status' => 'exception']);
             }
 
-return $created;
+            return $created;
         });
     }
 }

@@ -19,6 +19,6 @@ final class CreateMetric
             throw new InvalidKpi('Metric direction must be higher or lower.');
         }
 
-return DB::transaction(fn (): KpiMetric => KpiMetric::create(['team_id' => $attributes['team_id'] ?? null, 'metric_ref' => $ref, 'name' => $attributes['name'], 'description' => $attributes['description'] ?? null, 'unit' => $attributes['unit'], 'direction' => $attributes['direction'] ?? 'higher', 'source_contract' => $attributes['source_contract'], 'formula' => $attributes['formula'] ?? null, 'owner_ref' => $attributes['owner_ref'] ?? null, 'active' => $attributes['active'] ?? true, 'metadata' => $attributes['metadata'] ?? null]));
+        return DB::transaction(fn (): KpiMetric => KpiMetric::create(['team_id' => $attributes['team_id'] ?? null, 'metric_ref' => $ref, 'name' => $attributes['name'], 'description' => $attributes['description'] ?? null, 'unit' => $attributes['unit'], 'direction' => $attributes['direction'] ?? 'higher', 'source_contract' => $attributes['source_contract'], 'formula' => $attributes['formula'] ?? null, 'owner_ref' => $attributes['owner_ref'] ?? null, 'active' => $attributes['active'] ?? true, 'metadata' => $attributes['metadata'] ?? null]));
     }
 }

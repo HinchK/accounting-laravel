@@ -18,6 +18,6 @@ final class RecordPurchaseOrderChange
             throw new InvalidPurchaseOrder('Closed orders cannot receive changes and changes require a reason.');
         }
 
-return DB::transaction(fn (): PurchaseOrderChange => PurchaseOrderChange::create(['order_id' => $order->id, 'version' => ((int) $order->changes()->max('version')) + 1, 'changes' => $attributes['changes'], 'reason' => $attributes['reason'], 'actor_ref' => $attributes['actor_ref'] ?? null, 'approved_at' => $attributes['approved_at'] ?? null, 'metadata' => $attributes['metadata'] ?? null]));
+        return DB::transaction(fn (): PurchaseOrderChange => PurchaseOrderChange::create(['order_id' => $order->id, 'version' => ((int) $order->changes()->max('version')) + 1, 'changes' => $attributes['changes'], 'reason' => $attributes['reason'], 'actor_ref' => $attributes['actor_ref'] ?? null, 'approved_at' => $attributes['approved_at'] ?? null, 'metadata' => $attributes['metadata'] ?? null]));
     }
 }

@@ -25,6 +25,6 @@ final class AddEstimateItem
             throw new InvalidEstimate('Item quantity must be positive and price cannot be negative.');
         }
 
-return $e->items()->create(['item_ref' => $a['item_ref'] ?? null, 'description' => $a['description'], 'quantity' => $quantity, 'unit_price' => $price, 'tax_rate' => $a['tax_rate'] ?? 0, 'amount' => round($quantity * $price, 2), 'metadata' => $a['metadata'] ?? null]);
+        return $e->items()->create(['item_ref' => $a['item_ref'] ?? null, 'description' => $a['description'], 'quantity' => $quantity, 'unit_price' => $price, 'tax_rate' => $a['tax_rate'] ?? 0, 'amount' => round($quantity * $price, 2), 'metadata' => $a['metadata'] ?? null]);
     }
 }

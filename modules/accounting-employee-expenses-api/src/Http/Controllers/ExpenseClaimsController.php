@@ -69,6 +69,6 @@ final class ExpenseClaimsController extends Controller
 
     public function post(Request $r, ExpenseClaim $c, PostExpenseClaim $a): ExpenseClaimResource
     {
-        return new ExpenseClaimResource($a->handle($c,(string) $r->user()->getAuthIdentifier()));
+        return new ExpenseClaimResource($a->handle($c, (string) $r->user()->getAuthIdentifier()));
     }
 }

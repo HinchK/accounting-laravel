@@ -20,7 +20,7 @@ final class ReimburseTrip
             throw new InvalidMileage('This trip is already reimbursed for the payee.');
         }
 
-return DB::transaction(function () use ($trip, $payee, $externalRef): MileageReimbursement {
+        return DB::transaction(function () use ($trip, $payee, $externalRef): MileageReimbursement {
             $reimbursement = MileageReimbursement::create(['trip_id' => $trip->id, 'payee_ref' => $payee, 'currency' => $trip->currency, 'amount' => $trip->reimbursement_amount, 'status' => 'submitted', 'external_ref' => $externalRef]);
             $trip->update(['status' => TripStatus::Reimbursed, 'reimbursed_at' => now()]);
 

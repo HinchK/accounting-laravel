@@ -17,7 +17,7 @@ final class PostPayment
             throw new InvalidLease('Only scheduled lease payments can be posted.');
         }
 
-return DB::transaction(function () use ($payment): LeasePayment {
+        return DB::transaction(function () use ($payment): LeasePayment {
             $lease = $payment->lease()->lockForUpdate()->firstOrFail();
             $lease->update(['lease_liability' => max(0, (float) $lease->lease_liability - (float) $payment->principal_amount), 'accumulated_depreciation' => (float) $lease->accumulated_depreciation + (float) $payment->depreciation_amount]);
             $payment->update(['status' => PaymentStatus::Posted, 'posted_at' => now()]);

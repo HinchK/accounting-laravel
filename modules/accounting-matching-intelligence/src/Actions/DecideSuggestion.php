@@ -20,7 +20,7 @@ final class DecideSuggestion
             throw new InvalidMatch('Confidence is below the safe automation threshold.');
         }
 
-return DB::transaction(function () use ($suggestion, $actor, $accept, $automate): MatchingSuggestion {
+        return DB::transaction(function () use ($suggestion, $actor, $accept, $automate): MatchingSuggestion {
             $result = $suggestion->update(['status' => $automate ? SuggestionStatus::Automated : ($accept ? SuggestionStatus::Accepted : SuggestionStatus::Rejected), 'metadata' => array_merge($suggestion->metadata ?? [], ['decided_by' => $actor, 'decided_at' => now()->toISOString()])]);
             $result = $suggestion->refresh();
             DB::afterCommit(fn () => event(new SuggestionDecided($result)));

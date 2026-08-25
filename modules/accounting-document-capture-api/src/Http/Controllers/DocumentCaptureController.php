@@ -65,6 +65,6 @@ final class DocumentCaptureController extends Controller
 
     public function archive(Request $r, CapturedDocument $d, ArchiveDocument $a): CapturedDocumentResource
     {
-        return new CapturedDocumentResource($a->handle($d,(string) $r->user()->getAuthIdentifier()));
+        return new CapturedDocumentResource($a->handle($d, (string) $r->user()->getAuthIdentifier()));
     }
 }

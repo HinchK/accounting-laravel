@@ -23,13 +23,13 @@ final class CreateEntityBook
             throw new InvalidEntity('Base currency must be an ISO 4217 code.');
         }
 
-return DB::transaction(function () use ($attributes, $currency): EntityBook {
+        return DB::transaction(function () use ($attributes, $currency): EntityBook {
             $book = EntityBook::query()->firstOrCreate(['team_id' => $attributes['team_id'] ?? null, 'entity_ref' => $attributes['entity_ref']], ['code' => $attributes['code'], 'name' => $attributes['name'], 'base_currency' => $currency, 'timezone' => $attributes['timezone'] ?? 'UTC', 'tax_registration' => $attributes['tax_registration'] ?? null, 'status' => EntityBookStatus::Active, 'metadata' => $attributes['metadata'] ?? null]);
             if ($book->wasRecentlyCreated) {
                 DB::afterCommit(fn () => event(new EntityBookActivated($book->refresh())));
             }
 
-return $book;
+            return $book;
         });
     }
 }

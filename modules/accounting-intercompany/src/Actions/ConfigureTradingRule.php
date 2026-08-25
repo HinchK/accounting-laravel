@@ -21,6 +21,6 @@ final class ConfigureTradingRule
             throw new InvalidIntercompany('Markup cannot be negative.');
         }
 
-return TradingRule::create(['counterparty_id' => $counterparty->getKey(), 'rule_ref' => $a['rule_ref'], 'description' => $a['description'], 'pricing_method' => $a['pricing_method'], 'markup_percent' => $markup, 'currency' => strtoupper($a['currency']), 'active' => $a['active'] ?? true, 'metadata' => $a['metadata'] ?? null]);
+        return TradingRule::create(['counterparty_id' => $counterparty->getKey(), 'rule_ref' => $a['rule_ref'], 'description' => $a['description'], 'pricing_method' => $a['pricing_method'], 'markup_percent' => $markup, 'currency' => strtoupper($a['currency']), 'active' => $a['active'] ?? true, 'metadata' => $a['metadata'] ?? null]);
     }
 }

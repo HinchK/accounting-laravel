@@ -27,6 +27,6 @@ final class ProjectCostSummary
             $byType[$type] = (float) $costs->sum('amount');
         }
 
-return ['total_cost' => $total, 'committed' => $committed, 'actual' => $actual, 'wip' => $wip, 'cost_to_complete' => max(0.0, $committed - $actual), 'variance' => $committed - $actual, 'by_type' => $byType, 'entries' => $rows->count()];
+        return ['total_cost' => $total, 'committed' => $committed, 'actual' => $actual, 'wip' => $wip, 'cost_to_complete' => max(0.0, $committed - $actual), 'variance' => $committed - $actual, 'by_type' => $byType, 'entries' => $rows->count()];
     }
 }

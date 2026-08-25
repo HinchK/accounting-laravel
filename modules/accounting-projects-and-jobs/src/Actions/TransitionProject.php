@@ -20,6 +20,6 @@ final class TransitionProject
             throw new InvalidProject("Cannot transition from {$project->status->value} to {$status->value}.");
         }
 
-return DB::transaction(fn (): ProjectJob => tap($project)->update(['status' => $status]));
+        return DB::transaction(fn (): ProjectJob => tap($project)->update(['status' => $status]));
     }
 }

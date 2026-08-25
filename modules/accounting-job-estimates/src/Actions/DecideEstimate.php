@@ -21,7 +21,7 @@ final class DecideEstimate
             throw new InvalidEstimate('Rejected estimates require a comment.');
         }
 
-return DB::transaction(function () use ($estimate, $actor, $approved, $comment): JobEstimate {
+        return DB::transaction(function () use ($estimate, $actor, $approved, $comment): JobEstimate {
             $estimate->approvals()->create(['actor_ref' => $actor, 'decision' => $approved ? DecisionType::Approved : DecisionType::Rejected, 'comment' => $comment, 'decided_at' => now()]);
             $estimate->update(['status' => $approved ? EstimateStatus::Approved : EstimateStatus::Rejected]);
             $result = $estimate->refresh();
@@ -29,7 +29,7 @@ return DB::transaction(function () use ($estimate, $actor, $approved, $comment):
                 DB::afterCommit(fn () => event(new EstimateApproved($result)));
             }
 
-return $result;
+            return $result;
         });
     }
 }

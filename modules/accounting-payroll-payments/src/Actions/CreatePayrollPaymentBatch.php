@@ -20,7 +20,7 @@ final class CreatePayrollPaymentBatch
             throw new InvalidPayrollPayment('Batch reference and positive non-negative amounts are required.');
         }
 
-return DB::transaction(function () use ($attributes, $net, $liability): PayrollPaymentBatch {
+        return DB::transaction(function () use ($attributes, $net, $liability): PayrollPaymentBatch {
             $batch = PayrollPaymentBatch::query()->firstOrNew(['team_id' => $attributes['team_id'] ?? null, 'batch_ref' => $attributes['batch_ref']]);
             $batch->fill(array_merge($attributes, ['net_pay_amount' => $net, 'liability_amount' => $liability, 'status' => $attributes['status'] ?? PaymentStatus::Draft]));
             $batch->save();

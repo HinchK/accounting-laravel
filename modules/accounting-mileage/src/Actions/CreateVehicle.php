@@ -19,6 +19,6 @@ final class CreateVehicle
             throw new InvalidMileage('Vehicle registration already exists for this tenant.');
         }
 
-return DB::transaction(fn (): Vehicle => Vehicle::create(['team_id' => $attributes['team_id'], 'owner_ref' => $attributes['owner_ref'] ?? null, 'registration' => $registration, 'make' => $attributes['make'] ?? null, 'model' => $attributes['model'] ?? null, 'fuel_type' => $attributes['fuel_type'] ?? null, 'co2_g_per_km' => $attributes['co2_g_per_km'] ?? null, 'active' => $attributes['active'] ?? true, 'metadata' => $attributes['metadata'] ?? null]));
+        return DB::transaction(fn (): Vehicle => Vehicle::create(['team_id' => $attributes['team_id'], 'owner_ref' => $attributes['owner_ref'] ?? null, 'registration' => $registration, 'make' => $attributes['make'] ?? null, 'model' => $attributes['model'] ?? null, 'fuel_type' => $attributes['fuel_type'] ?? null, 'co2_g_per_km' => $attributes['co2_g_per_km'] ?? null, 'active' => $attributes['active'] ?? true, 'metadata' => $attributes['metadata'] ?? null]));
     }
 }

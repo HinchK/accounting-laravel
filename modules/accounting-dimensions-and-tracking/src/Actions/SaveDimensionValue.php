@@ -17,7 +17,7 @@ final class SaveDimensionValue
             throw new InvalidDimension('Cannot add a value to an inactive dimension.');
         }
 
-return DB::transaction(function () use ($dimension, $attributes, $value) {
+        return DB::transaction(function () use ($dimension, $attributes, $value) {
             $query = $dimension->values()->where('code', $attributes['code'] ?? '');
             if ($value) {
                 $query->where($value->getKeyName(), '!=', $value->getKey());

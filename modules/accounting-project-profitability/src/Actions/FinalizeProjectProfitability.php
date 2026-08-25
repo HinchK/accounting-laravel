@@ -17,7 +17,7 @@ final class FinalizeProjectProfitability
             throw new InvalidProfitability('A reversed profitability record cannot be finalized.');
         }
 
-return DB::transaction(function () use ($record): ProjectProfitability {
+        return DB::transaction(function () use ($record): ProjectProfitability {
             $record->update(['status' => ProfitabilityStatus::Final]);
 
             return $record->refresh();

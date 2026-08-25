@@ -17,13 +17,13 @@ final class GrantEntityAccess
             throw new InvalidEntity('User reference and role are required.');
         }
 
-return DB::transaction(function () use ($entity, $userRef, $role, $permissions, $default): EntityAccess {
+        return DB::transaction(function () use ($entity, $userRef, $role, $permissions, $default): EntityAccess {
             $access = EntityAccess::updateOrCreate(['entity_id' => $entity->id, 'user_ref' => $userRef], ['role' => $role, 'permissions' => $permissions, 'is_default' => $default]);
             if ($default) {
                 EntityAccess::query()->where('user_ref', $userRef)->whereKeyNot($access->id)->update(['is_default' => false]);
             }
 
-return $access->refresh();
+            return $access->refresh();
         });
     }
 }

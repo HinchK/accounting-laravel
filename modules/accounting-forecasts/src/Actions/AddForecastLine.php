@@ -22,6 +22,6 @@ final class AddForecastLine
             throw new InvalidForecast('Only draft forecasts can be edited.');
         }
 
-return ForecastLine::create(['forecast_id' => $forecast->getKey(), 'period_ref' => $a['period_ref'], 'account_ref' => $a['account_ref'], 'dimension_ref' => $a['dimension_ref'] ?? null, 'description' => $a['description'], 'driver_ref' => $a['driver_ref'] ?? null, 'forecast_value' => $value, 'variance_value' => 0, 'metadata' => $a['metadata'] ?? null]);
+        return ForecastLine::create(['forecast_id' => $forecast->getKey(), 'period_ref' => $a['period_ref'], 'account_ref' => $a['account_ref'], 'dimension_ref' => $a['dimension_ref'] ?? null, 'description' => $a['description'], 'driver_ref' => $a['driver_ref'] ?? null, 'forecast_value' => $value, 'variance_value' => 0, 'metadata' => $a['metadata'] ?? null]);
     }
 }

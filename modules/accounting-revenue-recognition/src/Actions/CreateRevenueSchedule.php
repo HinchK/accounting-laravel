@@ -27,7 +27,7 @@ final class CreateRevenueSchedule
             throw new InvalidRecognition('start_date is required.');
         }
 
-return DB::transaction(function () use ($attributes, $periods, $total, $date): RevenueSchedule {
+        return DB::transaction(function () use ($attributes, $periods, $total, $date): RevenueSchedule {
             $obligation = RevenueObligation::create(['team_id' => $attributes['team_id'] ?? null, 'source_type' => $attributes['source_type'] ?? null, 'source_id' => $attributes['source_id'] ?? null, 'description' => $attributes['description'] ?? null, 'currency' => $attributes['currency'] ?? 'USD', 'total_amount' => $total, 'start_date' => $date, 'periods' => $periods, 'status' => RecognitionStatus::Active, 'metadata' => $attributes['metadata'] ?? null]);
             $schedule = RevenueSchedule::create(['obligation_id' => $obligation->id, 'allocation_reference_id' => $attributes['allocation_reference_id'] ?? null, 'total_amount' => $total, 'start_date' => $date, 'periods' => $periods, 'deferred_account_ref' => $attributes['deferred_account_ref'], 'revenue_account_ref' => $attributes['revenue_account_ref'], 'status' => RecognitionStatus::Active, 'funded' => (bool) ($attributes['funded'] ?? false), 'metadata' => $attributes['metadata'] ?? null]);
             $per = round($total / $periods, 2);
@@ -36,7 +36,7 @@ return DB::transaction(function () use ($attributes, $periods, $total, $date): R
                 $schedule->entries()->create(['period_number' => $n, 'recognition_date' => now()->parse($date)->addMonths($n - 1)->toDateString(), 'amount' => $amount, 'status' => RecognitionStatus::Active]);
             }
 
-return $schedule->load('entries');
+            return $schedule->load('entries');
         });
     }
 }

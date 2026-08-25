@@ -17,7 +17,7 @@ final class AllocatePayrollLiability
             throw new InvalidLiability('Allocation exceeds the outstanding liability or lacks a reference.');
         }
 
-return DB::transaction(function () use ($liability, $amount, $allocationRef): PayrollLiability {
+        return DB::transaction(function () use ($liability, $amount, $allocationRef): PayrollLiability {
             $paid = (float) $liability->paid_amount + $amount;
             $liability->update(['paid_amount' => $paid, 'payment_ref' => $allocationRef, 'allocation_ref' => $allocationRef, 'status' => $paid >= (float) $liability->amount ? LiabilityStatus::Paid : LiabilityStatus::PartPaid]);
 

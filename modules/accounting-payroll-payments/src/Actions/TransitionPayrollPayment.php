@@ -29,7 +29,7 @@ final class TransitionPayrollPayment
             $data = array_merge($data, ['failure_code' => $details['failure_code'] ?? null, 'failure_message' => $details['failure_message'] ?? null]);
         }
 
-return DB::transaction(function () use ($batch, $data): PayrollPaymentBatch {
+        return DB::transaction(function () use ($batch, $data): PayrollPaymentBatch {
             $batch->update($data);
 
             return $batch->refresh();

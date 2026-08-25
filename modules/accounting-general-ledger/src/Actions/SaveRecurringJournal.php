@@ -19,7 +19,7 @@ final class SaveRecurringJournal
             throw new InvalidJournal('A recurring journal requires at least two lines.');
         }
 
-return DB::transaction(function () use ($attributes, $template) {
+        return DB::transaction(function () use ($attributes, $template) {
             $template ??= new RecurringJournal();
             $template->fill($attributes);
             $template->save();

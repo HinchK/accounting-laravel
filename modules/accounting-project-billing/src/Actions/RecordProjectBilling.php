@@ -30,7 +30,7 @@ final class RecordProjectBilling
             }
         }
 
-return DB::transaction(function () use ($attributes, $method, $start, $end): ProjectBilling {
+        return DB::transaction(function () use ($attributes, $method, $start, $end): ProjectBilling {
             $query = ProjectBilling::query()->where('project_job_id', $attributes['project_job_id'])->where('method', $method->value)->where('source_ref', $attributes['source_ref'] ?? null)->whereDate('period_start', $start)->whereDate('period_end', $end);
             $record = $query->first() ?? new ProjectBilling();
             $record->fill(array_merge($attributes, ['method' => $method, 'status' => $attributes['status'] ?? BillingStatus::Draft, 'period_start' => $start, 'period_end' => $end]));

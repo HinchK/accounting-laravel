@@ -20,7 +20,7 @@ final class SettleTransaction
             throw new InvalidIntercompany('Settlement amount or references are invalid.');
         }
 
-return DB::transaction(function () use ($transaction, $a, $amount): IntercompanyTransaction {
+        return DB::transaction(function () use ($transaction, $a, $amount): IntercompanyTransaction {
             $transaction->settlements()->create(['settlement_ref' => $a['settlement_ref'], 'amount' => $amount, 'currency' => strtoupper($a['currency'] ?? $transaction->currency), 'settled_at' => $a['settled_at'] ?? now(), 'source_ref' => $a['source_ref']]);
             $transaction->update(['status' => TransactionStatus::Settled]);
 

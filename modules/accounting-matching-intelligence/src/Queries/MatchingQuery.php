@@ -18,7 +18,7 @@ final class MatchingQuery
             $q->where('status', $status);
         }
 
-return $q->paginate(min(max($perPage, 1), 100));
+        return $q->paginate(min(max($perPage, 1), 100));
     }
 
     public function automationEligible(?int $teamId = null, int $perPage = 25): LengthAwarePaginator
@@ -28,6 +28,6 @@ return $q->paginate(min(max($perPage, 1), 100));
             $q->where('team_id', $teamId);
         }
 
-return $q->paginate(min(max($perPage, 1), 100));
+        return $q->paginate(min(max($perPage, 1), 100));
     }
 }

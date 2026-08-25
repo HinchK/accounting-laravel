@@ -16,6 +16,6 @@ final class CreateEntityMapping
             throw new InvalidEntity('Mapping type, source, and target are required.');
         }
 
-return EntityMapping::updateOrCreate(['entity_id' => $entity->id, 'mapping_type' => $type, 'source_ref' => $source], ['target_ref' => $target, 'is_active' => true]);
+        return EntityMapping::updateOrCreate(['entity_id' => $entity->id, 'mapping_type' => $type, 'source_ref' => $source], ['target_ref' => $target, 'is_active' => true]);
     }
 }

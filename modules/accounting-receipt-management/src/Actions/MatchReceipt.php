@@ -21,7 +21,7 @@ final class MatchReceipt
             throw new InvalidReceipt('A match target is required.');
         }
 
-return DB::transaction(function () use ($receipt, $attributes): ReceiptMatch {
+        return DB::transaction(function () use ($receipt, $attributes): ReceiptMatch {
             $match = ReceiptMatch::firstOrCreate(['receipt_id' => $receipt->id, 'target_type' => $attributes['target_type'], 'target_id' => (string) $attributes['target_id']], ['matched_amount' => $attributes['matched_amount'] ?? $receipt->amount, 'status' => 'confirmed', 'confidence' => $attributes['confidence'] ?? 1, 'metadata' => $attributes['metadata'] ?? null]);
             $receipt->update(['status' => ReceiptStatus::Matched]);
             ReceiptAudit::create(['receipt_id' => $receipt->id, 'action' => 'matched', 'actor_ref' => $attributes['actor_ref'] ?? null, 'evidence' => ['target_type' => $match->target_type, 'target_id' => $match->target_id], 'created_at' => now()]);

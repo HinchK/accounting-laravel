@@ -24,7 +24,7 @@ final class AllocateDimensions
                 throw new InvalidDimension('This allocation key has already been processed.');
             }
 
-return collect($allocations)->map(fn ($row) => DimensionAllocation::create(['allocation_key' => $key, 'amount' => round((float) $amount * (float) $row['percentage'] / 100, 2), 'currency' => $currency, 'percentage' => $row['percentage'], 'dimensions' => $row['dimensions'] ?? [], 'created_by' => $actor]))->all();
+            return collect($allocations)->map(fn ($row) => DimensionAllocation::create(['allocation_key' => $key, 'amount' => round((float) $amount * (float) $row['percentage'] / 100, 2), 'currency' => $currency, 'percentage' => $row['percentage'], 'dimensions' => $row['dimensions'] ?? [], 'created_by' => $actor]))->all();
         });
     }
 }

@@ -20,6 +20,6 @@ final class CreateReportPack
             throw new InvalidReport('Report period end must not precede its start.');
         }
 
-return DB::transaction(fn (): ReportPack => ReportPack::create(['team_id' => $attributes['team_id'] ?? null, 'report_ref' => $ref, 'name' => $attributes['name'], 'period_start' => $attributes['period_start'], 'period_end' => $attributes['period_end'], 'currency' => strtoupper($attributes['currency']), 'status' => ReportStatus::Draft, 'version' => $attributes['version'] ?? 1, 'owner_ref' => $attributes['owner_ref'] ?? null, 'metadata' => $attributes['metadata'] ?? null]));
+        return DB::transaction(fn (): ReportPack => ReportPack::create(['team_id' => $attributes['team_id'] ?? null, 'report_ref' => $ref, 'name' => $attributes['name'], 'period_start' => $attributes['period_start'], 'period_end' => $attributes['period_end'], 'currency' => strtoupper($attributes['currency']), 'status' => ReportStatus::Draft, 'version' => $attributes['version'] ?? 1, 'owner_ref' => $attributes['owner_ref'] ?? null, 'metadata' => $attributes['metadata'] ?? null]));
     }
 }

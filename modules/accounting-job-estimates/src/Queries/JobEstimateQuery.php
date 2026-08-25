@@ -24,7 +24,7 @@ final class JobEstimateQuery
             $rows[] = ['line_ref' => $line->line_ref, 'estimate' => (float) $line->amount, 'actual' => (float) $line->actual_amount, 'variance' => round((float) $line->actual_amount - (float) $line->amount, 2)];
         }
 
-return $rows;
+        return $rows;
     }
 
     public function estimateAtCompletion(JobEstimate $estimate): array

@@ -19,6 +19,6 @@ final class GenerateInvoicePdf
             throw new InvalidInvoice('Only PDF output is supported by this boundary.');
         }
 
-return ['invoice_id' => $invoice->id, 'format' => 'pdf', 'filename' => 'invoice-'.$invoice->invoice_number.'.pdf', 'immutable' => $invoice->status === InvoiceStatus::Final];
+        return ['invoice_id' => $invoice->id, 'format' => 'pdf', 'filename' => 'invoice-'.$invoice->invoice_number.'.pdf', 'immutable' => $invoice->status === InvoiceStatus::Final];
     }
 }

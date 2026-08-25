@@ -20,7 +20,7 @@ final class TransitionPurchaseOrder
             throw new InvalidPurchaseOrder("Cannot transition order from {$order->status->value} to {$status->value}.");
         }
 
-return DB::transaction(function () use ($order, $status, $attributes): PurchaseOrder {
+        return DB::transaction(function () use ($order, $status, $attributes): PurchaseOrder {
             $order->update(['status' => $status, 'commitment_ref' => $attributes['commitment_ref'] ?? $order->commitment_ref]);
 
             return $order->refresh();

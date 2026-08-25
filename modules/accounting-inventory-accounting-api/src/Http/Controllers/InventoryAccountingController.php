@@ -88,6 +88,6 @@ final class InventoryAccountingController extends Controller
     {
         $data = $request->validate(['team_id' => 'nullable|integer', 'reconciliation_ref' => 'required|string|max:100', 'period_ref' => 'required|string|max:100', 'subledger_value' => 'required|numeric|min:0', 'general_ledger_value' => 'required|numeric|min:0', 'actor_ref' => 'nullable|string|max:255']);
 
-        return response()->json(['data' => $action->handle($data)],201);
+        return response()->json(['data' => $action->handle($data)], 201);
     }
 }

@@ -39,7 +39,7 @@ final class ImportSettlement
                     throw new InvalidReconciliation('Settlement reference already exists with different source data.');
                 }
 
-return $existing->load('items');
+                return $existing->load('items');
             }
             $totals = ['gross' => 0.0, 'fee' => 0.0, 'refund' => 0.0, 'dispute' => 0.0, 'net' => 0.0];
             $run = SettlementRun::create(array_merge($key, ['merchant_ref' => $attributes['merchant_ref'] ?? null, 'period_start' => $attributes['period_start'], 'period_end' => $attributes['period_end'], 'currency' => $currency, 'status' => SettlementStatus::Imported, 'idempotency_key' => $attributes['idempotency_key'] ?? null, 'source_hash' => $sourceHash, 'metadata' => $attributes['metadata'] ?? null]));

@@ -21,7 +21,7 @@ final class RecordApproval
             throw new InvalidRequisition('Approval decision is invalid.');
         }
 
-return DB::transaction(function () use ($requisition, $attributes, $decision): RequisitionApproval {
+        return DB::transaction(function () use ($requisition, $attributes, $decision): RequisitionApproval {
             $approval = RequisitionApproval::create(['requisition_id' => $requisition->id, 'approver_ref' => $attributes['approver_ref'], 'decision' => $decision, 'reason' => $attributes['reason'] ?? null, 'decided_at' => now()]);
             $requisition->update(['status' => $decision === 'approved' ? RequisitionStatus::Approved : RequisitionStatus::Rejected, 'approved_at' => $decision === 'approved' ? now() : null]);
 

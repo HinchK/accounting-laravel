@@ -24,6 +24,6 @@ final class RecordActual
             $estimate->lines()->where('line_ref', $actual->line_ref)->increment('actual_amount', $amount);
         }
 
-return $actual;
+        return $actual;
     }
 }

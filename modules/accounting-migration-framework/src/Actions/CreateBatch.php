@@ -27,7 +27,7 @@ final class CreateBatch
                     throw new InvalidMigration('Batch reference already exists with different rows.');
                 }
 
-return $existing->load('rows');
+                return $existing->load('rows');
             }$batch = MigrationBatch::create(['team_id' => $attributes['team_id'] ?? null, 'batch_ref' => $ref, 'source_id' => $source->id, 'mapping_id' => $mapping->id, 'status' => MigrationStatus::Draft, 'dry_run' => (bool) ($attributes['dry_run'] ?? false), 'resume_token' => bin2hex(random_bytes(24)), 'total_count' => count($rows), 'metadata' => array_merge($attributes['metadata'] ?? [], ['rows_hash' => $hash])]);
             foreach ($rows as $index => $row) {
                 if (! is_array($row) || blank($row['source_key'] ?? null)) {
@@ -35,7 +35,7 @@ return $existing->load('rows');
                 }$batch->rows()->create(['row_ref' => (string) ($row['row_ref'] ?? $index + 1), 'source_key' => (string) $row['source_key'], 'payload' => $row['payload'] ?? $row]);
             }
 
-return $batch->load('rows');
+            return $batch->load('rows');
         });
     }
 }

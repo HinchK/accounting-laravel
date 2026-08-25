@@ -23,7 +23,7 @@ final class CreateSuggestion
             throw new InvalidMatch('Suggestion reference and confidence from zero to one are required.');
         }
 
-return DB::transaction(function () use ($attributes, $evidence, $confidence, $ref): MatchingSuggestion {
+        return DB::transaction(function () use ($attributes, $evidence, $confidence, $ref): MatchingSuggestion {
             $existing = MatchingSuggestion::query()->where(['team_id' => $attributes['team_id'] ?? null, 'suggestion_ref' => $ref])->first();
             if ($existing) {
                 return $existing->load('evidence');

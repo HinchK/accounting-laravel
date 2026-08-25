@@ -26,7 +26,7 @@ final class SaveAccountingItem
             }
         }
 
-return DB::transaction(function () use ($attributes, $code, $kind): AccountingItem {
+        return DB::transaction(function () use ($attributes, $code, $kind): AccountingItem {
             $item = AccountingItem::query()->where('team_id', $attributes['team_id'] ?? null)->where('code', $code)->first() ?? new AccountingItem();
             $item->fill(array_merge($attributes, ['code' => $code, 'name' => trim((string) $attributes['name']), 'kind' => $kind, 'status' => $attributes['status'] ?? ItemStatus::Active]));
             $item->save();

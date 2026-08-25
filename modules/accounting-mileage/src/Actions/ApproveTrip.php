@@ -21,7 +21,7 @@ final class ApproveTrip
             throw new InvalidMileage('A rejection requires a reason.');
         }
 
-return DB::transaction(function () use ($trip, $actor, $approved, $reason): MileageTrip {
+        return DB::transaction(function () use ($trip, $actor, $approved, $reason): MileageTrip {
             $decision = $approved ? ApprovalDecision::Approved : ApprovalDecision::Rejected;
             $trip->approvals()->create(['actor_ref' => $actor, 'decision' => $decision, 'reason' => $reason, 'decided_at' => now()]);
             $trip->update(['status' => $approved ? TripStatus::Approved : TripStatus::Rejected, 'approved_at' => $approved ? now() : null]);
@@ -30,7 +30,7 @@ return DB::transaction(function () use ($trip, $actor, $approved, $reason): Mile
                 DB::afterCommit(fn () => event(new TripApproved($result)));
             }
 
-return $result;
+            return $result;
         });
     }
 }

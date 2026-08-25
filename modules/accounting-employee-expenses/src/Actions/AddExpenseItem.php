@@ -27,6 +27,6 @@ final class AddExpenseItem
             throw new InvalidClaim('Per diem days must be positive.');
         }
 
-return $c->items()->create(['category_ref' => $a['category_ref'], 'spent_on' => $a['spent_on'], 'description' => $a['description'], 'amount' => $amount, 'tax_amount' => $a['tax_amount'] ?? 0, 'merchant' => $a['merchant'] ?? null, 'receipt_ref' => $a['receipt_ref'] ?? null, 'per_diem_days' => $days, 'attendees' => $a['attendees'] ?? null, 'metadata' => $a['metadata'] ?? null]);
+        return $c->items()->create(['category_ref' => $a['category_ref'], 'spent_on' => $a['spent_on'], 'description' => $a['description'], 'amount' => $amount, 'tax_amount' => $a['tax_amount'] ?? 0, 'merchant' => $a['merchant'] ?? null, 'receipt_ref' => $a['receipt_ref'] ?? null, 'per_diem_days' => $days, 'attendees' => $a['attendees'] ?? null, 'metadata' => $a['metadata'] ?? null]);
     }
 }

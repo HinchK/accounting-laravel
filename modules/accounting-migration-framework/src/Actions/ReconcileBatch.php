@@ -19,7 +19,7 @@ final class ReconcileBatch
             throw new InvalidMigration('Only completed batches can be reconciled.');
         }
 
-return DB::transaction(function () use ($batch, $attributes): MigrationReconciliation {
+        return DB::transaction(function () use ($batch, $attributes): MigrationReconciliation {
             $failed = $batch->rows()->where('status', RowStatus::Failed)->count();
             $imported = $batch->rows()->where('status', RowStatus::Imported)->count();
             $sourceCount = $batch->total_count;

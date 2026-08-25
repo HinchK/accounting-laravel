@@ -17,6 +17,6 @@ final class AddCommentary
             throw new InvalidKpi('Commentary body is required.');
         }
 
-return DB::transaction(fn (): KpiCommentary => KpiCommentary::create(['goal_id' => $goal->id, 'actor_ref' => $actor, 'body' => $body, 'period_ref' => $period]));
+        return DB::transaction(fn (): KpiCommentary => KpiCommentary::create(['goal_id' => $goal->id, 'actor_ref' => $actor, 'body' => $body, 'period_ref' => $period]));
     }
 }

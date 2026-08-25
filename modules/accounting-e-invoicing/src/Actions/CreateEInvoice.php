@@ -21,7 +21,7 @@ final class CreateEInvoice
             throw new InvalidEInvoice('The structured format, currency, or payload is invalid.');
         }
 
-return DB::transaction(function () use ($a): EInvoiceDocument {
+        return DB::transaction(function () use ($a): EInvoiceDocument {
             $d = EInvoiceDocument::create(['legal_entity_id' => $a['legal_entity_id'], 'document_ref' => $a['document_ref'], 'document_type' => $a['document_type'], 'format' => $a['format'], 'status' => DocumentStatus::Draft, 'tax_id' => $a['tax_id'], 'counterparty_ref' => $a['counterparty_ref'], 'currency' => strtoupper($a['currency']), 'payload' => $a['payload'], 'metadata' => $a['metadata'] ?? null]);
             $d->events()->create(['event' => 'created', 'actor_ref' => $a['actor_ref'] ?? null]);
 

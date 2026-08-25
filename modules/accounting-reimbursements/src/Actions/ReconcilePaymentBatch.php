@@ -21,7 +21,7 @@ final class ReconcilePaymentBatch
             throw new InvalidReimbursement('Settled amount does not reconcile with the payment batch.');
         }
 
-return DB::transaction(function () use ($batch, $expected, $settled, $variance, $externalRef): ReimbursementReconciliation {
+        return DB::transaction(function () use ($batch, $expected, $settled, $variance, $externalRef): ReimbursementReconciliation {
             $batch->update(['status' => BatchStatus::Reconciled]);
 
             return ReimbursementReconciliation::create(['batch_id' => $batch->id, 'expected_amount' => $expected, 'settled_amount' => $settled, 'variance' => $variance, 'status' => 'matched', 'external_ref' => $externalRef]);

@@ -20,7 +20,7 @@ final class WriteDownInventory
             throw new InvalidInventory('Write-down must be positive, justified and no greater than inventory value.');
         }
 
-return DB::transaction(function () use ($item, $attributes, $amount): InventoryWriteDown {
+        return DB::transaction(function () use ($item, $attributes, $amount): InventoryWriteDown {
             $write = InventoryWriteDown::create(['item_id' => $item->getKey(), 'write_down_ref' => $attributes['write_down_ref'], 'amount' => $amount, 'reason' => $attributes['reason'], 'actor_ref' => $attributes['actor_ref'] ?? null, 'written_down_at' => now()]);
             InventoryMovement::create(['item_id' => $item->getKey(), 'movement_ref' => $attributes['write_down_ref'], 'movement_type' => MovementType::WriteDown, 'quantity' => 0, 'unit_cost' => 0, 'total_cost' => $amount, 'source_ref' => $attributes['write_down_ref'], 'occurred_at' => now()]);
             $item->decrement('inventory_value', $amount);

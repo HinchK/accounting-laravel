@@ -22,13 +22,13 @@ final class CreatePurchaseOrder
             throw new InvalidPurchaseOrder('Supplier, currency, and positive order total are required.');
         }
 
-return DB::transaction(function () use ($attributes, $lines, $total): PurchaseOrder {
+        return DB::transaction(function () use ($attributes, $lines, $total): PurchaseOrder {
             $order = PurchaseOrder::create(['team_id' => $attributes['team_id'] ?? null, 'supplier_ref' => $attributes['supplier_ref'], 'order_number' => $attributes['order_number'] ?? ('PO-'.now()->format('YmdHis').'-'.str()->random(5)), 'currency' => strtoupper($attributes['currency']), 'order_date' => $attributes['order_date'] ?? now()->toDateString(), 'expected_delivery_on' => $attributes['expected_delivery_on'] ?? null, 'total_amount' => $total, 'status' => PurchaseOrderStatus::Draft, 'source_requisition_ref' => $attributes['source_requisition_ref'] ?? null, 'notes' => $attributes['notes'] ?? null, 'metadata' => $attributes['metadata'] ?? null]);
             foreach ($lines as $line) {
                 $order->lines()->create(['item_ref' => $line['item_ref'], 'description' => $line['description'] ?? null, 'quantity' => $line['quantity'], 'unit_price' => $line['unit_price'], 'received_quantity' => 0, 'delivery_metadata' => $line['delivery_metadata'] ?? null]);
             }
 
-return $order->load('lines');
+            return $order->load('lines');
         });
     }
 }

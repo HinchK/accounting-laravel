@@ -28,7 +28,7 @@ final class CaptureTrip
                     throw new InvalidMileage('Trip reference already exists with different source data.');
                 }
 
-return $existing;
+                return $existing;
             }$amount = round($distance * (float) ($attributes['rate_per_distance'] ?? 0), 2);
             $trip = MileageTrip::create(['team_id' => $attributes['team_id'] ?? null, 'trip_ref' => $ref, 'employee_ref' => $employee, 'vehicle_id' => $attributes['vehicle_id'] ?? null, 'rate_id' => $attributes['rate_id'] ?? null, 'policy_id' => $attributes['policy_id'] ?? null, 'project_ref' => $attributes['project_ref'] ?? null, 'origin' => $attributes['origin'] ?? null, 'destination' => $attributes['destination'] ?? null, 'trip_date' => $attributes['trip_date'], 'distance' => $distance, 'distance_unit' => $attributes['distance_unit'] ?? 'km', 'business_purpose' => $attributes['business_purpose'] ?? null, 'region' => $attributes['region'], 'currency' => strtoupper($attributes['currency']), 'reimbursement_amount' => $amount, 'status' => TripStatus::Draft, 'source' => $attributes['source'] ?? 'manual', 'source_hash' => $hash, 'metadata' => $attributes['metadata'] ?? null]);
             DB::afterCommit(fn () => event(new TripCaptured($trip)));

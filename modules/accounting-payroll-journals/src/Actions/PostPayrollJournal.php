@@ -17,7 +17,7 @@ final class PostPayrollJournal
             throw new InvalidPayrollJournal('Only draft payroll journals can be posted.');
         }
 
-return DB::transaction(function () use ($journal): PayrollJournal {
+        return DB::transaction(function () use ($journal): PayrollJournal {
             $journal->update(['status' => JournalStatus::Posted, 'posted_at' => now()]);
 
             return $journal->refresh();

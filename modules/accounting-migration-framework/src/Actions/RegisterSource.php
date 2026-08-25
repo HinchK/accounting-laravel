@@ -17,7 +17,7 @@ final class RegisterSource
             throw new InvalidMigration('A source requires reference, provider, type, and name.');
         }
 
-return DB::transaction(function () use ($attributes, $ref): MigrationSource {
+        return DB::transaction(function () use ($attributes, $ref): MigrationSource {
             return MigrationSource::updateOrCreate(['team_id' => $attributes['team_id'] ?? null, 'source_ref' => $ref], ['provider' => $attributes['provider'], 'source_type' => $attributes['source_type'], 'name' => $attributes['name'], 'record_count' => (int) ($attributes['record_count'] ?? 0), 'checksum' => $attributes['checksum'] ?? null, 'status' => $attributes['status'] ?? 'active', 'metadata' => $attributes['metadata'] ?? null]);
         });
     }

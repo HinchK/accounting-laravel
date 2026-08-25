@@ -23,7 +23,7 @@ final class ReviewReport
             throw new InvalidReport('Only draft or in-review reports can be reviewed.');
         }
 
-return DB::transaction(function () use ($report, $actor, $review, $comment): ReportPack {
+        return DB::transaction(function () use ($report, $actor, $review, $comment): ReportPack {
             $report->reviews()->create(['actor_ref' => $actor, 'decision' => $review, 'comment' => $comment, 'reviewed_at' => now()]);
             $status = $review === ReviewDecision::Approved ? ReportStatus::Approved : ($review === ReviewDecision::Rejected ? ReportStatus::Draft : ReportStatus::InReview);
             $report->update(['status' => $status, 'approved_by' => $review === ReviewDecision::Approved ? $actor : null, 'approved_at' => $review === ReviewDecision::Approved ? now() : null]);
@@ -32,7 +32,7 @@ return DB::transaction(function () use ($report, $actor, $review, $comment): Rep
                 DB::afterCommit(fn () => event(new ReportApproved($result)));
             }
 
-return $result;
+            return $result;
         });
     }
 }

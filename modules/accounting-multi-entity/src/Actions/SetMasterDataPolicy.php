@@ -16,6 +16,6 @@ final class SetMasterDataPolicy
             throw new InvalidEntity('Policy key and supported mode are required.');
         }
 
-return MasterDataPolicy::updateOrCreate(['entity_id' => $entity->id, 'policy_key' => $key], ['mode' => $mode, 'configuration' => $configuration]);
+        return MasterDataPolicy::updateOrCreate(['entity_id' => $entity->id, 'policy_key' => $key], ['mode' => $mode, 'configuration' => $configuration]);
     }
 }

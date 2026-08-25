@@ -18,6 +18,6 @@ final class CreateReimbursementLiability
             throw new InvalidReimbursement('An approved liability requires payee, positive amount, and currency.');
         }
 
-return DB::transaction(fn (): ReimbursementLiability => ReimbursementLiability::create(['team_id' => $attributes['team_id'] ?? null, 'payee_ref' => $attributes['payee_ref'], 'source_type' => $attributes['source_type'] ?? null, 'source_id' => $attributes['source_id'] ?? null, 'kind' => $attributes['kind'] ?? 'expense', 'currency' => strtoupper($attributes['currency']), 'amount' => $amount, 'approved_at' => now(), 'status' => ReimbursementStatus::Approved, 'metadata' => $attributes['metadata'] ?? null]));
+        return DB::transaction(fn (): ReimbursementLiability => ReimbursementLiability::create(['team_id' => $attributes['team_id'] ?? null, 'payee_ref' => $attributes['payee_ref'], 'source_type' => $attributes['source_type'] ?? null, 'source_id' => $attributes['source_id'] ?? null, 'kind' => $attributes['kind'] ?? 'expense', 'currency' => strtoupper($attributes['currency']), 'amount' => $amount, 'approved_at' => now(), 'status' => ReimbursementStatus::Approved, 'metadata' => $attributes['metadata'] ?? null]));
     }
 }

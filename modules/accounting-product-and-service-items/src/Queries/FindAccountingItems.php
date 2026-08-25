@@ -17,6 +17,6 @@ final class FindAccountingItems
             $query->where(fn (Builder $q): Builder => $q->where('code', 'like', '%'.trim($term).'%')->orWhere('name', 'like', '%'.trim($term).'%'));
         }
 
-return $query->orderBy('code');
+        return $query->orderBy('code');
     }
 }

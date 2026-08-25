@@ -17,7 +17,7 @@ final class ReversePayrollJournal
             throw new InvalidPayrollJournal('Only posted journals with a reversal reference can be reversed.');
         }
 
-return DB::transaction(function () use ($journal, $reversalRef): PayrollJournal {
+        return DB::transaction(function () use ($journal, $reversalRef): PayrollJournal {
             $journal->update(['status' => JournalStatus::Reversed, 'reversed_at' => now(), 'reversal_ref' => $reversalRef]);
 
             return $journal->refresh();

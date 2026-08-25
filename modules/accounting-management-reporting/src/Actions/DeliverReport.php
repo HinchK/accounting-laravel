@@ -20,7 +20,7 @@ final class DeliverReport
             throw new InvalidReport('Delivery format must be pdf or spreadsheet.');
         }
 
-return DB::transaction(function () use ($report, $format, $attributes): ReportDelivery {
+        return DB::transaction(function () use ($report, $format, $attributes): ReportDelivery {
             $delivery = ReportDelivery::updateOrCreate(['report_pack_id' => $report->id, 'format' => $format], ['file_ref' => $attributes['file_ref'] ?? null, 'status' => 'delivered', 'recipients' => $attributes['recipients'] ?? [], 'checksum' => $attributes['checksum'] ?? null, 'delivered_at' => now(), 'metadata' => $attributes['metadata'] ?? null]);
             $report->update(['status' => ReportStatus::Delivered, 'delivered_at' => now()]);
 

@@ -22,6 +22,6 @@ final class CreateRegionalPack
             }
         }
 
-return DB::transaction(fn (): RegionalPack => RegionalPack::create(['country_code' => $country, 'locale' => $attributes['locale'], 'currency' => strtoupper($attributes['currency']), 'version' => $attributes['version'] ?? '1.0.0', 'status' => RegionalPackStatus::Draft, 'effective_from' => $attributes['effective_from'] ?? now()->toDateString(), 'metadata' => $attributes['metadata'] ?? null]));
+        return DB::transaction(fn (): RegionalPack => RegionalPack::create(['country_code' => $country, 'locale' => $attributes['locale'], 'currency' => strtoupper($attributes['currency']), 'version' => $attributes['version'] ?? '1.0.0', 'status' => RegionalPackStatus::Draft, 'effective_from' => $attributes['effective_from'] ?? now()->toDateString(), 'metadata' => $attributes['metadata'] ?? null]));
     }
 }

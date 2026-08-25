@@ -20,7 +20,7 @@ final class ApplyLandedCost
             throw new InvalidInventory('Landed cost requires positive amount, reference, allocation basis and source.');
         }
 
-return DB::transaction(function () use ($item, $attributes, $amount): LandedCost {
+        return DB::transaction(function () use ($item, $attributes, $amount): LandedCost {
             $cost = LandedCost::create(['item_id' => $item->getKey(), 'cost_ref' => $attributes['cost_ref'], 'amount' => $amount, 'allocation_basis' => $attributes['allocation_basis'], 'source_ref' => $attributes['source_ref'], 'allocated_at' => now()]);
             InventoryMovement::create(['item_id' => $item->getKey(), 'movement_ref' => $attributes['cost_ref'], 'movement_type' => MovementType::LandedCost, 'quantity' => 0, 'unit_cost' => 0, 'total_cost' => $amount, 'source_ref' => $attributes['source_ref'], 'occurred_at' => now()]);
             $item->increment('inventory_value', $amount);

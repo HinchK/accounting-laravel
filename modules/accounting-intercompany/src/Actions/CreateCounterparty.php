@@ -17,6 +17,6 @@ final class CreateCounterparty
             }
         }
 
-return IntercompanyCounterparty::create(['team_id' => $a['team_id'] ?? null, 'entity_ref' => $a['entity_ref'], 'counterparty_ref' => $a['counterparty_ref'], 'name' => $a['name'], 'default_currency' => strtoupper($a['default_currency']), 'active' => $a['active'] ?? true, 'metadata' => $a['metadata'] ?? null]);
+        return IntercompanyCounterparty::create(['team_id' => $a['team_id'] ?? null, 'entity_ref' => $a['entity_ref'], 'counterparty_ref' => $a['counterparty_ref'], 'name' => $a['name'], 'default_currency' => strtoupper($a['default_currency']), 'active' => $a['active'] ?? true, 'metadata' => $a['metadata'] ?? null]);
     }
 }

@@ -20,7 +20,7 @@ final class RecordPayrollLiability
             throw new InvalidLiability('Liability reference and valid amount/allocation are required.');
         }
 
-return DB::transaction(function () use ($attributes, $amount, $paid): PayrollLiability {
+        return DB::transaction(function () use ($attributes, $amount, $paid): PayrollLiability {
             $row = PayrollLiability::query()->firstOrNew(['team_id' => $attributes['team_id'] ?? null, 'liability_ref' => $attributes['liability_ref']]);
             $row->fill(array_merge($attributes, ['amount' => $amount, 'paid_amount' => $paid, 'status' => $attributes['status'] ?? ($paid === $amount ? LiabilityStatus::Paid : LiabilityStatus::Open)]));
             $row->save();

@@ -20,6 +20,6 @@ final class AddFulfillmentReference
             throw new InvalidSalesOrder('Fulfillment quantity must be positive.');
         }
 
-return SalesOrderAllocation::query()->create(array_merge($attributes, ['sales_order_id' => $order->id]));
+        return SalesOrderAllocation::query()->create(array_merge($attributes, ['sales_order_id' => $order->id]));
     }
 }

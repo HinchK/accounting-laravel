@@ -20,7 +20,7 @@ final class ConfirmTransaction
             throw new InvalidIntercompany('A rejected confirmation requires a comment.');
         }
 
-return DB::transaction(function () use ($transaction, $entity, $confirmed, $comment): IntercompanyTransaction {
+        return DB::transaction(function () use ($transaction, $entity, $confirmed, $comment): IntercompanyTransaction {
             $transaction->confirmations()->create(['entity_ref' => $entity, 'status' => $confirmed ? ConfirmationStatus::Confirmed : ConfirmationStatus::Rejected, 'confirmed_amount' => $transaction->amount, 'comment' => $comment, 'actor_ref' => $entity, 'confirmed_at' => now()]);
             $transaction->update(['status' => $confirmed ? TransactionStatus::Confirmed : TransactionStatus::Disputed]);
 

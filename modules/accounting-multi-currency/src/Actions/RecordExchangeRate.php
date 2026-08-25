@@ -20,7 +20,7 @@ final class RecordExchangeRate
             throw new InvalidCurrency('Distinct ISO currencies, positive rate, and rate date are required.');
         }
 
-return DB::transaction(function () use ($attributes, $from, $to, $rate): ExchangeRate {
+        return DB::transaction(function () use ($attributes, $from, $to, $rate): ExchangeRate {
             $record = ExchangeRate::updateOrCreate(['team_id' => $attributes['team_id'] ?? null, 'from_currency' => $from, 'to_currency' => $to, 'rate_date' => $attributes['rate_date'], 'rate_type' => $attributes['rate_type'] ?? 'spot'], ['rate' => $rate, 'source' => $attributes['source'] ?? 'manual', 'is_historical' => $attributes['is_historical'] ?? true, 'metadata' => $attributes['metadata'] ?? null]);
             DB::afterCommit(fn () => event(new RateRecorded($record->refresh())));
 

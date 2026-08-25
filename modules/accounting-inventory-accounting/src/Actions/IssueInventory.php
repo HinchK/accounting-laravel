@@ -21,7 +21,7 @@ final class IssueInventory
             throw new InvalidInventory('Insufficient quantity on hand.');
         }
 
-return DB::transaction(function () use ($item, $attributes, $quantity): float {
+        return DB::transaction(function () use ($item, $attributes, $quantity): float {
             $remaining = $quantity;
             $cost = 0.0;
             foreach ($item->layers()->where('quantity_remaining', '>', 0)->orderBy('received_at')->lockForUpdate()->get() as $layer) {

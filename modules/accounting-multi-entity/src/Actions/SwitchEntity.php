@@ -20,7 +20,7 @@ final class SwitchEntity
             throw new InvalidEntity('The user has no access to this entity.');
         }
 
-return DB::transaction(function () use ($entity, $userRef, $sessionRef): EntitySwitch {
+        return DB::transaction(function () use ($entity, $userRef, $sessionRef): EntitySwitch {
             $switch = EntitySwitch::create(['entity_id' => $entity->id, 'user_ref' => $userRef, 'session_ref' => $sessionRef, 'switched_at' => now()]);
             DB::afterCommit(fn () => event(new EntitySwitched($switch->refresh())));
 

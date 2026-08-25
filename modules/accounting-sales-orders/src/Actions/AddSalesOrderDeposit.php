@@ -21,7 +21,7 @@ final class AddSalesOrderDeposit
                 throw new InvalidSalesOrder('Deposits cannot exceed the order total.');
             }
 
-return SalesOrderDeposit::query()->create(array_merge($attributes, ['sales_order_id' => $order->id]));
+            return SalesOrderDeposit::query()->create(array_merge($attributes, ['sales_order_id' => $order->id]));
         });
     }
 }

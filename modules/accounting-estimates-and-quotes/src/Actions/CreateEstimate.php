@@ -21,7 +21,7 @@ final class CreateEstimate
             throw new InvalidEstimate('Estimate currency or dates are invalid.');
         }
 
-return DB::transaction(function () use ($a): Estimate {
+        return DB::transaction(function () use ($a): Estimate {
             $e = Estimate::create(['legal_entity_id' => $a['legal_entity_id'], 'customer_ref' => $a['customer_ref'], 'quote_ref' => $a['quote_ref'], 'name' => $a['name'], 'currency' => strtoupper($a['currency']), 'status' => EstimateStatus::Draft, 'issue_date' => $a['issue_date'], 'expires_on' => $a['expires_on'] ?? null, 'terms' => $a['terms'] ?? null, 'brand' => $a['brand'] ?? null, 'metadata' => $a['metadata'] ?? null]);
             $e->versions()->create(['version' => 1, 'snapshot' => $e->load('items')->toArray(), 'created_by' => $a['created_by'] ?? null]);
             $e->history()->create(['event' => 'created', 'actor_ref' => $a['created_by'] ?? null]);

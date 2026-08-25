@@ -75,6 +75,6 @@ final class EInvoicingController extends Controller
 
     public function archive(Request $r, EInvoiceDocument $d, ArchiveEInvoice $a): EInvoiceResource
     {
-        return new EInvoiceResource($a->handle($d,(string) $r->user()->getAuthIdentifier()));
+        return new EInvoiceResource($a->handle($d, (string) $r->user()->getAuthIdentifier()));
     }
 }

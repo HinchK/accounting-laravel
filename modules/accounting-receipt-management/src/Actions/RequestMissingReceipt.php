@@ -19,7 +19,7 @@ final class RequestMissingReceipt
                 Receipt::whereKey($attributes['receipt_id'])->update(['status' => ReceiptStatus::Requested]);
             }
 
-return $request;
+            return $request;
         });
     }
 }

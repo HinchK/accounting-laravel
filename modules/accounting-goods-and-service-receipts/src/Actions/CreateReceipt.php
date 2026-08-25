@@ -22,6 +22,6 @@ final class CreateReceipt
             throw new InvalidReceipt('Receipt type must be goods or service.');
         }
 
-return Receipt::create(['team_id' => $a['team_id'] ?? null, 'receipt_ref' => $a['receipt_ref'], 'receipt_type' => $type, 'supplier_ref' => $a['supplier_ref'], 'purchase_order_ref' => $a['purchase_order_ref'] ?? null, 'currency' => strtoupper($a['currency']), 'status' => ReceiptStatus::Draft, 'received_at' => $a['received_at'] ?? now(), 'inventory_ref' => $a['inventory_ref'] ?? null, 'project_ref' => $a['project_ref'] ?? null, 'metadata' => $a['metadata'] ?? null]);
+        return Receipt::create(['team_id' => $a['team_id'] ?? null, 'receipt_ref' => $a['receipt_ref'], 'receipt_type' => $type, 'supplier_ref' => $a['supplier_ref'], 'purchase_order_ref' => $a['purchase_order_ref'] ?? null, 'currency' => strtoupper($a['currency']), 'status' => ReceiptStatus::Draft, 'received_at' => $a['received_at'] ?? now(), 'inventory_ref' => $a['inventory_ref'] ?? null, 'project_ref' => $a['project_ref'] ?? null, 'metadata' => $a['metadata'] ?? null]);
     }
 }

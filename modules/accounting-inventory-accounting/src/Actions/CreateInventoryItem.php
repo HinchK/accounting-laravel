@@ -22,6 +22,6 @@ final class CreateInventoryItem
             throw new InvalidInventory('A supported valuation method is required.');
         }
 
-return InventoryItem::create(['team_id' => $attributes['team_id'] ?? null, 'item_ref' => $attributes['item_ref'], 'description' => $attributes['description'], 'warehouse_ref' => $attributes['warehouse_ref'], 'currency' => strtoupper($attributes['currency']), 'valuation_method' => $method, 'status' => InventoryStatus::Active, 'metadata' => $attributes['metadata'] ?? null]);
+        return InventoryItem::create(['team_id' => $attributes['team_id'] ?? null, 'item_ref' => $attributes['item_ref'], 'description' => $attributes['description'], 'warehouse_ref' => $attributes['warehouse_ref'], 'currency' => strtoupper($attributes['currency']), 'valuation_method' => $method, 'status' => InventoryStatus::Active, 'metadata' => $attributes['metadata'] ?? null]);
     }
 }

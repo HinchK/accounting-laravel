@@ -46,6 +46,6 @@ final class ImportPayrollRun
             }
         }
 
-return $errors;
+        return $errors;
     }
 }

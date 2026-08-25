@@ -19,6 +19,6 @@ final class CreateRequisition
             throw new InvalidRequisition('Requester, currency, positive total, and at least one line are required.');
         }
 
-return DB::transaction(fn (): PurchaseRequisition => PurchaseRequisition::create(['team_id' => $attributes['team_id'] ?? null, 'requester_ref' => $attributes['requester_ref'], 'title' => $attributes['title'] ?? null, 'currency' => strtoupper($attributes['currency']), 'total_amount' => $total, 'lines' => $lines, 'coding' => $attributes['coding'] ?? [], 'budget' => $attributes['budget'] ?? null, 'attachments' => $attributes['attachments'] ?? [], 'status' => RequisitionStatus::Draft, 'metadata' => $attributes['metadata'] ?? null]));
+        return DB::transaction(fn (): PurchaseRequisition => PurchaseRequisition::create(['team_id' => $attributes['team_id'] ?? null, 'requester_ref' => $attributes['requester_ref'], 'title' => $attributes['title'] ?? null, 'currency' => strtoupper($attributes['currency']), 'total_amount' => $total, 'lines' => $lines, 'coding' => $attributes['coding'] ?? [], 'budget' => $attributes['budget'] ?? null, 'attachments' => $attributes['attachments'] ?? [], 'status' => RequisitionStatus::Draft, 'metadata' => $attributes['metadata'] ?? null]));
     }
 }

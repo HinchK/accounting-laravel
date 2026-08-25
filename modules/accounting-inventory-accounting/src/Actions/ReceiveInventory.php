@@ -21,7 +21,7 @@ final class ReceiveInventory
             throw new InvalidInventory('Receipt requires positive quantity, non-negative cost, movement reference and source.');
         }
 
-return DB::transaction(function () use ($item, $attributes, $quantity, $unit): CostLayer {
+        return DB::transaction(function () use ($item, $attributes, $quantity, $unit): CostLayer {
             $layer = CostLayer::create(['item_id' => $item->getKey(), 'layer_ref' => $attributes['movement_ref'], 'received_at' => $attributes['occurred_at'] ?? now(), 'quantity_received' => $quantity, 'quantity_remaining' => $quantity, 'unit_cost' => $unit, 'total_cost' => round($quantity * $unit, 2), 'source_ref' => $attributes['source_ref']]);
             InventoryMovement::create(['item_id' => $item->getKey(), 'movement_ref' => $attributes['movement_ref'], 'movement_type' => MovementType::Receipt, 'quantity' => $quantity, 'unit_cost' => $unit, 'total_cost' => round($quantity * $unit, 2), 'source_ref' => $attributes['source_ref'], 'occurred_at' => $attributes['occurred_at'] ?? now()]);
             $item->increment('quantity_on_hand', $quantity);

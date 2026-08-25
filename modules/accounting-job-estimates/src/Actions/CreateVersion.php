@@ -18,7 +18,7 @@ final class CreateVersion
             throw new InvalidEstimate('Archived estimates cannot be versioned.');
         }
 
-return DB::transaction(function () use ($estimate, $notes): EstimateVersion {
+        return DB::transaction(function () use ($estimate, $notes): EstimateVersion {
             $number = (int) $estimate->version_no + 1;
             $version = EstimateVersion::create(['estimate_id' => $estimate->getKey(), 'version_no' => $number, 'status' => EstimateStatus::Draft, 'notes' => $notes]);
             foreach ($estimate->lines as $line) {

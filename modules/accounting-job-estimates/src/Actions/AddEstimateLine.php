@@ -28,7 +28,7 @@ final class AddEstimateLine
             throw new InvalidEstimate('Lines can only be changed on a draft estimate.');
         }
 
-return DB::transaction(function () use ($estimate, $attributes, $type, $quantity, $rate): EstimateLine {
+        return DB::transaction(function () use ($estimate, $attributes, $type, $quantity, $rate): EstimateLine {
             $line = EstimateLine::create(['estimate_id' => $estimate->getKey(), 'version_id' => null, 'line_ref' => $attributes['line_ref'], 'line_type' => $type, 'category' => $attributes['category'], 'description' => $attributes['description'], 'quantity' => $quantity, 'rate' => $rate, 'amount' => round($quantity * $rate, 2), 'metadata' => $attributes['metadata'] ?? null]);
             $this->totals($estimate);
 

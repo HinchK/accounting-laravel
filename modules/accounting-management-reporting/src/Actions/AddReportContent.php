@@ -19,7 +19,7 @@ final class AddReportContent
             throw new InvalidReport('Narratives require section, title, and body.');
         }
 
-return DB::transaction(fn (): ReportNarrative => ReportNarrative::create(['report_pack_id' => $report->id, 'section_ref' => $section, 'title' => $attributes['title'], 'body' => $attributes['body'], 'author_ref' => $attributes['author_ref'] ?? null, 'version' => $attributes['version'] ?? 1, 'metadata' => $attributes['metadata'] ?? null]));
+        return DB::transaction(fn (): ReportNarrative => ReportNarrative::create(['report_pack_id' => $report->id, 'section_ref' => $section, 'title' => $attributes['title'], 'body' => $attributes['body'], 'author_ref' => $attributes['author_ref'] ?? null, 'version' => $attributes['version'] ?? 1, 'metadata' => $attributes['metadata'] ?? null]));
     }
 
     public function chart(ReportPack $report, array $attributes): ReportChart
@@ -28,6 +28,6 @@ return DB::transaction(fn (): ReportNarrative => ReportNarrative::create(['repor
             throw new InvalidReport('Charts require reference, title, type, and series.');
         }
 
-return DB::transaction(fn (): ReportChart => ReportChart::create(['report_pack_id' => $report->id, 'chart_ref' => $attributes['chart_ref'], 'title' => $attributes['title'], 'chart_type' => $attributes['chart_type'], 'data_source' => $attributes['data_source'] ?? 'module-contract', 'series' => $attributes['series'], 'options' => $attributes['options'] ?? null, 'metadata' => $attributes['metadata'] ?? null]));
+        return DB::transaction(fn (): ReportChart => ReportChart::create(['report_pack_id' => $report->id, 'chart_ref' => $attributes['chart_ref'], 'title' => $attributes['title'], 'chart_type' => $attributes['chart_type'], 'data_source' => $attributes['data_source'] ?? 'module-contract', 'series' => $attributes['series'], 'options' => $attributes['options'] ?? null, 'metadata' => $attributes['metadata'] ?? null]));
     }
 }

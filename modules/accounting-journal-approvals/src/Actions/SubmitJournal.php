@@ -23,7 +23,7 @@ final class SubmitJournal
             throw new InvalidApproval('Approval reference and positive journal amount are required.');
         }
 
-return DB::transaction(function () use ($attributes, $evidence, $ref, $amount): JournalApproval {
+        return DB::transaction(function () use ($attributes, $evidence, $ref, $amount): JournalApproval {
             $existing = JournalApproval::query()->where(['team_id' => $attributes['team_id'] ?? null, 'approval_ref' => $ref])->first();
             if ($existing) {
                 return $existing->load('evidence');
@@ -34,7 +34,7 @@ return DB::transaction(function () use ($attributes, $evidence, $ref, $amount): 
                 }$approval->evidence()->create(['kind' => $item['kind'], 'file_ref' => $item['file_ref'] ?? null, 'description' => $item['description'] ?? null, 'checksum' => $item['checksum'] ?? null, 'metadata' => $item['metadata'] ?? null]);
             }
 
-return $approval->load('evidence');
+            return $approval->load('evidence');
         });
     }
 }

@@ -23,7 +23,7 @@ final class UploadDocument
             throw new InvalidCapture('The source document is a duplicate.');
         }
 
-return DB::transaction(function () use ($a): CapturedDocument {
+        return DB::transaction(function () use ($a): CapturedDocument {
             $d = CapturedDocument::create(['team_id' => $a['team_id'] ?? null, 'source_channel' => $a['source_channel'], 'file_ref' => $a['file_ref'], 'checksum' => $a['checksum'], 'mime_type' => $a['mime_type'], 'status' => CaptureStatus::Uploaded, 'retention_until' => $a['retention_until'] ?? null, 'metadata' => $a['metadata'] ?? null]);
             $d->events()->create(['event' => 'uploaded', 'actor_ref' => $a['actor_ref'] ?? null]);
 

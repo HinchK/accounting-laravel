@@ -18,6 +18,6 @@ final class AddTransferPricingEvidence
             }
         }
 
-return TransferPricingEvidence::create(['transaction_id' => $transaction->getKey(), 'evidence_ref' => $a['evidence_ref'], 'kind' => $a['kind'], 'file_ref' => $a['file_ref'] ?? null, 'description' => $a['description'] ?? null, 'arm_length_value' => $a['arm_length_value'] ?? null, 'currency' => strtoupper($a['currency']), 'captured_at' => now(), 'metadata' => $a['metadata'] ?? null]);
+        return TransferPricingEvidence::create(['transaction_id' => $transaction->getKey(), 'evidence_ref' => $a['evidence_ref'], 'kind' => $a['kind'], 'file_ref' => $a['file_ref'] ?? null, 'description' => $a['description'] ?? null, 'arm_length_value' => $a['arm_length_value'] ?? null, 'currency' => strtoupper($a['currency']), 'captured_at' => now(), 'metadata' => $a['metadata'] ?? null]);
     }
 }

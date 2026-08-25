@@ -25,7 +25,7 @@ final class ReturnReceipt
             throw new InvalidReceipt('Return exceeds the received quantity or is invalid.');
         }
 
-return DB::transaction(function () use ($receipt, $line, $a, $qty, $value): ReceiptReturn {
+        return DB::transaction(function () use ($receipt, $line, $a, $qty, $value): ReceiptReturn {
             $r = ReceiptReturn::create(['receipt_id' => $receipt->getKey(), 'return_ref' => $a['return_ref'], 'line_ref' => $a['line_ref'], 'quantity' => $qty, 'value' => $value, 'reason' => $a['reason'], 'source_ref' => $a['source_ref'], 'returned_at' => now()]);
             $line->increment('returned_quantity', $qty);
             $receipt->update(['status' => ReceiptStatus::PartiallyReturned]);

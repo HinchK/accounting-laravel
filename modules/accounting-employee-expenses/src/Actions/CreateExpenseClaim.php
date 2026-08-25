@@ -21,7 +21,7 @@ final class CreateExpenseClaim
             throw new InvalidClaim('Currency must be an ISO three-letter code.');
         }
 
-return DB::transaction(function () use ($a): ExpenseClaim {
+        return DB::transaction(function () use ($a): ExpenseClaim {
             $c = ExpenseClaim::create(['team_id' => $a['team_id'] ?? null, 'employee_ref' => $a['employee_ref'], 'claim_ref' => $a['claim_ref'], 'currency' => strtoupper($a['currency']), 'status' => ClaimStatus::Draft, 'project_ref' => $a['project_ref'] ?? null, 'dimension_ref' => $a['dimension_ref'] ?? null, 'metadata' => $a['metadata'] ?? null]);
             $c->history()->create(['event' => 'created', 'actor_ref' => $a['actor_ref'] ?? null]);
 

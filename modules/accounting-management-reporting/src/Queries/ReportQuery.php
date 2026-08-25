@@ -18,7 +18,7 @@ final class ReportQuery
             $q->where('status', $status);
         }
 
-return $q->paginate(min(max($perPage, 1), 100));
+        return $q->paginate(min(max($perPage, 1), 100));
     }
 
     public function summary(ReportPack $report): array

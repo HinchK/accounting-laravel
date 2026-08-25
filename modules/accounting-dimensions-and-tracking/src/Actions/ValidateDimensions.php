@@ -25,6 +25,6 @@ final class ValidateDimensions
             }
         }
 
-return $values;
+        return $values;
     }
 }

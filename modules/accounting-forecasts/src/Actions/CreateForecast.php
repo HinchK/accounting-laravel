@@ -22,6 +22,6 @@ final class CreateForecast
             throw new InvalidForecast('Forecast method and horizon must be valid.');
         }
 
-return Forecast::create(['team_id' => $a['team_id'] ?? null, 'forecast_ref' => $a['forecast_ref'], 'name' => $a['name'], 'currency' => strtoupper($a['currency']), 'method' => $method, 'status' => ForecastStatus::Draft, 'base_period' => $a['base_period'], 'horizon_periods' => $a['horizon_periods'], 'scenario_ref' => $a['scenario_ref'] ?? null, 'metadata' => $a['metadata'] ?? null]);
+        return Forecast::create(['team_id' => $a['team_id'] ?? null, 'forecast_ref' => $a['forecast_ref'], 'name' => $a['name'], 'currency' => strtoupper($a['currency']), 'method' => $method, 'status' => ForecastStatus::Draft, 'base_period' => $a['base_period'], 'horizon_periods' => $a['horizon_periods'], 'scenario_ref' => $a['scenario_ref'] ?? null, 'metadata' => $a['metadata'] ?? null]);
     }
 }

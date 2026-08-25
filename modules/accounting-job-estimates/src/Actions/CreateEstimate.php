@@ -22,6 +22,6 @@ final class CreateEstimate
             throw new InvalidEstimate('Estimate reference is required.');
         }
 
-return DB::transaction(fn (): JobEstimate => JobEstimate::create(['team_id' => $attributes['team_id'] ?? null, 'estimate_ref' => $ref, 'project_ref' => $attributes['project_ref'], 'title' => $attributes['title'], 'currency' => strtoupper($attributes['currency']), 'status' => EstimateStatus::Draft, 'version_no' => 1, 'metadata' => $attributes['metadata'] ?? null]));
+        return DB::transaction(fn (): JobEstimate => JobEstimate::create(['team_id' => $attributes['team_id'] ?? null, 'estimate_ref' => $ref, 'project_ref' => $attributes['project_ref'], 'title' => $attributes['title'], 'currency' => strtoupper($attributes['currency']), 'status' => EstimateStatus::Draft, 'version_no' => 1, 'metadata' => $attributes['metadata'] ?? null]));
     }
 }

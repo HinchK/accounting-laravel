@@ -22,7 +22,7 @@ final class RunBatch
             throw new InvalidMigration('Batch limit must be positive.');
         }
 
-return DB::transaction(function () use ($batch, $dryRun, $limit): MigrationBatch {
+        return DB::transaction(function () use ($batch, $dryRun, $limit): MigrationBatch {
             $batch = MigrationBatch::query()->lockForUpdate()->findOrFail($batch->id);
             $isDry = $dryRun || $batch->dry_run;
             if (! $isDry && $batch->status === MigrationStatus::DryRun) {
@@ -42,7 +42,7 @@ return DB::transaction(function () use ($batch, $dryRun, $limit): MigrationBatch
                 return $result;
             }
 
-return $batch;
+            return $batch;
         });
     }
 
@@ -69,6 +69,6 @@ return $batch;
             }
         }
 
-return $payload;
+        return $payload;
     }
 }

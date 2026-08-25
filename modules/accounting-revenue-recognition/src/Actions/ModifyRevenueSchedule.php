@@ -20,6 +20,6 @@ final class ModifyRevenueSchedule
             throw new InvalidRecognition('A modification reason is required.');
         }
 
-return DB::transaction(fn (): RevenueModification => RevenueModification::create(['schedule_id' => $schedule->id, 'effective_date' => $attributes['effective_date'] ?? now()->toDateString(), 'amount_delta' => $attributes['amount_delta'] ?? 0, 'reason' => $attributes['reason'], 'status' => 'approved', 'metadata' => $attributes['metadata'] ?? null]));
+        return DB::transaction(fn (): RevenueModification => RevenueModification::create(['schedule_id' => $schedule->id, 'effective_date' => $attributes['effective_date'] ?? now()->toDateString(), 'amount_delta' => $attributes['amount_delta'] ?? 0, 'reason' => $attributes['reason'], 'status' => 'approved', 'metadata' => $attributes['metadata'] ?? null]));
     }
 }
