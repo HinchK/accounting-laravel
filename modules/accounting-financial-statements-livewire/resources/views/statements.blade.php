@@ -1,0 +1,1 @@
+<div><h2>Financial statements</h2><p>Net income: {{ number_format($statement['net_income'], 2) }}</p><p>Revenue: {{ number_format($statement['revenue']['total'], 2) }}</p><p>Expenses: {{ number_format($statement['expenses']['total'], 2) }}</p></div>

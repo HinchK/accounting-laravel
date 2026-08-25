@@ -1,0 +1,5 @@
+<?php
+declare(strict_types=1);
+namespace Liberu\Accounting\GeneralLedgerFilament\Resources;
+use Filament\Forms\Components\{DatePicker,TextInput}; use Filament\Resources\Resource; use Filament\Tables\Columns\TextColumn; use Filament\Tables\Table; use Liberu\Accounting\GeneralLedger\Models\JournalEntry; use Liberu\Accounting\GeneralLedgerFilament\Resources\JournalResource\Pages\ListJournals;
+final class JournalResource extends Resource { protected static ?string $model=JournalEntry::class; public static function form(\Filament\Schemas\Schema $schema): \Filament\Schemas\Schema{return $schema->components([TextInput::make('book_id')->numeric()->required(),DatePicker::make('entry_date')->required(),TextInput::make('description')]);} public static function table(Table $table): Table{return $table->columns([TextColumn::make('entry_number'),TextColumn::make('entry_date')->date(),TextColumn::make('journal_type'),TextColumn::make('status')->badge()]);} public static function getPages():array{return ['index'=>ListJournals::route('/')];} }

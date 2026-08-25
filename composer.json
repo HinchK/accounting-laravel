@@ -41,6 +41,711 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-chart-of-accounts",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-chart-of-accounts-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-chart-of-accounts-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-chart-of-accounts-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/module-manager",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-financial-master-data",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-financial-master-data-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-financial-master-data-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-financial-master-data-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-periods",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-periods-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-periods-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-periods-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-accounts-payable",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-accounts-payable-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-accounts-payable-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-accounts-payable-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-supplier-bills",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-supplier-bills-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-supplier-bills-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-supplier-bills-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-three-way-matching",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-three-way-matching-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-three-way-matching-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-three-way-matching-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-tax-core",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-tax-core-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-tax-core-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-tax-core-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-supplier-portal",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-supplier-portal-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-supplier-portal-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-supplier-portal-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-spreadsheet-migration",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-sage-accounting-migration",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-sage-accounting-migration-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-sage-accounting-migration-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-sage-accounting-migration-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-revenue-recognition",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-revenue-recognition-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-revenue-recognition-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-revenue-recognition-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-reimbursements",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-reimbursements-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-reimbursements-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-reimbursements-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-regional-packs",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-regional-packs-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-regional-packs-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-regional-packs-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-recurring-transactions",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-recurring-transactions-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-recurring-transactions-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-recurring-transactions-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-receipt-management",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-receipt-management-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-receipt-management-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-receipt-management-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-quickbooks-online-migration",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-quickbooks-online-migration-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-quickbooks-online-migration-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-quickbooks-online-migration-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-purchase-requisitions",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-purchase-requisitions-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-purchase-requisitions-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-purchase-requisitions-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-purchase-orders",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-purchase-orders-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-purchase-orders-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-purchase-orders-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-projects-and-jobs",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-projects-and-jobs-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-projects-and-jobs-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-projects-and-jobs-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-project-profitability",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-project-profitability-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-project-profitability-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-project-profitability-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-project-costing",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-project-costing-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-project-costing-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-project-costing-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-project-billing",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-project-billing-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-project-billing-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-project-billing-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-product-and-service-items",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-product-and-service-items-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-product-and-service-items-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-product-and-service-items-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-payroll-payments",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-payroll-payments-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-payroll-payments-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-payroll-payments-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-payroll-liabilities",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-payroll-liabilities-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-payroll-liabilities-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-payroll-liabilities-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-payroll-journals",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-payroll-journals-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-payroll-journals-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-payroll-journals-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-payroll-integration",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-payroll-integration-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-payroll-integration-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-payroll-integration-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-spreadsheet-migration-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-spreadsheet-migration-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-spreadsheet-migration-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-sales-tax-and-gst",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-sales-tax-and-gst-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-sales-tax-and-gst-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-sales-tax-and-gst-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-sales-orders",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-sales-orders-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-sales-orders-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-sales-orders-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-policies",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-policies-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-policies-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-policies-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-general-ledger",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-general-ledger-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-general-ledger-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-general-ledger-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-dimensions-and-tracking",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-dimensions-and-tracking-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-dimensions-and-tracking-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-dimensions-and-tracking-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-financial-statements",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-financial-statements-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-financial-statements-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-financial-statements-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-sales-invoicing",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-sales-invoicing-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-sales-invoicing-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-sales-invoicing-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-accounts-receivable",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-accounts-receivable-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-accounts-receivable-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-accounts-receivable-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/liberu-platform-orchestration",
             "options": {
                 "symlink": true
@@ -258,6 +963,146 @@
         "liberusoftware/module-accounting-core-api": "^1.0",
         "liberusoftware/module-accounting-core-filament": "^1.0",
         "liberusoftware/module-accounting-core-livewire": "^1.0",
+        "liberusoftware/module-accounting-chart-of-accounts": "^1.0",
+        "liberusoftware/module-accounting-chart-of-accounts-api": "^1.0",
+        "liberusoftware/module-accounting-chart-of-accounts-filament": "^1.0",
+        "liberusoftware/module-accounting-chart-of-accounts-livewire": "^1.0",
+        "liberusoftware/module-accounting-financial-master-data": "^1.0",
+        "liberusoftware/module-accounting-financial-master-data-api": "^1.0",
+        "liberusoftware/module-accounting-financial-master-data-filament": "^1.0",
+        "liberusoftware/module-accounting-financial-master-data-livewire": "^1.0",
+        "liberusoftware/module-accounting-periods": "^1.0",
+        "liberusoftware/module-accounting-periods-api": "^1.0",
+        "liberusoftware/module-accounting-periods-filament": "^1.0",
+        "liberusoftware/module-accounting-periods-livewire": "^1.0",
+        "liberusoftware/module-accounting-accounts-payable": "^1.0",
+        "liberusoftware/module-accounting-accounts-payable-api": "^1.0",
+        "liberusoftware/module-accounting-accounts-payable-filament": "^1.0",
+        "liberusoftware/module-accounting-accounts-payable-livewire": "^1.0",
+        "liberusoftware/module-accounting-supplier-bills": "^1.0",
+        "liberusoftware/module-accounting-supplier-bills-api": "^1.0",
+        "liberusoftware/module-accounting-supplier-bills-filament": "^1.0",
+        "liberusoftware/module-accounting-supplier-bills-livewire": "^1.0",
+        "liberusoftware/module-accounting-three-way-matching": "^1.0",
+        "liberusoftware/module-accounting-three-way-matching-api": "^1.0",
+        "liberusoftware/module-accounting-three-way-matching-filament": "^1.0",
+        "liberusoftware/module-accounting-three-way-matching-livewire": "^1.0",
+        "liberusoftware/module-accounting-tax-core": "^1.0",
+        "liberusoftware/module-accounting-tax-core-api": "^1.0",
+        "liberusoftware/module-accounting-tax-core-filament": "^1.0",
+        "liberusoftware/module-accounting-tax-core-livewire": "^1.0",
+        "liberusoftware/module-accounting-supplier-portal": "^1.0",
+        "liberusoftware/module-accounting-supplier-portal-api": "^1.0",
+        "liberusoftware/module-accounting-supplier-portal-filament": "^1.0",
+        "liberusoftware/module-accounting-supplier-portal-livewire": "^1.0",
+        "liberusoftware/module-accounting-spreadsheet-migration": "^1.0",
+        "liberusoftware/module-accounting-spreadsheet-migration-api": "^1.0",
+        "liberusoftware/module-accounting-spreadsheet-migration-filament": "^1.0",
+        "liberusoftware/module-accounting-spreadsheet-migration-livewire": "^1.0",
+        "liberusoftware/module-accounting-sage-accounting-migration": "^1.0",
+        "liberusoftware/module-accounting-sage-accounting-migration-api": "^1.0",
+        "liberusoftware/module-accounting-sage-accounting-migration-filament": "^1.0",
+        "liberusoftware/module-accounting-sage-accounting-migration-livewire": "^1.0",
+        "liberusoftware/module-accounting-revenue-recognition": "^1.0",
+        "liberusoftware/module-accounting-revenue-recognition-api": "^1.0",
+        "liberusoftware/module-accounting-revenue-recognition-filament": "^1.0",
+        "liberusoftware/module-accounting-revenue-recognition-livewire": "^1.0",
+        "liberusoftware/module-accounting-reimbursements": "^1.0",
+        "liberusoftware/module-accounting-reimbursements-api": "^1.0",
+        "liberusoftware/module-accounting-reimbursements-filament": "^1.0",
+        "liberusoftware/module-accounting-reimbursements-livewire": "^1.0",
+        "liberusoftware/module-accounting-regional-packs": "^1.0",
+        "liberusoftware/module-accounting-regional-packs-api": "^1.0",
+        "liberusoftware/module-accounting-regional-packs-filament": "^1.0",
+        "liberusoftware/module-accounting-regional-packs-livewire": "^1.0",
+        "liberusoftware/module-accounting-recurring-transactions": "^1.0",
+        "liberusoftware/module-accounting-recurring-transactions-api": "^1.0",
+        "liberusoftware/module-accounting-recurring-transactions-filament": "^1.0",
+        "liberusoftware/module-accounting-recurring-transactions-livewire": "^1.0",
+        "liberusoftware/module-accounting-receipt-management": "^1.0",
+        "liberusoftware/module-accounting-receipt-management-api": "^1.0",
+        "liberusoftware/module-accounting-receipt-management-filament": "^1.0",
+        "liberusoftware/module-accounting-receipt-management-livewire": "^1.0",
+        "liberusoftware/module-accounting-quickbooks-online-migration": "^1.0",
+        "liberusoftware/module-accounting-quickbooks-online-migration-api": "^1.0",
+        "liberusoftware/module-accounting-quickbooks-online-migration-filament": "^1.0",
+        "liberusoftware/module-accounting-quickbooks-online-migration-livewire": "^1.0",
+        "liberusoftware/module-accounting-purchase-requisitions": "^1.0",
+        "liberusoftware/module-accounting-purchase-requisitions-api": "^1.0",
+        "liberusoftware/module-accounting-purchase-requisitions-filament": "^1.0",
+        "liberusoftware/module-accounting-purchase-requisitions-livewire": "^1.0",
+        "liberusoftware/module-accounting-purchase-orders": "^1.0",
+        "liberusoftware/module-accounting-purchase-orders-api": "^1.0",
+        "liberusoftware/module-accounting-purchase-orders-filament": "^1.0",
+        "liberusoftware/module-accounting-purchase-orders-livewire": "^1.0",
+        "liberusoftware/module-accounting-projects-and-jobs": "^1.0",
+        "liberusoftware/module-accounting-projects-and-jobs-api": "^1.0",
+        "liberusoftware/module-accounting-projects-and-jobs-filament": "^1.0",
+        "liberusoftware/module-accounting-projects-and-jobs-livewire": "^1.0",
+        "liberusoftware/module-accounting-project-profitability": "^1.0",
+        "liberusoftware/module-accounting-project-profitability-api": "^1.0",
+        "liberusoftware/module-accounting-project-profitability-filament": "^1.0",
+        "liberusoftware/module-accounting-project-profitability-livewire": "^1.0",
+        "liberusoftware/module-accounting-project-costing": "^1.0",
+        "liberusoftware/module-accounting-project-costing-api": "^1.0",
+        "liberusoftware/module-accounting-project-costing-filament": "^1.0",
+        "liberusoftware/module-accounting-project-costing-livewire": "^1.0",
+        "liberusoftware/module-accounting-project-billing": "^1.0",
+        "liberusoftware/module-accounting-project-billing-api": "^1.0",
+        "liberusoftware/module-accounting-project-billing-filament": "^1.0",
+        "liberusoftware/module-accounting-project-billing-livewire": "^1.0",
+        "liberusoftware/module-accounting-product-and-service-items": "^1.0",
+        "liberusoftware/module-accounting-product-and-service-items-api": "^1.0",
+        "liberusoftware/module-accounting-product-and-service-items-filament": "^1.0",
+        "liberusoftware/module-accounting-product-and-service-items-livewire": "^1.0",
+        "liberusoftware/module-accounting-payroll-payments": "^1.0",
+        "liberusoftware/module-accounting-payroll-payments-api": "^1.0",
+        "liberusoftware/module-accounting-payroll-payments-filament": "^1.0",
+        "liberusoftware/module-accounting-payroll-payments-livewire": "^1.0",
+        "liberusoftware/module-accounting-payroll-liabilities": "^1.0",
+        "liberusoftware/module-accounting-payroll-liabilities-api": "^1.0",
+        "liberusoftware/module-accounting-payroll-liabilities-filament": "^1.0",
+        "liberusoftware/module-accounting-payroll-liabilities-livewire": "^1.0",
+        "liberusoftware/module-accounting-payroll-journals": "^1.0",
+        "liberusoftware/module-accounting-payroll-journals-api": "^1.0",
+        "liberusoftware/module-accounting-payroll-journals-filament": "^1.0",
+        "liberusoftware/module-accounting-payroll-journals-livewire": "^1.0",
+        "liberusoftware/module-accounting-payroll-integration": "^1.0",
+        "liberusoftware/module-accounting-payroll-integration-api": "^1.0",
+        "liberusoftware/module-accounting-payroll-integration-filament": "^1.0",
+        "liberusoftware/module-accounting-payroll-integration-livewire": "^1.0",
+        "liberusoftware/module-accounting-sales-tax-and-gst": "^1.0",
+        "liberusoftware/module-accounting-sales-tax-and-gst-api": "^1.0",
+        "liberusoftware/module-accounting-sales-tax-and-gst-filament": "^1.0",
+        "liberusoftware/module-accounting-sales-tax-and-gst-livewire": "^1.0",
+        "liberusoftware/module-accounting-sales-orders": "^1.0",
+        "liberusoftware/module-accounting-sales-orders-api": "^1.0",
+        "liberusoftware/module-accounting-sales-orders-filament": "^1.0",
+        "liberusoftware/module-accounting-sales-orders-livewire": "^1.0",
+        "liberusoftware/module-accounting-policies": "^1.0",
+        "liberusoftware/module-accounting-policies-api": "^1.0",
+        "liberusoftware/module-accounting-policies-filament": "^1.0",
+        "liberusoftware/module-accounting-policies-livewire": "^1.0",
+        "liberusoftware/module-accounting-general-ledger": "^1.0",
+        "liberusoftware/module-accounting-general-ledger-api": "^1.0",
+        "liberusoftware/module-accounting-general-ledger-filament": "^1.0",
+        "liberusoftware/module-accounting-general-ledger-livewire": "^1.0",
+        "liberusoftware/module-accounting-dimensions-and-tracking": "^1.0",
+        "liberusoftware/module-accounting-dimensions-and-tracking-api": "^1.0",
+        "liberusoftware/module-accounting-dimensions-and-tracking-filament": "^1.0",
+        "liberusoftware/module-accounting-dimensions-and-tracking-livewire": "^1.0",
+        "liberusoftware/module-accounting-financial-statements": "^1.0",
+        "liberusoftware/module-accounting-financial-statements-api": "^1.0",
+        "liberusoftware/module-accounting-financial-statements-filament": "^1.0",
+        "liberusoftware/module-accounting-financial-statements-livewire": "^1.0",
+        "liberusoftware/module-accounting-sales-invoicing": "^1.0",
+        "liberusoftware/module-accounting-sales-invoicing-api": "^1.0",
+        "liberusoftware/module-accounting-sales-invoicing-filament": "^1.0",
+        "liberusoftware/module-accounting-sales-invoicing-livewire": "^1.0",
+        "liberusoftware/module-accounting-accounts-receivable": "^1.0",
+        "liberusoftware/module-accounting-accounts-receivable-api": "^1.0",
+        "liberusoftware/module-accounting-accounts-receivable-filament": "^1.0",
+        "liberusoftware/module-accounting-accounts-receivable-livewire": "^1.0",
         "liberusoftware/module-liberu-platform-orchestration": "^1.0",
         "liberusoftware/module-liberu-executive-insights": "^1.0",
         "liberusoftware/module-liberu-business-workflow-reconciliation": "^1.0",
