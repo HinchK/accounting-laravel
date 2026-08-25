@@ -646,6 +646,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-opening-balances",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-opening-balances-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-opening-balances-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-opening-balances-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-sales-orders",
             "options": { "symlink": true }
         },
@@ -1123,6 +1143,10 @@
         "liberusoftware/module-accounting-operational-reports-api": "^1.0",
         "liberusoftware/module-accounting-operational-reports-filament": "^1.0",
         "liberusoftware/module-accounting-operational-reports-livewire": "^1.0",
+        "liberusoftware/module-accounting-opening-balances": "^1.0",
+        "liberusoftware/module-accounting-opening-balances-api": "^1.0",
+        "liberusoftware/module-accounting-opening-balances-filament": "^1.0",
+        "liberusoftware/module-accounting-opening-balances-livewire": "^1.0",
         "liberusoftware/module-accounting-sales-orders": "^1.0",
         "liberusoftware/module-accounting-sales-orders-api": "^1.0",
         "liberusoftware/module-accounting-sales-orders-filament": "^1.0",

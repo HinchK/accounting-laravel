@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f2b3206513f989917677ed5749535ce5",
+    "content-hash": "72532d0b6cc1b7a70311be6fc0bda867",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -8095,6 +8095,159 @@
                 "MIT"
             ],
             "description": "Livewire adapter for the accounting general ledger.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-opening-balances",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-opening-balances",
+                "reference": "2e734a0f17e90cf8e4fd6ca438f0e9e2b38b74a3"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\OpeningBalances\\OpeningBalancesServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-opening-balances"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\OpeningBalances\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Opening balances migration and reconciliation domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-opening-balances-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-opening-balances-api",
+                "reference": "9f2c7a5f2aebbee70f1c133a66b0c0b1713e5438"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-opening-balances": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\OpeningBalancesApi\\OpeningBalancesApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-opening-balances-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\OpeningBalancesApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Opening balances API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-opening-balances-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-opening-balances-filament",
+                "reference": "d6e1a9ad504dc170f447091b13d4925b854586e4"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-opening-balances": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\OpeningBalancesFilament\\OpeningBalancesFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-opening-balances-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\OpeningBalancesFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Opening balances Filament 5 adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-opening-balances-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-opening-balances-livewire",
+                "reference": "1d22af1cdb6acf9731162ed7083e9eed33ee8a07"
+            },
+            "require": {
+                "liberusoftware/module-accounting-opening-balances": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\OpeningBalancesLivewire\\OpeningBalancesLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-opening-balances-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\OpeningBalancesLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Opening balances Livewire 4 adapter.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
