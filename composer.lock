@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "68d42e98d4cf45d70df978c36c384239",
+    "content-hash": "7637449926c5ed8821f73d369a271d42",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -8095,6 +8095,159 @@
                 "MIT"
             ],
             "description": "Livewire adapter for the accounting general ledger.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-job-estimates",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-job-estimates",
+                "reference": "fb0b17eb213732534c8bab9484f1835daeaaf7e5"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\JobEstimates\\JobEstimatesServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-job-estimates"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\JobEstimates\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Job estimates, versions, approvals, actual comparison and estimate at completion.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-job-estimates-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-job-estimates-api",
+                "reference": "57facb53a02903af173869f7252fde1ef2bae2d1"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-job-estimates": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\JobEstimatesApi\\JobEstimatesApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-job-estimates-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\JobEstimatesApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API for job estimates.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-job-estimates-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-job-estimates-filament",
+                "reference": "9e3e38390489b1478d79b3a453cee33046318a99"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-job-estimates": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\JobEstimatesFilament\\JobEstimatesFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-job-estimates-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\JobEstimatesFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 UI for job estimates.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-job-estimates-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-job-estimates-livewire",
+                "reference": "6b78da19e77375559f53a40a5f8782242d6179f0"
+            },
+            "require": {
+                "liberusoftware/module-accounting-job-estimates": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\JobEstimatesLivewire\\JobEstimatesLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-job-estimates-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\JobEstimatesLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 UI for job estimates.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
