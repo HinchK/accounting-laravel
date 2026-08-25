@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Liberu\Accounting\Core\Tests;
 
+use Illuminate\Database\DatabaseServiceProvider;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Events\EventServiceProvider;
-use Illuminate\Database\DatabaseServiceProvider;
 use Liberu\PackageTestbench\PackageTestCase;
 
 abstract class TestCase extends PackageTestCase

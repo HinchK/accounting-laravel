@@ -15,5 +15,8 @@ class NumberingSequence extends Model
 
     protected $casts = ['next_number' => 'integer', 'padding' => 'integer'];
 
-    public function book(): BelongsTo { return $this->belongsTo(Book::class); }
+    public function book(): BelongsTo
+    {
+        return $this->belongsTo(Book::class);
+    }
 }

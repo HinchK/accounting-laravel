@@ -16,9 +16,28 @@ class Book extends Model
 
     protected $casts = ['is_active' => 'bool'];
 
-    public function legalEntity(): BelongsTo { return $this->belongsTo(LegalEntity::class); }
-    public function fiscalCalendars(): HasMany { return $this->hasMany(FiscalCalendar::class); }
-    public function numberingSequences(): HasMany { return $this->hasMany(NumberingSequence::class); }
-    public function defaults(): HasMany { return $this->hasMany(AccountingDefault::class); }
-    public function policies(): HasMany { return $this->hasMany(AccountingPolicy::class); }
+    public function legalEntity(): BelongsTo
+    {
+        return $this->belongsTo(LegalEntity::class);
+    }
+
+    public function fiscalCalendars(): HasMany
+    {
+        return $this->hasMany(FiscalCalendar::class);
+    }
+
+    public function numberingSequences(): HasMany
+    {
+        return $this->hasMany(NumberingSequence::class);
+    }
+
+    public function defaults(): HasMany
+    {
+        return $this->hasMany(AccountingDefault::class);
+    }
+
+    public function policies(): HasMany
+    {
+        return $this->hasMany(AccountingPolicy::class);
+    }
 }

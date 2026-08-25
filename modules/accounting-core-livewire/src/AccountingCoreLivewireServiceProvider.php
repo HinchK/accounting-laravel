@@ -3,9 +3,9 @@
 namespace Liberu\Accounting\CoreLivewire;
 
 use Illuminate\Support\ServiceProvider;
-use Liberu\Accounting\CoreLivewire\Livewire\LegalEntities;
-use Liberu\Accounting\CoreLivewire\Livewire\Books;
 use Liberu\Accounting\CoreLivewire\Livewire\AccountingSettings;
+use Liberu\Accounting\CoreLivewire\Livewire\Books;
+use Liberu\Accounting\CoreLivewire\Livewire\LegalEntities;
 use Livewire\Livewire;
 
 final class AccountingCoreLivewireServiceProvider extends ServiceProvider

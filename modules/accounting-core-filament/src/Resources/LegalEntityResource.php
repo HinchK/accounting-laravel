@@ -12,8 +12,8 @@ use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Liberu\Accounting\Core\Models\LegalEntity;
-use Liberu\Accounting\CoreFilament\Resources\LegalEntityResource\Pages\EditLegalEntity;
 use Liberu\Accounting\CoreFilament\Resources\LegalEntityResource\Pages\CreateLegalEntity;
+use Liberu\Accounting\CoreFilament\Resources\LegalEntityResource\Pages\EditLegalEntity;
 use Liberu\Accounting\CoreFilament\Resources\LegalEntityResource\Pages\ListLegalEntities;
 
 final class LegalEntityResource extends Resource

@@ -1,17 +1,23 @@
 <?php
+
 namespace Liberu\Accounting\CoreLivewire\Livewire;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\View as ViewFacade;
 use Liberu\Accounting\Core\Actions\SaveAccountingSetting;
-use Liberu\Accounting\Core\Models\{AccountingDefault, AccountingPolicy, Book};
+use Liberu\Accounting\Core\Models\AccountingDefault;
+use Liberu\Accounting\Core\Models\AccountingPolicy;
+use Liberu\Accounting\Core\Models\Book;
 use Livewire\Component;
 
 final class AccountingSettings extends Component
 {
     public int|string $bookId = '';
+
     public string $setting = 'defaults';
+
     public string $key = '';
+
     public string $value = '{}';
 
     public function save(SaveAccountingSetting $save): void

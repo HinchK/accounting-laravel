@@ -15,5 +15,8 @@ class AccountingDefault extends Model
 
     protected $casts = ['value' => 'array'];
 
-    public function book(): BelongsTo { return $this->belongsTo(Book::class); }
+    public function book(): BelongsTo
+    {
+        return $this->belongsTo(Book::class);
+    }
 }

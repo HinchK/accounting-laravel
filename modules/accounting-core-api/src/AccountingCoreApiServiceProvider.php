@@ -7,12 +7,12 @@ namespace Liberu\Accounting\CoreApi;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Liberu\Accounting\Core\Models\LegalEntity;
 use Liberu\Accounting\Core\Models\Book;
 use Liberu\Accounting\Core\Models\FiscalCalendar;
+use Liberu\Accounting\Core\Models\LegalEntity;
 use Liberu\Accounting\Core\Models\NumberingSequence;
-use Liberu\Accounting\CoreApi\Policies\LegalEntityPolicy;
 use Liberu\Accounting\CoreApi\Policies\AccountingCorePolicy;
+use Liberu\Accounting\CoreApi\Policies\LegalEntityPolicy;
 
 final class AccountingCoreApiServiceProvider extends ServiceProvider
 {

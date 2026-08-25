@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Liberu\Accounting\CoreApi\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Response;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Gate;
 use Liberu\Accounting\Core\Actions\CreateLegalEntity;

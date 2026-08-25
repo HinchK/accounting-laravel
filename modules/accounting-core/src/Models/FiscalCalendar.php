@@ -15,5 +15,8 @@ class FiscalCalendar extends Model
 
     protected $casts = ['starts_on' => 'date', 'ends_on' => 'date', 'is_closed' => 'bool'];
 
-    public function book(): BelongsTo { return $this->belongsTo(Book::class); }
+    public function book(): BelongsTo
+    {
+        return $this->belongsTo(Book::class);
+    }
 }

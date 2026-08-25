@@ -4,8 +4,8 @@ namespace Liberu\Accounting\CoreFilament;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
-use Liberu\Accounting\CoreFilament\Resources\LegalEntityResource;
 use Liberu\Accounting\CoreFilament\Resources\BookResource;
+use Liberu\Accounting\CoreFilament\Resources\LegalEntityResource;
 
 final class AccountingCoreFilamentPlugin implements Plugin
 {

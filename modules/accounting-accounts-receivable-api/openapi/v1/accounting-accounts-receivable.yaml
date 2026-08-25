@@ -1,0 +1,27 @@
+openapi: 3.1.0
+info: {title: Accounting Accounts Receivable API, version: 1.0.0}
+servers: [{url: /}]
+paths:
+  /api/v1/accounting/accounts-receivable:
+    get: {operationId: accounting.accounts.receivable.list, security: [{sanctum: []}], parameters: [{name: party_id, in: query, schema: {type: integer}}, {name: page[size], in: query, schema: {type: integer, minimum: 1, maximum: 100}}], responses: {'200': {description: Authorized open items}}}
+    post: {operationId: accounting.accounts.receivable.create, security: [{sanctum: []}], requestBody: {required: true, content: {application/json: {schema: {$ref: '#/components/schemas/OpenItemCreate'}}}}, responses: {'201': {description: Open item created}}}
+  /api/v1/accounting/accounts-receivable/aging:
+    get: {operationId: accounting.accounts.receivable.aging, security: [{sanctum: []}], responses: {'200': {description: Aging buckets}}}
+  /api/v1/accounting/accounts-receivable/statement/{party}:
+    get: {operationId: accounting.accounts.receivable.statement, security: [{sanctum: []}], responses: {'200': {description: Customer statement}}}
+  /api/v1/accounting/accounts-receivable/receipts:
+    post: {operationId: accounting.accounts.receivable.receipts.create, security: [{sanctum: []}], responses: {'201': {description: Receipt created}}}
+components:
+  securitySchemes: {sanctum: {type: http, scheme: bearer, bearerFormat: Sanctum}}
+  schemas:
+    OpenItemCreate:
+      type: object
+      required: [party_id, reference, issued_on, original_amount, currency]
+      properties:
+        party_id: {type: integer}
+        reference: {type: string, maxLength: 128}
+        issued_on: {type: string, format: date}
+        due_on: {type: string, format: date, nullable: true}
+        original_amount: {type: number, minimum: 0.01}
+        currency: {type: string, minLength: 3, maxLength: 3}
+        metadata: {type: object, additionalProperties: true}

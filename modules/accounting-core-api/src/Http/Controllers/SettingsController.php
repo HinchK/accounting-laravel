@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Liberu\Accounting\CoreApi\Http\Controllers;
@@ -8,7 +9,9 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Gate;
 use Liberu\Accounting\Core\Actions\SaveAccountingSetting;
-use Liberu\Accounting\Core\Models\{AccountingDefault, AccountingPolicy, Book};
+use Liberu\Accounting\Core\Models\AccountingDefault;
+use Liberu\Accounting\Core\Models\AccountingPolicy;
+use Liberu\Accounting\Core\Models\Book;
 use Liberu\Accounting\CoreApi\Http\Resources\AccountingSettingResource;
 
 final class SettingsController extends Controller

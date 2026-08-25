@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6662cafcacf255bd9ef8d9d16652e119",
+    "content-hash": "ba67ee51f9c8d9480175d28f365c66dd",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -5514,7 +5514,7 @@
             "version": "1.4.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-activity-comments.git",
+                "url": "git@github.com:liberusoftware/module-activity-comments.git",
                 "reference": "416a1fdfb51bf5dbe331326709b44fdd7b9d3f32"
             },
             "dist": {
@@ -5569,7 +5569,7 @@
             "version": "1.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/analytics-contracts.git",
+                "url": "git@github.com:liberusoftware/analytics-contracts.git",
                 "reference": "c950ae334da15762f9b8e55777c844a3c902ab74"
             },
             "dist": {
@@ -5602,7 +5602,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-analytics-core.git",
+                "url": "git@github.com:liberusoftware/module-analytics-core.git",
                 "reference": "b302f2e18910c3589fc3497a241bd56db809da93"
             },
             "dist": {
@@ -5658,7 +5658,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-analytics-google.git",
+                "url": "git@github.com:liberusoftware/module-analytics-google.git",
                 "reference": "60d4b39b689e13557829dd5b1fbb62ebb1d589c6"
             },
             "dist": {
@@ -5713,7 +5713,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-analytics-meta.git",
+                "url": "git@github.com:liberusoftware/module-analytics-meta.git",
                 "reference": "e087a4499ec299462ebdacd574ee12e52d36cc4c"
             },
             "dist": {
@@ -5768,7 +5768,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-api-access.git",
+                "url": "git@github.com:liberusoftware/module-api-access.git",
                 "reference": "5c79a794e1e64e84efde7305bde23a1dca459168"
             },
             "dist": {
@@ -5824,7 +5824,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-application.git",
+                "url": "git@github.com:liberusoftware/module-application.git",
                 "reference": "f4fe1f694a693308398e50c3894ca266bece75ac"
             },
             "dist": {
@@ -5879,7 +5879,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-audit.git",
+                "url": "git@github.com:liberusoftware/module-audit.git",
                 "reference": "78c4f3b0f59484fd928cff4cc1c63a0e32f75857"
             },
             "dist": {
@@ -5934,7 +5934,7 @@
             "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/composer-installer.git",
+                "url": "git@github.com:liberusoftware/composer-installer.git",
                 "reference": "470e3b95f6232424c69d67e4f7dad6f3619c37c4"
             },
             "dist": {
@@ -5982,7 +5982,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-currency-context.git",
+                "url": "git@github.com:liberusoftware/module-currency-context.git",
                 "reference": "10f4df26157d7c5fee683d75f0a542c689afdd57"
             },
             "dist": {
@@ -6037,7 +6037,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-developer-experience.git",
+                "url": "git@github.com:liberusoftware/module-developer-experience.git",
                 "reference": "2a2f574430611175af6ff430d65156a56be7b657"
             },
             "dist": {
@@ -6092,7 +6092,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-feature-flags.git",
+                "url": "git@github.com:liberusoftware/module-feature-flags.git",
                 "reference": "f0701fbb929b8d5f330204b3b53c1901cec0749e"
             },
             "dist": {
@@ -6147,7 +6147,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-files-media.git",
+                "url": "git@github.com:liberusoftware/module-files-media.git",
                 "reference": "214f00cd168620fe6fa209c6669a206534129ff5"
             },
             "dist": {
@@ -6202,7 +6202,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-identity-core.git",
+                "url": "git@github.com:liberusoftware/module-identity-core.git",
                 "reference": "46d9b48899910a511285761f990a1d7f96531189"
             },
             "dist": {
@@ -6256,7 +6256,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-identity-core-filament.git",
+                "url": "git@github.com:liberusoftware/module-identity-core-filament.git",
                 "reference": "34519fdd11c96b7db55def83ef50321265b81ba8"
             },
             "dist": {
@@ -6310,7 +6310,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-identity-socialstream.git",
+                "url": "git@github.com:liberusoftware/module-identity-socialstream.git",
                 "reference": "faea00423bd97e3de696e37cb5d7cc6bafc0edf2"
             },
             "dist": {
@@ -6368,7 +6368,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-import-export.git",
+                "url": "git@github.com:liberusoftware/module-import-export.git",
                 "reference": "075032d5033056c3b4a10a010673de3d4a57159c"
             },
             "dist": {
@@ -6423,7 +6423,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-integrations.git",
+                "url": "git@github.com:liberusoftware/module-integrations.git",
                 "reference": "9569c7b2e48633fc47131a0a3533dfb7a4d516fc"
             },
             "dist": {
@@ -6478,7 +6478,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-jetstream-bridge.git",
+                "url": "git@github.com:liberusoftware/module-jetstream-bridge.git",
                 "reference": "7ba43cc22d76d231d74b3987bbb7d40dd2a0f445"
             },
             "dist": {
@@ -6535,7 +6535,7 @@
             "version": "1.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/localization-contracts.git",
+                "url": "git@github.com:liberusoftware/localization-contracts.git",
                 "reference": "7b5121caeeda07379bab2bf8ea1b3947855afed3"
             },
             "dist": {
@@ -6568,7 +6568,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-localization-core.git",
+                "url": "git@github.com:liberusoftware/module-localization-core.git",
                 "reference": "c77a5aed99bd101eeff7a7a94dde0a969a0f38ab"
             },
             "dist": {
@@ -6626,7 +6626,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-localization-core-livewire.git",
+                "url": "git@github.com:liberusoftware/module-localization-core-livewire.git",
                 "reference": "31553cab97641e83fc702974c3159de78afdcec7"
             },
             "dist": {
@@ -6681,7 +6681,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-localization-mymemory.git",
+                "url": "git@github.com:liberusoftware/module-localization-mymemory.git",
                 "reference": "bf11fef28492b3a311cb252f484205b5875c5d9e"
             },
             "dist": {
@@ -6731,6 +6731,317 @@
                 "issues": "https://github.com/liberusoftware/module-localization-mymemory/issues"
             },
             "time": "2026-08-07T14:25:31+00:00"
+        },
+        {
+            "name": "liberusoftware/module-accounting-accounts-payable",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-accounts-payable",
+                "reference": "fa2904163f0b827140f1f66d6ed5bbdad15c37d6"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-accounting-financial-master-data": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\AccountsPayable\\AccountsPayableServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-accounts-payable"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\AccountsPayable\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounts Payable domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-accounts-payable-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-accounts-payable-api",
+                "reference": "a628e7120e0d7f0fd0354ee0ad7e7e8ae8fe3111"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-accounts-payable": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\AccountsPayableApi\\AccountsPayableApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-accounts-payable-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\AccountsPayableApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API adapter for Accounts Payable.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-accounts-payable-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-accounts-payable-filament",
+                "reference": "ffc0f6eab8916f27686ce2698b96f9f31e0e416c"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-accounts-payable": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\AccountsPayableFilament\\AccountsPayableFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-accounts-payable-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\AccountsPayableFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament adapter for Accounts Payable.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-accounts-payable-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-accounts-payable-livewire",
+                "reference": "82c60e7b3f5d46b546b643ef88b90fe83493747e"
+            },
+            "require": {
+                "liberusoftware/module-accounting-accounts-payable": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\AccountsPayableLivewire\\AccountsPayableLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-accounts-payable-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\AccountsPayableLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire adapter for Accounts Payable.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-accounts-receivable",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-accounts-receivable",
+                "reference": "21bd2d08464643236f0a4ec2bb34104ba905ae25"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/events": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-accounting-core": "^1.0",
+                "liberusoftware/module-accounting-financial-master-data": "^1.0",
+                "liberusoftware/module-accounting-sales-invoicing": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\AccountsReceivable\\AccountsReceivableServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-accounts-receivable"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\AccountsReceivable\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Independent Accounts Receivable domain module for Liberu Accounting.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-accounts-receivable-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-accounts-receivable-api",
+                "reference": "d2263f4e86b5f2d020e95474e60af6ada06f7193"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-accounts-receivable": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\AccountsReceivableApi\\AccountsReceivableApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-accounts-receivable-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\AccountsReceivableApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API adapter for Accounts Receivable.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-accounts-receivable-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-accounts-receivable-filament",
+                "reference": "97e562de4f8a7c4fc12f3c205b13ee714c9492d6"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-accounts-receivable": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\AccountsReceivableFilament\\AccountsReceivableFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-accounts-receivable-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\AccountsReceivableFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament adapter for Accounts Receivable.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-accounts-receivable-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-accounts-receivable-livewire",
+                "reference": "5bc28b5912af8d62bafcc0c36a3e00e603429df1"
+            },
+            "require": {
+                "liberusoftware/module-accounting-accounts-receivable": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\AccountsReceivableLivewire\\AccountsReceivableLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-accounts-receivable-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\AccountsReceivableLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire adapter for Accounts Receivable.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "liberusoftware/module-accounting-chart-of-accounts",
@@ -7790,6 +8101,376 @@
             }
         },
         {
+            "name": "liberusoftware/module-accounting-payroll-integration",
+            "version": "1.0.0",
+            "dist": {"type": "path", "url": "modules/accounting-payroll-integration", "reference": "working-tree"},
+            "require": {"illuminate/database": "^13.0", "illuminate/support": "^13.0", "php": "^8.5"},
+            "type": "liberu-module",
+            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\PayrollIntegration\\PayrollIntegrationServiceProvider"]}, "liberu": {"name": "accounting-payroll-integration"}},
+            "autoload": {"psr-4": {"Liberu\\Accounting\\PayrollIntegration\\": "src/"}},
+            "description": "Payroll integration domain module.",
+            "transport-options": {"symlink": true, "relative": true}
+        },
+        {
+            "name": "liberusoftware/module-accounting-payroll-integration-api",
+            "version": "1.0.0",
+            "dist": {"type": "path", "url": "modules/accounting-payroll-integration-api", "reference": "working-tree"},
+            "require": {"illuminate/http": "^13.0", "illuminate/routing": "^13.0", "liberusoftware/module-accounting-payroll-integration": "^1.0", "php": "^8.5"},
+            "type": "liberu-module",
+            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\PayrollIntegrationApi\\PayrollIntegrationApiServiceProvider"]}, "liberu": {"name": "accounting-payroll-integration-api"}},
+            "autoload": {"psr-4": {"Liberu\\Accounting\\PayrollIntegrationApi\\": "src/"}},
+            "description": "Payroll integration API adapter.",
+            "transport-options": {"symlink": true, "relative": true}
+        },
+        {
+            "name": "liberusoftware/module-accounting-payroll-integration-filament",
+            "version": "1.0.0",
+            "dist": {"type": "path", "url": "modules/accounting-payroll-integration-filament", "reference": "working-tree"},
+            "require": {"filament/filament": "^5.0", "liberusoftware/module-accounting-payroll-integration": "^1.0", "php": "^8.5"},
+            "type": "liberu-module",
+            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\PayrollIntegrationFilament\\PayrollIntegrationFilamentServiceProvider"]}, "liberu": {"name": "accounting-payroll-integration-filament"}},
+            "autoload": {"psr-4": {"Liberu\\Accounting\\PayrollIntegrationFilament\\": "src/"}},
+            "description": "Payroll integration Filament adapter.",
+            "transport-options": {"symlink": true, "relative": true}
+        },
+        {
+            "name": "liberusoftware/module-accounting-payroll-integration-livewire",
+            "version": "1.0.0",
+            "dist": {"type": "path", "url": "modules/accounting-payroll-integration-livewire", "reference": "working-tree"},
+            "require": {"liberusoftware/module-accounting-payroll-integration": "^1.0", "livewire/livewire": "^4.0", "php": "^8.5"},
+            "type": "liberu-module",
+            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\PayrollIntegrationLivewire\\PayrollIntegrationLivewireServiceProvider"]}, "liberu": {"name": "accounting-payroll-integration-livewire"}},
+            "autoload": {"psr-4": {"Liberu\\Accounting\\PayrollIntegrationLivewire\\": "src/"}},
+            "description": "Payroll integration Livewire adapter.",
+            "transport-options": {"symlink": true, "relative": true}
+        },
+        {
+            "name": "liberusoftware/module-accounting-payroll-journals",
+            "version": "1.0.0",
+            "dist": {"type": "path", "url": "modules/accounting-payroll-journals", "reference": "working-tree"},
+            "require": {"illuminate/database": "^13.0", "illuminate/support": "^13.0", "php": "^8.5"},
+            "type": "liberu-module",
+            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\PayrollJournals\\PayrollJournalsServiceProvider"]}, "liberu": {"name": "accounting-payroll-journals"}},
+            "autoload": {"psr-4": {"Liberu\\Accounting\\PayrollJournals\\": "src/"}},
+            "description": "Payroll journals domain module.",
+            "transport-options": {"symlink": true, "relative": true}
+        },
+        {
+            "name": "liberusoftware/module-accounting-payroll-journals-api",
+            "version": "1.0.0",
+            "dist": {"type": "path", "url": "modules/accounting-payroll-journals-api", "reference": "working-tree"},
+            "require": {"illuminate/http": "^13.0", "illuminate/routing": "^13.0", "liberusoftware/module-accounting-payroll-journals": "^1.0", "php": "^8.5"},
+            "type": "liberu-module",
+            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\PayrollJournalsApi\\PayrollJournalsApiServiceProvider"]}, "liberu": {"name": "accounting-payroll-journals-api"}},
+            "autoload": {"psr-4": {"Liberu\\Accounting\\PayrollJournalsApi\\": "src/"}},
+            "description": "Payroll journals API adapter.",
+            "transport-options": {"symlink": true, "relative": true}
+        },
+        {
+            "name": "liberusoftware/module-accounting-payroll-journals-filament",
+            "version": "1.0.0",
+            "dist": {"type": "path", "url": "modules/accounting-payroll-journals-filament", "reference": "working-tree"},
+            "require": {"filament/filament": "^5.0", "liberusoftware/module-accounting-payroll-journals": "^1.0", "php": "^8.5"},
+            "type": "liberu-module",
+            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\PayrollJournalsFilament\\PayrollJournalsFilamentServiceProvider"]}, "liberu": {"name": "accounting-payroll-journals-filament"}},
+            "autoload": {"psr-4": {"Liberu\\Accounting\\PayrollJournalsFilament\\": "src/"}},
+            "description": "Payroll journals Filament adapter.",
+            "transport-options": {"symlink": true, "relative": true}
+        },
+        {
+            "name": "liberusoftware/module-accounting-payroll-journals-livewire",
+            "version": "1.0.0",
+            "dist": {"type": "path", "url": "modules/accounting-payroll-journals-livewire", "reference": "working-tree"},
+            "require": {"liberusoftware/module-accounting-payroll-journals": "^1.0", "livewire/livewire": "^4.0", "php": "^8.5"},
+            "type": "liberu-module",
+            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\PayrollJournalsLivewire\\PayrollJournalsLivewireServiceProvider"]}, "liberu": {"name": "accounting-payroll-journals-livewire"}},
+            "autoload": {"psr-4": {"Liberu\\Accounting\\PayrollJournalsLivewire\\": "src/"}},
+            "description": "Payroll journals Livewire adapter.",
+            "transport-options": {"symlink": true, "relative": true}
+        },
+        {
+            "name": "liberusoftware/module-accounting-payroll-liabilities",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-payroll-liabilities",
+                "reference": "bba1207b8a6ada08851c1e4f636b91363a354611"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PayrollLiabilities\\PayrollLiabilitiesServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-payroll-liabilities"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PayrollLiabilities\\": "src/"
+                }
+            },
+            "description": "Payroll liabilities domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-payroll-liabilities-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-payroll-liabilities-api",
+                "reference": "d2cb5f5e2428461f3c983e660b732d59504aa610"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-payroll-liabilities": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PayrollLiabilitiesApi\\PayrollLiabilitiesApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-payroll-liabilities-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PayrollLiabilitiesApi\\": "src/"
+                }
+            },
+            "description": "Payroll liabilities API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-payroll-liabilities-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-payroll-liabilities-filament",
+                "reference": "f7fc5227eb14e85adca47e997e5bc1b3fdd1a687"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-payroll-liabilities": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PayrollLiabilitiesFilament\\PayrollLiabilitiesFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-payroll-liabilities-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PayrollLiabilitiesFilament\\": "src/"
+                }
+            },
+            "description": "Payroll liabilities Filament adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-payroll-liabilities-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-payroll-liabilities-livewire",
+                "reference": "6351d9b60f5da941e45ba0e8816cc060d52f66e9"
+            },
+            "require": {
+                "liberusoftware/module-accounting-payroll-liabilities": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PayrollLiabilitiesLivewire\\PayrollLiabilitiesLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-payroll-liabilities-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PayrollLiabilitiesLivewire\\": "src/"
+                }
+            },
+            "description": "Payroll liabilities Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-payroll-payments",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-payroll-payments",
+                "reference": "ef3c1c31c87770f13b24340ae497e02ee9c58a12"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PayrollPayments\\PayrollPaymentsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-payroll-payments"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PayrollPayments\\": "src/"
+                }
+            },
+            "description": "Payroll payments domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-payroll-payments-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-payroll-payments-api",
+                "reference": "48c3ae377178efa756bdcfa912f6605fa2d31e28"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-payroll-payments": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PayrollPaymentsApi\\PayrollPaymentsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-payroll-payments-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PayrollPaymentsApi\\": "src/"
+                }
+            },
+            "description": "Payroll payments API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-payroll-payments-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-payroll-payments-filament",
+                "reference": "635c3f1f9dc71b93411a89b4009a0694cd198e7b"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-payroll-payments": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PayrollPaymentsFilament\\PayrollPaymentsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-payroll-payments-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PayrollPaymentsFilament\\": "src/"
+                }
+            },
+            "description": "Payroll payments Filament adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-payroll-payments-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-payroll-payments-livewire",
+                "reference": "48447733e0681b923f54be3903e87cf42cd8c808"
+            },
+            "require": {
+                "liberusoftware/module-accounting-payroll-payments": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PayrollPaymentsLivewire\\PayrollPaymentsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-payroll-payments-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PayrollPaymentsLivewire\\": "src/"
+                }
+            },
+            "description": "Payroll payments Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "liberusoftware/module-accounting-periods",
             "version": "1.0.0",
             "dist": {
@@ -8098,6 +8779,2073 @@
             }
         },
         {
+            "name": "liberusoftware/module-accounting-product-and-service-items",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-product-and-service-items",
+                "reference": "1239e983148c7c03b15ed76cd31898d36d1ed91f"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ProductAndServiceItems\\ProductAndServiceItemsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-product-and-service-items"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ProductAndServiceItems\\": "src/"
+                }
+            },
+            "description": "Product and service items domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-product-and-service-items-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-product-and-service-items-api",
+                "reference": "13bab034247ec411d7905e8ce051c8550d394dc2"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-product-and-service-items": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ProductAndServiceItemsApi\\ProductAndServiceItemsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-product-and-service-items-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ProductAndServiceItemsApi\\": "src/"
+                }
+            },
+            "description": "Product and service items API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-product-and-service-items-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-product-and-service-items-filament",
+                "reference": "eedfb82c5a57837cb8fb5bbfc3a2162f5638dba5"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-product-and-service-items": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ProductAndServiceItemsFilament\\ProductAndServiceItemsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-product-and-service-items-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ProductAndServiceItemsFilament\\": "src/"
+                }
+            },
+            "description": "Product and service items Filament adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-product-and-service-items-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-product-and-service-items-livewire",
+                "reference": "9a2a31198cecab21f88da008a0f67f3fc87821b0"
+            },
+            "require": {
+                "liberusoftware/module-accounting-product-and-service-items": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ProductAndServiceItemsLivewire\\ProductAndServiceItemsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-product-and-service-items-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ProductAndServiceItemsLivewire\\": "src/"
+                }
+            },
+            "description": "Product and service items Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-project-billing",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-project-billing",
+                "reference": "8b43586507bc30fdb44037de2658be40024e4529"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-accounting-projects-and-jobs": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ProjectBilling\\ProjectBillingServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-project-billing"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ProjectBilling\\": "src/"
+                }
+            },
+            "description": "Project billing domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-project-billing-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-project-billing-api",
+                "reference": "a4ee7e3a0e6c36f7df479bd41e6f350fa4604c0e"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-project-billing": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ProjectBillingApi\\ProjectBillingApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-project-billing-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ProjectBillingApi\\": "src/"
+                }
+            },
+            "description": "Project billing API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-project-billing-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-project-billing-filament",
+                "reference": "a59650a1d4fe742a01334bec91adacdc8e26037f"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-project-billing": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ProjectBillingFilament\\ProjectBillingFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-project-billing-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ProjectBillingFilament\\": "src/"
+                }
+            },
+            "description": "Project billing Filament adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-project-billing-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-project-billing-livewire",
+                "reference": "74a24c82d4be5f4b378ee7b151807cadce1ae87b"
+            },
+            "require": {
+                "liberusoftware/module-accounting-project-billing": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ProjectBillingLivewire\\ProjectBillingLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-project-billing-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ProjectBillingLivewire\\": "src/"
+                }
+            },
+            "description": "Project billing Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-project-costing",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-project-costing",
+                "reference": "2b92a47fc1f620b63689e1bc39df9561bd427de6"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-accounting-projects-and-jobs": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ProjectCosting\\ProjectCostingServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-project-costing"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ProjectCosting\\": "src/"
+                }
+            },
+            "description": "Project costing domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-project-costing-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-project-costing-api",
+                "reference": "1a5730cf31506fe7e54e4b46bc90fd7191d03db5"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-project-costing": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ProjectCostingApi\\ProjectCostingApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-project-costing-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ProjectCostingApi\\": "src/"
+                }
+            },
+            "description": "Project costing API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-project-costing-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-project-costing-filament",
+                "reference": "3f4c050ed40c4bfd0d40b5207a2022ca02e80456"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-project-costing": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ProjectCostingFilament\\ProjectCostingFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-project-costing-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ProjectCostingFilament\\": "src/"
+                }
+            },
+            "description": "Project costing Filament adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-project-costing-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-project-costing-livewire",
+                "reference": "600fd1ae6f0be1a97620b789af6111dc7a73d3f5"
+            },
+            "require": {
+                "liberusoftware/module-accounting-project-costing": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ProjectCostingLivewire\\ProjectCostingLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-project-costing-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ProjectCostingLivewire\\": "src/"
+                }
+            },
+            "description": "Project costing Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-project-profitability",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-project-profitability",
+                "reference": "3a8c5b361ee58fce65d05d2ccef64a74e41ab111"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-accounting-projects-and-jobs": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ProjectProfitability\\ProjectProfitabilityServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-project-profitability"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ProjectProfitability\\": "src/"
+                }
+            },
+            "description": "Project profitability domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-project-profitability-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-project-profitability-api",
+                "reference": "28d60b0ac83e46e983afac662126b7dd9ba84639"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-project-profitability": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ProjectProfitabilityApi\\ProjectProfitabilityApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-project-profitability-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ProjectProfitabilityApi\\": "src/"
+                }
+            },
+            "description": "Project profitability API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-project-profitability-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-project-profitability-filament",
+                "reference": "13053b4ae496c6a88672e35563565c4d3557305b"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-project-profitability": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ProjectProfitabilityFilament\\ProjectProfitabilityFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-project-profitability-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ProjectProfitabilityFilament\\": "src/"
+                }
+            },
+            "description": "Project profitability Filament adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-project-profitability-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-project-profitability-livewire",
+                "reference": "58d0bfb1d736f4d7c6706cad809e188670a1e647"
+            },
+            "require": {
+                "liberusoftware/module-accounting-project-profitability": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ProjectProfitabilityLivewire\\ProjectProfitabilityLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-project-profitability-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ProjectProfitabilityLivewire\\": "src/"
+                }
+            },
+            "description": "Project profitability Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-projects-and-jobs",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-projects-and-jobs",
+                "reference": "e34534da0cf94e9e781a87e228cadbe7da197c26"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ProjectsAndJobs\\ProjectsAndJobsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-projects-and-jobs"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ProjectsAndJobs\\": "src/"
+                }
+            },
+            "description": "Accounting projects and jobs domain module",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-projects-and-jobs-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-projects-and-jobs-api",
+                "reference": "cab60d6d3fe22e75abda99f2d0493332e1b6e2cb"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-projects-and-jobs": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ProjectsAndJobsApi\\ProjectsAndJobsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-projects-and-jobs-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ProjectsAndJobsApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Projects and jobs API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-projects-and-jobs-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-projects-and-jobs-filament",
+                "reference": "5c04e82387299c41498e7b5142ad1d8eafe9b5e5"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-projects-and-jobs": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ProjectsAndJobsFilament\\ProjectsAndJobsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-projects-and-jobs-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ProjectsAndJobsFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Projects and jobs Filament adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-projects-and-jobs-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-projects-and-jobs-livewire",
+                "reference": "d2c714ffec2798e1b921f12d5194151d1d3cecce"
+            },
+            "require": {
+                "liberusoftware/module-accounting-projects-and-jobs": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ProjectsAndJobsLivewire\\ProjectsAndJobsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-projects-and-jobs-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ProjectsAndJobsLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Projects and jobs Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-purchase-orders",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-purchase-orders",
+                "reference": "4ccf32d1c38e3aef69f873733c16586fd28899fd"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PurchaseOrders\\PurchaseOrdersServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-purchase-orders"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PurchaseOrders\\": "src/"
+                }
+            },
+            "description": "Accounting purchase orders domain module",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-purchase-orders-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-purchase-orders-api",
+                "reference": "e626938da0556f029c6ff7bd15b03d335c44890b"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-purchase-orders": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PurchaseOrdersApi\\PurchaseOrdersApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-purchase-orders-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PurchaseOrdersApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Purchase orders API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-purchase-orders-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-purchase-orders-filament",
+                "reference": "923316b1e2bb2892e57496e90e026221b2ecf6d1"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-purchase-orders": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PurchaseOrdersFilament\\PurchaseOrdersFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-purchase-orders-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PurchaseOrdersFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Purchase orders Filament adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-purchase-orders-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-purchase-orders-livewire",
+                "reference": "c12316abc34aeb54af1d85efebca63d665dad662"
+            },
+            "require": {
+                "liberusoftware/module-accounting-purchase-orders": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PurchaseOrdersLivewire\\PurchaseOrdersLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-purchase-orders-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PurchaseOrdersLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Purchase orders Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-purchase-requisitions",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-purchase-requisitions",
+                "reference": "6f3260b05e17367bb0853c3ee8c6151f3acbae75"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PurchaseRequisitions\\PurchaseRequisitionsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-purchase-requisitions"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PurchaseRequisitions\\": "src/"
+                }
+            },
+            "description": "Accounting purchase requisitions domain module",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-purchase-requisitions-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-purchase-requisitions-api",
+                "reference": "529a7dbfe8154a7e0520c138d4c3d741d7610128"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-purchase-requisitions": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PurchaseRequisitionsApi\\PurchaseRequisitionsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-purchase-requisitions-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PurchaseRequisitionsApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Purchase requisitions API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-purchase-requisitions-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-purchase-requisitions-filament",
+                "reference": "cf1e6c67ec9a0366346a28bd13403c2a09f7ed54"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-purchase-requisitions": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PurchaseRequisitionsFilament\\PurchaseRequisitionsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-purchase-requisitions-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PurchaseRequisitionsFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Purchase requisitions Filament adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-purchase-requisitions-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-purchase-requisitions-livewire",
+                "reference": "c54a5c2527f3a3c890b4dee4009f64091a193b75"
+            },
+            "require": {
+                "liberusoftware/module-accounting-purchase-requisitions": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PurchaseRequisitionsLivewire\\PurchaseRequisitionsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-purchase-requisitions-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PurchaseRequisitionsLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Purchase requisitions Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-quickbooks-online-migration",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-quickbooks-online-migration",
+                "reference": "5d277ae602a923460bc2c2355e1651cce3b40e9f"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\QuickBooksOnlineMigration\\QuickBooksOnlineMigrationServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-quickbooks-online-migration"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\QuickBooksOnlineMigration\\": "src/"
+                }
+            },
+            "description": "Accounting QuickBooks Online migration domain module",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-quickbooks-online-migration-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-quickbooks-online-migration-api",
+                "reference": "af908f81bc53761d27bcbe5ee4efd6f5f1c423e4"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-quickbooks-online-migration": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\QuickBooksOnlineMigrationApi\\QuickBooksOnlineMigrationApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-quickbooks-online-migration-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\QuickBooksOnlineMigrationApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "QuickBooks Online migration API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-quickbooks-online-migration-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-quickbooks-online-migration-filament",
+                "reference": "294de858d955b2c10f11eee8aded019bccb70f85"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-quickbooks-online-migration": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\QuickBooksOnlineMigrationFilament\\QuickBooksOnlineMigrationFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-quickbooks-online-migration-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\QuickBooksOnlineMigrationFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "QuickBooks Online migration Filament adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-quickbooks-online-migration-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-quickbooks-online-migration-livewire",
+                "reference": "8b1450361679e9d12c90aff248a4b39e898689d6"
+            },
+            "require": {
+                "liberusoftware/module-accounting-quickbooks-online-migration": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\QuickBooksOnlineMigrationLivewire\\QuickBooksOnlineMigrationLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-quickbooks-online-migration-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\QuickBooksOnlineMigrationLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "QuickBooks Online migration Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-receipt-management",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-receipt-management",
+                "reference": "ccb4648fd65831ed636a18cc209394e4d235ab9d"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ReceiptManagement\\ReceiptManagementServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-receipt-management"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ReceiptManagement\\": "src/"
+                }
+            },
+            "description": "Accounting receipt management domain module",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-receipt-management-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-receipt-management-api",
+                "reference": "216501abc4d13f60efcc518414a1cdd414291214"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-receipt-management": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ReceiptManagementApi\\ReceiptManagementApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-receipt-management-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ReceiptManagementApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Receipt management API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-receipt-management-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-receipt-management-filament",
+                "reference": "1e4ba65e8f7145b6457b8d0cd11e20830330045e"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-receipt-management": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ReceiptManagementFilament\\ReceiptManagementFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-receipt-management-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ReceiptManagementFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Receipt management Filament adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-receipt-management-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-receipt-management-livewire",
+                "reference": "581ae5e6769ce35f307a15164a7b82b6c2a9d8cd"
+            },
+            "require": {
+                "liberusoftware/module-accounting-receipt-management": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ReceiptManagementLivewire\\ReceiptManagementLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-receipt-management-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ReceiptManagementLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Receipt management Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-recurring-transactions",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-recurring-transactions",
+                "reference": "6d92347a38cee651908d816728e9b683277d6c32"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\RecurringTransactions\\RecurringTransactionsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-recurring-transactions"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\RecurringTransactions\\": "src/"
+                }
+            },
+            "description": "Accounting recurring transactions domain module",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-recurring-transactions-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-recurring-transactions-api",
+                "reference": "76a70b23ecc750eff0e5a859ee22edc94eec98a0"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-recurring-transactions": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\RecurringTransactionsApi\\RecurringTransactionsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-recurring-transactions-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\RecurringTransactionsApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Recurring transactions API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-recurring-transactions-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-recurring-transactions-filament",
+                "reference": "3f9958bceb5daf4e9676766e6031c722ecbd7451"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-recurring-transactions": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\RecurringTransactionsFilament\\RecurringTransactionsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-recurring-transactions-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\RecurringTransactionsFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Recurring transactions Filament adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-recurring-transactions-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-recurring-transactions-livewire",
+                "reference": "117abb3b59c96fe38443c6e46b408d178338f2a8"
+            },
+            "require": {
+                "liberusoftware/module-accounting-recurring-transactions": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\RecurringTransactionsLivewire\\RecurringTransactionsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-recurring-transactions-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\RecurringTransactionsLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Recurring transactions Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-regional-packs",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-regional-packs",
+                "reference": "d414d63de22773b135b21df5f3172534dc8375bb"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\RegionalPacks\\RegionalPacksServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-regional-packs"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\RegionalPacks\\": "src/"
+                }
+            },
+            "description": "Accounting regional packs domain module",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-regional-packs-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-regional-packs-api",
+                "reference": "cceca00df575416fa5828206a7a9bc21171dae62"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-regional-packs": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\RegionalPacksApi\\RegionalPacksApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-regional-packs-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\RegionalPacksApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Regional packs API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-regional-packs-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-regional-packs-filament",
+                "reference": "49b0251d268eb39e090209c8b02100c30b17ee73"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-regional-packs": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\RegionalPacksFilament\\RegionalPacksFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-regional-packs-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\RegionalPacksFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Regional packs Filament adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-regional-packs-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-regional-packs-livewire",
+                "reference": "e6477ae3355e1f7ef31a8ce1b3501388d172447e"
+            },
+            "require": {
+                "liberusoftware/module-accounting-regional-packs": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\RegionalPacksLivewire\\RegionalPacksLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-regional-packs-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\RegionalPacksLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Regional packs Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-reimbursements",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-reimbursements",
+                "reference": "43cf59565ae314391420fd64521cf0e65e47a5b5"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\Reimbursements\\ReimbursementsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-reimbursements"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\Reimbursements\\": "src/"
+                }
+            },
+            "description": "Accounting reimbursements domain module",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-reimbursements-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-reimbursements-api",
+                "reference": "9c18f534a4791cc10fb4561823336e60e96cf1f1"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-reimbursements": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ReimbursementsApi\\ReimbursementsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-reimbursements-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ReimbursementsApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Reimbursements API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-reimbursements-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-reimbursements-filament",
+                "reference": "5257b6e6937a9c15d8fe527e87426f6208ef7abb"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-reimbursements": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ReimbursementsFilament\\ReimbursementsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-reimbursements-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ReimbursementsFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Reimbursements Filament adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-reimbursements-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-reimbursements-livewire",
+                "reference": "989cf61def649b9d3e420e3f53b9d6fd31e400f7"
+            },
+            "require": {
+                "liberusoftware/module-accounting-reimbursements": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ReimbursementsLivewire\\ReimbursementsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-reimbursements-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ReimbursementsLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Reimbursements Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-revenue-recognition",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-revenue-recognition",
+                "reference": "6ff786de74b1aaa4ab9b8e605378b2675bbd0c6b"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\RevenueRecognition\\RevenueRecognitionServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-revenue-recognition"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\RevenueRecognition\\": "src/"
+                }
+            },
+            "description": "Accounting revenue recognition domain module",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-revenue-recognition-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-revenue-recognition-api",
+                "reference": "fb810a1ca683792da3dbb1895e77a18b72785c54"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-revenue-recognition": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\RevenueRecognitionApi\\RevenueRecognitionApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-revenue-recognition-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\RevenueRecognitionApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Revenue recognition API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-revenue-recognition-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-revenue-recognition-filament",
+                "reference": "5a29d5c8643b9c256f1d6aafe5ffc1d33bcdeffd"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-revenue-recognition": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\RevenueRecognitionFilament\\RevenueRecognitionFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-revenue-recognition-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\RevenueRecognitionFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Revenue recognition Filament adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-revenue-recognition-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-revenue-recognition-livewire",
+                "reference": "44b86c62fffa66104e56ce300e7e299dfd45b5cd"
+            },
+            "require": {
+                "liberusoftware/module-accounting-revenue-recognition": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\RevenueRecognitionLivewire\\RevenueRecognitionLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-revenue-recognition-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\RevenueRecognitionLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Revenue recognition Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-sage-accounting-migration",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-sage-accounting-migration",
+                "reference": "16dcb73f08836175246f29045a51b0e3f553c4bc"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SageAccountingMigration\\SageAccountingMigrationServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-sage-accounting-migration"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SageAccountingMigration\\": "src/"
+                }
+            },
+            "description": "Sage Accounting migration domain module",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-sage-accounting-migration-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-sage-accounting-migration-api",
+                "reference": "33cebd983ea320db4a45253957fdd8fc251e565d"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-sage-accounting-migration": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SageAccountingMigrationApi\\SageAccountingMigrationApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-sage-accounting-migration-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SageAccountingMigrationApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Sage Accounting migration API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-sage-accounting-migration-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-sage-accounting-migration-filament",
+                "reference": "d8240dc0ab6589d66b65d2c73bb2b4a4a33d084c"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-sage-accounting-migration": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SageAccountingMigrationFilament\\SageAccountingMigrationFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-sage-accounting-migration-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SageAccountingMigrationFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Sage Accounting migration Filament adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-sage-accounting-migration-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-sage-accounting-migration-livewire",
+                "reference": "f3b763200b719e7c1ebb3a441c54e30f9f5db5f2"
+            },
+            "require": {
+                "liberusoftware/module-accounting-sage-accounting-migration": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SageAccountingMigrationLivewire\\SageAccountingMigrationLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-sage-accounting-migration-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SageAccountingMigrationLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Sage Accounting migration Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "liberusoftware/module-accounting-sales-invoicing",
             "version": "1.0.0",
             "dist": {
@@ -8247,6 +10995,1079 @@
                 "MIT"
             ],
             "description": "Livewire adapter for accounting sales invoicing.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-sales-orders",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-sales-orders",
+                "reference": "48f9d77eced1fe8196b84857082026a32f0b7441"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SalesOrders\\SalesOrdersServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-sales-orders"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SalesOrders\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting sales orders domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-sales-orders-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-sales-orders-api",
+                "reference": "c5f904eb6efa3f21447ba1fc94d7b6caf264ce55"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-sales-orders": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SalesOrdersApi\\SalesOrdersApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-sales-orders-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SalesOrdersApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Sales orders API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-sales-orders-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-sales-orders-filament",
+                "reference": "65540a3ed55b202a16efed28abc8631214e71f4d"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-sales-orders": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SalesOrdersFilament\\SalesOrdersFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-sales-orders-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SalesOrdersFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Sales orders Filament adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-sales-orders-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-sales-orders-livewire",
+                "reference": "5ddcfc0ed62a8de2aa419e8c8fee1693b8e621d0"
+            },
+            "require": {
+                "liberusoftware/module-accounting-sales-orders": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SalesOrdersLivewire\\SalesOrdersLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-sales-orders-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SalesOrdersLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Sales orders Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-sales-tax-and-gst",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-sales-tax-and-gst",
+                "reference": "7a04bdda8a53ae2256d96ba5cc211e303b1ca522"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SalesTaxAndGst\\SalesTaxAndGstServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-sales-tax-and-gst"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SalesTaxAndGst\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting sales tax and GST domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-sales-tax-and-gst-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-sales-tax-and-gst-api",
+                "reference": "d5f165d1c9d6c0bd347d166672fc00d7deadb3dd"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-sales-tax-and-gst": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SalesTaxAndGstApi\\SalesTaxAndGstApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-sales-tax-and-gst-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SalesTaxAndGstApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Sales tax and GST API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-sales-tax-and-gst-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-sales-tax-and-gst-filament",
+                "reference": "c1b6148a4efd9bb1589c62953ed9074679fc9aa0"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-sales-tax-and-gst": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SalesTaxAndGstFilament\\SalesTaxAndGstFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-sales-tax-and-gst-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SalesTaxAndGstFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Sales tax and GST Filament adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-sales-tax-and-gst-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-sales-tax-and-gst-livewire",
+                "reference": "52cc4085525773b97aa805348f098056eda599f7"
+            },
+            "require": {
+                "liberusoftware/module-accounting-sales-tax-and-gst": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SalesTaxAndGstLivewire\\SalesTaxAndGstLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-sales-tax-and-gst-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SalesTaxAndGstLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Sales tax and GST Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-spreadsheet-migration",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-spreadsheet-migration",
+                "reference": "3789429f5f9440a92c0bd5ad1142ea8327bcec2f"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SpreadsheetMigration\\SpreadsheetMigrationServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-spreadsheet-migration"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SpreadsheetMigration\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting spreadsheet migration domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-spreadsheet-migration-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-spreadsheet-migration-api",
+                "reference": "771b4d5f9ccec0036f0ff1f1cdc0e26660207351"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-spreadsheet-migration": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SpreadsheetMigrationApi\\SpreadsheetMigrationApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-spreadsheet-migration-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SpreadsheetMigrationApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Spreadsheet migration API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-spreadsheet-migration-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-spreadsheet-migration-filament",
+                "reference": "e741dcd425ff872d5b37940d123f57e53b0a21e9"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-spreadsheet-migration": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SpreadsheetMigrationFilament\\SpreadsheetMigrationFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-spreadsheet-migration-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SpreadsheetMigrationFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Spreadsheet migration Filament adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-spreadsheet-migration-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-spreadsheet-migration-livewire",
+                "reference": "43011ff8725e869ae8a473c5e17a6200343673cd"
+            },
+            "require": {
+                "liberusoftware/module-accounting-spreadsheet-migration": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SpreadsheetMigrationLivewire\\SpreadsheetMigrationLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-spreadsheet-migration-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SpreadsheetMigrationLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Spreadsheet migration Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-supplier-bills",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-supplier-bills",
+                "reference": "378e1ac9f35014d4e2b4cba7e0f20e04302b8acf"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-accounting-accounts-payable": "^1.0",
+                "liberusoftware/module-accounting-financial-master-data": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SupplierBills\\SupplierBillsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-supplier-bills"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SupplierBills\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Supplier bills domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-supplier-bills-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-supplier-bills-api",
+                "reference": "6c477ffb2cd1742db081a467083d04c42fdee811"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-supplier-bills": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SupplierBillsApi\\SupplierBillsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-supplier-bills-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SupplierBillsApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API adapter for Supplier Bills.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-supplier-bills-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-supplier-bills-filament",
+                "reference": "012ac818bde8a895d5b1e53ee625685d77032350"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-supplier-bills": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SupplierBillsFilament\\SupplierBillsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-supplier-bills-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SupplierBillsFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament adapter for Supplier Bills.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-supplier-bills-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-supplier-bills-livewire",
+                "reference": "4de27d8b18a6091544ed168a9a5fe16f3b00838b"
+            },
+            "require": {
+                "liberusoftware/module-accounting-supplier-bills": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SupplierBillsLivewire\\SupplierBillsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-supplier-bills-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SupplierBillsLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire adapter for Supplier Bills.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-supplier-portal",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-supplier-portal",
+                "reference": "c7e7e78fae9498aa1d314ca12d2c77714ed1e021"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SupplierPortal\\SupplierPortalServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-supplier-portal"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SupplierPortal\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting supplier portal domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-supplier-portal-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-supplier-portal-api",
+                "reference": "52eab5302ca2f0e206531af9f1648cb6eb12262d"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-supplier-portal": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SupplierPortalApi\\SupplierPortalApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-supplier-portal-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SupplierPortalApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Supplier portal API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-supplier-portal-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-supplier-portal-filament",
+                "reference": "180077ef282b765ced6b4aff6aef1d499b140184"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-supplier-portal": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SupplierPortalFilament\\SupplierPortalFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-supplier-portal-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SupplierPortalFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Supplier portal Filament adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-supplier-portal-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-supplier-portal-livewire",
+                "reference": "1db79d76a184fd6c339662dba75e220d302f4460"
+            },
+            "require": {
+                "liberusoftware/module-accounting-supplier-portal": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\SupplierPortalLivewire\\SupplierPortalLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-supplier-portal-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\SupplierPortalLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Supplier portal Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-tax-core",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-tax-core",
+                "reference": "1e34fced56431d3c1309f985f114339f51289657"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\TaxCore\\TaxCoreServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-tax-core"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\TaxCore\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting tax core domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-tax-core-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-tax-core-api",
+                "reference": "801dff57b2dc1b978ab019a631bb38539c760953"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-tax-core": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\TaxCoreApi\\TaxCoreApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-tax-core-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\TaxCoreApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting tax core API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-tax-core-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-tax-core-filament",
+                "reference": "b51f6e0101bd810bedc70b32bb2f8152844ee8df"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-tax-core": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\TaxCoreFilament\\TaxCoreFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-tax-core-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\TaxCoreFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting tax core Filament adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-tax-core-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-tax-core-livewire",
+                "reference": "ad102517e2555d8e11e71977b81dab01d20f18d9"
+            },
+            "require": {
+                "liberusoftware/module-accounting-tax-core": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\TaxCoreLivewire\\TaxCoreLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-tax-core-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\TaxCoreLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting tax core Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-three-way-matching",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-three-way-matching",
+                "reference": "9b867ed1ba661fd2e773a8ffbc2d98270f22f1ec"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ThreeWayMatching\\ThreeWayMatchingServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-three-way-matching"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ThreeWayMatching\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Three-Way Matching domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-three-way-matching-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-three-way-matching-api",
+                "reference": "4771b7d4ebebaa3a7c2e0bd7c5ec670201727936"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-three-way-matching": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ThreeWayMatchingApi\\ThreeWayMatchingApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-three-way-matching-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ThreeWayMatchingApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API adapter for Three-Way Matching.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-three-way-matching-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-three-way-matching-filament",
+                "reference": "bbd790fcb69c15b099ae33367f7ce8f1b3bec769"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-three-way-matching": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ThreeWayMatchingFilament\\ThreeWayMatchingFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-three-way-matching-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ThreeWayMatchingFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament adapter for Three-Way Matching.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-three-way-matching-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-three-way-matching-livewire",
+                "reference": "a644c36635bd4e38b1ce1c2ab9801d5c06557b69"
+            },
+            "require": {
+                "liberusoftware/module-accounting-three-way-matching": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ThreeWayMatchingLivewire\\ThreeWayMatchingLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-three-way-matching-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ThreeWayMatchingLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire adapter for Three-Way Matching.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
@@ -8454,7 +12275,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-module-manager-filament.git",
+                "url": "git@github.com:liberusoftware/module-module-manager-filament.git",
                 "reference": "44378fb5b6b5ea3239639f09ad51b1a8b8696026"
             },
             "dist": {
@@ -8509,7 +12330,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-notifications.git",
+                "url": "git@github.com:liberusoftware/module-notifications.git",
                 "reference": "c218aa80a8773b7feadd0a884172a88135446ef9"
             },
             "dist": {
@@ -8564,7 +12385,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-observability.git",
+                "url": "git@github.com:liberusoftware/module-observability.git",
                 "reference": "6adfdab5abf83d6f39473345822fda97f3f05ecb"
             },
             "dist": {
@@ -8620,7 +12441,7 @@
             "version": "1.5.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-organizations-teams.git",
+                "url": "git@github.com:liberusoftware/module-organizations-teams.git",
                 "reference": "12f20e83088659fe9194823d090e44358eed3a56"
             },
             "dist": {
@@ -8676,7 +12497,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-organizations-teams-filament.git",
+                "url": "git@github.com:liberusoftware/module-organizations-teams-filament.git",
                 "reference": "ce57c44ef89eb852c9c1737d65de7a9e5ffa4b76"
             },
             "dist": {
@@ -8730,7 +12551,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-profiles.git",
+                "url": "git@github.com:liberusoftware/module-profiles.git",
                 "reference": "bdf7c4cb01bf602735df5ecf01d02cbb88b659fe"
             },
             "dist": {
@@ -8785,7 +12606,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-roles-permissions.git",
+                "url": "git@github.com:liberusoftware/module-roles-permissions.git",
                 "reference": "d061b98bbe185ae966e8fe6ea4761bddf48aed9d"
             },
             "dist": {
@@ -8840,7 +12661,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-roles-permissions-filament.git",
+                "url": "git@github.com:liberusoftware/module-roles-permissions-filament.git",
                 "reference": "788117df5f64d16103ce595a42fc3506d97a16d2"
             },
             "dist": {
@@ -8895,7 +12716,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-scheduler-queues.git",
+                "url": "git@github.com:liberusoftware/module-scheduler-queues.git",
                 "reference": "fdfb3b1b3d8b9c3142fa670063da5ae116fa5c76"
             },
             "dist": {
@@ -8947,16 +12768,16 @@
         },
         {
             "name": "liberusoftware/search",
-            "version": "1.5.1",
+            "version": "1.5.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-search.git",
-                "reference": "d2617f80de4c267adf4593b357b545c9ec762188"
+                "url": "git@github.com:liberusoftware/module-search.git",
+                "reference": "5cd2c62a9cce7c36c3f107ac7d26357d2a714395"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liberusoftware/module-search/zipball/d2617f80de4c267adf4593b357b545c9ec762188",
-                "reference": "d2617f80de4c267adf4593b357b545c9ec762188",
+                "url": "https://api.github.com/repos/liberusoftware/module-search/zipball/5cd2c62a9cce7c36c3f107ac7d26357d2a714395",
+                "reference": "5cd2c62a9cce7c36c3f107ac7d26357d2a714395",
                 "shasum": ""
             },
             "require": {
@@ -8996,17 +12817,17 @@
             ],
             "description": "Provider-neutral authorized search contracts and local Eloquent driver.",
             "support": {
-                "source": "https://github.com/liberusoftware/module-search/tree/1.5.1",
+                "source": "https://github.com/liberusoftware/module-search/tree/1.5.3",
                 "issues": "https://github.com/liberusoftware/module-search/issues"
             },
-            "time": "2026-08-07T14:25:44+00:00"
+            "time": "2026-08-24T17:46:12+00:00"
         },
         {
             "name": "liberusoftware/search-api",
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-search-api.git",
+                "url": "git@github.com:liberusoftware/module-search-api.git",
                 "reference": "73a5e71c61c7199896ea9a8d01012fa832140f5d"
             },
             "dist": {
@@ -9061,7 +12882,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-sessions-devices.git",
+                "url": "git@github.com:liberusoftware/module-sessions-devices.git",
                 "reference": "164817b59449f6930af4ff08d93c21b93368c738"
             },
             "dist": {
@@ -9116,7 +12937,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-sessions-devices-filament.git",
+                "url": "git@github.com:liberusoftware/module-sessions-devices-filament.git",
                 "reference": "91eb6d30430ad82b21dc57c68ffbaa804299d41f"
             },
             "dist": {
@@ -9170,7 +12991,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-settings.git",
+                "url": "git@github.com:liberusoftware/module-settings.git",
                 "reference": "37c18cd0aaa4d026b7adcfba859516dd7abc39aa"
             },
             "dist": {
@@ -9224,7 +13045,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-settings-filament.git",
+                "url": "git@github.com:liberusoftware/module-settings-filament.git",
                 "reference": "86ee7e6377624baca845121981e6bb8cec092ca2"
             },
             "dist": {
@@ -9279,16 +13100,16 @@
         },
         {
             "name": "liberusoftware/theme-support",
-            "version": "1.4.2",
+            "version": "1.4.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-theme-support.git",
-                "reference": "22c3d18d23d802265d68f03e58f8dda8b88b48fa"
+                "url": "git@github.com:liberusoftware/module-theme-support.git",
+                "reference": "cc7019f1d077e498ad647bb566a28ae009b2cb1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liberusoftware/module-theme-support/zipball/22c3d18d23d802265d68f03e58f8dda8b88b48fa",
-                "reference": "22c3d18d23d802265d68f03e58f8dda8b88b48fa",
+                "url": "https://api.github.com/repos/liberusoftware/module-theme-support/zipball/cc7019f1d077e498ad647bb566a28ae009b2cb1e",
+                "reference": "cc7019f1d077e498ad647bb566a28ae009b2cb1e",
                 "shasum": ""
             },
             "require": {
@@ -9334,17 +13155,17 @@
             ],
             "description": "Theme discovery and host presentation support for Liberu applications.",
             "support": {
-                "source": "https://github.com/liberusoftware/module-theme-support/tree/1.4.2",
+                "source": "https://github.com/liberusoftware/module-theme-support/tree/v1.4.3",
                 "issues": "https://github.com/liberusoftware/module-theme-support/issues"
             },
-            "time": "2026-08-07T14:25:46+00:00"
+            "time": "2026-08-24T17:42:47+00:00"
         },
         {
             "name": "liberusoftware/theme-support-livewire",
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-theme-support-livewire.git",
+                "url": "git@github.com:liberusoftware/module-theme-support-livewire.git",
                 "reference": "8db221e424ebd0a1d9bbb61265b41878da59caeb"
             },
             "dist": {
@@ -9400,7 +13221,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-two-factor-authentication.git",
+                "url": "git@github.com:liberusoftware/module-two-factor-authentication.git",
                 "reference": "60e4cb036f76375e9814cf57ca4a32fc343301e5"
             },
             "dist": {
@@ -9455,7 +13276,7 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-webhooks.git",
+                "url": "git@github.com:liberusoftware/module-webhooks.git",
                 "reference": "308f905ee503c708dce8ffbb78a08c7c5b9d72bb"
             },
             "dist": {
@@ -19972,7 +23793,7 @@
             "version": "1.2.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/boilerplate-scripts.git",
+                "url": "git@github.com:liberusoftware/boilerplate-scripts.git",
                 "reference": "a7461a447049879ef30202cc0a12dfe0919fa9e2"
             },
             "dist": {
