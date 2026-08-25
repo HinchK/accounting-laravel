@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd0c104438b044018122894536203074",
+    "content-hash": "894f03f4e26d9ef058329f035c87e04c",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7940,6 +7940,159 @@
                 "MIT"
             ],
             "description": "Livewire adapter for accounting financial statements.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-fixed-assets",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-fixed-assets",
+                "reference": "bbfea4acc2e7a295126ba9d14777e22d190935e0"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\FixedAssets\\FixedAssetsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-fixed-assets"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\FixedAssets\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Fixed asset register, categories, acquisition, capitalization, components, locations, books and documents.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-fixed-assets-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-fixed-assets-api",
+                "reference": "b038d5d4d5f1bc1a7e5bc0ebaee873a7068f73c7"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-fixed-assets": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\FixedAssetsApi\\FixedAssetsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-fixed-assets-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\FixedAssetsApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API for fixed assets.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-fixed-assets-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-fixed-assets-filament",
+                "reference": "5f23f9eea86b1ae1fdb473922871f70dd8cc3d67"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-fixed-assets": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\FixedAssetsFilament\\FixedAssetsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-fixed-assets-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\FixedAssetsFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 UI for fixed assets.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-fixed-assets-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-fixed-assets-livewire",
+                "reference": "5707597fb136fb7f2400886b6ad3f951ecf46889"
+            },
+            "require": {
+                "liberusoftware/module-accounting-fixed-assets": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\FixedAssetsLivewire\\FixedAssetsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-fixed-assets-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\FixedAssetsLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 UI for fixed assets.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
