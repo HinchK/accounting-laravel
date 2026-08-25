@@ -67,4 +67,12 @@ class AccountingFinancialStatementsTest extends TestCase
         $this->getJson('/api/v1/accounting/financial-statements/profit-and-loss?book_id='.$book->id.'&start_date=2026-02-01&end_date=2026-01-01')
             ->assertStatus(422);
     }
+
+    public function test_api_requires_the_financial_statements_read_ability(): void
+    {
+        Sanctum::actingAs(User::factory()->create(), []);
+
+        $this->getJson('/api/v1/accounting/financial-statements/profit-and-loss?book_id=1&start_date=2026-01-01&end_date=2026-01-31')
+            ->assertForbidden();
+    }
 }
