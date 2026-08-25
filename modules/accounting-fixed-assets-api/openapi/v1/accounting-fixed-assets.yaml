@@ -1,0 +1,7 @@
+openapi: 3.1.0
+info: {title: Accounting Fixed Assets API, version: 1.0.0}
+paths:
+  /api/v1/accounting/fixed-assets:
+    get: {operationId: listFixedAssets, responses: {'200': {description: Fixed assets}}}
+  /api/v1/accounting/fixed-assets/{asset}/summary:
+    get: {operationId: summarizeFixedAsset, responses: {'200': {description: Asset register summary}}}

@@ -1,0 +1,2 @@
+<?php
+declare(strict_types=1);namespace Liberu\Accounting\ForecastsLivewire;use Illuminate\Support\ServiceProvider;use Livewire\Livewire;use Liberu\Accounting\ForecastsLivewire\Livewire\Forecasts;final class ForecastsLivewireServiceProvider extends ServiceProvider {public function boot():void{Livewire::component('module-accounting-forecasts::forecasts',Forecasts::class);$this->loadViewsFrom(__DIR__.'/../resources/views','module-accounting-forecasts-livewire');}}
