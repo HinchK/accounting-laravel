@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e68af8956f0b3f4b91dfa7ab89bea79",
+    "content-hash": "13f00f40e119f2c4ade0f34c1f09a9fa",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -8095,6 +8095,159 @@
                 "MIT"
             ],
             "description": "Livewire adapter for the accounting general ledger.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-multi-currency",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-multi-currency",
+                "reference": "1ee027f08b5060c67754f6b1eec979695382837b"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\MultiCurrency\\MultiCurrencyServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-multi-currency"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\MultiCurrency\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Multi-currency rates and revaluation domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-multi-currency-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-multi-currency-api",
+                "reference": "bbef590156ee6e34633942d7b84861b82da8f63d"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-multi-currency": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\MultiCurrencyApi\\MultiCurrencyApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-multi-currency-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\MultiCurrencyApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Multi-currency API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-multi-currency-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-multi-currency-filament",
+                "reference": "ea311bdd622a6c044f29ff7fcd07878577de0fd1"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-multi-currency": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\MultiCurrencyFilament\\MultiCurrencyFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-multi-currency-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\MultiCurrencyFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Multi-currency Filament 5 adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-multi-currency-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-multi-currency-livewire",
+                "reference": "6e3aa509b627156ff5e4ae754e70e1ce5c353ab0"
+            },
+            "require": {
+                "liberusoftware/module-accounting-multi-currency": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\MultiCurrencyLivewire\\MultiCurrencyLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-multi-currency-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\MultiCurrencyLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Multi-currency Livewire 4 adapter.",
             "transport-options": {
                 "symlink": true,
                 "relative": true

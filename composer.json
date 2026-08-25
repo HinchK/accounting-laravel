@@ -686,6 +686,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-multi-currency",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-multi-currency-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-multi-currency-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-multi-currency-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-sales-orders",
             "options": { "symlink": true }
         },
@@ -1171,6 +1191,10 @@
         "liberusoftware/module-accounting-multi-entity-api": "^1.0",
         "liberusoftware/module-accounting-multi-entity-filament": "^1.0",
         "liberusoftware/module-accounting-multi-entity-livewire": "^1.0",
+        "liberusoftware/module-accounting-multi-currency": "^1.0",
+        "liberusoftware/module-accounting-multi-currency-api": "^1.0",
+        "liberusoftware/module-accounting-multi-currency-filament": "^1.0",
+        "liberusoftware/module-accounting-multi-currency-livewire": "^1.0",
         "liberusoftware/module-accounting-sales-orders": "^1.0",
         "liberusoftware/module-accounting-sales-orders-api": "^1.0",
         "liberusoftware/module-accounting-sales-orders-filament": "^1.0",
