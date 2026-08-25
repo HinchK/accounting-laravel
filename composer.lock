@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ba67ee51f9c8d9480175d28f365c66dd",
+    "content-hash": "13816e78ca29749d28bf2477f765ec4b",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -8103,90 +8103,284 @@
         {
             "name": "liberusoftware/module-accounting-payroll-integration",
             "version": "1.0.0",
-            "dist": {"type": "path", "url": "modules/accounting-payroll-integration", "reference": "working-tree"},
-            "require": {"illuminate/database": "^13.0", "illuminate/support": "^13.0", "php": "^8.5"},
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-payroll-integration",
+                "reference": "9474bf7347d85c56ffd34aa7e3d15cbbfeb1f427"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
             "type": "liberu-module",
-            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\PayrollIntegration\\PayrollIntegrationServiceProvider"]}, "liberu": {"name": "accounting-payroll-integration"}},
-            "autoload": {"psr-4": {"Liberu\\Accounting\\PayrollIntegration\\": "src/"}},
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PayrollIntegration\\PayrollIntegrationServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-payroll-integration"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PayrollIntegration\\": "src/"
+                }
+            },
             "description": "Payroll integration domain module.",
-            "transport-options": {"symlink": true, "relative": true}
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "liberusoftware/module-accounting-payroll-integration-api",
             "version": "1.0.0",
-            "dist": {"type": "path", "url": "modules/accounting-payroll-integration-api", "reference": "working-tree"},
-            "require": {"illuminate/http": "^13.0", "illuminate/routing": "^13.0", "liberusoftware/module-accounting-payroll-integration": "^1.0", "php": "^8.5"},
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-payroll-integration-api",
+                "reference": "8fa9ff7d3c173da82e2ebef1cac87ca201d48d14"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-payroll-integration": "^1.0",
+                "php": "^8.5"
+            },
             "type": "liberu-module",
-            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\PayrollIntegrationApi\\PayrollIntegrationApiServiceProvider"]}, "liberu": {"name": "accounting-payroll-integration-api"}},
-            "autoload": {"psr-4": {"Liberu\\Accounting\\PayrollIntegrationApi\\": "src/"}},
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PayrollIntegrationApi\\PayrollIntegrationApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-payroll-integration-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PayrollIntegrationApi\\": "src/"
+                }
+            },
             "description": "Payroll integration API adapter.",
-            "transport-options": {"symlink": true, "relative": true}
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "liberusoftware/module-accounting-payroll-integration-filament",
             "version": "1.0.0",
-            "dist": {"type": "path", "url": "modules/accounting-payroll-integration-filament", "reference": "working-tree"},
-            "require": {"filament/filament": "^5.0", "liberusoftware/module-accounting-payroll-integration": "^1.0", "php": "^8.5"},
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-payroll-integration-filament",
+                "reference": "0df5d32969ddab10251aafa97b29ca2c6ef8fe49"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-payroll-integration": "^1.0",
+                "php": "^8.5"
+            },
             "type": "liberu-module",
-            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\PayrollIntegrationFilament\\PayrollIntegrationFilamentServiceProvider"]}, "liberu": {"name": "accounting-payroll-integration-filament"}},
-            "autoload": {"psr-4": {"Liberu\\Accounting\\PayrollIntegrationFilament\\": "src/"}},
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PayrollIntegrationFilament\\PayrollIntegrationFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-payroll-integration-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PayrollIntegrationFilament\\": "src/"
+                }
+            },
             "description": "Payroll integration Filament adapter.",
-            "transport-options": {"symlink": true, "relative": true}
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "liberusoftware/module-accounting-payroll-integration-livewire",
             "version": "1.0.0",
-            "dist": {"type": "path", "url": "modules/accounting-payroll-integration-livewire", "reference": "working-tree"},
-            "require": {"liberusoftware/module-accounting-payroll-integration": "^1.0", "livewire/livewire": "^4.0", "php": "^8.5"},
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-payroll-integration-livewire",
+                "reference": "b8eb06133ee8275e0b5282fa89a27d77ef3d6354"
+            },
+            "require": {
+                "liberusoftware/module-accounting-payroll-integration": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
             "type": "liberu-module",
-            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\PayrollIntegrationLivewire\\PayrollIntegrationLivewireServiceProvider"]}, "liberu": {"name": "accounting-payroll-integration-livewire"}},
-            "autoload": {"psr-4": {"Liberu\\Accounting\\PayrollIntegrationLivewire\\": "src/"}},
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PayrollIntegrationLivewire\\PayrollIntegrationLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-payroll-integration-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PayrollIntegrationLivewire\\": "src/"
+                }
+            },
             "description": "Payroll integration Livewire adapter.",
-            "transport-options": {"symlink": true, "relative": true}
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "liberusoftware/module-accounting-payroll-journals",
             "version": "1.0.0",
-            "dist": {"type": "path", "url": "modules/accounting-payroll-journals", "reference": "working-tree"},
-            "require": {"illuminate/database": "^13.0", "illuminate/support": "^13.0", "php": "^8.5"},
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-payroll-journals",
+                "reference": "d8ebd64f5037b3d49bd7a761b2b4c151b81dc5e8"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
             "type": "liberu-module",
-            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\PayrollJournals\\PayrollJournalsServiceProvider"]}, "liberu": {"name": "accounting-payroll-journals"}},
-            "autoload": {"psr-4": {"Liberu\\Accounting\\PayrollJournals\\": "src/"}},
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PayrollJournals\\PayrollJournalsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-payroll-journals"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PayrollJournals\\": "src/"
+                }
+            },
             "description": "Payroll journals domain module.",
-            "transport-options": {"symlink": true, "relative": true}
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "liberusoftware/module-accounting-payroll-journals-api",
             "version": "1.0.0",
-            "dist": {"type": "path", "url": "modules/accounting-payroll-journals-api", "reference": "working-tree"},
-            "require": {"illuminate/http": "^13.0", "illuminate/routing": "^13.0", "liberusoftware/module-accounting-payroll-journals": "^1.0", "php": "^8.5"},
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-payroll-journals-api",
+                "reference": "083ab7d5e14d19e1d56d5691b50c28ab3da6d664"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-payroll-journals": "^1.0",
+                "php": "^8.5"
+            },
             "type": "liberu-module",
-            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\PayrollJournalsApi\\PayrollJournalsApiServiceProvider"]}, "liberu": {"name": "accounting-payroll-journals-api"}},
-            "autoload": {"psr-4": {"Liberu\\Accounting\\PayrollJournalsApi\\": "src/"}},
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PayrollJournalsApi\\PayrollJournalsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-payroll-journals-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PayrollJournalsApi\\": "src/"
+                }
+            },
             "description": "Payroll journals API adapter.",
-            "transport-options": {"symlink": true, "relative": true}
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "liberusoftware/module-accounting-payroll-journals-filament",
             "version": "1.0.0",
-            "dist": {"type": "path", "url": "modules/accounting-payroll-journals-filament", "reference": "working-tree"},
-            "require": {"filament/filament": "^5.0", "liberusoftware/module-accounting-payroll-journals": "^1.0", "php": "^8.5"},
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-payroll-journals-filament",
+                "reference": "c2b9909d89b89df0805179ebacfff1ec7d8ca035"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-payroll-journals": "^1.0",
+                "php": "^8.5"
+            },
             "type": "liberu-module",
-            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\PayrollJournalsFilament\\PayrollJournalsFilamentServiceProvider"]}, "liberu": {"name": "accounting-payroll-journals-filament"}},
-            "autoload": {"psr-4": {"Liberu\\Accounting\\PayrollJournalsFilament\\": "src/"}},
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PayrollJournalsFilament\\PayrollJournalsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-payroll-journals-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PayrollJournalsFilament\\": "src/"
+                }
+            },
             "description": "Payroll journals Filament adapter.",
-            "transport-options": {"symlink": true, "relative": true}
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "liberusoftware/module-accounting-payroll-journals-livewire",
             "version": "1.0.0",
-            "dist": {"type": "path", "url": "modules/accounting-payroll-journals-livewire", "reference": "working-tree"},
-            "require": {"liberusoftware/module-accounting-payroll-journals": "^1.0", "livewire/livewire": "^4.0", "php": "^8.5"},
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-payroll-journals-livewire",
+                "reference": "03734c1aa2258af4854f001dd0dae50cca129c80"
+            },
+            "require": {
+                "liberusoftware/module-accounting-payroll-journals": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
             "type": "liberu-module",
-            "extra": {"laravel": {"providers": ["Liberu\\Accounting\\PayrollJournalsLivewire\\PayrollJournalsLivewireServiceProvider"]}, "liberu": {"name": "accounting-payroll-journals-livewire"}},
-            "autoload": {"psr-4": {"Liberu\\Accounting\\PayrollJournalsLivewire\\": "src/"}},
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\PayrollJournalsLivewire\\PayrollJournalsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-payroll-journals-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\PayrollJournalsLivewire\\": "src/"
+                }
+            },
             "description": "Payroll journals Livewire adapter.",
-            "transport-options": {"symlink": true, "relative": true}
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "liberusoftware/module-accounting-payroll-liabilities",
