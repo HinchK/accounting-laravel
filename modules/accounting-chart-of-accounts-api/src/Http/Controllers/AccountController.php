@@ -14,6 +14,7 @@ use Liberu\Accounting\ChartOfAccounts\Actions\ArchiveAccount;
 use Liberu\Accounting\ChartOfAccounts\Actions\SaveAccount;
 use Liberu\Accounting\ChartOfAccounts\Models\Account;
 use Liberu\Accounting\ChartOfAccounts\Exceptions\InvalidAccountHierarchy;
+use Liberu\Accounting\ChartOfAccounts\Exceptions\InvalidAccount;
 use Liberu\Accounting\ChartOfAccountsApi\Http\Requests\StoreAccountRequest;
 use Liberu\Accounting\ChartOfAccountsApi\Http\Requests\UpdateAccountRequest;
 use Liberu\Accounting\ChartOfAccountsApi\Http\Resources\AccountResource;
@@ -23,9 +24,20 @@ final class AccountController extends Controller
     public function index(Request $request): JsonResponse
     {
         Gate::authorize('viewAny', Account::class);
-        $query = Account::query()->latest()->when($request->integer('legal_entity_id'), fn ($q, $id) => $q->where('legal_entity_id', $id));
+        $query = Account::query()->when(! $request->boolean('include_archived'), fn ($q) => $q->where('is_active', true))->latest()->when($request->integer('legal_entity_id'), fn ($q, $id) => $q->where('legal_entity_id', $id))->when($request->filled('type'), fn ($q) => $q->where('type', $request->string('type')));
 
         return AccountResource::collection($query->paginate(min($request->integer('per_page', 25), 100)))->response();
+    }
+
+    public function tree(Request $request): JsonResponse
+    {
+        Gate::authorize('viewAny', Account::class);
+        $entityId = $request->integer('legal_entity_id');
+        if ($entityId < 1) {
+            throw ValidationException::withMessages(['legal_entity_id' => 'A legal entity is required.']);
+        }
+
+        return response()->json(['data' => AccountResource::collection(Account::query()->where('legal_entity_id', $entityId)->whereNull('parent_id')->with('children.children.children')->orderBy('code')->get())]);
     }
 
     public function show(string $account): AccountResource
@@ -44,6 +56,8 @@ final class AccountController extends Controller
             return (new AccountResource($save->handle($request->validated())))->response()->setStatusCode(201);
         } catch (InvalidAccountHierarchy $exception) {
             $this->rejectHierarchy($exception);
+        } catch (InvalidAccount $exception) {
+            $this->rejectAccount($exception);
         }
     }
 
@@ -56,6 +70,8 @@ final class AccountController extends Controller
             return new AccountResource($save->handle($request->validated() + ['legal_entity_id' => $model->legal_entity_id], $model));
         } catch (InvalidAccountHierarchy $exception) {
             $this->rejectHierarchy($exception);
+        } catch (InvalidAccount $exception) {
+            $this->rejectAccount($exception);
         }
     }
 
@@ -67,6 +83,8 @@ final class AccountController extends Controller
             $archive->handle($model);
         } catch (InvalidAccountHierarchy $exception) {
             $this->rejectHierarchy($exception);
+        } catch (InvalidAccount $exception) {
+            $this->rejectAccount($exception);
         }
 
         return response()->noContent();
@@ -76,5 +94,10 @@ final class AccountController extends Controller
     private function rejectHierarchy(InvalidAccountHierarchy $exception): never
     {
         throw ValidationException::withMessages(['parent_id' => $exception->getMessage()]);
+    }
+
+    private function rejectAccount(InvalidAccount $exception): never
+    {
+        throw ValidationException::withMessages(['account' => $exception->getMessage()]);
     }
 }

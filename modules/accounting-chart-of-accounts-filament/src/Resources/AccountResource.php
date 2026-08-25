@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Liberu\Accounting\ChartOfAccountsFilament\Resources;
 
-use Filament\Actions\DeleteAction;
+use Filament\Actions\Action;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -17,6 +17,7 @@ use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Liberu\Accounting\ChartOfAccounts\Models\Account;
+use Liberu\Accounting\ChartOfAccounts\Actions\ArchiveAccount;
 use Liberu\Accounting\ChartOfAccountsFilament\Resources\AccountResource\Pages\CreateAccount;
 use Liberu\Accounting\ChartOfAccountsFilament\Resources\AccountResource\Pages\EditAccount;
 use Liberu\Accounting\ChartOfAccountsFilament\Resources\AccountResource\Pages\ListAccounts;
@@ -53,7 +54,10 @@ final class AccountResource extends Resource
             TextColumn::make('normal_balance')->badge(),
             IconColumn::make('is_control_account')->boolean(),
             IconColumn::make('is_active')->boolean(),
-        ])->recordActions([EditAction::make(), DeleteAction::make()]);
+        ])->recordActions([
+            EditAction::make(),
+            Action::make('archive')->requiresConfirmation()->visible(fn (Account $record): bool => $record->is_active)->action(fn (Account $record): Account => app(ArchiveAccount::class)->handle($record)),
+        ]);
     }
 
     /** @return array<string, PageRegistration> */
