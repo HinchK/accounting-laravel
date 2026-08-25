@@ -786,6 +786,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-leases",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-leases-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-leases-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-leases-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-sales-orders",
             "options": { "symlink": true }
         },
@@ -1291,6 +1311,10 @@
         "liberusoftware/module-accounting-management-reporting-api": "^1.0",
         "liberusoftware/module-accounting-management-reporting-filament": "^1.0",
         "liberusoftware/module-accounting-management-reporting-livewire": "^1.0",
+        "liberusoftware/module-accounting-leases": "^1.0",
+        "liberusoftware/module-accounting-leases-api": "^1.0",
+        "liberusoftware/module-accounting-leases-filament": "^1.0",
+        "liberusoftware/module-accounting-leases-livewire": "^1.0",
         "liberusoftware/module-accounting-sales-orders": "^1.0",
         "liberusoftware/module-accounting-sales-orders-api": "^1.0",
         "liberusoftware/module-accounting-sales-orders-filament": "^1.0",
