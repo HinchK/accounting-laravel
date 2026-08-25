@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "89d0d9adf4a33821d06872a39e8a6cfd",
+    "content-hash": "69384798493551a1220f56742db476c6",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -8095,6 +8095,159 @@
                 "MIT"
             ],
             "description": "Livewire adapter for the accounting general ledger.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-migration-framework",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-migration-framework",
+                "reference": "dbc4f0e2f4ede57889ee1de19dec39e3fca1b426"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\MigrationFramework\\MigrationFrameworkServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-migration-framework"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\MigrationFramework\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting migration sources, mappings, dry runs, batches, resume, errors and reconciliation.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-migration-framework-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-migration-framework-api",
+                "reference": "5d9a00f587fe183a624f33fe875a58b1be1dcd51"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-migration-framework": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\MigrationFrameworkApi\\MigrationFrameworkApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-migration-framework-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\MigrationFrameworkApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API for the accounting migration framework.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-migration-framework-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-migration-framework-filament",
+                "reference": "09849be1ceb1b057cffe99a6be08f2376a947abb"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-migration-framework": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\MigrationFrameworkFilament\\MigrationFrameworkFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-migration-framework-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\MigrationFrameworkFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 UI for migration framework operations.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-migration-framework-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-migration-framework-livewire",
+                "reference": "0eb9c1b042b25020081612ee4d5411e0c5b069d5"
+            },
+            "require": {
+                "liberusoftware/module-accounting-migration-framework": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\MigrationFrameworkLivewire\\MigrationFrameworkLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-migration-framework-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\MigrationFrameworkLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 UI for migration framework operations.",
             "transport-options": {
                 "symlink": true,
                 "relative": true

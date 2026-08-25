@@ -726,6 +726,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-migration-framework",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-migration-framework-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-migration-framework-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-migration-framework-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-sales-orders",
             "options": { "symlink": true }
         },
@@ -1219,6 +1239,10 @@
         "liberusoftware/module-accounting-mileage-api": "^1.0",
         "liberusoftware/module-accounting-mileage-filament": "^1.0",
         "liberusoftware/module-accounting-mileage-livewire": "^1.0",
+        "liberusoftware/module-accounting-migration-framework": "^1.0",
+        "liberusoftware/module-accounting-migration-framework-api": "^1.0",
+        "liberusoftware/module-accounting-migration-framework-filament": "^1.0",
+        "liberusoftware/module-accounting-migration-framework-livewire": "^1.0",
         "liberusoftware/module-accounting-sales-orders": "^1.0",
         "liberusoftware/module-accounting-sales-orders-api": "^1.0",
         "liberusoftware/module-accounting-sales-orders-filament": "^1.0",
