@@ -926,6 +926,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-estimates-and-quotes",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-estimates-and-quotes-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-estimates-and-quotes-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-estimates-and-quotes-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-fixed-assets",
             "options": { "symlink": true }
         },
@@ -1503,6 +1523,10 @@
         "liberusoftware/module-accounting-fixed-assets-api": "^1.0",
         "liberusoftware/module-accounting-fixed-assets-filament": "^1.0",
         "liberusoftware/module-accounting-fixed-assets-livewire": "^1.0",
+        "liberusoftware/module-accounting-estimates-and-quotes": "^1.0",
+        "liberusoftware/module-accounting-estimates-and-quotes-api": "^1.0",
+        "liberusoftware/module-accounting-estimates-and-quotes-filament": "^1.0",
+        "liberusoftware/module-accounting-estimates-and-quotes-livewire": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals-api": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals-filament": "^1.0",
