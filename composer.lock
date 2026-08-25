@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7637449926c5ed8821f73d369a271d42",
+    "content-hash": "71351e0522bf8438712e5305e4434153",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -8095,6 +8095,159 @@
                 "MIT"
             ],
             "description": "Livewire adapter for the accounting general ledger.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-inventory-accounting",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-inventory-accounting",
+                "reference": "7501eebd6d278d863593227d0b8978eeaf2bced4"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\InventoryAccounting\\InventoryAccountingServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-inventory-accounting"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\InventoryAccounting\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Inventory valuation, cost layers, cost of sales, landed costs, adjustments, write-downs and reconciliation.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-inventory-accounting-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-inventory-accounting-api",
+                "reference": "75342fd939f0cb9020633068eba4b60f83d0323c"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-inventory-accounting": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\InventoryAccountingApi\\InventoryAccountingApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-inventory-accounting-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\InventoryAccountingApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API for inventory accounting.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-inventory-accounting-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-inventory-accounting-filament",
+                "reference": "4cb4261fca3d0f84ca0e9a2e757fbd6993946630"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-inventory-accounting": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\InventoryAccountingFilament\\InventoryAccountingFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-inventory-accounting-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\InventoryAccountingFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 UI for inventory accounting.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-inventory-accounting-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-inventory-accounting-livewire",
+                "reference": "462558539a8b1c360724a094ae47eb3e6fe8ef0b"
+            },
+            "require": {
+                "liberusoftware/module-accounting-inventory-accounting": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\InventoryAccountingLivewire\\InventoryAccountingLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-inventory-accounting-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\InventoryAccountingLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 UI for inventory accounting.",
             "transport-options": {
                 "symlink": true,
                 "relative": true

@@ -846,6 +846,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-inventory-accounting",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-inventory-accounting-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-inventory-accounting-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-inventory-accounting-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-kpi-and-goals",
             "options": { "symlink": true }
         },
@@ -1383,6 +1403,10 @@
         "liberusoftware/module-accounting-job-estimates-api": "^1.0",
         "liberusoftware/module-accounting-job-estimates-filament": "^1.0",
         "liberusoftware/module-accounting-job-estimates-livewire": "^1.0",
+        "liberusoftware/module-accounting-inventory-accounting": "^1.0",
+        "liberusoftware/module-accounting-inventory-accounting-api": "^1.0",
+        "liberusoftware/module-accounting-inventory-accounting-filament": "^1.0",
+        "liberusoftware/module-accounting-inventory-accounting-livewire": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals-api": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals-filament": "^1.0",
