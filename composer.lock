@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "71351e0522bf8438712e5305e4434153",
+    "content-hash": "5df1949c20502f9ac2f59e5c5e47f0cb",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -8095,6 +8095,159 @@
                 "MIT"
             ],
             "description": "Livewire adapter for the accounting general ledger.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-intercompany",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-intercompany",
+                "reference": "347e94032b47bbdcc5e909af9cd82256e4b665fc"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\Intercompany\\IntercompanyServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-intercompany"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\Intercompany\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Intercompany counterparties, trading rules, paired transactions, settlement, evidence and reconciliation.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-intercompany-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-intercompany-api",
+                "reference": "4a687c63191fd408ce9d8a46c3bcc41f491a354d"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-intercompany": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\IntercompanyApi\\IntercompanyApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-intercompany-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\IntercompanyApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API for intercompany accounting.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-intercompany-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-intercompany-filament",
+                "reference": "acd078f656b6f28766c10eb8dc1bc8d88863bd62"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-intercompany": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\IntercompanyFilament\\IntercompanyFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-intercompany-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\IntercompanyFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 UI for intercompany accounting.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-intercompany-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-intercompany-livewire",
+                "reference": "c3a10fde3fc5acecaff572c15da29b589a8bb5b6"
+            },
+            "require": {
+                "liberusoftware/module-accounting-intercompany": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\IntercompanyLivewire\\IntercompanyLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-intercompany-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\IntercompanyLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 UI for intercompany accounting.",
             "transport-options": {
                 "symlink": true,
                 "relative": true

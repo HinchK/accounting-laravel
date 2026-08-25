@@ -866,6 +866,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-intercompany",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-intercompany-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-intercompany-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-intercompany-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-kpi-and-goals",
             "options": { "symlink": true }
         },
@@ -1407,6 +1427,10 @@
         "liberusoftware/module-accounting-inventory-accounting-api": "^1.0",
         "liberusoftware/module-accounting-inventory-accounting-filament": "^1.0",
         "liberusoftware/module-accounting-inventory-accounting-livewire": "^1.0",
+        "liberusoftware/module-accounting-intercompany": "^1.0",
+        "liberusoftware/module-accounting-intercompany-api": "^1.0",
+        "liberusoftware/module-accounting-intercompany-filament": "^1.0",
+        "liberusoftware/module-accounting-intercompany-livewire": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals-api": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals-filament": "^1.0",
