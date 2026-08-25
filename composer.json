@@ -886,6 +886,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-goods-and-service-receipts",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-goods-and-service-receipts-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-goods-and-service-receipts-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-goods-and-service-receipts-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-kpi-and-goals",
             "options": { "symlink": true }
         },
@@ -1431,6 +1451,10 @@
         "liberusoftware/module-accounting-intercompany-api": "^1.0",
         "liberusoftware/module-accounting-intercompany-filament": "^1.0",
         "liberusoftware/module-accounting-intercompany-livewire": "^1.0",
+        "liberusoftware/module-accounting-goods-and-service-receipts": "^1.0",
+        "liberusoftware/module-accounting-goods-and-service-receipts-api": "^1.0",
+        "liberusoftware/module-accounting-goods-and-service-receipts-filament": "^1.0",
+        "liberusoftware/module-accounting-goods-and-service-receipts-livewire": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals-api": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals-filament": "^1.0",

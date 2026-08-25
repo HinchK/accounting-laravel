@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5df1949c20502f9ac2f59e5c5e47f0cb",
+    "content-hash": "fd901e0e031e5c98785e8625aee1f4f9",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -8095,6 +8095,159 @@
                 "MIT"
             ],
             "description": "Livewire adapter for the accounting general ledger.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-goods-and-service-receipts",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-goods-and-service-receipts",
+                "reference": "ed25e0e1bcf0d2b5e58af63b1f5bcf798d3b0f8d"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\GoodsAndServiceReceipts\\GoodsAndServiceReceiptsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-goods-and-service-receipts"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\GoodsAndServiceReceipts\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Goods and service receipts, quantities, variance, returns, attachments and accruals.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-goods-and-service-receipts-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-goods-and-service-receipts-api",
+                "reference": "ca30c9aae72d4e68de82521c4691625f3e5473dd"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-goods-and-service-receipts": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\GoodsAndServiceReceiptsApi\\GoodsAndServiceReceiptsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-goods-and-service-receipts-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\GoodsAndServiceReceiptsApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API for goods and service receipts.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-goods-and-service-receipts-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-goods-and-service-receipts-filament",
+                "reference": "ae12105bb9398d7e4435793e4ae5eef065f8e685"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-goods-and-service-receipts": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\GoodsAndServiceReceiptsFilament\\GoodsAndServiceReceiptsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-goods-and-service-receipts-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\GoodsAndServiceReceiptsFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 UI for goods and service receipts.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-goods-and-service-receipts-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-goods-and-service-receipts-livewire",
+                "reference": "9b12b4a8d7138197b4f5925c0d91e32511a84adb"
+            },
+            "require": {
+                "liberusoftware/module-accounting-goods-and-service-receipts": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\GoodsAndServiceReceiptsLivewire\\GoodsAndServiceReceiptsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-goods-and-service-receipts-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\GoodsAndServiceReceiptsLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 UI for goods and service receipts.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
