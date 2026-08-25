@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "79bffd86dae43866391272663a12a544",
+    "content-hash": "68d42e98d4cf45d70df978c36c384239",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -8095,6 +8095,159 @@
                 "MIT"
             ],
             "description": "Livewire adapter for the accounting general ledger.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-journal-approvals",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-journal-approvals",
+                "reference": "7d0e2f9851cabffa41b857b1fd18c35f2bc4cfcc"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\JournalApprovals\\JournalApprovalsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-journal-approvals"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\JournalApprovals\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Journal approval requests, thresholds, evidence, decisions, posting and emergency controls.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-journal-approvals-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-journal-approvals-api",
+                "reference": "ec086163e44979d898f02a5edd357b99e9867bfc"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-journal-approvals": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\JournalApprovalsApi\\JournalApprovalsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-journal-approvals-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\JournalApprovalsApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API for journal approvals.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-journal-approvals-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-journal-approvals-filament",
+                "reference": "13459718d94123c87ec06e2dac55f723a452d01c"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-journal-approvals": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\JournalApprovalsFilament\\JournalApprovalsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-journal-approvals-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\JournalApprovalsFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 UI for journal approvals.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-journal-approvals-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-journal-approvals-livewire",
+                "reference": "629f4c6ef0b981d9a9c5ea1d407fbfa41aca0bc8"
+            },
+            "require": {
+                "liberusoftware/module-accounting-journal-approvals": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\JournalApprovalsLivewire\\JournalApprovalsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-journal-approvals-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\JournalApprovalsLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 UI for journal approvals.",
             "transport-options": {
                 "symlink": true,
                 "relative": true

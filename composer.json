@@ -806,6 +806,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-journal-approvals",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-journal-approvals-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-journal-approvals-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-journal-approvals-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-kpi-and-goals",
             "options": { "symlink": true }
         },
@@ -1335,6 +1355,10 @@
         "liberusoftware/module-accounting-leases-api": "^1.0",
         "liberusoftware/module-accounting-leases-filament": "^1.0",
         "liberusoftware/module-accounting-leases-livewire": "^1.0",
+        "liberusoftware/module-accounting-journal-approvals": "^1.0",
+        "liberusoftware/module-accounting-journal-approvals-api": "^1.0",
+        "liberusoftware/module-accounting-journal-approvals-filament": "^1.0",
+        "liberusoftware/module-accounting-journal-approvals-livewire": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals-api": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals-filament": "^1.0",
