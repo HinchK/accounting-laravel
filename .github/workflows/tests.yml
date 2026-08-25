@@ -45,6 +45,12 @@ jobs:
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist --optimize-autoloader
 
+      # Composer's custom module installer places remote package archives under
+      # tracked module/theme directories. Restore the repository-owned sources so
+      # formatting, analysis, and tests exercise the checked-in implementation.
+      - name: Restore tracked package sources
+        run: git restore --source=HEAD --worktree -- modules themes
+
       - name: Audit dependencies
         run: composer audit --locked
 
