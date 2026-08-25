@@ -626,6 +626,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-operational-reports",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-operational-reports-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-operational-reports-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-operational-reports-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-sales-orders",
             "options": { "symlink": true }
         },
@@ -1099,6 +1119,10 @@
         "liberusoftware/module-accounting-payment-reconciliation-api": "^1.0",
         "liberusoftware/module-accounting-payment-reconciliation-filament": "^1.0",
         "liberusoftware/module-accounting-payment-reconciliation-livewire": "^1.0",
+        "liberusoftware/module-accounting-operational-reports": "^1.0",
+        "liberusoftware/module-accounting-operational-reports-api": "^1.0",
+        "liberusoftware/module-accounting-operational-reports-filament": "^1.0",
+        "liberusoftware/module-accounting-operational-reports-livewire": "^1.0",
         "liberusoftware/module-accounting-sales-orders": "^1.0",
         "liberusoftware/module-accounting-sales-orders-api": "^1.0",
         "liberusoftware/module-accounting-sales-orders-filament": "^1.0",

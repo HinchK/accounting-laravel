@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "39767c37f168ede5dee1ddf29e3f585b",
+    "content-hash": "f2b3206513f989917677ed5749535ce5",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -8095,6 +8095,159 @@
                 "MIT"
             ],
             "description": "Livewire adapter for the accounting general ledger.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-operational-reports",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-operational-reports",
+                "reference": "d8346412957892435cebd3b9ed5402e46de24668"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\OperationalReports\\OperationalReportsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-operational-reports"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\OperationalReports\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Operational reporting domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-operational-reports-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-operational-reports-api",
+                "reference": "9f9d84011a444473cb2ebddc1bb2e5eb54d56a38"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-operational-reports": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\OperationalReportsApi\\OperationalReportsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-operational-reports-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\OperationalReportsApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Operational reports API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-operational-reports-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-operational-reports-filament",
+                "reference": "7c7f54184e38373d400d48d2d7af292e4bb1b3cd"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-operational-reports": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\OperationalReportsFilament\\OperationalReportsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-operational-reports-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\OperationalReportsFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Operational reports Filament 5 adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-operational-reports-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-operational-reports-livewire",
+                "reference": "499d39a5add8a48b94fc7ab40eba4d489bfa898e"
+            },
+            "require": {
+                "liberusoftware/module-accounting-operational-reports": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\OperationalReportsLivewire\\OperationalReportsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-operational-reports-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\OperationalReportsLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Operational reports Livewire 4 adapter.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
