@@ -986,6 +986,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-document-capture",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-document-capture-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-document-capture-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-document-capture-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-fixed-assets",
             "options": { "symlink": true }
         },
@@ -1575,6 +1595,10 @@
         "liberusoftware/module-accounting-e-invoicing-api": "^1.0",
         "liberusoftware/module-accounting-e-invoicing-filament": "^1.0",
         "liberusoftware/module-accounting-e-invoicing-livewire": "^1.0",
+        "liberusoftware/module-accounting-document-capture": "^1.0",
+        "liberusoftware/module-accounting-document-capture-api": "^1.0",
+        "liberusoftware/module-accounting-document-capture-filament": "^1.0",
+        "liberusoftware/module-accounting-document-capture-livewire": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals-api": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals-filament": "^1.0",
