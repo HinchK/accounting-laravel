@@ -666,6 +666,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-multi-entity",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-multi-entity-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-multi-entity-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-multi-entity-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-sales-orders",
             "options": { "symlink": true }
         },
@@ -1147,6 +1167,10 @@
         "liberusoftware/module-accounting-opening-balances-api": "^1.0",
         "liberusoftware/module-accounting-opening-balances-filament": "^1.0",
         "liberusoftware/module-accounting-opening-balances-livewire": "^1.0",
+        "liberusoftware/module-accounting-multi-entity": "^1.0",
+        "liberusoftware/module-accounting-multi-entity-api": "^1.0",
+        "liberusoftware/module-accounting-multi-entity-filament": "^1.0",
+        "liberusoftware/module-accounting-multi-entity-livewire": "^1.0",
         "liberusoftware/module-accounting-sales-orders": "^1.0",
         "liberusoftware/module-accounting-sales-orders-api": "^1.0",
         "liberusoftware/module-accounting-sales-orders-filament": "^1.0",

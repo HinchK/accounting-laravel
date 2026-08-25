@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "72532d0b6cc1b7a70311be6fc0bda867",
+    "content-hash": "7e68af8956f0b3f4b91dfa7ab89bea79",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -8095,6 +8095,159 @@
                 "MIT"
             ],
             "description": "Livewire adapter for the accounting general ledger.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-multi-entity",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-multi-entity",
+                "reference": "3e0cbcbfc41029b37f0e84d0a70df1ec0570e9e6"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\MultiEntity\\MultiEntityServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-multi-entity"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\MultiEntity\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Multi-entity accounting domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-multi-entity-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-multi-entity-api",
+                "reference": "4e853b4e888ebb1347b6701b79f01ba521fe60c3"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-multi-entity": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\MultiEntityApi\\MultiEntityApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-multi-entity-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\MultiEntityApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Multi-entity API adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-multi-entity-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-multi-entity-filament",
+                "reference": "efe507bc47de62902ad5c70e5b6d53598ced6191"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-multi-entity": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\MultiEntityFilament\\MultiEntityFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-multi-entity-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\MultiEntityFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Multi-entity Filament 5 adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-multi-entity-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-multi-entity-livewire",
+                "reference": "fb3488a80f9f0f8a8e7ea3985e115646e3586bcd"
+            },
+            "require": {
+                "liberusoftware/module-accounting-multi-entity": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\MultiEntityLivewire\\MultiEntityLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-multi-entity-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\MultiEntityLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Multi-entity Livewire 4 adapter.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
