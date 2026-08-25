@@ -906,6 +906,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-forecasts",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-forecasts-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-forecasts-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-forecasts-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-kpi-and-goals",
             "options": { "symlink": true }
         },
@@ -1455,6 +1475,10 @@
         "liberusoftware/module-accounting-goods-and-service-receipts-api": "^1.0",
         "liberusoftware/module-accounting-goods-and-service-receipts-filament": "^1.0",
         "liberusoftware/module-accounting-goods-and-service-receipts-livewire": "^1.0",
+        "liberusoftware/module-accounting-forecasts": "^1.0",
+        "liberusoftware/module-accounting-forecasts-api": "^1.0",
+        "liberusoftware/module-accounting-forecasts-filament": "^1.0",
+        "liberusoftware/module-accounting-forecasts-livewire": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals-api": "^1.0",
         "liberusoftware/module-accounting-kpi-and-goals-filament": "^1.0",

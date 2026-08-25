@@ -1,0 +1,8 @@
+openapi: 3.1.0
+info: {title: Accounting Forecasts API, version: 1.0.0}
+paths:
+  /api/v1/accounting/forecasts:
+    get: {operationId: listForecasts, responses: {'200': {description: Forecasts}}}
+    post: {operationId: createForecast, responses: {'201': {description: Created forecast}}}
+  /api/v1/accounting/forecasts/{forecast}/variance:
+    get: {operationId: calculateForecastVariance, responses: {'200': {description: Forecast variance}}}

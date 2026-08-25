@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd901e0e031e5c98785e8625aee1f4f9",
+    "content-hash": "bd0c104438b044018122894536203074",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7940,6 +7940,159 @@
                 "MIT"
             ],
             "description": "Livewire adapter for accounting financial statements.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-forecasts",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-forecasts",
+                "reference": "050853f3b0d7c11bd28f429f9cc92d43f9e4541e"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\Forecasts\\ForecastsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-forecasts"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\Forecasts\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Driver and manual forecasts, scenarios, rolling periods, assumptions, approvals and variance.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-forecasts-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-forecasts-api",
+                "reference": "808d0bd55254e7134f732c682a4d3cd92c47b12d"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-forecasts": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ForecastsApi\\ForecastsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-forecasts-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ForecastsApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "HTTP API for forecasts.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-forecasts-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-forecasts-filament",
+                "reference": "554fba7633e79c66c017bf0c56f6c1579a85939f"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-forecasts": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ForecastsFilament\\ForecastsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-forecasts-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ForecastsFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament 5 UI for forecasts.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-forecasts-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-forecasts-livewire",
+                "reference": "8f79dd3e31899abc61f8452b1784ceba6dfc461a"
+            },
+            "require": {
+                "liberusoftware/module-accounting-forecasts": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ForecastsLivewire\\ForecastsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-forecasts-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ForecastsLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire 4 UI for forecasts.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
