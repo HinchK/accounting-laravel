@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Liberu\Accounting\AccountsPayable\Actions;
 
-use Liberu\Accounting\AccountsPayable\Enums\PayableStatus;
-use Liberu\Accounting\AccountsPayable\Enums\DisputeStatus;
 use Illuminate\Support\Facades\DB;
+use Liberu\Accounting\AccountsPayable\Enums\DisputeStatus;
+use Liberu\Accounting\AccountsPayable\Enums\PayableStatus;
 use Liberu\Accounting\AccountsPayable\Events\DisputeOpened;
 use Liberu\Accounting\AccountsPayable\Exceptions\InvalidPayable;
 use Liberu\Accounting\AccountsPayable\Models\PayableDispute;

@@ -6,7 +6,8 @@ namespace Liberu\Accounting\Forecasts\Actions;
 
 use Liberu\Accounting\Forecasts\Enums\ForecastStatus;
 use Liberu\Accounting\Forecasts\Exceptions\InvalidForecast;
-use Liberu\Accounting\Forecasts\Models\{Forecast, ForecastAssumption};
+use Liberu\Accounting\Forecasts\Models\Forecast;
+use Liberu\Accounting\Forecasts\Models\ForecastAssumption;
 
 final class AddForecastAssumption
 {

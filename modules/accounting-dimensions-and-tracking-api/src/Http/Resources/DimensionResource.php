@@ -5,7 +5,8 @@ declare(strict_types=1);
 namespace Liberu\Accounting\DimensionsApi\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use Liberu\Accounting\Dimensions\Models\{Dimension, DimensionValue};
+use Liberu\Accounting\Dimensions\Models\Dimension;
+use Liberu\Accounting\Dimensions\Models\DimensionValue;
 
 final class DimensionResource extends JsonResource
 {

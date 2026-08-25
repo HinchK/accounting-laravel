@@ -19,6 +19,7 @@ final class RecordPayment
         if ((float) ($attributes['amount'] ?? 0) <= 0 || strlen((string) ($attributes['currency'] ?? '')) !== 3) {
             throw new InvalidPayable('A payment requires a positive amount and currency.');
         }
+
         return DB::transaction(function () use ($attributes): PayablePayment {
             if (! empty($attributes['party_id']) && ! Party::query()->whereKey($attributes['party_id'])->where('type', PartyType::Supplier)->exists()) {
                 throw new InvalidPayable('Payments can only be assigned to an existing supplier.');

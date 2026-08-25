@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Liberu\Accounting\FixedAssets\Actions;
 
-use Liberu\Accounting\FixedAssets\Exceptions\InvalidAsset;
 use Liberu\Accounting\FixedAssets\Events\AssetLocationAssigned;
-use Liberu\Accounting\FixedAssets\Models\{Asset, AssetLocation};
+use Liberu\Accounting\FixedAssets\Exceptions\InvalidAsset;
+use Liberu\Accounting\FixedAssets\Models\Asset;
+use Liberu\Accounting\FixedAssets\Models\AssetLocation;
 
 final class AssignAssetLocation
 {

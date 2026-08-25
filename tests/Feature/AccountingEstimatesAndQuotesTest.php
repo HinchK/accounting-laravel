@@ -4,14 +4,18 @@ declare(strict_types=1);
 
 namespace Tests\Feature;
 
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Event;
 use Laravel\Sanctum\Sanctum;
-use Liberu\Accounting\EstimatesAndQuotes\Actions\{AddEstimateItem, ConvertEstimate, CreateEstimate, DecideEstimate, SendEstimate};
+use Liberu\Accounting\EstimatesAndQuotes\Actions\AddEstimateItem;
+use Liberu\Accounting\EstimatesAndQuotes\Actions\ConvertEstimate;
+use Liberu\Accounting\EstimatesAndQuotes\Actions\CreateEstimate;
+use Liberu\Accounting\EstimatesAndQuotes\Actions\DecideEstimate;
+use Liberu\Accounting\EstimatesAndQuotes\Actions\SendEstimate;
 use Liberu\Accounting\EstimatesAndQuotes\Enums\EstimateStatus;
 use Liberu\Accounting\EstimatesAndQuotes\Events\EstimateLifecycleChanged;
 use Liberu\Accounting\EstimatesAndQuotes\Exceptions\InvalidEstimate;
-use Liberu\Accounting\EstimatesAndQuotes\Models\Estimate;
 use Tests\TestCase;
 
 final class AccountingEstimatesAndQuotesTest extends TestCase
@@ -43,10 +47,10 @@ final class AccountingEstimatesAndQuotesTest extends TestCase
 
     public function test_api_enforces_estimate_write_ability_and_exposes_created_estimates(): void
     {
-        Sanctum::actingAs(\App\Models\User::factory()->create(), ['accounting.estimates-and-quotes.read']);
+        Sanctum::actingAs(User::factory()->create(), ['accounting.estimates-and-quotes.read']);
         $this->postJson('/api/v1/accounting/estimates-and-quotes', [])->assertForbidden();
 
-        Sanctum::actingAs(\App\Models\User::factory()->create(), ['accounting.estimates-and-quotes.write']);
+        Sanctum::actingAs(User::factory()->create(), ['accounting.estimates-and-quotes.write']);
         $response = $this->postJson('/api/v1/accounting/estimates-and-quotes', ['legal_entity_id' => 2, 'customer_ref' => 'CUS-3', 'quote_ref' => 'Q-003', 'name' => 'API quote', 'currency' => 'USD', 'issue_date' => '2026-08-25'])->assertCreated();
         $this->assertSame('Q-003', $response->json('data.quote_ref'));
         $this->assertDatabaseHas('accounting_sales_estimates', ['quote_ref' => 'Q-003']);

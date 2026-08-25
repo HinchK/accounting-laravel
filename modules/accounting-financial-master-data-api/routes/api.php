@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
 use Liberu\Accounting\FinancialMasterDataApi\Http\Controllers\PartyController;
-use Liberu\Accounting\FinancialMasterDataApi\Http\Controllers\ReferenceDataController;
 use Liberu\Accounting\FinancialMasterDataApi\Http\Controllers\PartyDetailController;
+use Liberu\Accounting\FinancialMasterDataApi\Http\Controllers\ReferenceDataController;
 
 Route::prefix('api/v1/accounting/financial-master-data')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {
     Route::get('parties', [PartyController::class, 'index'])->middleware('ability:accounting.master-data.read');

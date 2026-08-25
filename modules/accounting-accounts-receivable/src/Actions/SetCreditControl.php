@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Liberu\Accounting\AccountsReceivable\Actions;
 
-use Liberu\Accounting\AccountsReceivable\Models\ReceivableAccount;
 use Illuminate\Support\Facades\DB;
 use Liberu\Accounting\AccountsReceivable\Events\CreditControlChanged;
 use Liberu\Accounting\AccountsReceivable\Exceptions\InvalidReceivable;
+use Liberu\Accounting\AccountsReceivable\Models\ReceivableAccount;
 use Liberu\Accounting\FinancialMasterData\Enums\PartyType;
 use Liberu\Accounting\FinancialMasterData\Models\Party;
 

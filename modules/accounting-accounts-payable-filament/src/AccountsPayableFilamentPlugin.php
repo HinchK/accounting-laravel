@@ -10,11 +10,20 @@ use Liberu\Accounting\AccountsPayableFilament\Resources\PayableOpenItemResource;
 
 final class AccountsPayableFilamentPlugin implements Plugin
 {
-    public static function make(): static { return new self(); }
-    public function getId(): string { return 'accounting-accounts-payable'; }
+    public static function make(): static
+    {
+        return new self();
+    }
+
+    public function getId(): string
+    {
+        return 'accounting-accounts-payable';
+    }
+
     public function register(Panel $panel): void
     {
         $panel->resources([PayableOpenItemResource::class]);
     }
+
     public function boot(Panel $panel): void {}
 }

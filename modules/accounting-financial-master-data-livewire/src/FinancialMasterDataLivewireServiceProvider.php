@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Liberu\Accounting\FinancialMasterDataLivewire;
 
 use Illuminate\Support\ServiceProvider;
-use Livewire\Livewire;
 use Liberu\Accounting\FinancialMasterDataLivewire\Livewire\Parties;
 use Liberu\Accounting\FinancialMasterDataLivewire\Livewire\ReferenceData;
+use Livewire\Livewire;
 
 final class FinancialMasterDataLivewireServiceProvider extends ServiceProvider
 {

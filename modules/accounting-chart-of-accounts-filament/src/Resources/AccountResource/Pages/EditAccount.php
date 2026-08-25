@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Liberu\Accounting\ChartOfAccountsFilament\Resources\AccountResource\Pages;
 
-use Illuminate\Database\Eloquent\Model;
 use Filament\Resources\Pages\EditRecord;
+use Illuminate\Database\Eloquent\Model;
 use Liberu\Accounting\ChartOfAccounts\Actions\SaveAccount;
 use Liberu\Accounting\ChartOfAccounts\Models\Account;
 use Liberu\Accounting\ChartOfAccountsFilament\Resources\AccountResource;

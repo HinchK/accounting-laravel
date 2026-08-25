@@ -7,7 +7,8 @@ namespace Liberu\Accounting\Forecasts\Actions;
 use Carbon\CarbonImmutable;
 use Liberu\Accounting\Forecasts\Enums\ForecastStatus;
 use Liberu\Accounting\Forecasts\Exceptions\InvalidForecast;
-use Liberu\Accounting\Forecasts\Models\{Forecast, ForecastPeriod};
+use Liberu\Accounting\Forecasts\Models\Forecast;
+use Liberu\Accounting\Forecasts\Models\ForecastPeriod;
 
 final class CreateForecastPeriods
 {

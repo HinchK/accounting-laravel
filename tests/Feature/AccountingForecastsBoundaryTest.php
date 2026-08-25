@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace Tests\Feature;
 
-use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Liberu\Accounting\Forecasts\Actions\{AddForecastAssumption, CreateForecast, CreateForecastPeriods, SubmitForecast};
+use Illuminate\Support\Facades\Event;
+use Liberu\Accounting\Forecasts\Actions\AddForecastAssumption;
+use Liberu\Accounting\Forecasts\Actions\CreateForecast;
+use Liberu\Accounting\Forecasts\Actions\CreateForecastPeriods;
+use Liberu\Accounting\Forecasts\Actions\SubmitForecast;
 use Liberu\Accounting\Forecasts\Events\ForecastSubmitted;
 use Liberu\Accounting\Forecasts\Exceptions\InvalidForecast;
 use Tests\TestCase;
@@ -14,6 +17,7 @@ use Tests\TestCase;
 final class AccountingForecastsBoundaryTest extends TestCase
 {
     use RefreshDatabase;
+
     public function test_draft_forecast_can_generate_rolling_periods_and_assumptions(): void
     {
         $forecast = app(CreateForecast::class)->handle(['forecast_ref' => 'FC-BOUNDARY', 'name' => 'Rolling outlook', 'currency' => 'usd', 'method' => 'driver', 'base_period' => '2026-10', 'horizon_periods' => 3]);

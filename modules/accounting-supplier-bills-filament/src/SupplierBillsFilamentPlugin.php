@@ -9,8 +9,17 @@ use Filament\Panel;
 
 final class SupplierBillsFilamentPlugin implements Plugin
 {
-    public static function make(): static { return new self(); }
-    public function getId(): string { return 'accounting-supplier-bills'; }
+    public static function make(): static
+    {
+        return new self();
+    }
+
+    public function getId(): string
+    {
+        return 'accounting-supplier-bills';
+    }
+
     public function register(Panel $panel): void {}
+
     public function boot(Panel $panel): void {}
 }

@@ -15,7 +15,8 @@ final class VoidSupplierBill
         if ($bill->status !== SupplierBillStatus::Posted || blank($reason) || $bill->amount_paid > 0) {
             throw new InvalidSupplierBill('Only unpaid posted bills may be voided and a reason is required.');
         }
-        $bill->update(['status'=>SupplierBillStatus::Void,'metadata'=>array_merge($bill->metadata ?? [], ['void_reason'=>$reason])]);
+        $bill->update(['status' => SupplierBillStatus::Void, 'metadata' => array_merge($bill->metadata ?? [], ['void_reason' => $reason])]);
+
         return $bill->refresh();
     }
 }

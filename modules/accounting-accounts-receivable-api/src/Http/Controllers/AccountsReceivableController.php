@@ -21,8 +21,8 @@ use Liberu\Accounting\AccountsReceivable\Queries\AgingQuery;
 use Liberu\Accounting\AccountsReceivable\Queries\ControlAccountReconciliationQuery;
 use Liberu\Accounting\AccountsReceivable\Queries\CustomerSubledgerQuery;
 use Liberu\Accounting\AccountsReceivable\Queries\StatementQuery;
-use Liberu\Accounting\AccountsReceivableApi\Http\Resources\ReceivableOpenItemResource;
 use Liberu\Accounting\AccountsReceivableApi\Http\Resources\ReceivableDisputeResource;
+use Liberu\Accounting\AccountsReceivableApi\Http\Resources\ReceivableOpenItemResource;
 use Liberu\Accounting\AccountsReceivableApi\Http\Resources\ReceivableReceiptResource;
 
 final class AccountsReceivableController extends Controller
@@ -30,12 +30,14 @@ final class AccountsReceivableController extends Controller
     public function index(Request $request): JsonResponse
     {
         Gate::authorize('viewAny', ReceivableOpenItem::class);
+
         return response()->json(['data' => ReceivableOpenItemResource::collection(ReceivableOpenItem::query()->when($request->integer('party_id'), fn ($q, $v) => $q->where('party_id', $v))->latest()->paginate(min(100, max(1, $request->integer('page[size]', 25)))))]);
     }
 
     public function show(ReceivableOpenItem $openItem): ReceivableOpenItemResource
     {
         Gate::authorize('view', $openItem);
+
         return new ReceivableOpenItemResource($openItem->load('disputes'));
     }
 

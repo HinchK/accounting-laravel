@@ -1,5 +1,40 @@
 <?php
+
 declare(strict_types=1);
+
 namespace Liberu\Accounting\ReceiptManagementApi\Http\Controllers;
-use Illuminate\Http\Request;use Illuminate\Routing\Controller;use Liberu\Accounting\ReceiptManagement\Actions\{IngestReceipt,MatchReceipt,RequestMissingReceipt};use Liberu\Accounting\ReceiptManagement\Models\Receipt;
-final class ReceiptManagementController extends Controller {public function index():mixed{return Receipt::query()->with(['matches','annotations'])->latest()->paginate(25);}public function store(Request $request,IngestReceipt $action):Receipt{return $action->handle($request->validate(['team_id'=>'nullable|integer','file_ref'=>'required|string|max:190','source_type'=>'nullable|string','source_id'=>'nullable|string','merchant'=>'nullable|string','amount'=>'nullable|numeric','currency'=>'nullable|string|size:3','receipt_date'=>'nullable|date','retention_until'=>'nullable|date','metadata'=>'nullable|array']));}public function show(Receipt $receipt):Receipt{return $receipt->load(['matches','annotations']);}public function match(Request $request,Receipt $receipt,MatchReceipt $action):mixed{return $action->handle($receipt,$request->validate(['target_type'=>'required|string','target_id'=>'required|string','matched_amount'=>'nullable|numeric','confidence'=>'nullable|numeric','actor_ref'=>'nullable|string']));}public function requestMissing(Request $request,RequestMissingReceipt $action):mixed{return $action->handle($request->validate(['team_id'=>'nullable|integer','receipt_id'=>'nullable|integer','requestee_ref'=>'required|string','target_type'=>'required|string','target_id'=>'required|string','reason'=>'nullable|string','due_on'=>'nullable|date']));}}
+
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Liberu\Accounting\ReceiptManagement\Actions\IngestReceipt;
+use Liberu\Accounting\ReceiptManagement\Actions\MatchReceipt;
+use Liberu\Accounting\ReceiptManagement\Actions\RequestMissingReceipt;
+use Liberu\Accounting\ReceiptManagement\Models\Receipt;
+
+final class ReceiptManagementController extends Controller
+{
+    public function index(): mixed
+    {
+        return Receipt::query()->with(['matches', 'annotations'])->latest()->paginate(25);
+    }
+
+    public function store(Request $request, IngestReceipt $action): Receipt
+    {
+        return $action->handle($request->validate(['team_id' => 'nullable|integer', 'file_ref' => 'required|string|max:190', 'source_type' => 'nullable|string', 'source_id' => 'nullable|string', 'merchant' => 'nullable|string', 'amount' => 'nullable|numeric', 'currency' => 'nullable|string|size:3', 'receipt_date' => 'nullable|date', 'retention_until' => 'nullable|date', 'metadata' => 'nullable|array']));
+    }
+
+    public function show(Receipt $receipt): Receipt
+    {
+        return $receipt->load(['matches', 'annotations']);
+    }
+
+    public function match(Request $request, Receipt $receipt, MatchReceipt $action): mixed
+    {
+        return $action->handle($receipt, $request->validate(['target_type' => 'required|string', 'target_id' => 'required|string', 'matched_amount' => 'nullable|numeric', 'confidence' => 'nullable|numeric', 'actor_ref' => 'nullable|string']));
+    }
+
+    public function requestMissing(Request $request, RequestMissingReceipt $action): mixed
+    {
+        return $action->handle($request->validate(['team_id' => 'nullable|integer', 'receipt_id' => 'nullable|integer', 'requestee_ref' => 'required|string', 'target_type' => 'required|string', 'target_id' => 'required|string', 'reason' => 'nullable|string', 'due_on' => 'nullable|date']));
+    }
+}

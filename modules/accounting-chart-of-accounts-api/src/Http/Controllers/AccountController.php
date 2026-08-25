@@ -12,9 +12,9 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\ValidationException;
 use Liberu\Accounting\ChartOfAccounts\Actions\ArchiveAccount;
 use Liberu\Accounting\ChartOfAccounts\Actions\SaveAccount;
-use Liberu\Accounting\ChartOfAccounts\Models\Account;
-use Liberu\Accounting\ChartOfAccounts\Exceptions\InvalidAccountHierarchy;
 use Liberu\Accounting\ChartOfAccounts\Exceptions\InvalidAccount;
+use Liberu\Accounting\ChartOfAccounts\Exceptions\InvalidAccountHierarchy;
+use Liberu\Accounting\ChartOfAccounts\Models\Account;
 use Liberu\Accounting\ChartOfAccountsApi\Http\Requests\StoreAccountRequest;
 use Liberu\Accounting\ChartOfAccountsApi\Http\Requests\UpdateAccountRequest;
 use Liberu\Accounting\ChartOfAccountsApi\Http\Resources\AccountResource;
@@ -90,7 +90,6 @@ final class AccountController extends Controller
         return response()->noContent();
     }
 
-    /** @return never */
     private function rejectHierarchy(InvalidAccountHierarchy $exception): never
     {
         throw ValidationException::withMessages(['parent_id' => $exception->getMessage()]);

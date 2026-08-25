@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Liberu\Accounting\FinancialStatementsLivewire;
 
 use Illuminate\Support\ServiceProvider;
-use Livewire\Livewire;
 use Liberu\Accounting\FinancialStatementsLivewire\Livewire\Statements;
+use Livewire\Livewire;
 
 final class FinancialStatementsLivewireServiceProvider extends ServiceProvider
 {

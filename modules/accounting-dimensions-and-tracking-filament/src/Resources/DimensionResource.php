@@ -4,13 +4,18 @@ declare(strict_types=1);
 
 namespace Liberu\Accounting\DimensionsFilament\Resources;
 
-use Filament\Forms\Components\{Select, TextInput, Toggle};
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
-use Filament\Tables\Columns\{IconColumn, TextColumn};
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Liberu\Accounting\Dimensions\Models\Dimension;
-use Liberu\Accounting\DimensionsFilament\Resources\DimensionResource\Pages\{CreateDimension, EditDimension, ListDimensions};
+use Liberu\Accounting\DimensionsFilament\Resources\DimensionResource\Pages\CreateDimension;
+use Liberu\Accounting\DimensionsFilament\Resources\DimensionResource\Pages\EditDimension;
+use Liberu\Accounting\DimensionsFilament\Resources\DimensionResource\Pages\ListDimensions;
 
 final class DimensionResource extends Resource
 {

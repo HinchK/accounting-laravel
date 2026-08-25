@@ -18,23 +18,25 @@ use Liberu\Accounting\AccountsPayable\Models\PayableDispute;
 use Liberu\Accounting\AccountsPayable\Models\PayableOpenItem;
 use Liberu\Accounting\AccountsPayable\Models\PayablePayment;
 use Liberu\Accounting\AccountsPayable\Queries\AgingQuery;
-use Liberu\Accounting\AccountsPayable\Queries\SupplierSubledgerQuery;
 use Liberu\Accounting\AccountsPayable\Queries\ControlAccountReconciliationQuery;
+use Liberu\Accounting\AccountsPayable\Queries\SupplierSubledgerQuery;
 use Liberu\Accounting\AccountsPayableApi\Http\Resources\PayableDisputeResource;
-use Liberu\Accounting\AccountsPayableApi\Http\Resources\PayablePaymentResource;
 use Liberu\Accounting\AccountsPayableApi\Http\Resources\PayableOpenItemResource;
+use Liberu\Accounting\AccountsPayableApi\Http\Resources\PayablePaymentResource;
 
 final class PayableOpenItemController extends Controller
 {
     public function index(Request $request): mixed
     {
         Gate::authorize('viewAny', PayableOpenItem::class);
+
         return PayableOpenItemResource::collection(PayableOpenItem::query()->when($request->integer('party_id'), fn ($query, $id) => $query->where('party_id', $id))->latest('issued_on')->paginate(min(100, max(1, $request->integer('page.size', 25)))));
     }
 
     public function store(Request $request, CreateOpenItem $action): PayableOpenItemResource
     {
         Gate::authorize('create', PayableOpenItem::class);
+
         return new PayableOpenItemResource($action->handle($request->validate([
             'party_id' => ['required', 'integer'], 'reference' => ['required', 'string', 'max:128'], 'issued_on' => ['required', 'date'], 'due_on' => ['nullable', 'date'],
             'original_amount' => ['required', 'numeric', 'gt:0'], 'currency' => ['required', 'string', 'size:3'], 'payment_terms' => ['nullable', 'string', 'max:64'], 'source_type' => ['nullable', 'string'], 'source_id' => ['nullable', 'string'], 'metadata' => ['nullable', 'array'],
@@ -44,6 +46,7 @@ final class PayableOpenItemController extends Controller
     public function show(PayableOpenItem $payableOpenItem): PayableOpenItemResource
     {
         Gate::authorize('view', $payableOpenItem);
+
         return new PayableOpenItemResource($payableOpenItem->load('disputes', 'party'));
     }
 
@@ -61,6 +64,7 @@ final class PayableOpenItemController extends Controller
     {
         $data = $request->validate(['party_id' => ['nullable', 'integer'], 'paid_on' => ['nullable', 'date'], 'amount' => ['required', 'numeric', 'gt:0'], 'currency' => ['required', 'string', 'size:3'], 'reference' => ['nullable', 'string', 'max:128'], 'metadata' => ['nullable', 'array']]);
         Gate::authorize('create', PayablePayment::class);
+
         return response()->json(['data' => new PayablePaymentResource($action->handle($data))], 201);
     }
 
@@ -68,6 +72,7 @@ final class PayableOpenItemController extends Controller
     {
         Gate::authorize('update', $payment);
         $data = $request->validate(['open_item_id' => ['required', 'integer'], 'amount' => ['required', 'numeric', 'gt:0']]);
+
         return response()->json(['data' => new PayablePaymentResource($action->handle($payment, PayableOpenItem::findOrFail($data['open_item_id']), (float) $data['amount']))]);
     }
 
@@ -75,6 +80,7 @@ final class PayableOpenItemController extends Controller
     {
         Gate::authorize('create', PayableDispute::class);
         $data = $request->validate(['open_item_id' => ['required', 'integer'], 'reason' => ['required', 'string', 'max:255'], 'amount' => ['nullable', 'numeric', 'gt:0']]);
+
         return response()->json(['data' => new PayableDisputeResource($action->handle(PayableOpenItem::findOrFail($data['open_item_id']), $data['reason'], isset($data['amount']) ? (float) $data['amount'] : null))], 201);
     }
 
@@ -82,12 +88,14 @@ final class PayableOpenItemController extends Controller
     {
         Gate::authorize('update', $dispute);
         $data = $request->validate(['resolution' => ['required', 'string'], 'accepted' => ['boolean']]);
+
         return response()->json(['data' => $action->handle($dispute, $data['resolution'], (bool) ($data['accepted'] ?? false))]);
     }
 
     public function credit(Request $request, int $party, SetPaymentControl $action): JsonResponse
     {
         $data = $request->validate(['payment_hold' => ['nullable', 'boolean'], 'hold_reason' => ['nullable', 'string', 'max:255']]);
+
         return response()->json(['data' => $action->handle($party, $data['payment_hold'] ?? null, $data['hold_reason'] ?? null)]);
     }
 

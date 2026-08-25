@@ -19,6 +19,7 @@ final class SubmitForecast
         $forecast->update(['status' => ForecastStatus::Submitted]);
         $forecast = $forecast->refresh();
         event(new ForecastSubmitted($forecast));
+
         return $forecast;
     }
 }

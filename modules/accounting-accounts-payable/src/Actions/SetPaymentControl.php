@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Liberu\Accounting\AccountsPayable\Actions;
 
-use Liberu\Accounting\AccountsPayable\Models\PayableAccount;
 use Illuminate\Support\Facades\DB;
 use Liberu\Accounting\AccountsPayable\Events\PaymentControlChanged;
 use Liberu\Accounting\AccountsPayable\Exceptions\InvalidPayable;
+use Liberu\Accounting\AccountsPayable\Models\PayableAccount;
 use Liberu\Accounting\FinancialMasterData\Enums\PartyType;
 use Liberu\Accounting\FinancialMasterData\Models\Party;
 

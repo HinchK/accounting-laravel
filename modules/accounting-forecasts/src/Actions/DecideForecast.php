@@ -25,6 +25,7 @@ final class DecideForecast
         if ($approved) {
             event(new ForecastApproved($forecast, $actor));
         }
+
         return $forecast;
     }
 }

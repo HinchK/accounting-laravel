@@ -1,6 +1,13 @@
 <?php
+
 declare(strict_types=1);
+
 namespace Liberu\Accounting\GeneralLedger\Events;
-use Liberu\Accounting\GeneralLedger\Models\JournalEntry;
+
 use Illuminate\Contracts\Events\ShouldDispatchAfterCommit;
-final class JournalCreated implements ShouldDispatchAfterCommit { public function __construct(public readonly JournalEntry $journal) {} }
+use Liberu\Accounting\GeneralLedger\Models\JournalEntry;
+
+final class JournalCreated implements ShouldDispatchAfterCommit
+{
+    public function __construct(public readonly JournalEntry $journal) {}
+}

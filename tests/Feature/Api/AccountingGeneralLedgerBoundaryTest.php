@@ -6,7 +6,8 @@ use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Sanctum\Sanctum;
 use Liberu\Accounting\ChartOfAccounts\Models\Account;
-use Liberu\Accounting\Core\Models\{Book, LegalEntity};
+use Liberu\Accounting\Core\Models\Book;
+use Liberu\Accounting\Core\Models\LegalEntity;
 
 uses(RefreshDatabase::class);
 

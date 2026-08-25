@@ -4,10 +4,16 @@ declare(strict_types=1);
 
 namespace Tests\Feature;
 
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Event;
 use Laravel\Sanctum\Sanctum;
-use Liberu\Accounting\EmployeeExpenses\Actions\{AddExpenseItem,CreateExpenseClaim,DecideExpenseClaim,PostExpenseClaim,ReimburseExpenseClaim,SubmitExpenseClaim};
+use Liberu\Accounting\EmployeeExpenses\Actions\AddExpenseItem;
+use Liberu\Accounting\EmployeeExpenses\Actions\CreateExpenseClaim;
+use Liberu\Accounting\EmployeeExpenses\Actions\DecideExpenseClaim;
+use Liberu\Accounting\EmployeeExpenses\Actions\PostExpenseClaim;
+use Liberu\Accounting\EmployeeExpenses\Actions\ReimburseExpenseClaim;
+use Liberu\Accounting\EmployeeExpenses\Actions\SubmitExpenseClaim;
 use Liberu\Accounting\EmployeeExpenses\Enums\ClaimStatus;
 use Liberu\Accounting\EmployeeExpenses\Events\ClaimLifecycleChanged;
 use Liberu\Accounting\EmployeeExpenses\Exceptions\InvalidClaim;
@@ -42,7 +48,7 @@ final class AccountingEmployeeExpensesTest extends TestCase
 
     public function test_api_write_scope_is_required(): void
     {
-        Sanctum::actingAs(\App\Models\User::factory()->create(), ['accounting.employee-expenses.read']);
+        Sanctum::actingAs(User::factory()->create(), ['accounting.employee-expenses.read']);
         $this->postJson('/api/v1/accounting/employee-expenses', [])->assertForbidden();
     }
 }

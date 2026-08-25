@@ -14,6 +14,7 @@ use Liberu\Accounting\AccountsPayable\Models\PayableOpenItem;
 final class PayableOpenItemResource extends Resource
 {
     protected static ?string $model = PayableOpenItem::class;
+
     protected static ?string $navigationLabel = 'Payables';
 
     public static function form(Schema $schema): Schema

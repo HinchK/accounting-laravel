@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Liberu\Accounting\AccountsPayable\Actions;
 
-use Liberu\Accounting\AccountsPayable\Enums\DisputeStatus;
 use Illuminate\Support\Facades\DB;
+use Liberu\Accounting\AccountsPayable\Enums\DisputeStatus;
 use Liberu\Accounting\AccountsPayable\Enums\PayableStatus;
 use Liberu\Accounting\AccountsPayable\Events\DisputeResolved;
-use Liberu\Accounting\AccountsPayable\Models\PayableOpenItem;
 use Liberu\Accounting\AccountsPayable\Models\PayableDispute;
+use Liberu\Accounting\AccountsPayable\Models\PayableOpenItem;
 
 final class ResolveDispute
 {
@@ -18,6 +18,7 @@ final class ResolveDispute
         if ($dispute->status !== DisputeStatus::Open || blank($resolution)) {
             throw new \InvalidArgumentException('Only open disputes can be resolved with a resolution.');
         }
+
         return DB::transaction(function () use ($dispute, $resolution, $accepted): PayableDispute {
             $dispute->update(['status' => $accepted ? DisputeStatus::Resolved : DisputeStatus::Rejected, 'resolution' => $resolution, 'resolved_at' => now()]);
             $item = PayableOpenItem::query()->findOrFail($dispute->open_item_id);

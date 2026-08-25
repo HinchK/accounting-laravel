@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Liberu\Accounting\AccountsReceivable\Actions;
 
-use Liberu\Accounting\AccountsReceivable\Exceptions\InvalidReceivable;
+use Illuminate\Support\Facades\DB;
 use Liberu\Accounting\AccountsReceivable\Enums\DisputeStatus;
 use Liberu\Accounting\AccountsReceivable\Events\DisputeOpened;
+use Liberu\Accounting\AccountsReceivable\Exceptions\InvalidReceivable;
 use Liberu\Accounting\AccountsReceivable\Models\ReceivableDispute;
 use Liberu\Accounting\AccountsReceivable\Models\ReceivableOpenItem;
-use Illuminate\Support\Facades\DB;
 
 final class OpenDispute
 {

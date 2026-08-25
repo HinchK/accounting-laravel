@@ -16,8 +16,8 @@ use Filament\Schemas\Schema;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Liberu\Accounting\ChartOfAccounts\Models\Account;
 use Liberu\Accounting\ChartOfAccounts\Actions\ArchiveAccount;
+use Liberu\Accounting\ChartOfAccounts\Models\Account;
 use Liberu\Accounting\ChartOfAccountsFilament\Resources\AccountResource\Pages\CreateAccount;
 use Liberu\Accounting\ChartOfAccountsFilament\Resources\AccountResource\Pages\EditAccount;
 use Liberu\Accounting\ChartOfAccountsFilament\Resources\AccountResource\Pages\ListAccounts;
@@ -25,7 +25,9 @@ use Liberu\Accounting\ChartOfAccountsFilament\Resources\AccountResource\Pages\Li
 final class AccountResource extends Resource
 {
     protected static ?string $model = Account::class;
+
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-list-bullet';
+
     protected static string|\UnitEnum|null $navigationGroup = 'Accounting';
 
     public static function form(Schema $schema): Schema

@@ -4,10 +4,17 @@ declare(strict_types=1);
 
 namespace Tests\Feature;
 
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Event;
 use Laravel\Sanctum\Sanctum;
-use Liberu\Accounting\EInvoicing\Actions\{ArchiveEInvoice,CreateEInvoice,RecordEInvoiceReceipt,ReconcileEInvoice,SignEInvoice,SubmitEInvoice,ValidateEInvoice};
+use Liberu\Accounting\EInvoicing\Actions\ArchiveEInvoice;
+use Liberu\Accounting\EInvoicing\Actions\CreateEInvoice;
+use Liberu\Accounting\EInvoicing\Actions\ReconcileEInvoice;
+use Liberu\Accounting\EInvoicing\Actions\RecordEInvoiceReceipt;
+use Liberu\Accounting\EInvoicing\Actions\SignEInvoice;
+use Liberu\Accounting\EInvoicing\Actions\SubmitEInvoice;
+use Liberu\Accounting\EInvoicing\Actions\ValidateEInvoice;
 use Liberu\Accounting\EInvoicing\Enums\DocumentStatus;
 use Liberu\Accounting\EInvoicing\Events\EInvoiceStatusChanged;
 use Liberu\Accounting\EInvoicing\Exceptions\InvalidEInvoice;
@@ -42,7 +49,7 @@ final class AccountingEInvoicingTest extends TestCase
 
     public function test_api_write_scope_is_required(): void
     {
-        Sanctum::actingAs(\App\Models\User::factory()->create(), ['accounting.e-invoicing.read']);
+        Sanctum::actingAs(User::factory()->create(), ['accounting.e-invoicing.read']);
         $this->postJson('/api/v1/accounting/e-invoicing', [])->assertForbidden();
     }
 }

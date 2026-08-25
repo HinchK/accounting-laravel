@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Liberu\Accounting\AccountsPayableApi;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\ServiceProvider;
 use Liberu\Accounting\AccountsPayable\Models\PayableDispute;
 use Liberu\Accounting\AccountsPayable\Models\PayableOpenItem;
 use Liberu\Accounting\AccountsPayable\Models\PayablePayment;

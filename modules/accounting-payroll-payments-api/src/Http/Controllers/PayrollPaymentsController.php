@@ -1,2 +1,43 @@
 <?php
-declare(strict_types=1);namespace Liberu\Accounting\PayrollPaymentsApi\Http\Controllers;use Illuminate\Http\Request;use Illuminate\Routing\Controller;use Liberu\Accounting\PayrollPayments\Actions\{CreatePayrollPaymentBatch,TransitionPayrollPayment};use Liberu\Accounting\PayrollPayments\Enums\PaymentStatus;use Liberu\Accounting\PayrollPayments\Models\PayrollPaymentBatch;use Liberu\Accounting\PayrollPayments\Queries\PayrollPaymentSummary;final class PayrollPaymentsController extends Controller{public function index():mixed{return PayrollPaymentBatch::query()->latest()->paginate(min((int)request('per_page',25),100));}public function store(Request $request,CreatePayrollPaymentBatch $action):PayrollPaymentBatch{return $action->handle($request->validate(['team_id'=>'nullable|integer','batch_ref'=>'required|string|max:150','net_pay_ref'=>'nullable|string','liability_ref'=>'nullable|string','currency'=>'required|string|size:3','net_pay_amount'=>'required|numeric|min:0','liability_amount'=>'required|numeric|min:0','provider'=>'nullable|string','metadata'=>'nullable|array']));}public function show(PayrollPaymentBatch $payrollPaymentBatch):PayrollPaymentBatch{return $payrollPaymentBatch;}public function transition(Request $request,PayrollPaymentBatch $payrollPaymentBatch,TransitionPayrollPayment $action):PayrollPaymentBatch{$data=$request->validate(['status'=>'required|string','failure_code'=>'nullable|string','failure_message'=>'nullable|string']);return $action->handle($payrollPaymentBatch,PaymentStatus::from($data['status']),$data);}public function summary(Request $request,PayrollPaymentSummary $query):array{return $query->forTeam($request->integer('team_id')?:null);}}
+
+declare(strict_types=1);
+
+namespace Liberu\Accounting\PayrollPaymentsApi\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Liberu\Accounting\PayrollPayments\Actions\CreatePayrollPaymentBatch;
+use Liberu\Accounting\PayrollPayments\Actions\TransitionPayrollPayment;
+use Liberu\Accounting\PayrollPayments\Enums\PaymentStatus;
+use Liberu\Accounting\PayrollPayments\Models\PayrollPaymentBatch;
+use Liberu\Accounting\PayrollPayments\Queries\PayrollPaymentSummary;
+
+final class PayrollPaymentsController extends Controller
+{
+    public function index(): mixed
+    {
+        return PayrollPaymentBatch::query()->latest()->paginate(min((int) request('per_page', 25), 100));
+    }
+
+    public function store(Request $request, CreatePayrollPaymentBatch $action): PayrollPaymentBatch
+    {
+        return $action->handle($request->validate(['team_id' => 'nullable|integer', 'batch_ref' => 'required|string|max:150', 'net_pay_ref' => 'nullable|string', 'liability_ref' => 'nullable|string', 'currency' => 'required|string|size:3', 'net_pay_amount' => 'required|numeric|min:0', 'liability_amount' => 'required|numeric|min:0', 'provider' => 'nullable|string', 'metadata' => 'nullable|array']));
+    }
+
+    public function show(PayrollPaymentBatch $payrollPaymentBatch): PayrollPaymentBatch
+    {
+        return $payrollPaymentBatch;
+    }
+
+    public function transition(Request $request, PayrollPaymentBatch $payrollPaymentBatch, TransitionPayrollPayment $action): PayrollPaymentBatch
+    {
+        $data = $request->validate(['status' => 'required|string', 'failure_code' => 'nullable|string', 'failure_message' => 'nullable|string']);
+
+        return $action->handle($payrollPaymentBatch, PaymentStatus::from($data['status']), $data);
+    }
+
+    public function summary(Request $request, PayrollPaymentSummary $query): array
+    {
+        return $query->forTeam($request->integer('team_id') ?: null);
+    }
+}

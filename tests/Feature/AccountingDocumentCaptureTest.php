@@ -4,10 +4,14 @@ declare(strict_types=1);
 
 namespace Tests\Feature;
 
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Event;
 use Laravel\Sanctum\Sanctum;
-use Liberu\Accounting\DocumentCapture\Actions\{ArchiveDocument, ExtractDocument, ReviewDocument, UploadDocument};
+use Liberu\Accounting\DocumentCapture\Actions\ArchiveDocument;
+use Liberu\Accounting\DocumentCapture\Actions\ExtractDocument;
+use Liberu\Accounting\DocumentCapture\Actions\ReviewDocument;
+use Liberu\Accounting\DocumentCapture\Actions\UploadDocument;
 use Liberu\Accounting\DocumentCapture\Enums\CaptureStatus;
 use Liberu\Accounting\DocumentCapture\Events\CaptureStatusChanged;
 use Liberu\Accounting\DocumentCapture\Exceptions\InvalidCapture;
@@ -55,7 +59,7 @@ final class AccountingDocumentCaptureTest extends TestCase
 
     public function test_api_write_scope_is_required(): void
     {
-        Sanctum::actingAs(\App\Models\User::factory()->create(), ['accounting.document-capture.read']);
+        Sanctum::actingAs(User::factory()->create(), ['accounting.document-capture.read']);
         $this->postJson('/api/v1/accounting/document-capture', [])->assertForbidden();
     }
 }

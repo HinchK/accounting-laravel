@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\DB;
 use Laravel\Sanctum\Sanctum;
 use Liberu\Accounting\FinancialMasterData\Enums\PartyType;
 use Liberu\Accounting\FinancialMasterData\Models\Party;
@@ -34,7 +35,7 @@ it('rejects receivable access without the read ability', function (): void {
 
 function dbEntity(): int
 {
-    return Illuminate\Support\Facades\DB::table('accounting_legal_entities')->insertGetId([
+    return DB::table('accounting_legal_entities')->insertGetId([
         'name' => 'API Receivables Entity', 'currency_code' => 'USD', 'created_at' => now(), 'updated_at' => now(),
     ]);
 }
