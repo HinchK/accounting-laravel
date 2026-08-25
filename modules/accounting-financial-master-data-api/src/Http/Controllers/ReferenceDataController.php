@@ -10,12 +10,14 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Gate;
 use Liberu\Accounting\FinancialMasterData\Actions\SaveReferenceData;
+use Liberu\Accounting\FinancialMasterData\Exceptions\DuplicateMasterRecord;
 use Liberu\Accounting\FinancialMasterData\Models\ItemService;
 use Liberu\Accounting\FinancialMasterData\Models\PaymentTerm;
 use Liberu\Accounting\FinancialMasterData\Models\TaxProfile;
 use Liberu\Accounting\FinancialMasterDataApi\Http\Requests\StoreReferenceDataRequest;
 use Liberu\Accounting\FinancialMasterDataApi\Http\Requests\UpdateReferenceDataRequest;
 use Liberu\Accounting\FinancialMasterDataApi\Http\Resources\ReferenceDataResource;
+use Illuminate\Validation\ValidationException;
 
 final class ReferenceDataController extends Controller
 {
@@ -47,14 +49,22 @@ final class ReferenceDataController extends Controller
     public function store(StoreReferenceDataRequest $request, string $resource, SaveReferenceData $save): JsonResponse
     {
         $definition = $this->definition($resource); abort_unless($request->user()?->tokenCan('accounting.master-data.write'), 403);
-        return (new ReferenceDataResource($save->handle($definition['class'], $request->validated())))->response()->setStatusCode(201);
+        try {
+            return (new ReferenceDataResource($save->handle($definition['class'], $request->validated())))->response()->setStatusCode(201);
+        } catch (DuplicateMasterRecord $exception) {
+            throw ValidationException::withMessages(['code' => $exception->getMessage()]);
+        }
     }
 
     public function update(UpdateReferenceDataRequest $request, string $resource, string $record, SaveReferenceData $save): ReferenceDataResource
     {
         $definition = $this->definition($resource); abort_unless($request->user()?->tokenCan('accounting.master-data.write'), 403);
         $model = $definition['class']::query()->findOrFail($record);
-        return new ReferenceDataResource($save->handle($definition['class'], $request->validated(), $model));
+        try {
+            return new ReferenceDataResource($save->handle($definition['class'], $request->validated(), $model));
+        } catch (DuplicateMasterRecord $exception) {
+            throw ValidationException::withMessages(['code' => $exception->getMessage()]);
+        }
     }
 
     public function destroy(string $resource, string $record): Response

@@ -16,7 +16,9 @@ final class FinancialMasterDataLivewireServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'accounting-financial-master-data-livewire');
         Livewire::component('module-accounting-financial-master-data-parties', Parties::class);
         Livewire::component('module-accounting-financial-master-data::parties', Parties::class);
+        Livewire::component('financial-master-data-parties', Parties::class);
         Livewire::component('module-accounting-financial-master-data-reference-data', ReferenceData::class);
         Livewire::component('module-accounting-financial-master-data::reference-data', ReferenceData::class);
+        Livewire::component('financial-master-data-reference-data', ReferenceData::class);
     }
 }

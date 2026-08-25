@@ -66,3 +66,13 @@ it('stores party addresses and never returns bank credentials', function (): voi
     $this->getJson("/api/v1/accounting/financial-master-data/parties/{$party->id}/bank-details")
         ->assertOk()->assertJsonMissing(['credential_reference']);
 });
+
+it('returns a validation response for duplicate reference data', function (): void {
+    $entity = \Liberu\Accounting\Core\Models\LegalEntity::query()->create(['name' => 'Duplicate Reference Entity', 'currency_code' => 'GBP', 'accounting_basis' => 'accrual']);
+    Sanctum::actingAs(User::factory()->create(), ['accounting.master-data.write']);
+
+    $payload = ['legal_entity_id' => $entity->id, 'code' => 'NET30', 'name' => 'Net 30', 'days' => 30];
+    $this->postJson('/api/v1/accounting/financial-master-data/payment-terms', $payload)->assertCreated();
+    $this->postJson('/api/v1/accounting/financial-master-data/payment-terms', $payload)
+        ->assertUnprocessable()->assertJsonValidationErrors(['code']);
+});

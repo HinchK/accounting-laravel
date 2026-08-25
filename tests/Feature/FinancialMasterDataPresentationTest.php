@@ -34,3 +34,8 @@ it('creates tax reference data through Livewire', function (): void {
         ->call('save')->assertDispatched('reference-data-created');
     $this->assertDatabaseHas('accounting_master_tax_profiles', ['legal_entity_id' => $entity->id, 'code' => 'VAT20', 'rate' => 20]);
 });
+
+it('registers the compatibility Livewire aliases', function (): void {
+    Livewire::test('financial-master-data-parties')->assertStatus(200);
+    Livewire::test('financial-master-data-reference-data')->assertStatus(200);
+});

@@ -10,6 +10,15 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Liberu\Accounting\FinancialMasterData\Enums\PartyType;
 use Liberu\Accounting\FinancialMasterData\Enums\RecordStatus;
 
+/**
+ * @property int $legal_entity_id
+ * @property PartyType $type
+ * @property RecordStatus $status
+ * @property string $name
+ * @property string|null $email
+ * @property string|null $reference
+ * @property array<string, mixed>|null $metadata
+ */
 class Party extends Model
 {
     protected $table = 'accounting_master_parties';

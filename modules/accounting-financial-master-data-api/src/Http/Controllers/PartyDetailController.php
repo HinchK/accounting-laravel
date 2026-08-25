@@ -9,11 +9,13 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Gate;
 use Liberu\Accounting\FinancialMasterData\Actions\SaveReferenceData;
+use Liberu\Accounting\FinancialMasterData\Exceptions\DuplicateMasterRecord;
 use Liberu\Accounting\FinancialMasterData\Models\Address;
 use Liberu\Accounting\FinancialMasterData\Models\BankDetailReference;
 use Liberu\Accounting\FinancialMasterData\Models\Party;
 use Liberu\Accounting\FinancialMasterDataApi\Http\Requests\StorePartyDetailRequest;
 use Liberu\Accounting\FinancialMasterDataApi\Http\Resources\PartyDetailResource;
+use Illuminate\Validation\ValidationException;
 
 final class PartyDetailController extends Controller
 {
@@ -29,7 +31,11 @@ final class PartyDetailController extends Controller
         $model = $this->party($party); $class = $this->class($detail);
         abort_unless($request->user()?->tokenCan('accounting.master-data.write'), 403);
         $data = $request->validated() + ['party_id' => $model->getKey()];
-        return (new PartyDetailResource($save->handle($class, $data)))->response()->setStatusCode(201);
+        try {
+            return (new PartyDetailResource($save->handle($class, $data)))->response()->setStatusCode(201);
+        } catch (DuplicateMasterRecord $exception) {
+            throw ValidationException::withMessages(['detail' => $exception->getMessage()]);
+        }
     }
 
     public function destroy(string $party, string $detail, string $record): Response
