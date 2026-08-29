@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1de1120da9312483c2114f6d45dd8a17",
+    "content-hash": "79c7482e14890e639e45fbc926e1ac1f",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -15628,6 +15628,159 @@
                 "MIT"
             ],
             "description": "Livewire adapter for Three-Way Matching.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-time-tracking",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-time-tracking",
+                "reference": "e312072df4299c2e86896e1a995b004562dee8e7"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\TimeTracking\\TimeTrackingServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-time-tracking"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\TimeTracking\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting time tracking domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-time-tracking-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-time-tracking-api",
+                "reference": "42318bdd39e0877e7b592df50cb149bf1a2d2caf"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-time-tracking": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\TimeTrackingApi\\TimeTrackingApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-time-tracking-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\TimeTrackingApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting time tracking API presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-time-tracking-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-time-tracking-filament",
+                "reference": "60fd10e0cf21db2c3985f8fcc2bd93c82e98e85f"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-time-tracking": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\TimeTrackingFilament\\TimeTrackingFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-time-tracking-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\TimeTrackingFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting time tracking Filament presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-time-tracking-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-time-tracking-livewire",
+                "reference": "bde4f592ac0225a797875cc9a345c387c8fb522a"
+            },
+            "require": {
+                "liberusoftware/module-accounting-time-tracking": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\TimeTrackingLivewire\\TimeTrackingLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-time-tracking-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\TimeTrackingLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting time tracking Livewire presentation module.",
             "transport-options": {
                 "symlink": true,
                 "relative": true

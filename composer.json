@@ -226,6 +226,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-time-tracking",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-time-tracking-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-time-tracking-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-time-tracking-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-supplier-portal",
             "options": { "symlink": true }
         },
@@ -1479,6 +1499,10 @@
         "liberusoftware/module-accounting-transfers-api": "^1.0",
         "liberusoftware/module-accounting-transfers-filament": "^1.0",
         "liberusoftware/module-accounting-transfers-livewire": "^1.0",
+        "liberusoftware/module-accounting-time-tracking": "^1.0",
+        "liberusoftware/module-accounting-time-tracking-api": "^1.0",
+        "liberusoftware/module-accounting-time-tracking-filament": "^1.0",
+        "liberusoftware/module-accounting-time-tracking-livewire": "^1.0",
         "liberusoftware/module-accounting-supplier-portal": "^1.0",
         "liberusoftware/module-accounting-supplier-portal-api": "^1.0",
         "liberusoftware/module-accounting-supplier-portal-filament": "^1.0",
