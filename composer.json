@@ -206,6 +206,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-debt-and-loans",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-debt-and-loans-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-debt-and-loans-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-debt-and-loans-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-tax-core",
             "options": { "symlink": true }
         },
@@ -1655,6 +1675,10 @@
         "liberusoftware/module-accounting-deposits-and-clearing-api": "^1.0",
         "liberusoftware/module-accounting-deposits-and-clearing-filament": "^1.0",
         "liberusoftware/module-accounting-deposits-and-clearing-livewire": "^1.0",
+        "liberusoftware/module-accounting-debt-and-loans": "^1.0",
+        "liberusoftware/module-accounting-debt-and-loans-api": "^1.0",
+        "liberusoftware/module-accounting-debt-and-loans-filament": "^1.0",
+        "liberusoftware/module-accounting-debt-and-loans-livewire": "^1.0",
         "liberusoftware/module-accounting-tax-core": "^1.0",
         "liberusoftware/module-accounting-tax-core-api": "^1.0",
         "liberusoftware/module-accounting-tax-core-filament": "^1.0",

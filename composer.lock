@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e5e72effe19b2a07c0e632a583c2be6",
+    "content-hash": "b898f6451a40826e4d27c513f2d73f48",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7435,6 +7435,159 @@
                 "MIT"
             ],
             "description": "Livewire 4 presentation adapter for Liberu Accounting Core.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-debt-and-loans",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-debt-and-loans",
+                "reference": "e5a558cd9d7dcf6f8639712462a637861b6874da"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\DebtAndLoans\\DebtAndLoansServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-debt-and-loans"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\DebtAndLoans\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Debt facilities, drawdowns, repayments, interest, covenants, schedules and reconciliation.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-debt-and-loans-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-debt-and-loans-api",
+                "reference": "f108b1d998fe8b2ba8e35a1102d3cc34da7eb9c5"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-debt-and-loans": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\DebtAndLoansApi\\DebtAndLoansApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-debt-and-loans-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\DebtAndLoansApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Debt and loans HTTP API.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-debt-and-loans-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-debt-and-loans-filament",
+                "reference": "eba60c689fc729b66dee325e230a6f7ff407ea35"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-debt-and-loans": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\DebtAndLoansFilament\\DebtAndLoansFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-debt-and-loans-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\DebtAndLoansFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Debt and loans Filament 5 surfaces.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-debt-and-loans-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-debt-and-loans-livewire",
+                "reference": "4f60b3d121ca9455269d60ed7f403eab00ebec79"
+            },
+            "require": {
+                "liberusoftware/module-accounting-debt-and-loans": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\DebtAndLoansLivewire\\DebtAndLoansLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-debt-and-loans-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\DebtAndLoansLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Debt and loans Livewire 4 surfaces.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
