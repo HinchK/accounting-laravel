@@ -6,4 +6,10 @@ namespace Liberu\Accounting\JobEstimatesFilament;
 
 use Illuminate\Support\ServiceProvider;
 
-final class JobEstimatesFilamentServiceProvider extends ServiceProvider {}
+final class JobEstimatesFilamentServiceProvider extends ServiceProvider
+{
+    public function register(): void
+    {
+        $this->app->singleton(JobEstimatesFilamentPlugin::class);
+    }
+}
