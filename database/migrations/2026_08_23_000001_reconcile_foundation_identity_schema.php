@@ -29,10 +29,38 @@ return new class() extends Migration
             }
         });
 
-        foreach (['model_has_roles', 'model_has_permissions'] as $tableName) {
-            if (Schema::hasTable($tableName) && Schema::hasColumn($tableName, 'team_id')) {
-                Schema::table($tableName, function (Blueprint $table): void {
-                    $table->unsignedBigInteger('team_id')->nullable()->change();
+        $columnNames = config('permission.column_names', []);
+        $teamColumn = $columnNames['team_foreign_key'] ?? 'team_id';
+        $modelColumn = $columnNames['model_morph_key'] ?? 'model_id';
+
+        foreach ([
+            'model_has_roles' => $columnNames['role_pivot_key'] ?? 'role_id',
+            'model_has_permissions' => $columnNames['permission_pivot_key'] ?? 'permission_id',
+        ] as $tableName => $pivotColumn) {
+            if (! Schema::hasTable($tableName) || ! Schema::hasColumn($tableName, $teamColumn)) {
+                continue;
+            }
+
+            $primary = collect(Schema::getIndexes($tableName))->firstWhere('primary', true);
+
+            if ($primary !== null) {
+                Schema::table($tableName, function (Blueprint $table) use ($primary): void {
+                    $table->dropPrimary($primary['name']);
+                });
+            }
+
+            Schema::table($tableName, function (Blueprint $table) use ($teamColumn): void {
+                $table->unsignedBigInteger($teamColumn)->nullable()->change();
+            });
+
+            $uniqueName = "{$tableName}_team_pivot_unique";
+            $hasUnique = collect(Schema::getIndexes($tableName))->contains(
+                fn (array $index): bool => $index['name'] === $uniqueName,
+            );
+
+            if (! $hasUnique) {
+                Schema::table($tableName, function (Blueprint $table) use ($teamColumn, $pivotColumn, $modelColumn, $uniqueName): void {
+                    $table->unique([$teamColumn, $pivotColumn, $modelColumn, 'model_type'], $uniqueName);
                 });
             }
         }
