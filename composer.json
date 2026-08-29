@@ -406,6 +406,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-construction-tax",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-construction-tax-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-construction-tax-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-construction-tax-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-tax-core",
             "options": { "symlink": true }
         },
@@ -1915,6 +1935,10 @@
         "liberusoftware/module-accounting-contractor-compliance-api": "^1.0",
         "liberusoftware/module-accounting-contractor-compliance-filament": "^1.0",
         "liberusoftware/module-accounting-contractor-compliance-livewire": "^1.0",
+        "liberusoftware/module-accounting-construction-tax": "^1.0",
+        "liberusoftware/module-accounting-construction-tax-api": "^1.0",
+        "liberusoftware/module-accounting-construction-tax-filament": "^1.0",
+        "liberusoftware/module-accounting-construction-tax-livewire": "^1.0",
         "liberusoftware/module-accounting-xero-migration": "^1.0",
         "liberusoftware/module-accounting-xero-migration-api": "^1.0",
         "liberusoftware/module-accounting-xero-migration-filament": "^1.0",
