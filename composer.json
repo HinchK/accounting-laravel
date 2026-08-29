@@ -306,6 +306,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-custom-report-builder",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-custom-report-builder-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-custom-report-builder-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-custom-report-builder-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-tax-core",
             "options": { "symlink": true }
         },
@@ -1795,6 +1815,10 @@
         "liberusoftware/module-accounting-customer-payments-api": "^1.0",
         "liberusoftware/module-accounting-customer-payments-filament": "^1.0",
         "liberusoftware/module-accounting-customer-payments-livewire": "^1.0",
+        "liberusoftware/module-accounting-custom-report-builder": "^1.0",
+        "liberusoftware/module-accounting-custom-report-builder-api": "^1.0",
+        "liberusoftware/module-accounting-custom-report-builder-filament": "^1.0",
+        "liberusoftware/module-accounting-custom-report-builder-livewire": "^1.0",
         "liberusoftware/module-accounting-xero-migration": "^1.0",
         "liberusoftware/module-accounting-xero-migration-api": "^1.0",
         "liberusoftware/module-accounting-xero-migration-filament": "^1.0",
