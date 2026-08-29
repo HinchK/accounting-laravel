@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c9d79dad52c4e8aacf7e11d2e0b9e69",
+    "content-hash": "01a3954e683a4900f3e362047917f5d0",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7435,6 +7435,158 @@
                 "MIT"
             ],
             "description": "Livewire 4 presentation adapter for Liberu Accounting Core.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-customer-portal",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-customer-portal",
+                "reference": "a5adfc734cabcbd8f5b932c52279d7e15e88c93c"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CustomerPortal\\CustomerPortalServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-customer-portal"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CustomerPortal\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting customer portal domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-customer-portal-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-customer-portal-api",
+                "reference": "1ec3952171c7074bcc8a79a26af7f2c0142f6cb4"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "liberusoftware/module-accounting-customer-portal": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CustomerPortalApi\\CustomerPortalApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-customer-portal-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CustomerPortalApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting customer portal HTTP API.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-customer-portal-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-customer-portal-filament",
+                "reference": "11cc45e1c53c71e332f3cb9aa98517974779bc70"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-customer-portal": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CustomerPortalFilament\\CustomerPortalFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-customer-portal-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CustomerPortalFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting customer portal Filament 5 surfaces.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-customer-portal-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-customer-portal-livewire",
+                "reference": "3627bd9e18d5f8d02673c3ad65dd1c80256ea3ee"
+            },
+            "require": {
+                "liberusoftware/module-accounting-customer-portal": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CustomerPortalLivewire\\CustomerPortalLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-customer-portal-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CustomerPortalLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting customer portal Livewire 4 surfaces.",
             "transport-options": {
                 "symlink": true,
                 "relative": true

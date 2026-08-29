@@ -266,6 +266,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-customer-portal",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-customer-portal-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-customer-portal-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-customer-portal-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-tax-core",
             "options": { "symlink": true }
         },
@@ -1747,6 +1767,10 @@
         "liberusoftware/module-accounting-year-end-api": "^1.0",
         "liberusoftware/module-accounting-year-end-filament": "^1.0",
         "liberusoftware/module-accounting-year-end-livewire": "^1.0",
+        "liberusoftware/module-accounting-customer-portal": "^1.0",
+        "liberusoftware/module-accounting-customer-portal-api": "^1.0",
+        "liberusoftware/module-accounting-customer-portal-filament": "^1.0",
+        "liberusoftware/module-accounting-customer-portal-livewire": "^1.0",
         "liberusoftware/module-accounting-xero-migration": "^1.0",
         "liberusoftware/module-accounting-xero-migration-api": "^1.0",
         "liberusoftware/module-accounting-xero-migration-filament": "^1.0",
