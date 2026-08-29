@@ -9,6 +9,7 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 use Liberu\Accounting\SalesOrders\Models\SalesOrder;
 use Liberu\Accounting\SalesOrdersFilament\Resources\SalesOrderResource\Pages\ListSalesOrders;
 
@@ -26,6 +27,11 @@ final class SalesOrderResource extends Resource
     public static function table(Table $table): Table
     {
         return $table->columns([TextColumn::make('order_number')->searchable(), TextColumn::make('customer_id')->searchable(), TextColumn::make('status')->badge(), TextColumn::make('total'), TextColumn::make('invoiced_total'), TextColumn::make('order_date')->date()]);
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->where('team_id', (int) (auth()->user()?->current_team_id ?? -1));
     }
 
     public static function getPages(): array
