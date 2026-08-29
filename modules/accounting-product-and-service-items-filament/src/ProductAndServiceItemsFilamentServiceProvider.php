@@ -6,4 +6,10 @@ namespace Liberu\Accounting\ProductAndServiceItemsFilament;
 
 use Illuminate\Support\ServiceProvider;
 
-final class ProductAndServiceItemsFilamentServiceProvider extends ServiceProvider {}
+final class ProductAndServiceItemsFilamentServiceProvider extends ServiceProvider
+{
+    public function register(): void
+    {
+        $this->app->singleton(ProductAndServiceItemsFilamentPlugin::class);
+    }
+}
