@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf1e34fc8b6671317a431d6316eec9f4",
+    "content-hash": "9c8d5a86a2f700d200108b7f958004a0",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7435,6 +7435,158 @@
                 "MIT"
             ],
             "description": "Livewire 4 presentation adapter for Liberu Accounting Core.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-custom-report-builder",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-custom-report-builder",
+                "reference": "4a760a0fa9ae36f7f5c1d85d3d7713d9304779ca"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CustomReportBuilder\\CustomReportBuilderServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-custom-report-builder"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CustomReportBuilder\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting custom report builder domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-custom-report-builder-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-custom-report-builder-api",
+                "reference": "906c7c6313c23ba82c084bad2c8d1329d441732c"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "liberusoftware/module-accounting-custom-report-builder": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CustomReportBuilderApi\\CustomReportBuilderApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-custom-report-builder-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CustomReportBuilderApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting custom report builder HTTP API.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-custom-report-builder-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-custom-report-builder-filament",
+                "reference": "2e6c34c0fc37e1a9403037bb14864b171d86f037"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-custom-report-builder": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CustomReportBuilderFilament\\CustomReportBuilderFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-custom-report-builder-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CustomReportBuilderFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting custom report builder Filament 5 surfaces.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-custom-report-builder-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-custom-report-builder-livewire",
+                "reference": "79c40ac738646d469022a3373db47e0a3df4ef2f"
+            },
+            "require": {
+                "liberusoftware/module-accounting-custom-report-builder": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CustomReportBuilderLivewire\\CustomReportBuilderLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-custom-report-builder-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CustomReportBuilderLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting custom report builder Livewire 4 surfaces.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
