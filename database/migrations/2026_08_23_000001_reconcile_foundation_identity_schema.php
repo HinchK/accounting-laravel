@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class() extends Migration
@@ -44,9 +45,22 @@ return new class() extends Migration
             $primary = collect(Schema::getIndexes($tableName))->firstWhere('primary', true);
 
             if ($primary !== null) {
-                Schema::table($tableName, function (Blueprint $table) use ($primary): void {
-                    $table->dropPrimary($primary['name']);
-                });
+                // PostgreSQL cannot alter a column that participates in a
+                // primary-key constraint. Dropping the key through the schema
+                // builder and changing the column in the same migration can
+                // be reordered by the grammar, so remove the constraint with
+                // a separate statement first. The schema-builder path remains
+                // useful for MySQL and SQLite.
+                if (DB::connection()->getDriverName() === 'pgsql') {
+                    $table = DB::connection()->getQueryGrammar()->wrapTable($tableName);
+                    $constraint = DB::connection()->getQueryGrammar()->wrap($primary['name']);
+
+                    DB::statement("alter table {$table} drop constraint if exists {$constraint}");
+                } else {
+                    Schema::table($tableName, function (Blueprint $table) use ($primary): void {
+                        $table->dropPrimary($primary['name']);
+                    });
+                }
             }
 
             Schema::table($tableName, function (Blueprint $table) use ($teamColumn): void {
