@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9c8d5a86a2f700d200108b7f958004a0",
+    "content-hash": "7f496ee46159c46b0b128a9369f5a3c6",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7435,6 +7435,158 @@
                 "MIT"
             ],
             "description": "Livewire 4 presentation adapter for Liberu Accounting Core.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-credit-notes-and-adjustments",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-credit-notes-and-adjustments",
+                "reference": "74c7a430f32cd8ff0293f0b46f69c3449b4e34ae"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CreditNotesAndAdjustments\\CreditNotesAndAdjustmentsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-credit-notes-and-adjustments"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CreditNotesAndAdjustments\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting credit notes and adjustments domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-credit-notes-and-adjustments-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-credit-notes-and-adjustments-api",
+                "reference": "9e404524a5d5f01c5152aa3a4ce6202d08531e4d"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "liberusoftware/module-accounting-credit-notes-and-adjustments": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CreditNotesAndAdjustmentsApi\\CreditNotesAndAdjustmentsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-credit-notes-and-adjustments-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CreditNotesAndAdjustmentsApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting credit notes HTTP API.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-credit-notes-and-adjustments-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-credit-notes-and-adjustments-filament",
+                "reference": "2089659a5141757c5a81d834bfbc2bff2f6237e2"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-credit-notes-and-adjustments": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CreditNotesAndAdjustmentsFilament\\CreditNotesAndAdjustmentsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-credit-notes-and-adjustments-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CreditNotesAndAdjustmentsFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting credit notes Filament 5 surfaces.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-credit-notes-and-adjustments-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-credit-notes-and-adjustments-livewire",
+                "reference": "6b93eb76d826a2e4ffc4b1b774c335f4d656fd9c"
+            },
+            "require": {
+                "liberusoftware/module-accounting-credit-notes-and-adjustments": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CreditNotesAndAdjustmentsLivewire\\CreditNotesAndAdjustmentsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-credit-notes-and-adjustments-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CreditNotesAndAdjustmentsLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting credit notes Livewire 4 surfaces.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
