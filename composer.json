@@ -326,6 +326,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-credit-notes-and-adjustments",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-credit-notes-and-adjustments-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-credit-notes-and-adjustments-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-credit-notes-and-adjustments-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-tax-core",
             "options": { "symlink": true }
         },
@@ -1819,6 +1839,10 @@
         "liberusoftware/module-accounting-custom-report-builder-api": "^1.0",
         "liberusoftware/module-accounting-custom-report-builder-filament": "^1.0",
         "liberusoftware/module-accounting-custom-report-builder-livewire": "^1.0",
+        "liberusoftware/module-accounting-credit-notes-and-adjustments": "^1.0",
+        "liberusoftware/module-accounting-credit-notes-and-adjustments-api": "^1.0",
+        "liberusoftware/module-accounting-credit-notes-and-adjustments-filament": "^1.0",
+        "liberusoftware/module-accounting-credit-notes-and-adjustments-livewire": "^1.0",
         "liberusoftware/module-accounting-xero-migration": "^1.0",
         "liberusoftware/module-accounting-xero-migration-api": "^1.0",
         "liberusoftware/module-accounting-xero-migration-filament": "^1.0",
