@@ -226,6 +226,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-dashboards",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-dashboards-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-dashboards-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-dashboards-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-tax-core",
             "options": { "symlink": true }
         },
@@ -1679,6 +1699,10 @@
         "liberusoftware/module-accounting-debt-and-loans-api": "^1.0",
         "liberusoftware/module-accounting-debt-and-loans-filament": "^1.0",
         "liberusoftware/module-accounting-debt-and-loans-livewire": "^1.0",
+        "liberusoftware/module-accounting-dashboards": "^1.0",
+        "liberusoftware/module-accounting-dashboards-api": "^1.0",
+        "liberusoftware/module-accounting-dashboards-filament": "^1.0",
+        "liberusoftware/module-accounting-dashboards-livewire": "^1.0",
         "liberusoftware/module-accounting-tax-core": "^1.0",
         "liberusoftware/module-accounting-tax-core-api": "^1.0",
         "liberusoftware/module-accounting-tax-core-filament": "^1.0",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b898f6451a40826e4d27c513f2d73f48",
+    "content-hash": "35bc3d86664f96862278e4aa1628cd80",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7435,6 +7435,158 @@
                 "MIT"
             ],
             "description": "Livewire 4 presentation adapter for Liberu Accounting Core.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-dashboards",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-dashboards",
+                "reference": "03a3470c19ffb3e20be0a131afbd0e860c2057f7"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\Dashboards\\DashboardsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-dashboards"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\Dashboards\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting dashboards domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-dashboards-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-dashboards-api",
+                "reference": "960727da128f243634ecb13d6ce5f324e2a56038"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "liberusoftware/module-accounting-dashboards": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\DashboardsApi\\DashboardsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-dashboards-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\DashboardsApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting dashboards HTTP API.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-dashboards-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-dashboards-filament",
+                "reference": "572492d20c66fd61757037634353c9bed3050ba8"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-dashboards": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\DashboardsFilament\\DashboardsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-dashboards-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\DashboardsFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting dashboards Filament 5 surfaces.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-dashboards-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-dashboards-livewire",
+                "reference": "79e4f9dcca2d1ba86984482419a9f7f14a1a8190"
+            },
+            "require": {
+                "liberusoftware/module-accounting-dashboards": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\DashboardsLivewire\\DashboardsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-dashboards-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\DashboardsLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting dashboards Livewire 4 surfaces.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
