@@ -23,7 +23,7 @@ final class RecordProjectCost
 
         return DB::transaction(function () use ($attributes, $amount, $date, $type): ProjectCost {
             $key = ['project_job_id' => $attributes['project_job_id'], 'source_ref' => $attributes['source_ref'] ?? null, 'type' => $type];
-            $record = ProjectCost::query()->where($key)->first() ?? new ProjectCost();
+            $record = ProjectCost::query()->where($key)->when(array_key_exists('team_id', $attributes), fn ($query) => $query->where('team_id', $attributes['team_id']))->first() ?? new ProjectCost();
             $record->fill(array_merge($attributes, ['type' => $type, 'occurred_on' => $date, 'amount' => $amount]));
             $record->save();
 
