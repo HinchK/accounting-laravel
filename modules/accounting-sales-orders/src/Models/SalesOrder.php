@@ -28,7 +28,7 @@ final class SalesOrder extends Model
 {
     protected $table = 'accounting_sales_orders';
 
-    protected $fillable = ['customer_id', 'estimate_id', 'order_number', 'order_date', 'status', 'currency', 'subtotal', 'tax_total', 'total', 'invoiced_total', 'notes', 'metadata'];
+    protected $fillable = ['team_id', 'customer_id', 'estimate_id', 'order_number', 'order_date', 'status', 'currency', 'subtotal', 'tax_total', 'total', 'invoiced_total', 'notes', 'metadata'];
 
     protected $casts = ['status' => OrderStatus::class, 'order_date' => 'date', 'subtotal' => 'decimal:2', 'tax_total' => 'decimal:2', 'total' => 'decimal:2', 'invoiced_total' => 'decimal:2', 'metadata' => 'array'];
 
