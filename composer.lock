@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6f9f3509ddde20078b486799226cac09",
+    "content-hash": "6e7a28455702c88b2976d69a4e741426",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7233,6 +7233,146 @@
                 "MIT"
             ],
             "description": "Livewire 4 adapter for the accounting chart of accounts.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-coding-suggestions",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-coding-suggestions",
+                "reference": "67e2482e35b55099532335ec96a38aaf1515f204"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CodingSuggestions\\CodingSuggestionsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-coding-suggestions"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CodingSuggestions\\": "src/"
+                }
+            },
+            "description": "Accounting coding suggestions domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-coding-suggestions-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-coding-suggestions-api",
+                "reference": "a6124e20afd16ba4114246569295e3eacf24b2bd"
+            },
+            "require": {
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-accounting-coding-suggestions": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CodingSuggestionsApi\\CodingSuggestionsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-coding-suggestions-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CodingSuggestionsApi\\": "src/"
+                }
+            },
+            "description": "Accounting coding suggestions API presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-coding-suggestions-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-coding-suggestions-filament",
+                "reference": "471b1c5874a5a62361bd4d34c365d93d0040324c"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-coding-suggestions": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CodingSuggestionsFilament\\CodingSuggestionsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-coding-suggestions-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CodingSuggestionsFilament\\": "src/"
+                }
+            },
+            "description": "Accounting coding suggestions Filament presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-coding-suggestions-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-coding-suggestions-livewire",
+                "reference": "57cc3ef7869a79ac90695ac74283462f6b0136ec"
+            },
+            "require": {
+                "liberusoftware/module-accounting-coding-suggestions": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CodingSuggestionsLivewire\\CodingSuggestionsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-coding-suggestions-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CodingSuggestionsLivewire\\": "src/"
+                }
+            },
+            "description": "Accounting coding suggestions Livewire presentation module.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
