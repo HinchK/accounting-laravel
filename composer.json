@@ -166,6 +166,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-depreciation",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-depreciation-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-depreciation-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-depreciation-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-tax-core",
             "options": { "symlink": true }
         },
@@ -1607,6 +1627,10 @@
         "liberusoftware/module-accounting-three-way-matching-api": "^1.0",
         "liberusoftware/module-accounting-three-way-matching-filament": "^1.0",
         "liberusoftware/module-accounting-three-way-matching-livewire": "^1.0",
+        "liberusoftware/module-accounting-depreciation": "^1.0",
+        "liberusoftware/module-accounting-depreciation-api": "^1.0",
+        "liberusoftware/module-accounting-depreciation-filament": "^1.0",
+        "liberusoftware/module-accounting-depreciation-livewire": "^1.0",
         "liberusoftware/module-accounting-tax-core": "^1.0",
         "liberusoftware/module-accounting-tax-core-api": "^1.0",
         "liberusoftware/module-accounting-tax-core-filament": "^1.0",
