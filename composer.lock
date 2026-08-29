@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c7044de66446d4145754f7096d3c829d",
+    "content-hash": "3b497f74ec9a32839f8b9722fdb88622",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -16687,6 +16687,159 @@
                 "MIT"
             ],
             "description": "Accounting workpapers Livewire presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-vat",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-vat",
+                "reference": "791e6ab9"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\Vat\\VatServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-vat"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\Vat\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting VAT domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-vat-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-vat-api",
+                "reference": "791e6ab9"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-vat": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\VatApi\\VatApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-vat-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\VatApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting VAT API presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-vat-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-vat-filament",
+                "reference": "791e6ab9"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-vat": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\VatFilament\\VatFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-vat-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\VatFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting VAT Filament presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-vat-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-vat-livewire",
+                "reference": "791e6ab9"
+            },
+            "require": {
+                "liberusoftware/module-accounting-vat": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\VatLivewire\\VatLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-vat-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\VatLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting VAT Livewire presentation module.",
             "transport-options": {
                 "symlink": true,
                 "relative": true

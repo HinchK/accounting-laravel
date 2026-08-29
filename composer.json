@@ -326,6 +326,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-vat",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-vat-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-vat-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-vat-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-supplier-portal",
             "options": { "symlink": true }
         },
@@ -1599,6 +1619,10 @@
         "liberusoftware/module-accounting-workpapers-api": "^1.0",
         "liberusoftware/module-accounting-workpapers-filament": "^1.0",
         "liberusoftware/module-accounting-workpapers-livewire": "^1.0",
+        "liberusoftware/module-accounting-vat": "^1.0",
+        "liberusoftware/module-accounting-vat-api": "^1.0",
+        "liberusoftware/module-accounting-vat-filament": "^1.0",
+        "liberusoftware/module-accounting-vat-livewire": "^1.0",
         "liberusoftware/module-accounting-supplier-portal": "^1.0",
         "liberusoftware/module-accounting-supplier-portal-api": "^1.0",
         "liberusoftware/module-accounting-supplier-portal-filament": "^1.0",
