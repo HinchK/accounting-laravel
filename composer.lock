@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "50c3d9d1f8addb863d33440ec2993027",
+    "content-hash": "1de1120da9312483c2114f6d45dd8a17",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -15628,6 +15628,159 @@
                 "MIT"
             ],
             "description": "Livewire adapter for Three-Way Matching.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-transfers",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-transfers",
+                "reference": "8d179e9a410f6d87b656a909ee8f8284dbacc6bb"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\Transfers\\TransfersServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-transfers"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\Transfers\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting transfers domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-transfers-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-transfers-api",
+                "reference": "77664ad894487ab2b41e2d48273fbb6cbf23a53c"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-transfers": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\TransfersApi\\TransfersApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-transfers-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\TransfersApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting transfers API presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-transfers-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-transfers-filament",
+                "reference": "312d1b4edbe4c92a2a437af9d17cd9327194e6ac"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-transfers": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\TransfersFilament\\TransfersFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-transfers-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\TransfersFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting transfers Filament presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-transfers-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-transfers-livewire",
+                "reference": "c25b57885792bcbdc7a07b87222db60efe518491"
+            },
+            "require": {
+                "liberusoftware/module-accounting-transfers": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\TransfersLivewire\\TransfersLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-transfers-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\TransfersLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting transfers Livewire presentation module.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
