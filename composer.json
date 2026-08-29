@@ -346,6 +346,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-corporate-cards",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-corporate-cards-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-corporate-cards-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-corporate-cards-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-tax-core",
             "options": { "symlink": true }
         },
@@ -1843,6 +1863,10 @@
         "liberusoftware/module-accounting-credit-notes-and-adjustments-api": "^1.0",
         "liberusoftware/module-accounting-credit-notes-and-adjustments-filament": "^1.0",
         "liberusoftware/module-accounting-credit-notes-and-adjustments-livewire": "^1.0",
+        "liberusoftware/module-accounting-corporate-cards": "^1.0",
+        "liberusoftware/module-accounting-corporate-cards-api": "^1.0",
+        "liberusoftware/module-accounting-corporate-cards-filament": "^1.0",
+        "liberusoftware/module-accounting-corporate-cards-livewire": "^1.0",
         "liberusoftware/module-accounting-xero-migration": "^1.0",
         "liberusoftware/module-accounting-xero-migration-api": "^1.0",
         "liberusoftware/module-accounting-xero-migration-filament": "^1.0",

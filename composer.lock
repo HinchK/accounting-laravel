@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7f496ee46159c46b0b128a9369f5a3c6",
+    "content-hash": "b123d77478899fdfb5a0424faf7fe0aa",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7435,6 +7435,158 @@
                 "MIT"
             ],
             "description": "Livewire 4 presentation adapter for Liberu Accounting Core.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-corporate-cards",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-corporate-cards",
+                "reference": "364a1efa5b26928ba3fa78fe87bc9c2f0b9dfd9d"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CorporateCards\\CorporateCardsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-corporate-cards"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CorporateCards\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting corporate cards domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-corporate-cards-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-corporate-cards-api",
+                "reference": "f30a97992178d473639df6048e319dc1401786c2"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "liberusoftware/module-accounting-corporate-cards": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CorporateCardsApi\\CorporateCardsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-corporate-cards-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CorporateCardsApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting corporate cards HTTP API.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-corporate-cards-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-corporate-cards-filament",
+                "reference": "07d1ec961af64fcfdcb39773ac68633eb6df5320"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-corporate-cards": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CorporateCardsFilament\\CorporateCardsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-corporate-cards-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CorporateCardsFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting corporate cards Filament 5 surfaces.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-corporate-cards-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-corporate-cards-livewire",
+                "reference": "e2bfebb6affb3f8ab854efd15b4b836914e0c886"
+            },
+            "require": {
+                "liberusoftware/module-accounting-corporate-cards": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CorporateCardsLivewire\\CorporateCardsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-corporate-cards-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CorporateCardsLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting corporate cards Livewire 4 surfaces.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
