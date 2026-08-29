@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9102813d529197e62eb5a4ef5c38e290",
+    "content-hash": "6f9f3509ddde20078b486799226cac09",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7233,6 +7233,146 @@
                 "MIT"
             ],
             "description": "Livewire 4 adapter for the accounting chart of accounts.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-collections",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-collections",
+                "reference": "6ca7b3826efc85ee49ecd6721a6ce15f68b5157c"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\Collections\\CollectionsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-collections"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\Collections\\": "src/"
+                }
+            },
+            "description": "Accounting collections domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-collections-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-collections-api",
+                "reference": "66fa7ba43f04d5927e398050d986b987d445ea2d"
+            },
+            "require": {
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-accounting-collections": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CollectionsApi\\CollectionsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-collections-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CollectionsApi\\": "src/"
+                }
+            },
+            "description": "Accounting collections API presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-collections-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-collections-filament",
+                "reference": "e98630d9e8769dd85fcd776c06646515f346c523"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-collections": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CollectionsFilament\\CollectionsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-collections-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CollectionsFilament\\": "src/"
+                }
+            },
+            "description": "Accounting collections Filament presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-collections-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-collections-livewire",
+                "reference": "1760fb4658555bdbe97e95be0d681d3b47a5bf8a"
+            },
+            "require": {
+                "liberusoftware/module-accounting-collections": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CollectionsLivewire\\CollectionsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-collections-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CollectionsLivewire\\": "src/"
+                }
+            },
+            "description": "Accounting collections Livewire presentation module.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
