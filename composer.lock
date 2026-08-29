@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b123d77478899fdfb5a0424faf7fe0aa",
+    "content-hash": "632831ed72ee70da6710f340397f234d",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7233,6 +7233,158 @@
                 "MIT"
             ],
             "description": "Livewire 4 adapter for the accounting chart of accounts.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-contractor-reporting",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-contractor-reporting",
+                "reference": "8ab6c09fc59411bc50cf8106294632dd4fe633e1"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ContractorReporting\\ContractorReportingServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-contractor-reporting"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ContractorReporting\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting contractor reporting domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-contractor-reporting-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-contractor-reporting-api",
+                "reference": "c9d1605e737be4af6323d99ba64f087c65dd237a"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "liberusoftware/module-accounting-contractor-reporting": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ContractorReportingApi\\ContractorReportingApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-contractor-reporting-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ContractorReportingApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting contractor reporting HTTP API.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-contractor-reporting-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-contractor-reporting-filament",
+                "reference": "53cafe4a5a2393cccfac629abeb462709d5b4955"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-contractor-reporting": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ContractorReportingFilament\\ContractorReportingFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-contractor-reporting-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ContractorReportingFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting contractor reporting Filament 5 surfaces.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-contractor-reporting-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-contractor-reporting-livewire",
+                "reference": "f29643fa316973946a0006e82fe6910818f033a7"
+            },
+            "require": {
+                "liberusoftware/module-accounting-contractor-reporting": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ContractorReportingLivewire\\ContractorReportingLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-contractor-reporting-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ContractorReportingLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting contractor reporting Livewire 4 surfaces.",
             "transport-options": {
                 "symlink": true,
                 "relative": true

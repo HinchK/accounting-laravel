@@ -366,6 +366,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-contractor-reporting",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-contractor-reporting-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-contractor-reporting-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-contractor-reporting-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-tax-core",
             "options": { "symlink": true }
         },
@@ -1867,6 +1887,10 @@
         "liberusoftware/module-accounting-corporate-cards-api": "^1.0",
         "liberusoftware/module-accounting-corporate-cards-filament": "^1.0",
         "liberusoftware/module-accounting-corporate-cards-livewire": "^1.0",
+        "liberusoftware/module-accounting-contractor-reporting": "^1.0",
+        "liberusoftware/module-accounting-contractor-reporting-api": "^1.0",
+        "liberusoftware/module-accounting-contractor-reporting-filament": "^1.0",
+        "liberusoftware/module-accounting-contractor-reporting-livewire": "^1.0",
         "liberusoftware/module-accounting-xero-migration": "^1.0",
         "liberusoftware/module-accounting-xero-migration-api": "^1.0",
         "liberusoftware/module-accounting-xero-migration-filament": "^1.0",
