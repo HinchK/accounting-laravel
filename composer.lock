@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7f496ee46159c46b0b128a9369f5a3c6",
+    "content-hash": "6f9f3509ddde20078b486799226cac09",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7239,6 +7239,718 @@
             }
         },
         {
+            "name": "liberusoftware/module-accounting-collections",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-collections",
+                "reference": "6ca7b3826efc85ee49ecd6721a6ce15f68b5157c"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\Collections\\CollectionsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-collections"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\Collections\\": "src/"
+                }
+            },
+            "description": "Accounting collections domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-collections-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-collections-api",
+                "reference": "66fa7ba43f04d5927e398050d986b987d445ea2d"
+            },
+            "require": {
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-accounting-collections": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CollectionsApi\\CollectionsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-collections-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CollectionsApi\\": "src/"
+                }
+            },
+            "description": "Accounting collections API presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-collections-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-collections-filament",
+                "reference": "e98630d9e8769dd85fcd776c06646515f346c523"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-collections": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CollectionsFilament\\CollectionsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-collections-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CollectionsFilament\\": "src/"
+                }
+            },
+            "description": "Accounting collections Filament presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-collections-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-collections-livewire",
+                "reference": "1760fb4658555bdbe97e95be0d681d3b47a5bf8a"
+            },
+            "require": {
+                "liberusoftware/module-accounting-collections": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CollectionsLivewire\\CollectionsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-collections-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CollectionsLivewire\\": "src/"
+                }
+            },
+            "description": "Accounting collections Livewire presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-consolidation",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-consolidation",
+                "reference": "1d2e48811c718c04b01d1f12f89f277e6fe202f5"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\Consolidation\\ConsolidationServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-consolidation"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\Consolidation\\": "src/"
+                }
+            },
+            "description": "Accounting consolidation domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-consolidation-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-consolidation-api",
+                "reference": "59040c6bbccf44e77be67f8ad0e0d4a7af33134c"
+            },
+            "require": {
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-accounting-consolidation": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ConsolidationApi\\ConsolidationApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-consolidation-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ConsolidationApi\\": "src/"
+                }
+            },
+            "description": "Accounting consolidation API presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-consolidation-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-consolidation-filament",
+                "reference": "47431fe42301c3c6e256641d0cf1673e60b377f4"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-consolidation": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ConsolidationFilament\\ConsolidationFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-consolidation-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ConsolidationFilament\\": "src/"
+                }
+            },
+            "description": "Accounting consolidation Filament presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-consolidation-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-consolidation-livewire",
+                "reference": "ade19bf0db8b01c23e72dbd36e38899b818b4224"
+            },
+            "require": {
+                "liberusoftware/module-accounting-consolidation": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ConsolidationLivewire\\ConsolidationLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-consolidation-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ConsolidationLivewire\\": "src/"
+                }
+            },
+            "description": "Accounting consolidation Livewire presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-construction-tax",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-construction-tax",
+                "reference": "19d28015fcb58054b71c12e50b5d9b55f734ffbf"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ConstructionTax\\ConstructionTaxServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-construction-tax"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ConstructionTax\\": "src/"
+                }
+            },
+            "description": "Accounting construction tax domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-construction-tax-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-construction-tax-api",
+                "reference": "f77e0673e0df11e4d19a820b9e277ea8cc2ac139"
+            },
+            "require": {
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-accounting-construction-tax": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ConstructionTaxApi\\ConstructionTaxApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-construction-tax-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ConstructionTaxApi\\": "src/"
+                }
+            },
+            "description": "Accounting construction tax API presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-construction-tax-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-construction-tax-filament",
+                "reference": "a3b020d2662a32f6336a0e82f82f68c2b1fbca5a"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-construction-tax": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ConstructionTaxFilament\\ConstructionTaxFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-construction-tax-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ConstructionTaxFilament\\": "src/"
+                }
+            },
+            "description": "Accounting construction tax Filament presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-construction-tax-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-construction-tax-livewire",
+                "reference": "7c1caf597b52d78bf3f804042e98324dd0094c72"
+            },
+            "require": {
+                "liberusoftware/module-accounting-construction-tax": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ConstructionTaxLivewire\\ConstructionTaxLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-construction-tax-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ConstructionTaxLivewire\\": "src/"
+                }
+            },
+            "description": "Accounting construction tax Livewire presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-contractor-compliance",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-contractor-compliance",
+                "reference": "1e1610e6bc53fcb102bbc757b0c309b3aadf65fd"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ContractorCompliance\\ContractorComplianceServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-contractor-compliance"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ContractorCompliance\\": "src/"
+                }
+            },
+            "description": "Accounting contractor compliance domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-contractor-compliance-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-contractor-compliance-api",
+                "reference": "eb94c9f39d13a51837e3478bcf8daf84150cc1a3"
+            },
+            "require": {
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-accounting-contractor-compliance": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ContractorComplianceApi\\ContractorComplianceApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-contractor-compliance-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ContractorComplianceApi\\": "src/"
+                }
+            },
+            "description": "Accounting contractor compliance API presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-contractor-compliance-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-contractor-compliance-filament",
+                "reference": "5ab24f49862b1bdf6fa2564f32345ff2ef82bad5"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-contractor-compliance": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ContractorComplianceFilament\\ContractorComplianceFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-contractor-compliance-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ContractorComplianceFilament\\": "src/"
+                }
+            },
+            "description": "Accounting contractor compliance Filament presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-contractor-compliance-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-contractor-compliance-livewire",
+                "reference": "7462329ef6125c446a551d0d436aa9cb421befe1"
+            },
+            "require": {
+                "liberusoftware/module-accounting-contractor-compliance": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ContractorComplianceLivewire\\ContractorComplianceLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-contractor-compliance-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ContractorComplianceLivewire\\": "src/"
+                }
+            },
+            "description": "Accounting contractor compliance Livewire presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-contractor-reporting",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-contractor-reporting",
+                "reference": "8ab6c09fc59411bc50cf8106294632dd4fe633e1"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ContractorReporting\\ContractorReportingServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-contractor-reporting"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ContractorReporting\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting contractor reporting domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-contractor-reporting-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-contractor-reporting-api",
+                "reference": "c9d1605e737be4af6323d99ba64f087c65dd237a"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "liberusoftware/module-accounting-contractor-reporting": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ContractorReportingApi\\ContractorReportingApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-contractor-reporting-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ContractorReportingApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting contractor reporting HTTP API.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-contractor-reporting-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-contractor-reporting-filament",
+                "reference": "53cafe4a5a2393cccfac629abeb462709d5b4955"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-contractor-reporting": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ContractorReportingFilament\\ContractorReportingFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-contractor-reporting-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ContractorReportingFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting contractor reporting Filament 5 surfaces.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-contractor-reporting-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-contractor-reporting-livewire",
+                "reference": "f29643fa316973946a0006e82fe6910818f033a7"
+            },
+            "require": {
+                "liberusoftware/module-accounting-contractor-reporting": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\ContractorReportingLivewire\\ContractorReportingLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-contractor-reporting-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\ContractorReportingLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting contractor reporting Livewire 4 surfaces.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "liberusoftware/module-accounting-core",
             "version": "1.0.0",
             "dist": {
@@ -7435,6 +8147,158 @@
                 "MIT"
             ],
             "description": "Livewire 4 presentation adapter for Liberu Accounting Core.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-corporate-cards",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-corporate-cards",
+                "reference": "364a1efa5b26928ba3fa78fe87bc9c2f0b9dfd9d"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CorporateCards\\CorporateCardsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-corporate-cards"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CorporateCards\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting corporate cards domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-corporate-cards-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-corporate-cards-api",
+                "reference": "f30a97992178d473639df6048e319dc1401786c2"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "liberusoftware/module-accounting-corporate-cards": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CorporateCardsApi\\CorporateCardsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-corporate-cards-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CorporateCardsApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting corporate cards HTTP API.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-corporate-cards-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-corporate-cards-filament",
+                "reference": "07d1ec961af64fcfdcb39773ac68633eb6df5320"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-corporate-cards": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CorporateCardsFilament\\CorporateCardsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-corporate-cards-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CorporateCardsFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting corporate cards Filament 5 surfaces.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-corporate-cards-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-corporate-cards-livewire",
+                "reference": "e2bfebb6affb3f8ab854efd15b4b836914e0c886"
+            },
+            "require": {
+                "liberusoftware/module-accounting-corporate-cards": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CorporateCardsLivewire\\CorporateCardsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-corporate-cards-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CorporateCardsLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting corporate cards Livewire 4 surfaces.",
             "transport-options": {
                 "symlink": true,
                 "relative": true

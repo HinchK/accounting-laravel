@@ -346,6 +346,126 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-corporate-cards",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-corporate-cards-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-corporate-cards-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-corporate-cards-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-contractor-reporting",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-contractor-reporting-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-contractor-reporting-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-contractor-reporting-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-contractor-compliance",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-contractor-compliance-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-contractor-compliance-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-contractor-compliance-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-construction-tax",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-construction-tax-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-construction-tax-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-construction-tax-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-consolidation",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-consolidation-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-consolidation-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-consolidation-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-collections",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-collections-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-collections-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-collections-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-tax-core",
             "options": { "symlink": true }
         },
@@ -1843,6 +1963,30 @@
         "liberusoftware/module-accounting-credit-notes-and-adjustments-api": "^1.0",
         "liberusoftware/module-accounting-credit-notes-and-adjustments-filament": "^1.0",
         "liberusoftware/module-accounting-credit-notes-and-adjustments-livewire": "^1.0",
+        "liberusoftware/module-accounting-corporate-cards": "^1.0",
+        "liberusoftware/module-accounting-corporate-cards-api": "^1.0",
+        "liberusoftware/module-accounting-corporate-cards-filament": "^1.0",
+        "liberusoftware/module-accounting-corporate-cards-livewire": "^1.0",
+        "liberusoftware/module-accounting-contractor-reporting": "^1.0",
+        "liberusoftware/module-accounting-contractor-reporting-api": "^1.0",
+        "liberusoftware/module-accounting-contractor-reporting-filament": "^1.0",
+        "liberusoftware/module-accounting-contractor-reporting-livewire": "^1.0",
+        "liberusoftware/module-accounting-contractor-compliance": "^1.0",
+        "liberusoftware/module-accounting-contractor-compliance-api": "^1.0",
+        "liberusoftware/module-accounting-contractor-compliance-filament": "^1.0",
+        "liberusoftware/module-accounting-contractor-compliance-livewire": "^1.0",
+        "liberusoftware/module-accounting-construction-tax": "^1.0",
+        "liberusoftware/module-accounting-construction-tax-api": "^1.0",
+        "liberusoftware/module-accounting-construction-tax-filament": "^1.0",
+        "liberusoftware/module-accounting-construction-tax-livewire": "^1.0",
+        "liberusoftware/module-accounting-consolidation": "^1.0",
+        "liberusoftware/module-accounting-consolidation-api": "^1.0",
+        "liberusoftware/module-accounting-consolidation-filament": "^1.0",
+        "liberusoftware/module-accounting-consolidation-livewire": "^1.0",
+        "liberusoftware/module-accounting-collections": "^1.0",
+        "liberusoftware/module-accounting-collections-api": "^1.0",
+        "liberusoftware/module-accounting-collections-filament": "^1.0",
+        "liberusoftware/module-accounting-collections-livewire": "^1.0",
         "liberusoftware/module-accounting-xero-migration": "^1.0",
         "liberusoftware/module-accounting-xero-migration-api": "^1.0",
         "liberusoftware/module-accounting-xero-migration-filament": "^1.0",
