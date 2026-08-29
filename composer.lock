@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "01a3954e683a4900f3e362047917f5d0",
+    "content-hash": "bf1e34fc8b6671317a431d6316eec9f4",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7435,6 +7435,158 @@
                 "MIT"
             ],
             "description": "Livewire 4 presentation adapter for Liberu Accounting Core.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-customer-payments",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-customer-payments",
+                "reference": "5d9f9a0dc21919a378decefa4a96b337a01d575d"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CustomerPayments\\CustomerPaymentsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-customer-payments"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CustomerPayments\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting customer payments domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-customer-payments-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-customer-payments-api",
+                "reference": "82c344f3e787618437e81450066ce0b5faced0ec"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "liberusoftware/module-accounting-customer-payments": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CustomerPaymentsApi\\CustomerPaymentsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-customer-payments-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CustomerPaymentsApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting customer payments HTTP API.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-customer-payments-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-customer-payments-filament",
+                "reference": "7f89f05514f464fbfb6f37ee0db79f268b5f3546"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-customer-payments": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CustomerPaymentsFilament\\CustomerPaymentsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-customer-payments-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CustomerPaymentsFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting customer payments Filament 5 surfaces.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-customer-payments-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-customer-payments-livewire",
+                "reference": "e697e81174640605fa9af87934c1a3c4d63ad16c"
+            },
+            "require": {
+                "liberusoftware/module-accounting-customer-payments": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\CustomerPaymentsLivewire\\CustomerPaymentsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-customer-payments-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\CustomerPaymentsLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting customer payments Livewire 4 surfaces.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
