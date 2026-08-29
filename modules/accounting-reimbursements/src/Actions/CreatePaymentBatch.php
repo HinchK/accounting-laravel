@@ -13,10 +13,10 @@ use Liberu\Accounting\Reimbursements\Models\ReimbursementLiability;
 
 final class CreatePaymentBatch
 {
-    public function handle(array $liabilityIds): ReimbursementBatch
+    public function handle(array $liabilityIds, ?int $teamId = null): ReimbursementBatch
     {
-        return DB::transaction(function () use ($liabilityIds): ReimbursementBatch {
-            $liabilities = ReimbursementLiability::query()->whereIn('id', $liabilityIds)->lockForUpdate()->get();
+        return DB::transaction(function () use ($liabilityIds, $teamId): ReimbursementBatch {
+            $liabilities = ReimbursementLiability::query()->whereIn('id', $liabilityIds)->when($teamId !== null, fn ($query) => $query->where('team_id', $teamId))->lockForUpdate()->get();
             if ($liabilities->isEmpty() || $liabilities->contains(fn (ReimbursementLiability $liability): bool => $liability->status !== ReimbursementStatus::Approved)) {
                 throw new InvalidReimbursement('Only approved liabilities can be batched.');
             }$currencies = $liabilities->pluck('currency')->unique();
