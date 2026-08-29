@@ -24,11 +24,11 @@ final class PortalResourceController extends Controller
         return new PortalResourceResource($portalResource->load('documents'));
     }
 
-    public function store(Request $request, CreatePortalResource $action): PortalResourceResource
+    public function store(Request $request, CreatePortalResource $action): mixed
     {
         $data = $request->validate(['supplier_id' => 'required|string|max:160', 'type' => 'required|string', 'reference' => 'required|string|max:100', 'currency' => 'required|string|size:3', 'amount' => 'nullable|numeric|min:0', 'payload' => 'nullable|array']);
 
-        return new PortalResourceResource($action->handle($data));
+        return (new PortalResourceResource($action->handle($data)))->response()->setStatusCode(201);
     }
 
     public function transition(Request $request, PortalResource $portalResource, TransitionPortalResource $action): PortalResourceResource
