@@ -4,6 +4,6 @@ declare(strict_types=1);
 
 namespace Liberu\Accounting\YearEnd\Exceptions;
 
-use InvalidArgumentException;
+use DomainException;
 
-final class InvalidYearEnd extends InvalidArgumentException {}
+final class InvalidYearEnd extends DomainException {}

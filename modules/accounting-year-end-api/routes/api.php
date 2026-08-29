@@ -3,9 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use Liberu\Accounting\YearEndApi\Http\Controllers\YearEndController;
 
-Route::prefix('api/v1/accounting/year-end')->middleware(['auth:sanctum'])->group(function (): void {
-    Route::get('/', [YearEndController::class, 'index'])->middleware('ability:accounting.year-end.read');
-    Route::post('/', [YearEndController::class, 'store'])->middleware('ability:accounting.year-end.write');
-    Route::post('/{close}/close', [YearEndController::class, 'close'])->middleware('ability:accounting.year-end.write');
-    Route::post('/{close}/lock', [YearEndController::class, 'lock'])->middleware('ability:accounting.year-end.lock');
+Route::prefix('api/v1/accounting/year-end')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {
+    Route::middleware('ability:accounting.year-end.read')->get('/', [YearEndController::class, 'index']);
+    Route::middleware('ability:accounting.year-end.write')->group(function (): void {
+        Route::post('/', [YearEndController::class, 'store']);
+        Route::post('/{period}/adjustments', [YearEndController::class, 'adjustment']);
+        Route::post('/{period}/lock', [YearEndController::class, 'lock']);
+        Route::post('/{period}/archive', [YearEndController::class, 'archive']);
+    });
 });

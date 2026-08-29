@@ -7,7 +7,7 @@ namespace Liberu\Accounting\YearEnd\Enums;
 enum YearEndStatus: string
 {
     case Open = 'open';
-    case Closed = 'closed';
+    case Adjusted = 'adjusted';
     case Locked = 'locked';
-    case Reopened = 'reopened';
+    case Archived = 'archived';
 }
