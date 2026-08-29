@@ -6,6 +6,7 @@ namespace Liberu\Accounting\SupplierBillsFilament;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Liberu\Accounting\SupplierBillsFilament\Resources\SupplierBillResource;
 
 final class SupplierBillsFilamentPlugin implements Plugin
 {
@@ -19,7 +20,10 @@ final class SupplierBillsFilamentPlugin implements Plugin
         return 'accounting-supplier-bills';
     }
 
-    public function register(Panel $panel): void {}
+    public function register(Panel $panel): void
+    {
+        $panel->resources([SupplierBillResource::class]);
+    }
 
     public function boot(Panel $panel): void {}
 }
