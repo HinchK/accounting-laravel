@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6b9c8e04d541034814045931b2862a78",
+    "content-hash": "2e5e72effe19b2a07c0e632a583c2be6",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7435,6 +7435,159 @@
                 "MIT"
             ],
             "description": "Livewire 4 presentation adapter for Liberu Accounting Core.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-deposits-and-clearing",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-deposits-and-clearing",
+                "reference": "0dec963754aa684dc058a5ad180e08ee49254c2d"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\DepositsAndClearing\\DepositsAndClearingServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-deposits-and-clearing"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\DepositsAndClearing\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Undeposited funds, grouped deposits, provider clearing, fees, payouts and reconciliation.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-deposits-and-clearing-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-deposits-and-clearing-api",
+                "reference": "70641854a61c8e4ebe3834b778afc9f56db5bef3"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-deposits-and-clearing": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\DepositsAndClearingApi\\DepositsAndClearingApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-deposits-and-clearing-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\DepositsAndClearingApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Deposits and clearing HTTP API.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-deposits-and-clearing-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-deposits-and-clearing-filament",
+                "reference": "f115ce15b061bacea1f9231a56b1884599a75170"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-deposits-and-clearing": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\DepositsAndClearingFilament\\DepositsAndClearingFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-deposits-and-clearing-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\DepositsAndClearingFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Deposits and clearing Filament 5 surfaces.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-deposits-and-clearing-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-deposits-and-clearing-livewire",
+                "reference": "1888b84f966895ebec3106a3a72a352fe6440513"
+            },
+            "require": {
+                "liberusoftware/module-accounting-deposits-and-clearing": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\DepositsAndClearingLivewire\\DepositsAndClearingLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-deposits-and-clearing-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\DepositsAndClearingLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Deposits and clearing Livewire 4 surfaces.",
             "transport-options": {
                 "symlink": true,
                 "relative": true

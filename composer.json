@@ -186,6 +186,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-deposits-and-clearing",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-deposits-and-clearing-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-deposits-and-clearing-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-deposits-and-clearing-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-tax-core",
             "options": { "symlink": true }
         },
@@ -1631,6 +1651,10 @@
         "liberusoftware/module-accounting-depreciation-api": "^1.0",
         "liberusoftware/module-accounting-depreciation-filament": "^1.0",
         "liberusoftware/module-accounting-depreciation-livewire": "^1.0",
+        "liberusoftware/module-accounting-deposits-and-clearing": "^1.0",
+        "liberusoftware/module-accounting-deposits-and-clearing-api": "^1.0",
+        "liberusoftware/module-accounting-deposits-and-clearing-filament": "^1.0",
+        "liberusoftware/module-accounting-deposits-and-clearing-livewire": "^1.0",
         "liberusoftware/module-accounting-tax-core": "^1.0",
         "liberusoftware/module-accounting-tax-core-api": "^1.0",
         "liberusoftware/module-accounting-tax-core-filament": "^1.0",
