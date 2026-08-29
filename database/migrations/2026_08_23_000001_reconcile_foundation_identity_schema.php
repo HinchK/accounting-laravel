@@ -53,7 +53,11 @@ return new class() extends Migration
                 // useful for MySQL and SQLite.
                 if (DB::connection()->getDriverName() === 'pgsql') {
                     $table = DB::connection()->getQueryGrammar()->wrapTable($tableName);
-                    $constraint = DB::connection()->getQueryGrammar()->wrap($primary['name']);
+                    $constraintName = DB::selectOne(
+                        'select c.conname from pg_constraint c join pg_class t on t.oid = c.conrelid join pg_namespace n on n.oid = t.relnamespace where c.contype = ? and t.relname = ? and n.nspname = current_schema()',
+                        ['p', $tableName],
+                    )?->conname ?? $primary['name'];
+                    $constraint = DB::connection()->getQueryGrammar()->wrap($constraintName);
 
                     DB::statement("alter table {$table} drop constraint if exists {$constraint}");
                 } else {
@@ -63,9 +67,17 @@ return new class() extends Migration
                 }
             }
 
-            Schema::table($tableName, function (Blueprint $table) use ($teamColumn): void {
-                $table->unsignedBigInteger($teamColumn)->nullable()->change();
-            });
+            if (DB::connection()->getDriverName() === 'pgsql') {
+                $table = DB::connection()->getQueryGrammar()->wrapTable($tableName);
+                $column = DB::connection()->getQueryGrammar()->wrap($teamColumn);
+
+                DB::statement("alter table {$table} alter column {$column} type bigint using {$column}::bigint");
+                DB::statement("alter table {$table} alter column {$column} drop not null");
+            } else {
+                Schema::table($tableName, function (Blueprint $table) use ($teamColumn): void {
+                    $table->unsignedBigInteger($teamColumn)->nullable()->change();
+                });
+            }
 
             $uniqueName = "{$tableName}_team_pivot_unique";
             $hasUnique = collect(Schema::getIndexes($tableName))->contains(
