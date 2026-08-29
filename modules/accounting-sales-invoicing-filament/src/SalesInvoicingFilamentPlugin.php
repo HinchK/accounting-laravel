@@ -6,6 +6,7 @@ namespace Liberu\Accounting\SalesInvoicingFilament;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Liberu\Accounting\SalesInvoicingFilament\Resources\SalesInvoiceResource;
 
 final class SalesInvoicingFilamentPlugin implements Plugin
 {
@@ -14,7 +15,10 @@ final class SalesInvoicingFilamentPlugin implements Plugin
         return 'accounting-sales-invoicing';
     }
 
-    public function register(Panel $panel): void {}
+    public function register(Panel $panel): void
+    {
+        $panel->resources([SalesInvoiceResource::class]);
+    }
 
     public function boot(Panel $panel): void {}
 
