@@ -546,6 +546,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-cash-flow-forecasting",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-cash-flow-forecasting-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-cash-flow-forecasting-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-cash-flow-forecasting-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-tax-core",
             "options": { "symlink": true }
         },
@@ -2083,6 +2103,10 @@
         "liberusoftware/module-accounting-cash-position-api": "^1.0",
         "liberusoftware/module-accounting-cash-position-filament": "^1.0",
         "liberusoftware/module-accounting-cash-position-livewire": "^1.0",
+        "liberusoftware/module-accounting-cash-flow-forecasting": "^1.0",
+        "liberusoftware/module-accounting-cash-flow-forecasting-api": "^1.0",
+        "liberusoftware/module-accounting-cash-flow-forecasting-filament": "^1.0",
+        "liberusoftware/module-accounting-cash-flow-forecasting-livewire": "^1.0",
         "liberusoftware/module-accounting-xero-migration": "^1.0",
         "liberusoftware/module-accounting-xero-migration-api": "^1.0",
         "liberusoftware/module-accounting-xero-migration-filament": "^1.0",
