@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "432372e0f860503b02340399fdc5c75c",
+    "content-hash": "c4b7d482f52b3171dc6122faa985244c",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -16228,6 +16228,159 @@
                 }
             },
             "description": "Accounting withholding tax Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-year-end",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-year-end",
+                "reference": "b9fef8117a85f8fef45722c2902d995fee71bdde"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\YearEnd\\YearEndServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-year-end"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\YearEnd\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting year-end close domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-year-end-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-year-end-api",
+                "reference": "0667d0510a429165ba2a66e9366753fa52c92a07"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-year-end": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\YearEndApi\\YearEndApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-year-end-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\YearEndApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting year-end API presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-year-end-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-year-end-filament",
+                "reference": "0befb8da79bd7fa4823583b5f986062b223305eb"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-year-end": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\YearEndFilament\\YearEndFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-year-end-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\YearEndFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting year-end Filament presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-year-end-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-year-end-livewire",
+                "reference": "213fcfa25f2b5e11cdcc98d4fc4be60e5b8d3ee6"
+            },
+            "require": {
+                "liberusoftware/module-accounting-year-end": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\YearEndLivewire\\YearEndLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-year-end-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\YearEndLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting year-end Livewire presentation module.",
             "transport-options": {
                 "symlink": true,
                 "relative": true

@@ -266,6 +266,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-year-end",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-year-end-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-year-end-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-year-end-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-supplier-portal",
             "options": { "symlink": true }
         },
@@ -1527,6 +1547,10 @@
         "liberusoftware/module-accounting-tax-returns-api": "^1.0",
         "liberusoftware/module-accounting-tax-returns-filament": "^1.0",
         "liberusoftware/module-accounting-tax-returns-livewire": "^1.0",
+        "liberusoftware/module-accounting-year-end": "^1.0",
+        "liberusoftware/module-accounting-year-end-api": "^1.0",
+        "liberusoftware/module-accounting-year-end-filament": "^1.0",
+        "liberusoftware/module-accounting-year-end-livewire": "^1.0",
         "liberusoftware/module-accounting-supplier-portal": "^1.0",
         "liberusoftware/module-accounting-supplier-portal-api": "^1.0",
         "liberusoftware/module-accounting-supplier-portal-filament": "^1.0",
