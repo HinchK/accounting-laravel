@@ -466,6 +466,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-coding-suggestions",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-coding-suggestions-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-coding-suggestions-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-coding-suggestions-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-tax-core",
             "options": { "symlink": true }
         },
@@ -1987,6 +2007,10 @@
         "liberusoftware/module-accounting-collections-api": "^1.0",
         "liberusoftware/module-accounting-collections-filament": "^1.0",
         "liberusoftware/module-accounting-collections-livewire": "^1.0",
+        "liberusoftware/module-accounting-coding-suggestions": "^1.0",
+        "liberusoftware/module-accounting-coding-suggestions-api": "^1.0",
+        "liberusoftware/module-accounting-coding-suggestions-filament": "^1.0",
+        "liberusoftware/module-accounting-coding-suggestions-livewire": "^1.0",
         "liberusoftware/module-accounting-xero-migration": "^1.0",
         "liberusoftware/module-accounting-xero-migration-api": "^1.0",
         "liberusoftware/module-accounting-xero-migration-filament": "^1.0",
