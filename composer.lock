@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b497f74ec9a32839f8b9722fdb88622",
+    "content-hash": "270fae9cba8fb777a4dfaa8e7c4eceb7",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -16840,6 +16840,159 @@
                 "MIT"
             ],
             "description": "Accounting VAT Livewire presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-workforce-costing",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-workforce-costing",
+                "reference": "619203ea"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\WorkforceCosting\\WorkforceCostingServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-workforce-costing"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\WorkforceCosting\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting workforce costing domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-workforce-costing-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-workforce-costing-api",
+                "reference": "619203ea"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-workforce-costing": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\WorkforceCostingApi\\WorkforceCostingApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-workforce-costing-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\WorkforceCostingApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting workforce costing API presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-workforce-costing-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-workforce-costing-filament",
+                "reference": "619203ea"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-workforce-costing": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\WorkforceCostingFilament\\WorkforceCostingFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-workforce-costing-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\WorkforceCostingFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting workforce costing Filament presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-workforce-costing-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-workforce-costing-livewire",
+                "reference": "619203ea"
+            },
+            "require": {
+                "liberusoftware/module-accounting-workforce-costing": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\WorkforceCostingLivewire\\WorkforceCostingLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-workforce-costing-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\WorkforceCostingLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting workforce costing Livewire presentation module.",
             "transport-options": {
                 "symlink": true,
                 "relative": true

@@ -346,6 +346,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-workforce-costing",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-workforce-costing-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-workforce-costing-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-workforce-costing-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-supplier-portal",
             "options": { "symlink": true }
         },
@@ -1623,6 +1643,10 @@
         "liberusoftware/module-accounting-vat-api": "^1.0",
         "liberusoftware/module-accounting-vat-filament": "^1.0",
         "liberusoftware/module-accounting-vat-livewire": "^1.0",
+        "liberusoftware/module-accounting-workforce-costing": "^1.0",
+        "liberusoftware/module-accounting-workforce-costing-api": "^1.0",
+        "liberusoftware/module-accounting-workforce-costing-filament": "^1.0",
+        "liberusoftware/module-accounting-workforce-costing-livewire": "^1.0",
         "liberusoftware/module-accounting-supplier-portal": "^1.0",
         "liberusoftware/module-accounting-supplier-portal-api": "^1.0",
         "liberusoftware/module-accounting-supplier-portal-filament": "^1.0",
