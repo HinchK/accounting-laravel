@@ -286,6 +286,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-xero-migration",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-xero-migration-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-xero-migration-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-xero-migration-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-supplier-portal",
             "options": { "symlink": true }
         },
@@ -1551,6 +1571,10 @@
         "liberusoftware/module-accounting-year-end-api": "^1.0",
         "liberusoftware/module-accounting-year-end-filament": "^1.0",
         "liberusoftware/module-accounting-year-end-livewire": "^1.0",
+        "liberusoftware/module-accounting-xero-migration": "^1.0",
+        "liberusoftware/module-accounting-xero-migration-api": "^1.0",
+        "liberusoftware/module-accounting-xero-migration-filament": "^1.0",
+        "liberusoftware/module-accounting-xero-migration-livewire": "^1.0",
         "liberusoftware/module-accounting-supplier-portal": "^1.0",
         "liberusoftware/module-accounting-supplier-portal-api": "^1.0",
         "liberusoftware/module-accounting-supplier-portal-filament": "^1.0",

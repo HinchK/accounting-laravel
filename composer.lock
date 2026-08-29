@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c4b7d482f52b3171dc6122faa985244c",
+    "content-hash": "7ef0e77cc008c8739f214cbb5236d326",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -16381,6 +16381,159 @@
                 "MIT"
             ],
             "description": "Accounting year-end Livewire presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-xero-migration",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-xero-migration",
+                "reference": "81a6f8ea"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\XeroMigration\\XeroMigrationServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-xero-migration"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\XeroMigration\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting Xero migration domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-xero-migration-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-xero-migration-api",
+                "reference": "81a6f8ea"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-xero-migration": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\XeroMigrationApi\\XeroMigrationApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-xero-migration-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\XeroMigrationApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting Xero migration API presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-xero-migration-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-xero-migration-filament",
+                "reference": "81a6f8ea"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-xero-migration": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\XeroMigrationFilament\\XeroMigrationFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-xero-migration-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\XeroMigrationFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting Xero migration Filament presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-xero-migration-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-xero-migration-livewire",
+                "reference": "81a6f8ea"
+            },
+            "require": {
+                "liberusoftware/module-accounting-xero-migration": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\XeroMigrationLivewire\\XeroMigrationLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-xero-migration-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\XeroMigrationLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire adapter for Accounting Xero Migration.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
