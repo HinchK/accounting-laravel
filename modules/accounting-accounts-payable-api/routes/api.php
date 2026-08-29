@@ -10,6 +10,7 @@ Route::prefix('api/v1/accounting/accounts-payable')->middleware(['auth:sanctum',
         Route::get('/', [PayableOpenItemController::class, 'index']);
         Route::get('/aging', [PayableOpenItemController::class, 'aging']);
         Route::get('/balances/{party}', [PayableOpenItemController::class, 'balances']);
+        Route::get('/reconciliation', [PayableOpenItemController::class, 'reconcile']);
         Route::get('/open-items/{payableOpenItem}', [PayableOpenItemController::class, 'show']);
     });
     Route::middleware('ability:accounting.payables.write')->group(function (): void {

@@ -12,7 +12,9 @@ use Livewire\Component;
 final class SupplierBills extends Component
 {
     public ?int $partyId = null;
+
     public string $search = '';
+
     public bool $showForm = false;
 
     public function mount(?int $partyId = null): void
@@ -34,6 +36,7 @@ final class SupplierBills extends Component
     public function render(): mixed
     {
         $bills = SupplierBill::query()->with('party')->when($this->partyId, fn ($query) => $query->where('party_id', $this->partyId))->when($this->search !== '', fn ($query) => $query->where('bill_number', 'like', '%'.$this->search.'%'))->latest()->paginate(25);
-        return view('accounting-supplier-bills::supplier-bills', ['bills'=>$bills]);
+
+        return view('accounting-supplier-bills::supplier-bills', ['bills' => $bills]);
     }
 }

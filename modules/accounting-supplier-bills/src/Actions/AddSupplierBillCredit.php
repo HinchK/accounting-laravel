@@ -19,7 +19,8 @@ final class AddSupplierBillCredit
             if (! in_array($bill->status, [SupplierBillStatus::Approved, SupplierBillStatus::Posted], true) || $amount <= 0 || $amount > $bill->outstanding() || blank($attributes['reason'] ?? null)) {
                 throw new InvalidSupplierBill('A credit requires an approved or posted bill, a reason, and an amount within the outstanding balance.');
             }
-            $bill->credits()->create(array_merge($attributes, ['amount'=>$amount,'currency'=>$attributes['currency'] ?? $bill->currency]));
+            $bill->credits()->create(array_merge($attributes, ['amount' => $amount, 'currency' => $attributes['currency'] ?? $bill->currency]));
+
             return $bill->refresh()->load('credits');
         });
     }

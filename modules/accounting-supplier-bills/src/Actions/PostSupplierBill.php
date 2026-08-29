@@ -22,10 +22,11 @@ final class PostSupplierBill
             if ($bill->status !== SupplierBillStatus::Approved) {
                 throw new InvalidSupplierBill('Only approved supplier bills may be posted.');
             }
-            $this->createOpenItem->handle(['party_id'=>$bill->party_id,'source_type'=>SupplierBill::class,'source_id'=>(string) $bill->id,'reference'=>$bill->bill_number,'issued_on'=>$bill->bill_date,'due_on'=>$bill->due_on,'original_amount'=>$bill->total,'currency'=>$bill->currency,'metadata'=>['supplier_bill_id'=>$bill->id]]);
-            $bill->update(['status'=>SupplierBillStatus::Posted]);
+            $this->createOpenItem->handle(['party_id' => $bill->party_id, 'source_type' => SupplierBill::class, 'source_id' => (string) $bill->id, 'reference' => $bill->bill_number, 'issued_on' => $bill->bill_date, 'due_on' => $bill->due_on, 'original_amount' => $bill->total, 'currency' => $bill->currency, 'metadata' => ['supplier_bill_id' => $bill->id]]);
+            $bill->update(['status' => SupplierBillStatus::Posted]);
             $bill = $bill->refresh();
             DB::afterCommit(fn () => event(new SupplierBillPosted($bill)));
+
             return $bill;
         });
     }

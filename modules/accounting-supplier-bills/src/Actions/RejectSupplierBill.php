@@ -15,7 +15,8 @@ final class RejectSupplierBill
         if (blank($reason) || ! in_array($bill->status, [SupplierBillStatus::Draft, SupplierBillStatus::Approved], true)) {
             throw new InvalidSupplierBill('Only draft or approved bills may be rejected and a reason is required.');
         }
-        $bill->update(['status'=>SupplierBillStatus::Rejected,'approval_status'=>'rejected','rejection_reason'=>$reason]);
+        $bill->update(['status' => SupplierBillStatus::Rejected, 'approval_status' => 'rejected', 'rejection_reason' => $reason]);
+
         return $bill->refresh();
     }
 }
