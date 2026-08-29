@@ -30,12 +30,12 @@ final class TaxRuleController extends Controller
         return new TaxRuleResource($taxRule);
     }
 
-    public function store(Request $request, CreateTaxRule $action): TaxRuleResource
+    public function store(Request $request, CreateTaxRule $action): mixed
     {
         Gate::authorize('create', TaxRule::class);
         $data = $request->validate(['code' => 'required|string|max:64', 'name' => 'required|string|max:255', 'tax_type' => 'required|string|max:64', 'jurisdiction_code' => 'nullable|string|max:32', 'rate' => 'numeric|min:0|max:100', 'treatment' => 'nullable|string', 'effective_from' => 'required|date', 'effective_until' => 'nullable|date|after_or_equal:effective_from', 'status' => 'nullable|string', 'exemption_code' => 'nullable|string', 'control_account_code' => 'nullable|string', 'rounding_method' => 'nullable|string', 'rounding_scale' => 'nullable|integer|min:0|max:6']);
 
-        return new TaxRuleResource($action->handle($data));
+        return (new TaxRuleResource($action->handle($data)))->response()->setStatusCode(201);
     }
 
     public function update(Request $request, TaxRule $taxRule, UpdateTaxRule $action): TaxRuleResource
