@@ -10,9 +10,9 @@ use Liberu\Accounting\ProjectBilling\Models\ProjectBilling;
 final class ProjectBillingSummary
 {
     /** @return array<string,mixed> */
-    public function forProject(int $projectJobId): array
+    public function forProject(int $projectJobId, ?int $teamId = null): array
     {
-        return $this->summarize(ProjectBilling::query()->where('project_job_id', $projectJobId)->get());
+        return $this->summarize(ProjectBilling::query()->where('project_job_id', $projectJobId)->when($teamId !== null, fn ($query) => $query->where('team_id', $teamId))->get());
     }
 
     /** @param Collection<int,ProjectBilling> $rows @return array<string,mixed> */
