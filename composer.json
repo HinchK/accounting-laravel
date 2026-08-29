@@ -426,6 +426,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-consolidation",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-consolidation-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-consolidation-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-consolidation-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-tax-core",
             "options": { "symlink": true }
         },
@@ -1939,6 +1959,10 @@
         "liberusoftware/module-accounting-construction-tax-api": "^1.0",
         "liberusoftware/module-accounting-construction-tax-filament": "^1.0",
         "liberusoftware/module-accounting-construction-tax-livewire": "^1.0",
+        "liberusoftware/module-accounting-consolidation": "^1.0",
+        "liberusoftware/module-accounting-consolidation-api": "^1.0",
+        "liberusoftware/module-accounting-consolidation-filament": "^1.0",
+        "liberusoftware/module-accounting-consolidation-livewire": "^1.0",
         "liberusoftware/module-accounting-xero-migration": "^1.0",
         "liberusoftware/module-accounting-xero-migration-api": "^1.0",
         "liberusoftware/module-accounting-xero-migration-filament": "^1.0",
