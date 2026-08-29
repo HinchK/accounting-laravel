@@ -9,6 +9,7 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 use Liberu\Accounting\JobEstimates\Models\JobEstimate;
 
 final class JobEstimateResource extends Resource
@@ -16,6 +17,13 @@ final class JobEstimateResource extends Resource
     protected static ?string $model = JobEstimate::class;
 
     protected static ?string $navigationLabel = 'Job estimates';
+
+    public static function getEloquentQuery(): Builder
+    {
+        $teamId = auth()->user()?->current_team_id;
+
+        return parent::getEloquentQuery()->when($teamId !== null, fn (Builder $query): Builder => $query->where('team_id', $teamId));
+    }
 
     public static function form(Schema $schema): Schema
     {

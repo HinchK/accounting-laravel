@@ -37,3 +37,17 @@ it('uses the authenticated team when creating a job estimate', function (): void
 
     expect(JobEstimate::query()->where('estimate_ref', 'EST-3')->value('team_id'))->toBe($team->id);
 });
+
+it('requires the write ability for creating a job estimate', function (): void {
+    $user = User::factory()->create();
+    $team = Team::factory()->create(['user_id' => $user->id]);
+    $user->forceFill(['current_team_id' => $team->id])->save();
+    Sanctum::actingAs($user, ['accounting.job-estimates.read']);
+
+    $this->postJson('/api/v1/accounting/job-estimates', [
+        'estimate_ref' => 'EST-4',
+        'project_ref' => 'JOB-4',
+        'title' => 'Read-only project',
+        'currency' => 'GBP',
+    ])->assertForbidden();
+});
