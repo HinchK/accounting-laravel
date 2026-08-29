@@ -37,3 +37,12 @@ it('sends a normal user to the app panel after login', function () {
         ->get('/dashboard')
         ->assertRedirect(route('filament.app.pages.dashboard'));
 });
+
+it('uses the role-aware dashboard redirect from the public landing page', function (): void {
+    $user = seedTeamUser(superAdmin: false);
+
+    $this->actingAs($user)
+        ->get('/')
+        ->assertOk()
+        ->assertSee('href="'.route('dashboard').'"', false);
+});

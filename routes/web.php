@@ -31,7 +31,7 @@ Route::middleware('auth')->get('/dashboard', function (): RedirectResponse {
     }
 
     return redirect()->route('filament.app.pages.dashboard');
-});
+})->name('dashboard');
 
 // Portal access (customer + vendor): signed-link set-password + forgot. The
 // guard is fixed per route via defaults('guard', ...) — never from user input.
