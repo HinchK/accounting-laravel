@@ -6,7 +6,10 @@ namespace Liberu\Accounting\WorkpapersApi\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Liberu\Accounting\Workpapers\Actions\AddWorkpaperAttachment;
 use Liberu\Accounting\Workpapers\Actions\AddWorkpaperProcedure;
+use Liberu\Accounting\Workpapers\Actions\AddWorkpaperReference;
+use Liberu\Accounting\Workpapers\Actions\AssignWorkpaperReviewer;
 use Liberu\Accounting\Workpapers\Actions\ConcludeWorkpaper;
 use Liberu\Accounting\Workpapers\Actions\CreateWorkpaper;
 use Liberu\Accounting\Workpapers\Actions\RequestWorkpaperExport;
@@ -30,6 +33,21 @@ final class WorkpapersController extends Controller
         $model = $this->model($request, $workpaper);
 
         return response()->json($action->handle($model, $request->validate(['description' => 'required|string', 'status' => 'nullable|in:pending,passed,failed', 'performed_by' => 'nullable|integer', 'performed_at' => 'nullable|date', 'evidence' => 'nullable|string'])), 201);
+    }
+
+    public function reference(Request $request, string $workpaper, AddWorkpaperReference $action): mixed
+    {
+        return response()->json($action->handle($this->model($request, $workpaper), $request->validate(['label' => 'required|string|max:160', 'target_type' => 'nullable|string|max:160', 'target_id' => 'nullable|string|max:160', 'notes' => 'nullable|string'])), 201);
+    }
+
+    public function attachment(Request $request, string $workpaper, AddWorkpaperAttachment $action): mixed
+    {
+        return response()->json($action->handle($this->model($request, $workpaper), $request->validate(['name' => 'required|string|max:255', 'disk' => 'nullable|string|max:64', 'path' => 'required|string|max:500', 'mime_type' => 'nullable|string|max:160', 'size' => 'nullable|integer|min:0'])), 201);
+    }
+
+    public function reviewer(Request $request, string $workpaper, AssignWorkpaperReviewer $action): mixed
+    {
+        return response()->json($action->handle($this->model($request, $workpaper), (int) $request->validate(['reviewer_id' => 'required|integer'])['reviewer_id']));
     }
 
     public function conclude(Request $request, string $workpaper, ConcludeWorkpaper $action): mixed
