@@ -486,6 +486,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-close-management",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-close-management-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-close-management-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-close-management-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-tax-core",
             "options": { "symlink": true }
         },
@@ -2011,6 +2031,10 @@
         "liberusoftware/module-accounting-coding-suggestions-api": "^1.0",
         "liberusoftware/module-accounting-coding-suggestions-filament": "^1.0",
         "liberusoftware/module-accounting-coding-suggestions-livewire": "^1.0",
+        "liberusoftware/module-accounting-close-management": "^1.0",
+        "liberusoftware/module-accounting-close-management-api": "^1.0",
+        "liberusoftware/module-accounting-close-management-filament": "^1.0",
+        "liberusoftware/module-accounting-close-management-livewire": "^1.0",
         "liberusoftware/module-accounting-xero-migration": "^1.0",
         "liberusoftware/module-accounting-xero-migration-api": "^1.0",
         "liberusoftware/module-accounting-xero-migration-filament": "^1.0",
