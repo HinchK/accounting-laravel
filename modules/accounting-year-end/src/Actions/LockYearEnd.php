@@ -4,19 +4,20 @@ declare(strict_types=1);
 
 namespace Liberu\Accounting\YearEnd\Actions;
 
+use Illuminate\Support\Carbon;
 use Liberu\Accounting\YearEnd\Enums\YearEndStatus;
 use Liberu\Accounting\YearEnd\Exceptions\InvalidYearEnd;
-use Liberu\Accounting\YearEnd\Models\YearEndClose;
+use Liberu\Accounting\YearEnd\Models\YearEndPeriod;
 
 final class LockYearEnd
 {
-    public function handle(YearEndClose $close): YearEndClose
+    public function handle(YearEndPeriod $period, int $actor): YearEndPeriod
     {
-        if ($close->status !== YearEndStatus::Closed) {
-            throw new InvalidYearEnd('Only closed year ends can be locked.');
-        }
-        $close->update(['status' => YearEndStatus::Locked, 'locked_at' => now()]);
+        if ($period->status === YearEndStatus::Locked || $period->status === YearEndStatus::Archived) {
+            throw new InvalidYearEnd('Year end is already closed.');
+        } $retained = (float) $period->adjustments()->sum('amount');
+        $period->update(['status' => YearEndStatus::Locked, 'retained_earnings' => $retained, 'locked_by' => $actor, 'locked_at' => Carbon::now()]);
 
-        return $close->refresh();
+        return $period->fresh('adjustments');
     }
 }

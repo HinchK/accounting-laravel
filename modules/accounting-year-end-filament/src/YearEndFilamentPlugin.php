@@ -6,7 +6,6 @@ namespace Liberu\Accounting\YearEndFilament;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
-use Liberu\Accounting\YearEndFilament\Resources\YearEndCloseResource;
 
 final class YearEndFilamentPlugin implements Plugin
 {
@@ -20,10 +19,7 @@ final class YearEndFilamentPlugin implements Plugin
         return 'module-accounting-year-end-filament';
     }
 
-    public function register(Panel $panel): void
-    {
-        $panel->resources([YearEndCloseResource::class]);
-    }
+    public function register(Panel $panel): void {}
 
     public function boot(Panel $panel): void {}
 }
