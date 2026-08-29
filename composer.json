@@ -186,6 +186,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-withholding-tax",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-withholding-tax-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-withholding-tax-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-withholding-tax-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-supplier-portal",
             "options": { "symlink": true }
         },
@@ -1431,6 +1451,10 @@
         "liberusoftware/module-accounting-tax-core-api": "^1.0",
         "liberusoftware/module-accounting-tax-core-filament": "^1.0",
         "liberusoftware/module-accounting-tax-core-livewire": "^1.0",
+        "liberusoftware/module-accounting-withholding-tax": "^1.0",
+        "liberusoftware/module-accounting-withholding-tax-api": "^1.0",
+        "liberusoftware/module-accounting-withholding-tax-filament": "^1.0",
+        "liberusoftware/module-accounting-withholding-tax-livewire": "^1.0",
         "liberusoftware/module-accounting-supplier-portal": "^1.0",
         "liberusoftware/module-accounting-supplier-portal-api": "^1.0",
         "liberusoftware/module-accounting-supplier-portal-filament": "^1.0",
