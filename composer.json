@@ -246,6 +246,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-tax-returns",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-tax-returns-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-tax-returns-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-tax-returns-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-supplier-portal",
             "options": { "symlink": true }
         },
@@ -1503,6 +1523,10 @@
         "liberusoftware/module-accounting-time-tracking-api": "^1.0",
         "liberusoftware/module-accounting-time-tracking-filament": "^1.0",
         "liberusoftware/module-accounting-time-tracking-livewire": "^1.0",
+        "liberusoftware/module-accounting-tax-returns": "^1.0",
+        "liberusoftware/module-accounting-tax-returns-api": "^1.0",
+        "liberusoftware/module-accounting-tax-returns-filament": "^1.0",
+        "liberusoftware/module-accounting-tax-returns-livewire": "^1.0",
         "liberusoftware/module-accounting-supplier-portal": "^1.0",
         "liberusoftware/module-accounting-supplier-portal-api": "^1.0",
         "liberusoftware/module-accounting-supplier-portal-filament": "^1.0",

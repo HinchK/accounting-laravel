@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "79c7482e14890e639e45fbc926e1ac1f",
+    "content-hash": "432372e0f860503b02340399fdc5c75c",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -15475,6 +15475,159 @@
                 "MIT"
             ],
             "description": "Accounting tax core Livewire adapter.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-tax-returns",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-tax-returns",
+                "reference": "e3ed9611ef50cb8bc411bbd495610c4626c5a37a"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\TaxReturns\\TaxReturnsServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-tax-returns"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\TaxReturns\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting tax returns domain module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-tax-returns-api",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-tax-returns-api",
+                "reference": "9b4cd80c4808bdc3b87a09040111bddc44a9bac3"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "liberusoftware/module-accounting-tax-returns": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\TaxReturnsApi\\TaxReturnsApiServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-tax-returns-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\TaxReturnsApi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting tax returns API presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-tax-returns-filament",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-tax-returns-filament",
+                "reference": "bcdfa1cc00b40e0d2c27a617b470ede1335b163f"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "liberusoftware/module-accounting-tax-returns": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\TaxReturnsFilament\\TaxReturnsFilamentServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-tax-returns-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\TaxReturnsFilament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting tax returns Filament presentation module.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-accounting-tax-returns-livewire",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/accounting-tax-returns-livewire",
+                "reference": "2049d234bf1ae36ef8e10629fa915f84f1666e2d"
+            },
+            "require": {
+                "liberusoftware/module-accounting-tax-returns": "^1.0",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Liberu\\Accounting\\TaxReturnsLivewire\\TaxReturnsLivewireServiceProvider"
+                    ]
+                },
+                "liberu": {
+                    "name": "accounting-tax-returns-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Accounting\\TaxReturnsLivewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Accounting tax returns Livewire presentation module.",
             "transport-options": {
                 "symlink": true,
                 "relative": true
