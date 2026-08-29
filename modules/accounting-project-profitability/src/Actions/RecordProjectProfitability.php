@@ -31,6 +31,7 @@ final class RecordProjectProfitability
                 ->where('project_job_id', $attributes['project_job_id'])
                 ->whereDate('period_start', $start)
                 ->whereDate('period_end', $end)
+                ->when(array_key_exists('team_id', $attributes), fn ($query) => $query->where('team_id', $attributes['team_id']))
                 ->first() ?? new ProjectProfitability();
             $record->fill(array_merge($attributes, ['period_start' => $start, 'period_end' => $end, 'status' => $attributes['status'] ?? ProfitabilityStatus::Draft]));
             $record->save();

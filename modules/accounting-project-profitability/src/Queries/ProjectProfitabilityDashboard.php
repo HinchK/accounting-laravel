@@ -10,9 +10,9 @@ use Liberu\Accounting\ProjectProfitability\Models\ProjectProfitability;
 final class ProjectProfitabilityDashboard
 {
     /** @return array<string,mixed> */
-    public function forProject(int $projectJobId): array
+    public function forProject(int $projectJobId, ?int $teamId = null): array
     {
-        $rows = ProjectProfitability::query()->where('project_job_id', $projectJobId)->orderBy('period_start')->get();
+        $rows = ProjectProfitability::query()->where('project_job_id', $projectJobId)->when($teamId !== null, fn ($query) => $query->where('team_id', $teamId))->orderBy('period_start')->get();
 
         return $this->summarize($rows);
     }
