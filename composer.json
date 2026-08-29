@@ -306,6 +306,26 @@
         },
         {
             "type": "path",
+            "url": "modules/accounting-workpapers",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-workpapers-api",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-workpapers-filament",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
+            "url": "modules/accounting-workpapers-livewire",
+            "options": { "symlink": true }
+        },
+        {
+            "type": "path",
             "url": "modules/accounting-supplier-portal",
             "options": { "symlink": true }
         },
@@ -1575,6 +1595,10 @@
         "liberusoftware/module-accounting-xero-migration-api": "^1.0",
         "liberusoftware/module-accounting-xero-migration-filament": "^1.0",
         "liberusoftware/module-accounting-xero-migration-livewire": "^1.0",
+        "liberusoftware/module-accounting-workpapers": "^1.0",
+        "liberusoftware/module-accounting-workpapers-api": "^1.0",
+        "liberusoftware/module-accounting-workpapers-filament": "^1.0",
+        "liberusoftware/module-accounting-workpapers-livewire": "^1.0",
         "liberusoftware/module-accounting-supplier-portal": "^1.0",
         "liberusoftware/module-accounting-supplier-portal-api": "^1.0",
         "liberusoftware/module-accounting-supplier-portal-filament": "^1.0",
