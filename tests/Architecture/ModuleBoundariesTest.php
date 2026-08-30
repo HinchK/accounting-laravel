@@ -142,6 +142,7 @@ it('lets Composer own every module and theme autoload boundary', function () {
         'Liberu\\Themes\\ClearSignal\\',
         'Liberu\\Themes\\Dark\\',
         'Liberu\\Themes\\DefaultTheme\\',
+        'Liberu\\Themes\\AccountingErp\\',
     ]);
 
     foreach ($rootOwnedNamespaces as $namespace) {

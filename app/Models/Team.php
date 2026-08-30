@@ -39,6 +39,17 @@ class Team extends JetstreamTeam
         'vonage_key',
         'vonage_secret',
         'vonage_from',
+        'stripe_customer_id',
+        'stripe_subscription_id',
+        'stripe_product_id',
+        'stripe_monthly_price_id',
+        'stripe_yearly_price_id',
+        'stripe_price_id',
+        'premium_status',
+        'premium_trial_ends_at',
+        'premium_current_period_ends_at',
+        'premium_cancel_at_period_end',
+        'premium_last_event_id',
     ];
 
     /**
@@ -66,7 +77,30 @@ class Team extends JetstreamTeam
             'books_locked_before' => 'date',
             'vonage_key' => 'encrypted',
             'vonage_secret' => 'encrypted',
+            'premium_trial_ends_at' => 'datetime',
+            'premium_current_period_ends_at' => 'datetime',
+            'premium_cancel_at_period_end' => 'boolean',
         ];
+    }
+
+    public function hasPremiumAccess(?Carbon $at = null): bool
+    {
+        if (! config('premium.enabled', false)) {
+            return false;
+        }
+
+        $at ??= now();
+
+        return in_array($this->premium_status, ['trialing', 'active'], true)
+            && ($this->premium_status === 'trialing'
+                ? $this->premium_trial_ends_at === null || $this->premium_trial_ends_at->greaterThanOrEqualTo($at)
+                : $this->premium_current_period_ends_at === null || $this->premium_current_period_ends_at->greaterThanOrEqualTo($at));
+    }
+
+    public function isPremiumTrial(): bool
+    {
+        return $this->premium_status === 'trialing'
+            && ($this->premium_trial_ends_at === null || ! $this->premium_trial_ends_at->isPast());
     }
 
     /**

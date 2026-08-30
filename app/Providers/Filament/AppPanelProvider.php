@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use App\Filament\ModulePlugins;
+use App\Http\Middleware\EnsurePremiumAccess;
 use App\Support\ThemeColors;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -53,6 +54,7 @@ class AppPanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
                 SetLocale::class,
                 SecurityHeaders::class,
+                EnsurePremiumAccess::class,
             ])
             ->plugins(app(ModulePlugins::class)->forPanel('app'))
             ->authMiddleware([
