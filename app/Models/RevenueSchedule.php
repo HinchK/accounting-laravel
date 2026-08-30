@@ -10,6 +10,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/**
+ * @property-read Invoice|null $invoice
+ * @property-read Team|null $team
+ */
 class RevenueSchedule extends Model
 {
     use HasFactory;
@@ -39,6 +43,9 @@ class RevenueSchedule extends Model
         });
     }
 
+    /**
+     * @return BelongsTo<Invoice, $this>
+     */
     public function invoice(): BelongsTo
     {
         return $this->belongsTo(Invoice::class);
@@ -54,6 +61,9 @@ class RevenueSchedule extends Model
         return $this->belongsTo(Account::class, 'revenue_account_id');
     }
 
+    /**
+     * @return HasMany<RevenueScheduleEntry, $this>
+     */
     public function entries(): HasMany
     {
         return $this->hasMany(RevenueScheduleEntry::class);

@@ -12,7 +12,6 @@ use App\Providers\Filament\VendorPanelProvider;
 use App\Providers\FortifyServiceProvider;
 use App\Providers\JetstreamServiceProvider;
 use App\Providers\RouteServiceProvider;
-use App\Providers\TeamServiceProvider;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
@@ -29,7 +28,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Liberu Accounting ERP'),
 
     /*
     |--------------------------------------------------------------------------
@@ -111,6 +110,13 @@ return [
 
     'fallback_locale' => 'en',
 
+    'supported_locales' => [
+        'en' => 'English',
+        'es' => 'Español',
+        'fr' => 'Français',
+        'de' => 'Deutsch',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Faker Locale
@@ -186,7 +192,6 @@ return [
         VendorPanelProvider::class,
         RouteServiceProvider::class,
 
-        TeamServiceProvider::class,
         JetstreamServiceProvider::class,
         FortifyServiceProvider::class,
     ])->toArray(),

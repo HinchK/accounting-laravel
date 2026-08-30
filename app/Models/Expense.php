@@ -6,13 +6,23 @@ namespace App\Models;
 
 use App\Concerns\Approvable;
 use App\Concerns\Recurring;
+use App\Contracts\ApprovableRecord;
 use App\Notifications\ExpenseApprovalNotification;
 use App\Traits\IsTenantModel;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Expense extends Model
+/**
+ * @property int|null $team_id
+ * @property float|string $amount
+ * @property string|null $description
+ * @property bool $is_indirect
+ * @property string|null $approval_status
+ * @property int|null $approved_by
+ * @property-read User|null $user
+ */
+class Expense extends Model implements ApprovableRecord
 {
     use Approvable;
     use IsTenantModel;
@@ -86,7 +96,7 @@ class Expense extends Model
         return $this->approval_status === 'pending';
     }
 
-    public function getAllocatedAmount()
+    public function getAllocatedAmount(): float
     {
         if ($this->is_indirect) {
             return $this->amount * ($this->allocation_percentage / 100);

@@ -81,7 +81,7 @@ class SalesReceiptResource extends Resource
                             ->label('Reference #'),
 
                         Select::make('deposit_to_account_id')
-                            ->relationship('depositAccount', 'name')
+                            ->relationship('depositAccount', 'account_name')
                             ->label('Deposit To')
                             ->searchable()
                             ->preload(),
@@ -105,7 +105,7 @@ class SalesReceiptResource extends Resource
                             ->relationship()
                             ->schema([
                                 Select::make('account_id')
-                                    ->relationship('account', 'name')
+                                    ->relationship('account', 'account_name')
                                     ->searchable()
                                     ->preload(),
                                 TextInput::make('description')

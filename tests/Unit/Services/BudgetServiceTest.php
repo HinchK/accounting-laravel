@@ -21,7 +21,7 @@ class BudgetServiceTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->service = new BudgetService;
+        $this->service = new BudgetService();
     }
 
     public function test_get_budget_comparison_returns_array(): void

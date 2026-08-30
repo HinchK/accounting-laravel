@@ -5,11 +5,15 @@ declare(strict_types=1);
 namespace App\Filament\App\Resources\JournalEntries\Pages;
 
 use App\Filament\App\Resources\JournalEntries\JournalEntryResource;
+use App\Models\JournalEntry;
 use App\Rules\DoubleEntryValidator;
 use Filament\Actions;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\EditRecord;
 
+/**
+ * @property-read JournalEntry $record
+ */
 class EditJournalEntry extends EditRecord
 {
     #[\Override]

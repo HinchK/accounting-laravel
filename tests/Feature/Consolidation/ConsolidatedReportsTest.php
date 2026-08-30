@@ -30,7 +30,7 @@ class ConsolidatedReportsTest extends TestCase
         $group = ConsolidationGroup::create(['name' => 'G', 'owner_team_id' => $a->id]);
         $group->members()->sync([$a->id, $b->id]);
 
-        $page = new ConsolidatedReports;
+        $page = new ConsolidatedReports();
         $page->data = ['consolidation_group_id' => $group->id, 'start_date' => '2026-01-01', 'end_date' => '2026-12-31'];
         $page->generate();
 
@@ -49,10 +49,10 @@ class ConsolidatedReportsTest extends TestCase
         $group->members()->sync([$a->id]);
 
         $this->actingAs($owner);
-        $this->assertArrayHasKey($group->id, (new ConsolidatedReports)->visibleGroups());
+        $this->assertArrayHasKey($group->id, (new ConsolidatedReports())->visibleGroups());
 
         $this->actingAs($stranger);
-        $this->assertArrayNotHasKey($group->id, (new ConsolidatedReports)->visibleGroups());
+        $this->assertArrayNotHasKey($group->id, (new ConsolidatedReports())->visibleGroups());
     }
 
     public function test_generate_ignores_a_group_the_user_cannot_see(): void
@@ -64,7 +64,7 @@ class ConsolidatedReportsTest extends TestCase
         $group->members()->sync([$a->id]);
 
         $this->actingAs($stranger);
-        $page = new ConsolidatedReports;
+        $page = new ConsolidatedReports();
         $page->data = ['consolidation_group_id' => $group->id, 'start_date' => '2026-01-01', 'end_date' => '2026-12-31'];
         $page->generate();
 

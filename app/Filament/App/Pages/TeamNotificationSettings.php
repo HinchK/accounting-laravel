@@ -21,6 +21,9 @@ use Illuminate\Support\Facades\Auth;
  * Edits the current tenant team's Vonage SMS-sending credentials.
  * Team-admin only. Secrets are write-only: blank field = keep existing.
  */
+/**
+ * @property-read Schema $form
+ */
 class TeamNotificationSettings extends Page
 {
     #[\Override]

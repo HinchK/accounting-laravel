@@ -5,69 +5,71 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
-  workflow_dispatch:
-
-permissions:
-  contents: read
 
 jobs:
   install:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # v2
         with:
           php-version: '8.5'
-          extensions: mbstring, pdo, pdo_sqlite, bcmath, opcache, zip, gd, intl
-          coverage: none
+          extensions: mbstring, bcmath, pdo, pdo_sqlite, sqlite3, mysql, dom, curl, intl, gd
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: '20'
+          node-version: 'latest'
           cache: 'npm'
 
-      - name: Get composer cache directory
+      - name: Get Composer cache directory
         id: composer-cache
         run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
-      - name: Cache composer dependencies
-        uses: actions/cache@v4
+      - name: Cache Composer dependencies
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: ${{ runner.os }}-composer-
-
-      - name: Copy environment file
-        run: cp .env.example .env
+          restore-keys: |
+            ${{ runner.os }}-composer-
 
       - name: Install PHP dependencies
         run: composer install --no-interaction --prefer-dist --optimize-autoloader
 
+      # §6.2: local path repositories are Composer output that happens to be tracked.
+      # A clean install must reproduce those sources byte for byte. Other module and
+      # theme directories are installed from their remote Composer repositories and
+      # are generated output, so their release contents may legitimately differ.
+      - name: Installed packages match the tracked source
+        run: |
+          path_packages="$(php -r '$composer=json_decode(file_get_contents("composer.json"), true, 512, JSON_THROW_ON_ERROR); foreach ($composer["repositories"] as $repository) { if (($repository["type"] ?? null) === "path") { echo $repository["url"]." "; } }')"
+          if ! git diff --exit-code --stat -- $path_packages; then
+            echo "::error::A clean install rewrote a tracked Composer path repository."
+            echo "Edit the package source in its path repository and keep the install reproducible."
+            exit 1
+          fi
+
+      - name: Copy environment file
+        run: cp .env.testing .env
+
       - name: Generate application key
         run: php artisan key:generate
 
-      - name: Create SQLite database
-        run: touch database/database.sqlite
-
-      - name: Run database migrations
-        run: php artisan migrate:fresh --force
+      - name: Run database migrations (SQLite)
+        run: php artisan migrate --force
         env:
           DB_CONNECTION: sqlite
-          DB_DATABASE: database/database.sqlite
-
-      - name: Seed database
-        run: php artisan db:seed --force
-        env:
-          DB_CONNECTION: sqlite
-          DB_DATABASE: database/database.sqlite
+          DB_DATABASE: ':memory:'
 
       - name: Install npm dependencies
         run: npm ci
+
+      - name: Audit production npm dependencies
+        run: npm audit --omit=dev --audit-level=high
 
       - name: Build frontend assets
         run: npm run build

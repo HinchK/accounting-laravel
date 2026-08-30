@@ -39,7 +39,7 @@ class SchemaConsistencyTest extends TestCase
             }
 
             try {
-                $model = new $class;
+                $model = new $class();
                 $table = $model->getTable();
 
                 if (! Schema::hasTable($table)) {

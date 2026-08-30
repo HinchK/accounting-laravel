@@ -63,7 +63,7 @@ class ExchangeRateService
                 'from' => $r->fromCurrency?->code,
                 'to' => $r->toCurrency?->code,
                 'rate' => (float) $r->rate,
-                'date' => $r->date?->toDateString(),
+                'date' => $r->date->toDateString(),
             ])
             ->values()
             ->all();

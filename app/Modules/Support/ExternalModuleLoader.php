@@ -54,7 +54,7 @@ class ExternalModuleLoader
             }
 
             try {
-                $module = new $className;
+                $module = new $className();
 
                 if ($module instanceof ModuleInterface) {
                     $this->moduleManager->register($module);
@@ -127,7 +127,7 @@ class ExternalModuleLoader
         }
 
         try {
-            $module = new $moduleClass;
+            $module = new $moduleClass();
 
             if (! $module instanceof ModuleInterface) {
                 Log::warning("Custom module class does not implement ModuleInterface: {$moduleClass}");

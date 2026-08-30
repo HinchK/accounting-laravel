@@ -57,7 +57,7 @@ class TransactionResource extends Resource
                     ->numeric()
                     ->label('Amount')
                     ->required()
-                    ->rules(['required', new DoubleEntryValidator])
+                    ->rules(['required', new DoubleEntryValidator()])
                     ->step('0.01'),
                 Select::make('currency_id')
                     ->relationship('currency', 'code')

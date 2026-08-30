@@ -23,7 +23,7 @@ class PlaidServiceTest extends TestCase
         Config::set('services.plaid.secret', 'test_secret');
         Config::set('services.plaid.environment', 'sandbox');
 
-        $this->service = new PlaidService;
+        $this->service = new PlaidService();
     }
 
     public function test_create_link_token_sends_correct_request(): void
@@ -179,7 +179,7 @@ class PlaidServiceTest extends TestCase
     public function test_service_uses_correct_base_url_for_development(): void
     {
         Config::set('services.plaid.environment', 'development');
-        $service = new PlaidService;
+        $service = new PlaidService();
 
         Http::fake([
             'development.plaid.com/link/token/create' => Http::response([
@@ -195,7 +195,7 @@ class PlaidServiceTest extends TestCase
     public function test_service_uses_correct_base_url_for_production(): void
     {
         Config::set('services.plaid.environment', 'production');
-        $service = new PlaidService;
+        $service = new PlaidService();
 
         Http::fake([
             'production.plaid.com/link/token/create' => Http::response([

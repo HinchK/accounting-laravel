@@ -5,12 +5,19 @@ declare(strict_types=1);
 namespace App\Models;
 
 use App\Concerns\HasDocuments;
+use App\Contracts\Documentable;
 use App\Traits\IsTenantModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Collection;
 
-class CreditMemo extends Model
+/**
+ * @property int|null $team_id
+ * @property-read TaxRate|null $taxRate
+ * @property-read Collection<int, CreditMemoItem> $items
+ */
+class CreditMemo extends Model implements Documentable
 {
     use HasDocuments;
     use HasFactory, SoftDeletes;
@@ -207,6 +214,6 @@ class CreditMemo extends Model
             $number = isset($parts[1]) ? ((int) $parts[1]) + 1 : 1;
         }
 
-        return $prefix.$year.'-'.str_pad($number, 4, '0', STR_PAD_LEFT);
+        return $prefix.$year.'-'.str_pad((string) $number, 4, '0', STR_PAD_LEFT);
     }
 }

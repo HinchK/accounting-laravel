@@ -7,7 +7,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 
+/**
+ * @property int|null $journal_entry_id
+ * @property int $period_number
+ * @property Carbon $recognition_date
+ * @property int|float|string $amount
+ * @property-read RevenueSchedule $schedule
+ */
 class RevenueScheduleEntry extends Model
 {
     use HasFactory;

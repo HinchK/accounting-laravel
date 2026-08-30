@@ -2,5 +2,28 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - ../../base
-  - hpa.yaml
+- ../../base
+- hpa.yaml
+
+namespace: accounting-erp-laravel
+
+patches:
+- patch: |-
+    - op: replace
+      path: /spec/replicas
+      value: 3
+  target:
+    kind: Deployment
+    name: accounting-erp-laravel
+
+configMapGenerator:
+- name: accounting-erp-config
+  behavior: merge
+  literals:
+  - APP_ENV=production
+  - APP_DEBUG=false
+  - LOG_LEVEL=warning
+
+images:
+- name: ghcr.io/liberusoftware/accounting-erp-laravel
+  newTag: v2.0.0

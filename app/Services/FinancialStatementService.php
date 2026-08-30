@@ -42,7 +42,7 @@ class FinancialStatementService
      */
     private function scopedTeamId(): int
     {
-        return $this->teamOverride ?? auth()->user()?->current_team_id ?? -1;
+        return $this->teamOverride ?? auth()->user()->current_team_id ?? -1;
     }
 
     /**

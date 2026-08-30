@@ -22,8 +22,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $charge_date
  * @property string $description
  * @property int $quantity
- * @property decimal $unit_price
- * @property decimal $amount
+ * @property float|string $unit_price
+ * @property float|string $amount
  * @property int|null $invoice_id
  * @property string $status
  */
@@ -88,7 +88,7 @@ class DelayedCharge extends Model
      */
     public function customer(): BelongsTo
     {
-        return $this->belongsTo(Customer::class, 'customer_id', 'customer_id');
+        return $this->belongsTo(Customer::class, 'customer_id', 'id');
     }
 
     /**
@@ -96,7 +96,7 @@ class DelayedCharge extends Model
      */
     public function account(): BelongsTo
     {
-        return $this->belongsTo(Account::class, 'account_id', 'account_id');
+        return $this->belongsTo(Account::class, 'account_id', 'id');
     }
 
     /**
@@ -104,7 +104,7 @@ class DelayedCharge extends Model
      */
     public function invoice(): BelongsTo
     {
-        return $this->belongsTo(Invoice::class, 'invoice_id', 'invoice_id');
+        return $this->belongsTo(Invoice::class, 'invoice_id', 'id');
     }
 
     /**

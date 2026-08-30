@@ -100,7 +100,7 @@ class GeneralLedgerService
             $displayCurrency = Currency::where('is_default', true)->first();
         }
 
-        $budgetService = new BudgetService;
+        $budgetService = new BudgetService();
 
         return $budgetService->getBudgetComparison($startDate, $endDate);
     }

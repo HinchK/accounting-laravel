@@ -75,7 +75,7 @@ class XeroService
     {
         $payload = ['Invoices' => [[
             'Type' => 'ACCREC',
-            'Contact' => ['Name' => $invoice->customer?->customer_name ?? ('Customer '.$invoice->customer_id)],
+            'Contact' => ['Name' => $invoice->customer->customer_name ?? ('Customer '.$invoice->customer_id)],
             'LineItems' => [[
                 'Description' => 'Invoice '.($invoice->invoice_number ?? $invoice->id),
                 'Quantity' => 1,
@@ -174,7 +174,7 @@ class XeroService
     {
         $body = $this->client($connection)->post('/Invoices', ['Invoices' => [[
             'Type' => 'ACCPAY',
-            'Contact' => ['Name' => $bill->vendor?->name ?? ('Vendor '.$bill->vendor_id)],
+            'Contact' => ['Name' => $bill->vendor->name ?? ('Vendor '.$bill->vendor_id)],
             'LineItems' => [[
                 'Description' => 'Bill '.($bill->bill_number ?? $bill->getKey()),
                 'Quantity' => 1,

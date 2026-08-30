@@ -69,7 +69,7 @@ class PortalResourcesTest extends TestCase
 
         $method = new \ReflectionMethod(PortalBalanceWidget::class, 'getStats');
         $method->setAccessible(true);
-        $stats = $method->invoke(new PortalBalanceWidget);
+        $stats = $method->invoke(new PortalBalanceWidget());
 
         // First stat = outstanding balance: own unpaid only (100 + 50), never 999 (paid) or 777 (other customer).
         $this->assertSame('150.00', $stats[0]->getValue());

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "liberu-platform-orchestration",
+  "display_name": "Liberu Platform Orchestration",
+  "description": "Platform composition, capability visibility, and lifecycle coordination.",
+  "version": "1.0.0",
+  "category": "capability",
+  "provider": "Liberu\\PlatformOrchestration\\PlatformOrchestrationServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": { "liberusoftware/module-manager": "^1.0" }
+  },
+  "capabilities": ["liberu.platform.orchestration"],
+  "default_enabled": true,
+  "features": ["Composition manifests", "Capability graph", "Lifecycle coordination", "Release gates", "Ownership registry"]
+}

@@ -6,6 +6,7 @@ namespace App\Filament\App\Resources\Invoices\RelationManagers;
 
 use App\Models\Document;
 use App\Models\DocumentVersion;
+use App\Models\Invoice;
 use App\Services\DocumentService;
 use Carbon\Carbon;
 use Filament\Actions\Action;
@@ -48,8 +49,13 @@ class DocumentsRelationManager extends RelationManager
                         /** @var string|null $retentionUntil */
                         $retentionUntil = $data['retention_until'] ?? null;
 
+                        $owner = $this->getOwnerRecord();
+                        if (! $owner instanceof Invoice) {
+                            return;
+                        }
+
                         app(DocumentService::class)->attach(
-                            $this->getOwnerRecord(),
+                            $owner,
                             $file,
                             filled($retentionUntil) ? Carbon::parse($retentionUntil) : null,
                         );

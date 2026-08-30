@@ -32,7 +32,7 @@ class BankStatementImportServiceTest extends TestCase
 
     private function service(): BankStatementImportService
     {
-        return new BankStatementImportService;
+        return new BankStatementImportService();
     }
 
     private function tempFile(string $contents): string

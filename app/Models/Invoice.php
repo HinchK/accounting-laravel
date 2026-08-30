@@ -7,6 +7,8 @@ namespace App\Models;
 use App\Concerns\Approvable;
 use App\Concerns\HasDocuments;
 use App\Concerns\Recurring;
+use App\Contracts\ApprovableRecord;
+use App\Contracts\Documentable;
 use App\Traits\IsTenantModel;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
@@ -14,8 +16,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Collection;
 
-class Invoice extends Model
+/**
+ * @property int|null $team_id
+ * @property int $invoice_id
+ * @property int|null $journal_entry_id
+ * @property Customer|null $customer
+ * @property \Illuminate\Support\Carbon|null $last_reminder_sent_at
+ * @property-read Collection<int, TimeEntry> $timeEntries
+ * @property-read Team|null $team
+ */
+class Invoice extends Model implements ApprovableRecord, Documentable
 {
     use Approvable;
     use HasDocuments;
@@ -64,16 +76,17 @@ class Invoice extends Model
         'recurrence_end' => 'date',
         'last_generated' => 'date',
         'approved_at' => 'datetime',
+        'last_reminder_sent_at' => 'datetime',
     ];
 
-    public function customer()
+    public function customer(): BelongsTo
     {
         return $this->belongsTo(Customer::class);
     }
 
-    public function vendor()
+    public function vendor(): BelongsTo
     {
-        return $this->belongsTo(Vendor::class);
+        return $this->belongsTo(Vendor::class, 'vendor_id', 'vendor_id');
     }
 
     public function salesOrder()

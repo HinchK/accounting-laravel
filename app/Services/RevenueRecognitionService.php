@@ -78,7 +78,7 @@ class RevenueRecognitionService
 
         foreach ($due as $entry) {
             DB::transaction(function () use ($schedule, $entry): void {
-                $je = new JournalEntry;
+                $je = new JournalEntry();
                 // team_id + user_id are NOT fillable and there is no auth() in the scheduled
                 // command; set them explicitly so the entry is team-scoped (never the default
                 // team 1) and satisfies the non-nullable user_id FK (team owner).

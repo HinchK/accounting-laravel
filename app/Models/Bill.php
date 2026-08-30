@@ -7,13 +7,24 @@ namespace App\Models;
 use App\Concerns\Approvable;
 use App\Concerns\HasDocuments;
 use App\Concerns\Recurring;
+use App\Contracts\ApprovableRecord;
+use App\Contracts\Documentable;
 use App\Traits\IsTenantModel;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Collection;
 
-class Bill extends Model
+/**
+ * @property int|null $team_id
+ * @property string|null $payment_status
+ * @property \Illuminate\Support\Carbon|null $due_date
+ * @property-read TaxRate|null $taxRate
+ * @property-read Collection<int, BillItem> $items
+ * @property string|null $xero_id
+ */
+class Bill extends Model implements ApprovableRecord, Documentable
 {
     use Approvable;
     use HasDocuments;

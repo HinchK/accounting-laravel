@@ -1,98 +1,94 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: accounting-mysql
-  namespace: accounting
+  name: accounting-erp-mysql
+  namespace: accounting-erp-laravel
   labels:
-    app: accounting-laravel
-    component: database
+    app: accounting-erp-laravel
+    component: mysql
 spec:
-  serviceName: accounting-mysql
+  serviceName: accounting-erp-mysql
   replicas: 1
   selector:
     matchLabels:
-      app: accounting-laravel
-      component: database
+      app: accounting-erp-laravel
+      component: mysql
   template:
     metadata:
       labels:
-        app: accounting-laravel
-        component: database
+        app: accounting-erp-laravel
+        component: mysql
     spec:
       containers:
-        - name: mysql
-          image: mysql:8.0
-          ports:
-            - containerPort: 3306
-              name: mysql
-          env:
-            - name: MYSQL_DATABASE
-              valueFrom:
-                configMapKeyRef:
-                  name: accounting-config
-                  key: DB_DATABASE
-            - name: MYSQL_USER
-              valueFrom:
-                configMapKeyRef:
-                  name: accounting-config
-                  key: DB_USERNAME
-            - name: MYSQL_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: accounting-secret
-                  key: DB_PASSWORD
-            - name: MYSQL_ROOT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: accounting-secret
-                  key: DB_PASSWORD
-          resources:
-            requests:
-              cpu: 250m
-              memory: 512Mi
-            limits:
-              cpu: 1000m
-              memory: 2Gi
-          volumeMounts:
-            - name: mysql-data
-              mountPath: /var/lib/mysql
-          livenessProbe:
-            exec:
-              command: ['mysqladmin', 'ping', '-h', 'localhost']
-            initialDelaySeconds: 30
-            periodSeconds: 10
-            timeoutSeconds: 5
-          readinessProbe:
-            exec:
-              command: ['mysqladmin', 'ping', '-h', 'localhost']
-            initialDelaySeconds: 10
-            periodSeconds: 5
-            timeoutSeconds: 3
-  volumeClaimTemplates:
-    - metadata:
-        name: mysql-data
-      spec:
-        accessModes: [ReadWriteOnce]
-        storageClassName: standard
+      - name: mysql
+        image: mysql:8.0
+        ports:
+        - containerPort: 3306
+          name: mysql
+        env:
+        - name: MYSQL_DATABASE
+          valueFrom:
+            configMapKeyRef:
+              name: accounting-erp-config
+              key: DB_DATABASE
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: accounting-erp-secrets
+              key: DB_USERNAME
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: accounting-erp-secrets
+              key: DB_PASSWORD
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: accounting-erp-secrets
+              key: DB_ROOT_PASSWORD
+        volumeMounts:
+        - name: mysql-data
+          mountPath: /var/lib/mysql
         resources:
           requests:
-            storage: 20Gi
+            memory: "256Mi"
+            cpu: "200m"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"
+        livenessProbe:
+          exec:
+            command: [mysqladmin, ping, -h, localhost]
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          exec:
+            command: [mysqladmin, ping, -h, localhost]
+          initialDelaySeconds: 5
+          periodSeconds: 5
+  volumeClaimTemplates:
+  - metadata:
+      name: mysql-data
+    spec:
+      accessModes: [ReadWriteOnce]
+      resources:
+        requests:
+          storage: 20Gi
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: accounting-mysql
-  namespace: accounting
+  name: accounting-erp-mysql
+  namespace: accounting-erp-laravel
   labels:
-    app: accounting-laravel
-    component: database
+    app: accounting-erp-laravel
+    component: mysql
 spec:
   type: ClusterIP
-  clusterIP: None
-  selector:
-    app: accounting-laravel
-    component: database
   ports:
-    - port: 3306
-      targetPort: 3306
-      name: mysql
+  - port: 3306
+    targetPort: 3306
+    protocol: TCP
+  selector:
+    app: accounting-erp-laravel
+    component: mysql

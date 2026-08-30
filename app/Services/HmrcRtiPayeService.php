@@ -30,7 +30,7 @@ class HmrcRtiPayeService
             throw new \Exception('Company does not have a PAYE reference');
         }
 
-        if (! $payeSubmission->employee_data || count($payeSubmission->employee_data) === 0) {
+        if (empty($payeSubmission->employee_data)) {
             throw new \Exception('PAYE submission must have employee data');
         }
 

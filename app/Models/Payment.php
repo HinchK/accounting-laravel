@@ -9,6 +9,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+/**
+ * @property int|null $team_id
+ * @property string|null $xero_id
+ * @property-read Invoice|null $invoice
+ * @property-read Team|null $team
+ */
 class Payment extends Model
 {
     use HasFactory;
@@ -34,7 +40,10 @@ class Payment extends Model
         'payment_date' => 'date',
     ];
 
-    public function invoice()
+    /**
+     * @return BelongsTo<Invoice, $this>
+     */
+    public function invoice(): BelongsTo
     {
         return $this->belongsTo(Invoice::class, 'invoice_id');
     }

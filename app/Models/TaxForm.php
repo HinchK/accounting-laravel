@@ -9,6 +9,9 @@ use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property-read Customer|null $customer
+ */
 class TaxForm extends Model
 {
     use HasFactory;

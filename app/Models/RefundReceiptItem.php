@@ -18,8 +18,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int|null $account_id
  * @property string $description
  * @property int $quantity
- * @property decimal $unit_price
- * @property decimal $amount
+ * @property float|string $unit_price
+ * @property float|string $amount
  */
 class RefundReceiptItem extends Model
 {
@@ -74,6 +74,6 @@ class RefundReceiptItem extends Model
      */
     public function account(): BelongsTo
     {
-        return $this->belongsTo(Account::class, 'account_id', 'account_id');
+        return $this->belongsTo(Account::class, 'account_id', 'id');
     }
 }

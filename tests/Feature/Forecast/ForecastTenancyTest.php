@@ -50,7 +50,7 @@ class ForecastTenancyTest extends TestCase
 
         $scenario = ForecastScenario::create(['name' => 'S', 'team_id' => $teamB->id]);
 
-        $page = new ForecastComparison;
+        $page = new ForecastComparison();
         $page->data = ['forecast_scenario_id' => $scenario->id, 'periods' => 1];
         $page->generate();
 

@@ -7,6 +7,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property int|null $account_id
+ * @property string|null $description
+ * @property int|float|string $quantity
+ * @property int|float|string $unit_price
+ * @property int|float|string $amount
+ * @property int|float|string $tax_amount
+ * @property int|null $tax_rate_id
+ * @property-read TaxRate|null $taxRate
+ */
 class EstimateItem extends Model
 {
     use HasFactory;

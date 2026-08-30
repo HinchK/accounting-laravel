@@ -5,9 +5,13 @@ declare(strict_types=1);
 namespace App\Filament\App\Resources\ConsolidationGroups\Pages;
 
 use App\Filament\App\Resources\ConsolidationGroups\ConsolidationGroupResource;
+use App\Models\ConsolidationGroup;
 use Filament\Facades\Filament;
 use Filament\Resources\Pages\CreateRecord;
 
+/**
+ * @property-read ConsolidationGroup $record
+ */
 class CreateConsolidationGroup extends CreateRecord
 {
     #[\Override]

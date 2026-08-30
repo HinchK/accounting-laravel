@@ -5,10 +5,10 @@ declare(strict_types=1);
 
 namespace App\Services;
 
+use App\Contracts\Documentable;
 use App\Models\Document;
 use App\Models\DocumentVersion;
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -20,7 +20,7 @@ class DocumentService
         return (string) config('documents.disk', 'local');
     }
 
-    public function attach(Model $owner, UploadedFile $file, ?Carbon $retentionUntil = null): Document
+    public function attach(Documentable $owner, UploadedFile $file, ?Carbon $retentionUntil = null): Document
     {
         /** @var Document $document */
         $document = $owner->documents()->create([

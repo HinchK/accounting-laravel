@@ -18,16 +18,20 @@ class UserSeeder extends Seeder
     {
 
         $adminPassword = Str::random(12);
-        $adminUser = User::create([
-            'name' => 'Admin User',
-            'email' => 'admin@example.com',
-            'password' => Hash::make($adminPassword),
-            'email_verified_at' => now(),
-        ]);
+        $adminUser = User::updateOrCreate(
+            ['email' => 'admin@example.com'],
+            [
+                'name' => 'Admin User',
+                'password' => Hash::make($adminPassword),
+                'email_verified_at' => now(),
+            ],
+        );
 
         $team = Team::firstOrFail();
+        $adminUser->forceFill(['current_team_id' => $team->id])->save();
         $adminUser->teams()->syncWithoutDetaching([$team->id]);
 
+        setPermissionsTeamId($team->id);
         $role = Role::where('name', 'super_admin')->firstOrFail();
         $adminUser->assignRole($role);
 

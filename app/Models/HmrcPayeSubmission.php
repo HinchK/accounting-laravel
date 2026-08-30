@@ -9,6 +9,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+/**
+ * @property-read HmrcSubmission|null $hmrcSubmission
+ * @property-read Company|null $company
+ * @property array<int, array<string, mixed>>|null $employee_data
+ */
 class HmrcPayeSubmission extends Model
 {
     use HasFactory;
@@ -48,6 +53,9 @@ class HmrcPayeSubmission extends Model
     /**
      * Get the company that owns the PAYE submission.
      */
+    /**
+     * @return BelongsTo<Company, $this>
+     */
     public function company(): BelongsTo
     {
         // Company's primary key is `company_id`; pass keys explicitly so Laravel
@@ -57,6 +65,9 @@ class HmrcPayeSubmission extends Model
 
     /**
      * Get the HMRC submission for this PAYE submission.
+     */
+    /**
+     * @return BelongsTo<HmrcSubmission, $this>
      */
     public function hmrcSubmission(): BelongsTo
     {

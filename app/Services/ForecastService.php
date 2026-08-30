@@ -17,7 +17,7 @@ class ForecastService
      */
     public function rollingBaseline(int $periods, ?int $teamId = null): array
     {
-        $teamId ??= auth()->user()?->current_team_id ?? -1;
+        $teamId ??= auth()->user()->current_team_id ?? -1;
         $baseline = [];
 
         foreach (self::PL_TYPES as $type) {

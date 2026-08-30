@@ -32,7 +32,7 @@ class PaymentReminderNotification extends Notification implements ShouldQueue
 
     public function toMail($notifiable): MailMessage
     {
-        return (new MailMessage)
+        return (new MailMessage())
             ->subject('Payment Reminder - Invoice #'.$this->invoice->id)
             ->greeting('Hello '.$this->invoice->customer->customer_name)
             ->line('This is a reminder that payment for Invoice #'.$this->invoice->id.' is overdue.')

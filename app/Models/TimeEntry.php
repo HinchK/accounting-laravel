@@ -42,11 +42,11 @@ class TimeEntry extends Model
         return $this->belongsTo(Invoice::class);
     }
 
-    public function calculateTotalAmount(): int|float
+    public function calculateTotalAmount(): float
     {
         $hours = $this->end_time->diffInHours($this->start_time);
         $this->total_amount = $hours * $this->hourly_rate;
 
-        return $this->total_amount;
+        return (float) $this->total_amount;
     }
 }

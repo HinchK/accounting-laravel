@@ -84,7 +84,7 @@ class BudgetResource extends Resource
                 DeleteAction::make(),
                 Action::make('generate_forecast')
                     ->action(function (Budget $record): void {
-                        $budgetService = new BudgetService;
+                        $budgetService = new BudgetService();
                         $budgetService->generateForecast($record);
                     })
                     ->requiresConfirmation()

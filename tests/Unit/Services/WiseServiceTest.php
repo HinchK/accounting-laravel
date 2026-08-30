@@ -25,7 +25,7 @@ class WiseServiceTest extends TestCase
         Config::set('services.wise.redirect_uri', 'https://example.com/wise/callback');
         Config::set('services.wise.webhook_public_key', '');
 
-        $this->service = new WiseService;
+        $this->service = new WiseService();
     }
 
     public function test_get_authorization_url_returns_correct_url(): void
@@ -43,7 +43,7 @@ class WiseServiceTest extends TestCase
     public function test_get_authorization_url_uses_production_url_when_configured(): void
     {
         Config::set('services.wise.environment', 'production');
-        $service = new WiseService;
+        $service = new WiseService();
 
         $url = $service->getAuthorizationUrl('state');
 
@@ -354,7 +354,7 @@ class WiseServiceTest extends TestCase
     public function test_service_uses_production_base_url_when_configured(): void
     {
         Config::set('services.wise.environment', 'production');
-        $service = new WiseService;
+        $service = new WiseService();
 
         Http::fake([
             'api.transferwise.com/v2/profiles' => Http::response([], 200),

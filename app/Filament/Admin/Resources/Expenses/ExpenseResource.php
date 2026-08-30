@@ -20,7 +20,6 @@ use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Model;
 
 class ExpenseResource extends Resource
 {
@@ -59,7 +58,7 @@ class ExpenseResource extends Resource
                     ->disabled()
                     ->dehydrated(false),
                 Textarea::make('rejection_reason')
-                    ->visible(fn (?Model $record): bool => $record?->approval_status === 'rejected')
+                    ->visible(fn (?Expense $record): bool => $record?->approval_status === 'rejected')
                     ->maxLength(1000)
                     ->columnSpanFull(),
                 Toggle::make('is_recurring')
@@ -110,7 +109,7 @@ class ExpenseResource extends Resource
                     }),
                 TextColumn::make('approver.name')
                     ->label('Approved By')
-                    ->visible(fn (Model $record): bool => $record->approved_by !== null),
+                    ->visible(fn (Expense $record): bool => $record->approved_by !== null),
             ])
             ->filters([
                 SelectFilter::make('approval_status')
@@ -161,6 +160,8 @@ class ExpenseResource extends Resource
 
     public static function getNavigationBadge(): ?string
     {
-        return static::getModel()::where('approval_status', 'pending')->count() ?: null;
+        $count = static::getModel()::where('approval_status', 'pending')->count();
+
+        return $count > 0 ? (string) $count : null;
     }
 }

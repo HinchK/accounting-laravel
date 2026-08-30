@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Models;
 
 use App\Concerns\Approvable;
+use App\Contracts\ApprovableRecord;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -14,7 +15,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * SendApprovedOutboundPayment listener fires it immediately; above threshold it
  * waits for a second approver before the same listener sends it.
  */
-class OutboundPayment extends Model
+class OutboundPayment extends Model implements ApprovableRecord
 {
     use Approvable;
 

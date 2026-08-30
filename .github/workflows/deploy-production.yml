@@ -1,0 +1,101 @@
+name: Deploy production
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing protected release tag to deploy
+        required: true
+        type: string
+
+concurrency:
+  group: production
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: ${{ inputs.tag || github.event.release.tag_name }}
+          fetch-depth: 0
+
+      - name: Verify protected release ref
+        env:
+          TAG: ${{ inputs.tag || github.event.release.tag_name }}
+        run: |
+          [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          git show-ref --verify --quiet "refs/tags/$TAG"
+
+      - name: Authenticate to GitHub Container Registry
+        uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9 # v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+
+      - name: Wait for the release image
+        env:
+          TAG: ${{ inputs.tag || github.event.release.tag_name }}
+        run: |
+          for attempt in {1..30}; do
+            docker manifest inspect "ghcr.io/liberusoftware/accounting-erp-laravel:${TAG}" >/dev/null 2>&1 && exit 0
+            sleep 10
+          done
+          echo "Release image was not published: $TAG"
+          exit 1
+
+      - name: Configure cluster credentials
+        env:
+          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+        run: |
+          test -n "$KUBE_CONFIG_DATA"
+          mkdir -p "$RUNNER_TEMP/kube"
+          printf '%s' "$KUBE_CONFIG_DATA" | base64 --decode > "$RUNNER_TEMP/kube/config"
+          chmod 600 "$RUNNER_TEMP/kube/config"
+          echo "KUBECONFIG=$RUNNER_TEMP/kube/config" >> "$GITHUB_ENV"
+
+      - name: Deploy exact release image
+        env:
+          APP_KEY: ${{ secrets.APP_KEY }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_ROOT_PASSWORD: ${{ secrets.DB_ROOT_PASSWORD }}
+          DOMAIN: ${{ vars.PRODUCTION_DOMAIN }}
+          IMAGE_TAG: ${{ inputs.tag || github.event.release.tag_name }}
+        run: |
+          test -n "$APP_KEY"
+          test -n "$DB_PASSWORD"
+          test -n "$DB_ROOT_PASSWORD"
+          ENVIRONMENT=production ./k8s/deploy.sh
+
+      - name: Verify rollout health
+        run: |
+          kubectl rollout status deployment/accounting-erp-laravel \
+            --namespace accounting-erp-laravel --timeout=300s
+          kubectl get pods --namespace accounting-erp-laravel \
+            --selector=app=accounting-erp-laravel
+
+      - name: Smoke test production health endpoint
+        env:
+          HEALTHCHECK_URL: ${{ vars.PRODUCTION_HEALTHCHECK_URL }}
+        run: |
+          test -n "$HEALTHCHECK_URL"
+          curl --fail --silent --show-error --retry 5 --retry-delay 10 "$HEALTHCHECK_URL"
+
+      - name: Roll back failed rollout
+        if: failure()
+        run: |
+          kubectl rollout undo deployment/accounting-erp-laravel \
+            --namespace accounting-erp-laravel || true
+          kubectl rollout status deployment/accounting-erp-laravel \
+            --namespace accounting-erp-laravel --timeout=300s || true

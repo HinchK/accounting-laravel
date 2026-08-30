@@ -6,14 +6,12 @@ namespace App\Filament\App\Widgets;
 
 use App\Settings\GeneralSettings;
 use Filament\Widgets\Widget;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Override;
 
 class SocialLinksWidget extends Widget
 {
-    #[Override]
-    protected string $view = 'filament.app.widgets.social-links-widget';
-
     #[Override]
     public function render(): View
     {
@@ -37,20 +35,7 @@ class SocialLinksWidget extends Widget
             $links['YouTube'] = $settings->youtube_url;
         }
 
-        // Keep the Facebook Groups as fallback
-        if (empty($links)) {
-            $links = [
-                'GitHub' => 'https://www.github.com/liberu-genealogy',
-                'Facebook Page' => 'https://www.facebook.com/familytree365',
-                'Facebook Groups' => [
-                    'Family Tree 365' => 'https://www.facebook.com/groups/familytree365',
-                    'Genealogy Chat' => 'https://www.facebook.com/groups/genealogychat',
-                    'DNA 365' => 'https://www.facebook.com/groups/dna365',
-                ],
-            ];
-        }
-
-        return view($this->view, [
+        return app(Factory::class)->make('filament.app.widgets.social-links-widget', [
             'links' => $links,
         ]);
     }

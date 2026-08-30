@@ -24,9 +24,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property int|null $tax_rate_id
  * @property string $payment_method
  * @property string|null $reference_number
- * @property decimal $subtotal_amount
- * @property decimal $tax_amount
- * @property decimal $total_amount
+ * @property float|string $subtotal_amount
+ * @property float|string $tax_amount
+ * @property float|string $total_amount
  * @property string|null $notes
  * @property string $status
  */
@@ -85,7 +85,7 @@ class SalesReceipt extends Model
         $lastReceipt = self::orderBy('sales_receipt_id', 'desc')->first();
         $nextNumber = $lastReceipt ? ((int) substr((string) $lastReceipt->sales_receipt_number, 3)) + 1 : 1;
 
-        return 'SR-'.str_pad($nextNumber, 6, '0', STR_PAD_LEFT);
+        return 'SR-'.str_pad((string) $nextNumber, 6, '0', STR_PAD_LEFT);
     }
 
     /**
@@ -93,11 +93,14 @@ class SalesReceipt extends Model
      */
     public function customer(): BelongsTo
     {
-        return $this->belongsTo(Customer::class, 'customer_id', 'customer_id');
+        return $this->belongsTo(Customer::class, 'customer_id', 'id');
     }
 
     /**
      * Get the tax rate for the sales receipt
+     */
+    /**
+     * @return BelongsTo<TaxRate, $this>
      */
     public function taxRate(): BelongsTo
     {
@@ -109,7 +112,7 @@ class SalesReceipt extends Model
      */
     public function depositAccount(): BelongsTo
     {
-        return $this->belongsTo(Account::class, 'deposit_to_account_id', 'account_id');
+        return $this->belongsTo(Account::class, 'deposit_to_account_id', 'id');
     }
 
     /**

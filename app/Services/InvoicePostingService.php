@@ -51,7 +51,7 @@ class InvoicePostingService
                 return $existing instanceof JournalEntry ? $existing : throw new RuntimeException('Invoice linked to a missing journal entry.');
             }
 
-            $entry = new JournalEntry;
+            $entry = new JournalEntry();
             // team_id + user_id are NOT fillable and there is no auth() here; set
             // them explicitly so the entry is team-scoped (never default team 1)
             // and satisfies the non-nullable user_id FK (team owner).

@@ -20,6 +20,9 @@ use Filament\Schemas\Schema;
  * Pick a forecast scenario + period count and compare the rolling baseline
  * against the scenario-adjusted projection (net income per period).
  */
+/**
+ * @property-read Schema $form
+ */
 class ForecastComparison extends Page
 {
     #[\Override]

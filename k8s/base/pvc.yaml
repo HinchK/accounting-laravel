@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: accounting-storage
-  namespace: accounting
+  name: accounting-erp-storage
+  namespace: accounting-erp-laravel
   labels:
-    app: accounting-laravel
+    app: accounting-erp-laravel
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: standard
   resources:
     requests:
       storage: 10Gi
+  storageClassName: standard

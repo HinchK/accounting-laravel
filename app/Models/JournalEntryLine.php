@@ -7,7 +7,11 @@ namespace App\Models;
 use App\Traits\IsTenantModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+/**
+ * @property-read Account $account
+ */
 class JournalEntryLine extends Model
 {
     use HasFactory;
@@ -30,12 +34,18 @@ class JournalEntryLine extends Model
         'credit_amount' => 'decimal:2',
     ];
 
-    public function journalEntry()
+    /**
+     * @return BelongsTo<JournalEntry, $this>
+     */
+    public function journalEntry(): BelongsTo
     {
         return $this->belongsTo(JournalEntry::class);
     }
 
-    public function account()
+    /**
+     * @return BelongsTo<Account, $this>
+     */
+    public function account(): BelongsTo
     {
         return $this->belongsTo(Account::class, 'account_id', 'id');
     }

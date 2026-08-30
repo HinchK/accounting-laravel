@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+/**
+ * @property string|null $description
+ * @property int|float|string $quantity
+ * @property int|float|string $unit_price
+ * @property int|float|string $total_price
+ */
 class PurchaseRequestItem extends Model
 {
     use HasFactory;

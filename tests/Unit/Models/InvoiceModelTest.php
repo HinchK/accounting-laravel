@@ -14,17 +14,17 @@ class InvoiceModelTest extends TestCase
 
     public function test_invoice_has_customer_relationship(): void
     {
-        $this->assertNotNull((new Invoice)->customer());
+        $this->assertNotNull((new Invoice())->customer());
     }
 
     public function test_invoice_has_time_entries_relationship(): void
     {
-        $this->assertNotNull((new Invoice)->timeEntries());
+        $this->assertNotNull((new Invoice())->timeEntries());
     }
 
     public function test_invoice_has_credit_memos_relationship(): void
     {
-        $this->assertNotNull((new Invoice)->creditMemos());
+        $this->assertNotNull((new Invoice())->creditMemos());
     }
 
     public function test_invoice_total_amount_is_decimal_cast(): void
@@ -36,11 +36,11 @@ class InvoiceModelTest extends TestCase
 
     public function test_invoice_fillable_includes_payment_status(): void
     {
-        $this->assertContains('payment_status', (new Invoice)->getFillable());
+        $this->assertContains('payment_status', (new Invoice())->getFillable());
     }
 
     public function test_invoice_fillable_includes_invoice_number(): void
     {
-        $this->assertContains('invoice_number', (new Invoice)->getFillable());
+        $this->assertContains('invoice_number', (new Invoice())->getFillable());
     }
 }

@@ -39,7 +39,7 @@ class PortalAccessNotification extends Notification implements ShouldQueue
             ['id' => $notifiable->getKey(), 'hash' => sha1((string) $notifiable->password)],
         );
 
-        return (new MailMessage)
+        return (new MailMessage())
             ->subject('Set up your portal access')
             ->line('Set a password to access your portal.')
             ->action('Set password', $url)

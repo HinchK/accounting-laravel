@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Schema;
 
 // Make Vendor authenticatable for the vendor portal. email is the auth username,
 // so it gets a (nullable) unique index — duplicates would make login ambiguous.
-return new class extends Migration
+return new class() extends Migration
 {
     public function up(): void
     {

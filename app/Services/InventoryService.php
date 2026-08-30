@@ -20,7 +20,7 @@ class InventoryService
      */
     private function scopedTeamId(): int
     {
-        return auth()->user()?->current_team_id ?? -1;
+        return auth()->user()->current_team_id ?? -1;
     }
 
     public function createInventoryTransaction(
@@ -32,7 +32,7 @@ class InventoryService
     ) {
         $inventoryTx = InventoryTransaction::create([
             'inventory_item_id' => $item->id,
-            'transaction_id' => $transaction->id,
+            'transaction_id' => $transaction->getKey(),
             'quantity' => $quantity,
             'unit_price' => $unitPrice,
             'transaction_type' => $type,

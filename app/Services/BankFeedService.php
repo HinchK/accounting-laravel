@@ -37,7 +37,7 @@ class BankFeedService
                 'Authorization' => $this->apiConfig['key'],
             ])->get($this->apiConfig['url'].'/transactions', [
                 'bank_id' => $connection->bank_id,
-                'credentials' => decrypt($connection->credentials),
+                'credentials' => $connection->credentials ?? [],
             ]);
 
             if ($response->successful()) {
@@ -70,7 +70,7 @@ class BankFeedService
         );
 
         BankFeedTransaction::create([
-            'transaction_id' => $transaction->id,
+            'transaction_id' => $transaction->getKey(),
             'bank_connection_id' => $connection->id,
             'raw_data' => json_encode($transactionData),
         ]);

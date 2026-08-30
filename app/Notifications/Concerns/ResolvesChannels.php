@@ -26,13 +26,13 @@ trait ResolvesChannels
             $pref = $notifiable->notificationPreference;
             $channels = [];
 
-            if ($pref?->mail_enabled ?? true) {
+            if ($pref->mail_enabled ?? true) {
                 $channels[] = 'mail';
             }
-            if ($pref?->database_enabled ?? true) {
+            if ($pref->database_enabled ?? true) {
                 $channels[] = 'database';
             }
-            if (($pref?->sms_enabled ?? false) && ! empty($pref?->phone)) {
+            if (($pref->sms_enabled ?? false) && ! empty($pref->phone)) {
                 $channels[] = SmsChannel::class;
             }
 

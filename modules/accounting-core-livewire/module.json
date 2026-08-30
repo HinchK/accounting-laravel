@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "accounting-core-livewire",
+  "display_name": "Accounting Core Livewire",
+  "description": "Livewire 4 presentation adapter for Accounting Core.",
+  "provider": "Liberu\\Accounting\\CoreLivewire\\AccountingCoreLivewireServiceProvider",
+  "version": "1.0.0",
+  "category": "presentation",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": { "liberusoftware/module-accounting-core": "^1.0" }
+  },
+  "default_enabled": false,
+  "capabilities": ["accounting.core.livewire"],
+  "features": ["legal-entities", "books", "fiscal-calendars", "currencies", "numbering", "defaults", "policies"]
+}

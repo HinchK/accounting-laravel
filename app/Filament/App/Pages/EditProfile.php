@@ -15,6 +15,9 @@ use Laravel\Fortify\Actions\ConfirmTwoFactorAuthentication;
 use Laravel\Fortify\Actions\DisableTwoFactorAuthentication;
 use Laravel\Fortify\Actions\EnableTwoFactorAuthentication;
 
+/**
+ * @property-read Schema $form
+ */
 class EditProfile extends Page
 {
     #[\Override]

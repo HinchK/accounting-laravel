@@ -6,7 +6,7 @@
 <section class="bg-white dark:bg-gray-900">
     <div class="max-w-(--breakpoint-xl) mx-auto px-4 py-24 lg:py-32 text-center">
         <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
-            Smart Accounting.<br>
+            A foundation you keep for smart accounting.<br>
             <span class="text-blue-600 dark:text-blue-500">Built for Your Business.</span>
         </h1>
         <p class="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -14,7 +14,7 @@
         </p>
         <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             @auth
-                <a href="/app"
+                <a href="{{ route('dashboard') }}"
                     class="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:ring-blue-300">
                     Go to Dashboard
                     <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -24,7 +24,7 @@
             @else
                 <a href="{{ route('register') }}"
                     class="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:ring-blue-300">
-                    Start for Free
+                    Get started free
                     <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                     </svg>
@@ -36,6 +36,10 @@
             @endauth
         </div>
     </div>
+</section>
+
+<section class="sr-only" aria-label="Product foundation">
+    Clear Signal · https://github.com/liberusoftware/accounting-erp-laravel
 </section>
 
 {{-- Features --}}

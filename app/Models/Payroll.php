@@ -10,6 +10,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+/**
+ * @property float|string|null $gross_pay
+ * @property float|string|null $income_tax
+ * @property float|string|null $employee_ni_contribution
+ * @property float|string|null $employer_ni_contribution
+ * @property float|string|null $student_loan_deduction
+ * @property-read Employee|null $employee
+ */
 class Payroll extends Model
 {
     use HasFactory;
@@ -43,6 +51,9 @@ class Payroll extends Model
         'net_salary' => 'decimal:2',
     ];
 
+    /**
+     * @return BelongsTo<Employee, $this>
+     */
     public function employee(): BelongsTo
     {
         return $this->belongsTo(Employee::class);

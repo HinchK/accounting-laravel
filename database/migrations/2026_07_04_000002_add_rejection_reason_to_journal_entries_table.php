@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Schema;
 // The approval engine (#826) added rejection_reason to JournalEntry::$fillable
 // and approve/reject via the Approvable trait, but never added the column, so
 // markRejected() would hard-error on MySQL/prod (SchemaConsistencyTest caught it).
-return new class extends Migration
+return new class() extends Migration
 {
     public function up(): void
     {

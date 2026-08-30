@@ -8,6 +8,9 @@ use App\Traits\IsTenantModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property string $valuation_method
+ */
 class InventoryItem extends Model
 {
     use HasFactory;
@@ -50,11 +53,6 @@ class InventoryItem extends Model
     public function transactions()
     {
         return $this->hasMany(InventoryTransaction::class);
-    }
-
-    public function adjustments()
-    {
-        return $this->hasMany(InventoryAdjustment::class);
     }
 
     public function updateQuantity($change): void

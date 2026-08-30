@@ -74,7 +74,7 @@ class UserResource extends Resource
 
     public static function getNavigationBadge(): ?string
     {
-        return static::getModel()::count();
+        return (string) static::getModel()::count();
     }
 
     // Defence-in-depth: the admin panel gate (User::canAccessPanel) already

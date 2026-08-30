@@ -5,14 +5,23 @@ declare(strict_types=1);
 namespace App\Models;
 
 use App\Concerns\HasDocuments;
+use App\Contracts\Documentable;
 use App\Traits\IsTenantModel;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Collection;
 
-class Estimate extends Model
+/**
+ * @property int|null $team_id
+ * @property-read TaxRate|null $taxRate
+ * @property-read Collection<int, EstimateItem> $items
+ * @property-read Invoice|null $invoice
+ */
+class Estimate extends Model implements Documentable
 {
     use HasDocuments;
     use HasFactory, SoftDeletes;
@@ -70,7 +79,10 @@ class Estimate extends Model
         return $this->belongsTo(TaxRate::class, 'tax_rate_id', 'tax_rate_id');
     }
 
-    public function items()
+    /**
+     * @return HasMany<EstimateItem, $this>
+     */
+    public function items(): HasMany
     {
         return $this->hasMany(EstimateItem::class, 'estimate_id', 'estimate_id');
     }

@@ -9,6 +9,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/**
+ * @property string $name
+ * @property string $code
+ */
 class Project extends Model
 {
     use HasFactory;
@@ -32,16 +36,25 @@ class Project extends Model
         'allocation_percentage' => 'decimal:2',
     ];
 
+    /**
+     * @return HasMany<Transaction, $this>
+     */
     public function transactions(): HasMany
     {
         return $this->hasMany(Transaction::class);
     }
 
+    /**
+     * @return HasMany<Expense, $this>
+     */
     public function expenses(): HasMany
     {
         return $this->hasMany(Expense::class);
     }
 
+    /**
+     * @return HasMany<Budget, $this>
+     */
     public function budgets(): HasMany
     {
         return $this->hasMany(Budget::class);

@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+root="$(git rev-parse --show-toplevel)"
+cd "$root"
+
+run() {
+    printf '\n==> %s\n' "$*"
+    "$@"
+}
+
+command -v composer >/dev/null || { echo 'composer is required.' >&2; exit 1; }
+command -v php >/dev/null || { echo 'php is required.' >&2; exit 1; }
+command -v npm >/dev/null || { echo 'npm is required.' >&2; exit 1; }
+
+run composer validate --strict --no-check-publish
+run composer audit --locked --no-interaction
+run php artisan module:validate
+run php artisan foundation:doctor
+run vendor/bin/pint --test
+run vendor/bin/phpstan analyse --no-progress --memory-limit=1G
+
+if [[ -f package-lock.json ]]; then
+    run npm ci
+    run npm audit --omit=dev --audit-level=high
+    run npm run build
+fi
+
+run php artisan test --coverage --coverage-clover=coverage.xml --min=100
+run git diff --check
+
+if command -v docker >/dev/null; then
+    run docker compose config --quiet
+else
+    echo 'docker is required to validate Compose configuration.' >&2
+    exit 1
+fi
+
+if command -v kubectl >/dev/null; then
+    run kubectl kustomize k8s/overlays/development >/dev/null
+    run kubectl kustomize k8s/overlays/production >/dev/null
+else
+    echo 'kubectl is required to validate Kubernetes manifests.' >&2
+    exit 1
+fi
+
+printf '\nRelease verification passed.\n'

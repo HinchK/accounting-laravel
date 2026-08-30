@@ -8,7 +8,13 @@ use App\Traits\IsTenantModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 
+/**
+ * @property string $status
+ * @property Carbon|null $submitted_at
+ * @property-read bool $isEditable
+ */
 class HmrcSubmission extends Model
 {
     use HasFactory;

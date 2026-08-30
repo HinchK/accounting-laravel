@@ -10,6 +10,9 @@ use Filament\Schemas\Schema;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * @property-read Schema $form
+ */
 class UpdateProfileInformationPage extends Page
 {
     #[\Override]

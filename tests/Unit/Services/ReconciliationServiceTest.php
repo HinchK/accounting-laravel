@@ -18,7 +18,7 @@ class ReconciliationServiceTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->service = new ReconciliationService;
+        $this->service = new ReconciliationService();
     }
 
     public function test_reconcile_returns_expected_keys(): void

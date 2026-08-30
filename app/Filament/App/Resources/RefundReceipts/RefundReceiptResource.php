@@ -92,7 +92,7 @@ class RefundReceiptResource extends Resource
                             ->label('Reference #'),
 
                         Select::make('refund_from_account_id')
-                            ->relationship('refundAccount', 'name')
+                            ->relationship('refundAccount', 'account_name')
                             ->label('Refund From')
                             ->searchable()
                             ->preload(),
@@ -115,7 +115,7 @@ class RefundReceiptResource extends Resource
                             ->relationship()
                             ->schema([
                                 Select::make('account_id')
-                                    ->relationship('account', 'name')
+                                    ->relationship('account', 'account_name')
                                     ->searchable()
                                     ->preload(),
                                 TextInput::make('description')

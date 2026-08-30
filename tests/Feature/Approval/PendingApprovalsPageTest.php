@@ -29,7 +29,7 @@ class PendingApprovalsPageTest extends TestCase
         $step = $bill->approvalRequest()->first()->steps()->first();
 
         $this->actingAs($manager);
-        $page = new PendingApprovals;
+        $page = new PendingApprovals();
 
         $this->assertTrue($page->actionableStepsQuery()->pluck('id')->contains($step->id));
 
@@ -49,7 +49,7 @@ class PendingApprovalsPageTest extends TestCase
         $bill->submitForApproval();
 
         $this->actingAs($intruder);
-        $page = new PendingApprovals;
+        $page = new PendingApprovals();
 
         $this->assertTrue($page->actionableStepsQuery()->get()->isEmpty());
     }

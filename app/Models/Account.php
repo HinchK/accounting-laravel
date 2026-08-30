@@ -8,7 +8,17 @@ use App\Services\ExchangeRateService;
 use App\Traits\IsTenantModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Collection;
 
+/**
+ * @property int|null $team_id
+ * @property string|null $xero_id
+ * @property string|null $normal_balance
+ * @property-read Collection<int, self> $children
+ * @property-read self|null $parent
+ */
 class Account extends Model
 {
     use HasFactory;
@@ -77,17 +87,26 @@ class Account extends Model
         return $this->belongsTo(Currency::class);
     }
 
-    public function parent()
+    /**
+     * @return BelongsTo<Account, $this>
+     */
+    public function parent(): BelongsTo
     {
         return $this->belongsTo(Account::class, 'parent_id');
     }
 
-    public function children()
+    /**
+     * @return HasMany<Account, $this>
+     */
+    public function children(): HasMany
     {
         return $this->hasMany(Account::class, 'parent_id');
     }
 
-    public function transactions()
+    /**
+     * @return HasMany<Transaction, $this>
+     */
+    public function transactions(): HasMany
     {
         return $this->hasMany(Transaction::class);
     }

@@ -114,7 +114,7 @@ class BankStatementReconciliationTest extends TestCase
             'reconciled' => false,
         ]);
 
-        $reconciliationService = new ReconciliationService;
+        $reconciliationService = new ReconciliationService();
         $result = $reconciliationService->reconcile($statement);
 
         $this->assertArrayHasKey('matched_transactions', $result);
@@ -163,7 +163,7 @@ class BankStatementReconciliationTest extends TestCase
             'reconciled' => false,
         ]);
 
-        $reconciliationService = new ReconciliationService;
+        $reconciliationService = new ReconciliationService();
         $reconciliationService->reconcile($statement);
 
         $transaction->refresh();

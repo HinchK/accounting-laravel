@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Schema;
 
 // Customer extends Authenticatable (guard 'customer') but the table never had a
 // password — customers could not actually log in. Portal access needs these.
-return new class extends Migration
+return new class() extends Migration
 {
     public function up(): void
     {

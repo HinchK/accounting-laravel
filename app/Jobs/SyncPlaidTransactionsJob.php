@@ -159,7 +159,7 @@ class SyncPlaidTransactionsJob implements ShouldQueue
         // Store raw Plaid data
         BankFeedTransaction::updateOrCreate(
             [
-                'transaction_id' => $transaction->id,
+                'transaction_id' => $transaction->getKey(),
                 'bank_connection_id' => $connection->id,
             ],
             [

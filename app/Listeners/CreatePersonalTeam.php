@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Listeners;
 
+use App\Models\User;
 use App\Services\TeamManagementService;
 use Illuminate\Auth\Events\Registered;
 
@@ -13,6 +14,8 @@ class CreatePersonalTeam
 
     public function handle(Registered $event): void
     {
-        $this->teamManagementService->assignUserToDefaultTeam($event->user);
+        if ($event->user instanceof User) {
+            $this->teamManagementService->assignUserToDefaultTeam($event->user);
+        }
     }
 }
