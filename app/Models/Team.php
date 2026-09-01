@@ -39,6 +39,8 @@ class Team extends JetstreamTeam
         'vonage_key',
         'vonage_secret',
         'vonage_from',
+        'accounting_setup',
+        'accounting_setup_completed_at',
         'stripe_customer_id',
         'stripe_subscription_id',
         'stripe_product_id',
@@ -80,6 +82,8 @@ class Team extends JetstreamTeam
             'premium_trial_ends_at' => 'datetime',
             'premium_current_period_ends_at' => 'datetime',
             'premium_cancel_at_period_end' => 'boolean',
+            'accounting_setup' => 'encrypted:array',
+            'accounting_setup_completed_at' => 'datetime',
         ];
     }
 

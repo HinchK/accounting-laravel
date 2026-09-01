@@ -35,8 +35,19 @@ class AdminPanelProvider extends PanelProvider
             ->brandName('Liberu Accounting')
             ->login()
             ->colors(app(ThemeColors::class)->forSite())
+            ->navigationGroups([
+                'Overview',
+                'Operations',
+                'Finance',
+                'HR',
+                'Administration',
+                'Settings',
+                'System',
+            ])
+            ->discoverResources(in: app_path('Filament/Admin/Resources'), for: 'App\Filament\Admin\Resources')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverResources(in: app_path('Filament/App/Resources'), for: 'App\Filament\App\Resources')
+            ->discoverPages(in: app_path('Filament/Admin/Pages'), for: 'App\Filament\Admin\Pages')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([
                 Dashboard::class,
