@@ -30,7 +30,7 @@ class ExpenseResource extends Resource
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-currency-dollar';
 
     #[\Override]
-    protected static string|\UnitEnum|null $navigationGroup = 'Finance';
+    protected static string|\UnitEnum|null $navigationGroup = 'Accounting';
 
     #[\Override]
     public static function form(Schema $schema): Schema

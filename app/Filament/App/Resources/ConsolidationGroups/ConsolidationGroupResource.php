@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ConsolidationGroupResource extends Resource
 {
+    protected static string|\UnitEnum|null $navigationGroup = 'Reports';
     #[\Override]
     protected static ?string $model = ConsolidationGroup::class;
 

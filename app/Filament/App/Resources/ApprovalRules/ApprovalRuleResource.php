@@ -25,6 +25,7 @@ use Spatie\Permission\Models\Role;
 
 class ApprovalRuleResource extends Resource
 {
+    protected static string|\UnitEnum|null $navigationGroup = 'Accounting';
     #[\Override]
     protected static ?string $model = ApprovalRule::class;
 
