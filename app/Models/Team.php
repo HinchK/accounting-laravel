@@ -17,9 +17,20 @@ use Laravel\Jetstream\Team as JetstreamTeam;
 
 /**
  * @property int $user_id
+ * @property string $name
  * @property string|null $vonage_from
  * @property string|null $vonage_key
  * @property string|null $vonage_secret
+ * @property array<string, mixed>|null $accounting_setup
+ * @property Carbon|null $accounting_setup_completed_at
+ * @property string|null $stripe_customer_id
+ * @property string|null $stripe_subscription_id
+ * @property string|null $stripe_product_id
+ * @property string|null $stripe_price_id
+ * @property string|null $premium_status
+ * @property Carbon|null $premium_trial_ends_at
+ * @property Carbon|null $premium_current_period_ends_at
+ * @property string|null $premium_last_event_id
  * @property-read Carbon|null $books_locked_before
  */
 class Team extends JetstreamTeam

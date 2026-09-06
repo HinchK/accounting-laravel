@@ -134,7 +134,9 @@ class AccountSetupWizard extends Page
                 Action::make('finish')
                     ->label('Save setup')
                     ->color('primary')
-                    ->action(fn (): mixed => $this->save()),
+                    ->action(function (): void {
+                        $this->save();
+                    }),
             ]),
         ]);
     }
