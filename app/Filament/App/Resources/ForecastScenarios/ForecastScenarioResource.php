@@ -25,6 +25,7 @@ use Filament\Tables\Table;
 class ForecastScenarioResource extends Resource
 {
     protected static string|\UnitEnum|null $navigationGroup = 'Reports';
+
     #[\Override]
     protected static ?string $model = ForecastScenario::class;
 

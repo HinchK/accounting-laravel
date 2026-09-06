@@ -20,7 +20,7 @@ final class CertifyAccountReconciliation
         return DB::transaction(function () use ($reconciliation, $certification): AccountReconciliation {
             $reconciliation->update(['certification' => [...$certification, 'certified_at' => now()->toISOString()], 'status' => ReconciliationStatus::Certified]);
 
-        return $reconciliation;
+            return $reconciliation;
         });
     }
 }

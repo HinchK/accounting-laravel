@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Liberu\Accounting\CopilotLivewire\Livewire;
 
 use Illuminate\View\View;
-use Livewire\Component;
 use Liberu\Accounting\Copilot\Models\CopilotRequest;
+use Livewire\Component;
 
 final class Requests extends Component
 {

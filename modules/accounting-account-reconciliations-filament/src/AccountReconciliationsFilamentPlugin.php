@@ -10,8 +10,20 @@ use Liberu\Accounting\AccountReconciliationsFilament\Resources\AccountReconcilia
 
 final class AccountReconciliationsFilamentPlugin implements Plugin
 {
-    public static function make(): static { return new self(); }
-    public function getId(): string { return 'accounting-account-reconciliations'; }
-    public function register(Panel $panel): void { $panel->resources([AccountReconciliationResource::class]); }
+    public static function make(): static
+    {
+        return new self();
+    }
+
+    public function getId(): string
+    {
+        return 'accounting-account-reconciliations';
+    }
+
+    public function register(Panel $panel): void
+    {
+        $panel->resources([AccountReconciliationResource::class]);
+    }
+
     public function boot(Panel $panel): void {}
 }

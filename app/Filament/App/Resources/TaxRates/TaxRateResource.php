@@ -25,6 +25,7 @@ use Filament\Tables\Table;
 class TaxRateResource extends Resource
 {
     protected static string|\UnitEnum|null $navigationGroup = 'Tax & Compliance';
+
     #[\Override]
     protected static ?string $model = TaxRate::class;
 

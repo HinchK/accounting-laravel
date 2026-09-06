@@ -17,8 +17,11 @@ use Liberu\Accounting\AutomationPackFilament\Resources\AutomationRecipeResource\
 final class AutomationRecipeResource extends Resource
 {
     protected static ?string $model = AutomationRecipe::class;
+
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-bolt';
+
     protected static string|\UnitEnum|null $navigationGroup = 'Accounting';
+
     protected static ?string $navigationLabel = 'Automation';
 
     public static function form(Schema $schema): Schema

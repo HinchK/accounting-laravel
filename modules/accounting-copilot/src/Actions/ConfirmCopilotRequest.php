@@ -16,6 +16,7 @@ final class ConfirmCopilotRequest
 
         return DB::transaction(function () use ($request): CopilotRequest {
             $request->update(['status' => 'confirmed']);
+
             return $request->refresh();
         });
     }

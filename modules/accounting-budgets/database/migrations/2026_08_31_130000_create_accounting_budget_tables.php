@@ -16,8 +16,8 @@ return new class() extends Migration
             $table->string('name');
             $table->date('period_start');
             $table->date('period_end');
-            $table->char('currency',3);
-            $table->string('status',24)->index();
+            $table->char('currency', 3);
+            $table->string('status', 24)->index();
             $table->unsignedInteger('version')->default(1);
             $table->text('notes')->nullable();
             $table->json('metadata')->nullable();
@@ -26,7 +26,7 @@ return new class() extends Migration
             $table->timestamp('approved_at')->nullable();
             $table->timestamp('rejected_at')->nullable();
             $table->timestamps();
-            $table->unique(['team_id','name','period_start','period_end','version']);
+            $table->unique(['team_id', 'name', 'period_start', 'period_end', 'version']);
         });
         Schema::create('accounting_budget_lines', function (Blueprint $table): void {
             $table->id();
@@ -34,9 +34,9 @@ return new class() extends Migration
             $table->unsignedBigInteger('account_id')->index();
             $table->unsignedBigInteger('project_id')->nullable()->index();
             $table->json('dimensions')->nullable();
-            $table->decimal('planned_amount',20,2);
+            $table->decimal('planned_amount', 20, 2);
             $table->json('phases')->nullable();
-            $table->decimal('actual_amount',20,2)->nullable();
+            $table->decimal('actual_amount', 20, 2)->nullable();
             $table->text('notes')->nullable();
             $table->timestamps();
         });

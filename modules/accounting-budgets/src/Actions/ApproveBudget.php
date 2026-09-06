@@ -15,7 +15,8 @@ final class ApproveBudget
         if ($budget->status !== BudgetStatus::Submitted) {
             throw new InvalidBudget('Only submitted budgets can be approved.');
         }
-        $budget->update(['status'=>BudgetStatus::Approved,'approved_by'=>$actorId,'approved_at'=>now()]);
+        $budget->update(['status' => BudgetStatus::Approved, 'approved_by' => $actorId, 'approved_at' => now()]);
+
         return $budget;
     }
 }

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Liberu\Accounting\AutomationPackLivewire;
 
 use Illuminate\Support\ServiceProvider;
-use Livewire\Livewire;
 use Liberu\Accounting\AutomationPackLivewire\Livewire\Recipes;
+use Livewire\Livewire;
 
 final class AutomationPackLivewireServiceProvider extends ServiceProvider
 {

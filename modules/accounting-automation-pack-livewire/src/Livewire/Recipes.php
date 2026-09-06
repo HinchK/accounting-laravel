@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Liberu\Accounting\AutomationPackLivewire\Livewire;
 
 use Illuminate\View\View;
-use Livewire\Component;
 use Liberu\Accounting\AutomationPack\Models\AutomationRecipe;
+use Livewire\Component;
 
 final class Recipes extends Component
 {

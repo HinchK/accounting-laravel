@@ -21,6 +21,7 @@ use Filament\Tables\Table;
 class AssetAcquisitionResource extends Resource
 {
     protected static string|\UnitEnum|null $navigationGroup = 'Assets';
+
     #[\Override]
     protected static ?string $model = AssetAcquisition::class;
 

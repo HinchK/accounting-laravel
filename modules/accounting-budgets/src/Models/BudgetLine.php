@@ -11,9 +11,9 @@ final class BudgetLine extends Model
 {
     protected $table = 'accounting_budget_lines';
 
-    protected $fillable = ['budget_id','account_id','project_id','dimensions','planned_amount','phases','actual_amount','notes'];
+    protected $fillable = ['budget_id', 'account_id', 'project_id', 'dimensions', 'planned_amount', 'phases', 'actual_amount', 'notes'];
 
-    protected $casts = ['planned_amount'=>'decimal:2','actual_amount'=>'decimal:2','dimensions'=>'array','phases'=>'array'];
+    protected $casts = ['planned_amount' => 'decimal:2', 'actual_amount' => 'decimal:2', 'dimensions' => 'array', 'phases' => 'array'];
 
     public function budget(): BelongsTo
     {
