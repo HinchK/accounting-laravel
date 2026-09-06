@@ -16,6 +16,6 @@ final class SubmitAuditRequest
             throw new \InvalidArgumentException('Only open requests may be submitted.');
         }
 
-return tap($request)->update(['status' => AuditRequestStatus::Submitted, 'submitted_at' => Carbon::now()]);
+        return tap($request)->update(['status' => AuditRequestStatus::Submitted, 'submitted_at' => Carbon::now()]);
     }
 }

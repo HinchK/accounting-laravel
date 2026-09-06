@@ -16,6 +16,6 @@ final class RecordAssetEvent
             }
         }
 
-return AssetEvent::create($attributes);
+        return AssetEvent::create($attributes);
     }
 }

@@ -17,6 +17,6 @@ final class CreateWorkspaceItem
             }
         }
 
-return WorkspaceItem::create([...$attributes, 'status' => $attributes['status'] ?? WorkspaceItemStatus::Active]);
+        return WorkspaceItem::create([...$attributes, 'status' => $attributes['status'] ?? WorkspaceItemStatus::Active]);
     }
 }

@@ -18,6 +18,6 @@ final class RecordAnomaly
             }
         }
 
-return Anomaly::create([...$attributes, 'status' => AnomalyStatus::Open, 'detected_at' => $attributes['detected_at'] ?? CarbonImmutable::now()]);
+        return Anomaly::create([...$attributes, 'status' => AnomalyStatus::Open, 'detected_at' => $attributes['detected_at'] ?? CarbonImmutable::now()]);
     }
 }

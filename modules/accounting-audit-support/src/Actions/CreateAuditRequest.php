@@ -17,6 +17,6 @@ final class CreateAuditRequest
             }
         }
 
-return AuditRequest::create([...$attributes, 'status' => AuditRequestStatus::Open, 'reference' => $attributes['reference'] ?? 'AUD-'.strtoupper(str()->random(8))]);
+        return AuditRequest::create([...$attributes, 'status' => AuditRequestStatus::Open, 'reference' => $attributes['reference'] ?? 'AUD-'.strtoupper(str()->random(8))]);
     }
 }
