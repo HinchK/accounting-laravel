@@ -2880,13 +2880,15 @@
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
             "Liberu\\AccountingSdk\\": "sdk/src/",
-            "Liberu\\Foundation\\Integrations\\Contracts\\": "app/Contracts/Integrations/",
             "Liberu\\Themes\\Base\\": "themes/base/src/",
             "Liberu\\Themes\\ClearSignal\\": "themes/clear-signal/src/",
             "Liberu\\Themes\\Dark\\": "themes/dark/src/",
             "Liberu\\Themes\\DefaultTheme\\": "themes/default/src/",
             "Liberu\\Themes\\AccountingErp\\": "themes/accounting-erp/src/"
-        }
+        },
+        "classmap": [
+            "app/Contracts/Integrations/PaymentProviderAdapter.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
