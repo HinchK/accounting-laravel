@@ -18,6 +18,7 @@ use App\Http\Controllers\Api\TransactionController;
 use App\Http\Controllers\Api\WiseController;
 use App\Http\Controllers\Api\WiseWebhookController;
 use App\Http\Controllers\Api\XeroController;
+use App\Http\Controllers\Api\XeroWebhookController;
 use App\Services\ExchangeRateService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -118,14 +119,18 @@ Route::middleware('auth:sanctum')->group(function (): void {
     Route::prefix('sage')->middleware('throttle:60,1')->group(function (): void {
         Route::get('/connect', [SageController::class, 'connect']);
         Route::get('/callback', [SageController::class, 'callback']);
+        Route::get('/connections', [SageController::class, 'listConnections']);
         Route::post('/connections/{connection}/sync', [SageController::class, 'sync'])->middleware('throttle:10,1');
+        Route::delete('/connections/{connection}', [SageController::class, 'removeConnection']);
     });
 
     // Xero API Routes
     Route::prefix('xero')->middleware('throttle:60,1')->group(function (): void {
         Route::get('/connect', [XeroController::class, 'connect']);
         Route::get('/callback', [XeroController::class, 'callback']);
+        Route::get('/connections', [XeroController::class, 'listConnections']);
         Route::post('/connections/{connection}/sync', [XeroController::class, 'sync'])->middleware('throttle:10,1');
+        Route::delete('/connections/{connection}', [XeroController::class, 'removeConnection']);
     });
 
     // QuickBooks Online API Routes
@@ -162,3 +167,6 @@ Route::post('/webhooks/wise', [WiseWebhookController::class, 'handle']);
 
 // QBO Webhook (public endpoint, HMAC-verified — no Sanctum auth)
 Route::post('/webhooks/qbo', [QboWebhookController::class, 'handle']);
+
+// Xero webhook (public endpoint, HMAC-verified — no Sanctum auth)
+Route::post('/webhooks/xero', [XeroWebhookController::class, 'handle']);

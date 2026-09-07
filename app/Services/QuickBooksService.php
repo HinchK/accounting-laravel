@@ -6,7 +6,9 @@ namespace App\Services;
 
 use App\Models\Account;
 use App\Models\Bill;
+use App\Models\CreditMemo;
 use App\Models\Customer;
+use App\Models\Estimate;
 use App\Models\Invoice;
 use App\Models\Payment;
 use App\Models\QboConnection;
@@ -81,7 +83,7 @@ class QuickBooksService
                 'DetailType' => 'SalesItemLineDetail',
                 'SalesItemLineDetail' => ['ItemRef' => ['value' => '1']],
             ]],
-            'CustomerRef' => ['value' => (string) ($invoice->customer->qbo_id ?? $invoice->customer_id ?? '1')],
+            'CustomerRef' => ['value' => (string) (Customer::whereKey($invoice->customer_id)->value('qbo_id') ?? '1')],
         ];
 
         if ($invoice->qbo_id) {
@@ -117,16 +119,263 @@ class QuickBooksService
                 ['qbo_id' => $row['Id']],
                 [
                     'invoice_number' => $row['DocNumber'] ?? ('QBO-'.$row['Id']),
-                    'customer_id' => $this->resolveCustomerId($row['CustomerRef'] ?? null),
+                    'customer_id' => $this->resolveCustomerId($row['CustomerRef'] ?? null, $connection->team_id),
                     'total_amount' => $row['TotalAmt'] ?? 0,
                     'invoice_date' => $row['TxnDate'] ?? now()->toDateString(),
                     'qbo_sync_token' => $row['SyncToken'] ?? null,
                     'payment_status' => 'pending',
+                    'team_id' => $connection->team_id,
                 ],
             );
         }
 
         $connection->update(['last_synced_at' => now()]);
+
+        return count($rows);
+    }
+
+    /**
+     * Pull every accounting entity currently supported by the QBO adapter.
+     *
+     * @return array{customers:int,vendors:int,accounts:int,invoices:int,bills:int,payments:int,estimates:int,credit_memos:int,transactions:int}
+     */
+    public function sync(QboConnection $connection): array
+    {
+        return [
+            'customers' => $this->pullCustomers($connection),
+            'vendors' => $this->pullVendors($connection),
+            'accounts' => $this->pullAccounts($connection),
+            'invoices' => $this->pullInvoices($connection),
+            'bills' => $this->pullBills($connection),
+            'payments' => $this->pullPayments($connection),
+            'estimates' => $this->pullEstimates($connection),
+            'credit_memos' => $this->pullCreditMemos($connection),
+            'transactions' => $this->pullTransactions($connection),
+        ];
+    }
+
+    public function pullTransactions(QboConnection $connection): int
+    {
+        $rows = [];
+        foreach (['Purchase', 'Deposit', 'Transfer'] as $entity) {
+            foreach ($this->query($connection, 'select * from '.$entity)[$entity] ?? [] as $row) {
+                $row['_entity'] = $entity;
+                $rows[] = $row;
+            }
+        }
+
+        return app(ProviderTransactionImporter::class)->handle($rows, $connection->team_id, function (array $row): array {
+            $entity = (string) $row['_entity'];
+            $amount = (float) ($row['TotalAmt'] ?? $row['TransferAmt'] ?? 0);
+            if ($entity === 'Purchase') {
+                $amount *= -1;
+            }
+
+            $description = (string) ($row['PrivateNote'] ?? $row['Memo'] ?? 'QuickBooks '.$entity);
+
+            return [
+                'external_id' => 'qbo:'.$entity.':'.(string) $row['Id'],
+                'date' => (string) ($row['TxnDate'] ?? now()->toDateString()),
+                'amount' => $amount,
+                'description' => $description,
+                'account_id' => app(ProviderTransactionImporter::class)->accountId('qbo_id', $row['AccountRef']['value'] ?? null),
+                'type' => strtolower($entity),
+            ];
+        });
+    }
+
+    public function pushEstimate(Estimate $estimate, QboConnection $connection): Estimate
+    {
+        $payload = [
+            'CustomerRef' => ['value' => (string) (Customer::whereKey($estimate->customer_id)->value('qbo_id') ?? '1')],
+            'TxnDate' => optional($estimate->estimate_date)->format('Y-m-d') ?? (string) $estimate->estimate_date,
+            'ExpirationDate' => optional($estimate->expiration_date)->format('Y-m-d'),
+            'DocNumber' => $estimate->estimate_number,
+            'Line' => [[
+                'Amount' => (float) $estimate->total_amount,
+                'DetailType' => 'SalesItemLineDetail',
+                'SalesItemLineDetail' => ['ItemRef' => ['value' => '1']],
+            ]],
+        ];
+
+        if ($estimate->qbo_id) {
+            $payload['Id'] = $estimate->qbo_id;
+            $payload['SyncToken'] = '0';
+            $payload['sparse'] = true;
+        }
+
+        $body = $this->client($connection)->post('/estimate', $payload)->throw()->json();
+        $estimate->update(['qbo_id' => $body['Estimate']['Id'] ?? $estimate->qbo_id]);
+
+        return $estimate;
+    }
+
+    public function pullEstimates(QboConnection $connection): int
+    {
+        $rows = $this->query($connection, 'select * from Estimate')['Estimate'] ?? [];
+
+        foreach ($rows as $row) {
+            if (! isset($row['Id'])) {
+                continue;
+            }
+
+            Estimate::updateOrCreate(
+                ['qbo_id' => (string) $row['Id']],
+                [
+                    'customer_id' => $this->resolveCustomerId($row['CustomerRef'] ?? null, $connection->team_id),
+                    'estimate_number' => $row['DocNumber'] ?? 'QBO-'.$row['Id'],
+                    'estimate_date' => $row['TxnDate'] ?? now()->toDateString(),
+                    'expiration_date' => $row['ExpirationDate'] ?? null,
+                    'total_amount' => $row['TotalAmt'] ?? 0,
+                    'subtotal_amount' => $row['TotalAmt'] ?? 0,
+                    'status' => strtolower((string) ($row['CustomerMemo']['value'] ?? 'draft')),
+                    'team_id' => $connection->team_id,
+                ],
+            );
+        }
+
+        return count($rows);
+    }
+
+    public function pushCreditMemo(CreditMemo $creditMemo, QboConnection $connection): CreditMemo
+    {
+        $payload = [
+            'CustomerRef' => ['value' => (string) (Customer::whereKey($creditMemo->customer_id)->value('qbo_id') ?? '1')],
+            'TxnDate' => optional($creditMemo->credit_memo_date)->format('Y-m-d') ?? (string) $creditMemo->credit_memo_date,
+            'DocNumber' => $creditMemo->credit_memo_number,
+            'Line' => [[
+                'Amount' => (float) $creditMemo->total_amount,
+                'DetailType' => 'SalesItemLineDetail',
+                'SalesItemLineDetail' => ['ItemRef' => ['value' => '1']],
+            ]],
+        ];
+
+        if ($creditMemo->qbo_id) {
+            $payload['Id'] = $creditMemo->qbo_id;
+            $payload['SyncToken'] = '0';
+            $payload['sparse'] = true;
+        }
+
+        $body = $this->client($connection)->post('/creditmemo', $payload)->throw()->json();
+        $creditMemo->update(['qbo_id' => $body['CreditMemo']['Id'] ?? $creditMemo->qbo_id]);
+
+        return $creditMemo;
+    }
+
+    public function pullCreditMemos(QboConnection $connection): int
+    {
+        $rows = $this->query($connection, 'select * from CreditMemo')['CreditMemo'] ?? [];
+
+        foreach ($rows as $row) {
+            if (! isset($row['Id'])) {
+                continue;
+            }
+
+            CreditMemo::updateOrCreate(
+                ['qbo_id' => (string) $row['Id']],
+                [
+                    'customer_id' => $this->resolveCustomerId($row['CustomerRef'] ?? null, $connection->team_id),
+                    'credit_memo_number' => $row['DocNumber'] ?? 'QBO-'.$row['Id'],
+                    'credit_memo_date' => $row['TxnDate'] ?? now()->toDateString(),
+                    'total_amount' => $row['TotalAmt'] ?? 0,
+                    'subtotal_amount' => $row['TotalAmt'] ?? 0,
+                    'status' => 'open',
+                    'team_id' => $connection->team_id,
+                ],
+            );
+        }
+
+        return count($rows);
+    }
+
+    public function pushCustomer(Customer $customer, QboConnection $connection): Customer
+    {
+        $payload = [
+            'DisplayName' => trim($customer->customer_name.' '.$customer->customer_last_name),
+            'PrimaryEmailAddr' => ['Address' => $customer->customer_email],
+            'PrimaryPhone' => ['FreeFormNumber' => $customer->customer_phone],
+        ];
+
+        if ($customer->qbo_id) {
+            $payload['Id'] = $customer->qbo_id;
+            $payload['SyncToken'] = '0';
+            $payload['sparse'] = true;
+        }
+
+        $body = $this->client($connection)->post('/customer', $payload)->throw()->json();
+        $customer->update(['qbo_id' => $body['Customer']['Id'] ?? $customer->qbo_id]);
+
+        return $customer;
+    }
+
+    public function pullCustomers(QboConnection $connection): int
+    {
+        $rows = $this->query($connection, 'select * from Customer')['Customer'] ?? [];
+
+        foreach ($rows as $row) {
+            $id = $row['Id'] ?? null;
+            if ($id === null) {
+                continue;
+            }
+
+            Customer::updateOrCreate(
+                ['qbo_id' => (string) $id],
+                [
+                    'customer_name' => $row['DisplayName'] ?? 'QBO Customer '.$id,
+                    'customer_last_name' => '',
+                    'customer_email' => $row['PrimaryEmailAddr']['Address'] ?? 'qbo-'.$id.'@imported.invalid',
+                    'customer_phone' => $row['PrimaryPhone']['FreeFormNumber'] ?? 'qbo-'.$id,
+                    'customer_address' => $row['BillAddr']['Line1'] ?? 'Imported from QuickBooks Online',
+                    'customer_city' => $row['BillAddr']['City'] ?? 'Unknown',
+                    'team_id' => $connection->team_id,
+                ],
+            );
+        }
+
+        return count($rows);
+    }
+
+    public function pushVendor(Vendor $vendor, QboConnection $connection): Vendor
+    {
+        $payload = [
+            'DisplayName' => $vendor->name,
+            'PrimaryEmailAddr' => ['Address' => $vendor->email],
+            'PrimaryPhone' => ['FreeFormNumber' => $vendor->phone],
+        ];
+
+        if ($vendor->qbo_id) {
+            $payload['Id'] = $vendor->qbo_id;
+            $payload['SyncToken'] = '0';
+            $payload['sparse'] = true;
+        }
+
+        $body = $this->client($connection)->post('/vendor', $payload)->throw()->json();
+        $vendor->update(['qbo_id' => $body['Vendor']['Id'] ?? $vendor->qbo_id]);
+
+        return $vendor;
+    }
+
+    public function pullVendors(QboConnection $connection): int
+    {
+        $rows = $this->query($connection, 'select * from Vendor')['Vendor'] ?? [];
+
+        foreach ($rows as $row) {
+            $id = $row['Id'] ?? null;
+            if ($id === null) {
+                continue;
+            }
+
+            Vendor::updateOrCreate(
+                ['qbo_id' => (string) $id],
+                [
+                    'name' => $row['DisplayName'] ?? 'QBO Vendor '.$id,
+                    'email' => $row['PrimaryEmailAddr']['Address'] ?? 'qbo-vendor-'.$id.'@imported.invalid',
+                    'phone' => $row['PrimaryPhone']['FreeFormNumber'] ?? null,
+                    'address' => $row['BillAddr']['Line1'] ?? 'Imported from QuickBooks Online',
+                    'team_id' => $connection->team_id,
+                ],
+            );
+        }
 
         return count($rows);
     }
@@ -187,6 +436,7 @@ class QuickBooksService
                         ? (int) $row['AcctNum']
                         : 9000 + (int) $row['Id'],
                     'qbo_sync_token' => $row['SyncToken'] ?? null,
+                    'team_id' => $connection->team_id,
                 ],
             );
         }
@@ -199,12 +449,12 @@ class QuickBooksService
     public function pushBill(Bill $bill, QboConnection $connection): Bill
     {
         $payload = [
-            'VendorRef' => ['value' => (string) $bill->vendor_id],
+            'VendorRef' => ['value' => (string) (Vendor::whereKey($bill->vendor_id)->value('qbo_id') ?? '1')],
             'Line' => [[
                 'Amount' => (float) $bill->total_amount,
                 'DetailType' => 'AccountBasedExpenseLineDetail',
                 'AccountBasedExpenseLineDetail' => [
-                    'AccountRef' => ['value' => (string) ($bill->items->first()->account_id ?? '1')],
+                    'AccountRef' => ['value' => (string) (Account::whereKey($bill->items->first()->account_id ?? null)->value('qbo_id') ?? '1')],
                 ],
             ]],
         ];
@@ -233,11 +483,12 @@ class QuickBooksService
             Bill::updateOrCreate(
                 ['qbo_id' => $row['Id']],
                 [
-                    'vendor_id' => $this->resolveVendorId($row['VendorRef'] ?? null),
+                    'vendor_id' => $this->resolveVendorId($row['VendorRef'] ?? null, $connection->team_id),
                     'total_amount' => $row['TotalAmt'] ?? 0,
                     'bill_date' => $row['TxnDate'] ?? now()->toDateString(),
                     'due_date' => $row['DueDate'] ?? ($row['TxnDate'] ?? now()->toDateString()),
                     'qbo_sync_token' => $row['SyncToken'] ?? null,
+                    'team_id' => $connection->team_id,
                 ],
             );
         }
@@ -253,7 +504,7 @@ class QuickBooksService
 
         $payload = [
             'TotalAmt' => (float) $payment->payment_amount,
-            'CustomerRef' => ['value' => (string) ($invoice->customer_id ?? '1')],
+            'CustomerRef' => ['value' => (string) ($invoice === null ? '1' : (Customer::whereKey($invoice->customer_id)->value('qbo_id') ?? '1'))],
         ];
 
         if ($invoice?->qbo_id) {
@@ -291,6 +542,7 @@ class QuickBooksService
                     'payment_amount' => $row['TotalAmt'] ?? 0,
                     'payment_date' => $row['TxnDate'] ?? now()->toDateString(),
                     'qbo_sync_token' => $row['SyncToken'] ?? null,
+                    'team_id' => $connection->team_id,
                 ],
             );
         }
@@ -330,9 +582,14 @@ class QuickBooksService
      *
      * @param  array<string, mixed>|null  $vendorRef
      */
-    private function resolveVendorId(?array $vendorRef): int
+    private function resolveVendorId(?array $vendorRef, ?int $teamId = null): int
     {
-        return $this->syncedVendorId($vendorRef['name'] ?? ('QBO Vendor '.($vendorRef['value'] ?? 'Unknown')), 'qbo');
+        $externalId = $vendorRef['value'] ?? null;
+        if ($externalId !== null && ($localId = Vendor::where('qbo_id', (string) $externalId)->value('vendor_id')) !== null) {
+            return (int) $localId;
+        }
+
+        return $this->syncedVendorId($vendorRef['name'] ?? ('QBO Vendor '.($externalId ?? 'Unknown')), 'qbo', $teamId);
     }
 
     /**
@@ -341,9 +598,14 @@ class QuickBooksService
      *
      * @param  array<string, mixed>|null  $customerRef
      */
-    private function resolveCustomerId(?array $customerRef): int
+    private function resolveCustomerId(?array $customerRef, ?int $teamId = null): int
     {
-        return $this->syncedCustomerId($customerRef['name'] ?? ('QBO Customer '.($customerRef['value'] ?? 'Unknown')), 'qbo');
+        $externalId = $customerRef['value'] ?? null;
+        if ($externalId !== null && ($localId = Customer::where('qbo_id', (string) $externalId)->value('id')) !== null) {
+            return (int) $localId;
+        }
+
+        return $this->syncedCustomerId($customerRef['name'] ?? ('QBO Customer '.($externalId ?? 'Unknown')), 'qbo', $teamId);
     }
 
     /**

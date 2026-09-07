@@ -13,6 +13,10 @@ use Illuminate\Notifications\Notifiable;
 
 /**
  * @property string|null $password
+ * @property string|null $qbo_id
+ * @property string|null $sage_id
+ * @property string|null $xero_id
+ * @property int|null $team_id
  */
 class Vendor extends Authenticatable implements FilamentUser
 {
@@ -35,6 +39,10 @@ class Vendor extends Authenticatable implements FilamentUser
         'tax_id',
         'payment_terms',
         'status',
+        'qbo_id',
+        'sage_id',
+        'xero_id',
+        'team_id',
     ];
 
     #[\Override]

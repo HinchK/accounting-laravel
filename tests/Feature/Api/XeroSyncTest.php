@@ -91,6 +91,42 @@ class XeroSyncTest extends TestCase
         $this->assertDatabaseCount('xero_connections', 0);
     }
 
+    public function test_expired_token_is_refreshed_before_provider_request(): void
+    {
+        Http::fake([
+            'identity.xero.com/connect/token' => Http::response(['access_token' => 'refreshed-at', 'refresh_token' => 'refreshed-rt', 'expires_in' => 1800]),
+            '*/api.xro/2.0/Invoices*' => Http::response(['Invoices' => [['InvoiceID' => 'xero-refreshed']]]),
+        ]);
+
+        $customer = Customer::factory()->create();
+        $invoice = Invoice::factory()->create(['customer_id' => $customer->id]);
+        $connection = $this->connection();
+        $connection->update(['token_expires_at' => now()->subMinute()]);
+
+        $this->service()->pushInvoice($invoice, $connection);
+
+        Http::assertSent(fn ($request): bool => str_contains($request->url(), '/connect/token') && $request->data()['grant_type'] === 'refresh_token');
+        $this->assertSame('refreshed-at', $connection->fresh()->access_token);
+        $this->assertSame('xero-refreshed', $invoice->fresh()->xero_id);
+    }
+
+    public function test_connections_can_be_listed_and_removed_for_current_team(): void
+    {
+        $connection = $this->connection();
+
+        $this->actingAs($this->user)
+            ->getJson('/api/xero/connections')
+            ->assertOk()
+            ->assertJsonPath('connections.0.tenant_id', $connection->tenant_id);
+
+        $this->actingAs($this->user)
+            ->deleteJson('/api/xero/connections/'.$connection->id)
+            ->assertOk()
+            ->assertJson(['success' => true]);
+
+        $this->assertDatabaseMissing('xero_connections', ['id' => $connection->id]);
+    }
+
     public function test_push_invoice_stores_remote_id(): void
     {
         Http::fake(['*/api.xro/2.0/Invoices*' => Http::response(['Invoices' => [['InvoiceID' => 'xero-guid-1']]], 200)]);

@@ -8,6 +8,7 @@ use App\Models\Account;
 use App\Models\Bill;
 use App\Models\Invoice;
 use App\Models\Payment;
+use App\Models\Transaction;
 use App\Models\User;
 use App\Models\Vendor;
 use App\Models\XeroConnection;
@@ -110,5 +111,24 @@ class XeroEntitiesSyncTest extends TestCase
 
         $this->assertSame(1, $this->service()->pullPayments($this->connection()));
         $this->assertDatabaseHas('payments', ['xero_id' => 'xp-9', 'invoice_id' => $invoice->id]);
+    }
+
+    public function test_pull_bank_transactions_preserves_provider_identity_and_sign(): void
+    {
+        $account = Account::factory()->create(['xero_id' => 'bank-account-1']);
+        Http::fake(['*/api.xro/2.0/BankTransactions*' => Http::response(['BankTransactions' => [
+            ['BankTransactionID' => 'bank-tx-1', 'Type' => 'SPEND', 'Total' => 25.50, 'Date' => '2026-09-05', 'Reference' => 'Office supplies', 'BankAccount' => ['AccountID' => 'bank-account-1']],
+        ]], 200)]);
+
+        $count = $this->service()->pullTransactions($this->connection());
+
+        $this->assertSame(1, $count);
+        $this->assertDatabaseHas('transactions', [
+            'external_id' => 'xero:bank:bank-tx-1',
+            'amount' => -25.50,
+            'account_id' => $account->id,
+            'reconciled' => false,
+        ]);
+        $this->assertInstanceOf(Transaction::class, Transaction::where('external_id', 'xero:bank:bank-tx-1')->first());
     }
 }

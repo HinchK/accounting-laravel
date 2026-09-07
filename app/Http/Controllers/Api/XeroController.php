@@ -48,7 +48,37 @@ class XeroController extends Controller
     {
         abort_unless($connection->team_id === ($request->user()->current_team_id ?? -1), 403);
 
-        return response()->json(['success' => true, 'invoices_synced' => $this->xero->pullInvoices($connection)]);
+        $counts = $this->xero->sync($connection);
+
+        return response()->json([
+            'success' => true,
+            'customers_synced' => $counts['customers'],
+            'vendors_synced' => $counts['vendors'],
+            'invoices_synced' => $counts['invoices'],
+            'accounts_synced' => $counts['accounts'],
+            'bills_synced' => $counts['bills'],
+            'payments_synced' => $counts['payments'],
+            'estimates_synced' => $counts['estimates'],
+            'credit_memos_synced' => $counts['credit_memos'],
+            'transactions_synced' => $counts['transactions'],
+        ]);
+    }
+
+    public function listConnections(Request $request): JsonResponse
+    {
+        return response()->json([
+            'connections' => XeroConnection::where('team_id', (int) ($request->user()->current_team_id ?? -1))
+                ->get(['id', 'tenant_id', 'status', 'last_synced_at']),
+        ]);
+    }
+
+    public function removeConnection(Request $request, XeroConnection $connection): JsonResponse
+    {
+        abort_unless($connection->team_id === ($request->user()->current_team_id ?? -1), 403);
+
+        $connection->delete();
+
+        return response()->json(['success' => true]);
     }
 
     private function stateCacheKey(Request $request): string

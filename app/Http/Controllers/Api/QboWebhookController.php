@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\SyncAccountingProviderConnectionJob;
+use App\Models\QboConnection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -25,11 +27,27 @@ class QboWebhookController extends Controller
             return response()->json(['success' => false], 401);
         }
 
-        // ponytail: enqueue a pull for the affected realm here once async sync lands.
-        // The verified notification body lists changed entities per realmId.
-        Log::info('QBO webhook received', ['events' => $request->input('eventNotifications', [])]);
+        $realmIds = collect($request->input('eventNotifications', []))
+            ->pluck('realmId')
+            ->filter(fn (mixed $realmId): bool => is_string($realmId) && $realmId !== '')
+            ->unique()
+            ->values();
 
-        return response()->json(['success' => true]);
+        $connections = QboConnection::query()
+            ->where('status', 'active')
+            ->whereIn('realm_id', $realmIds->all())
+            ->get();
+
+        foreach ($connections as $connection) {
+            SyncAccountingProviderConnectionJob::dispatch('qbo', (int) $connection->getKey());
+        }
+
+        Log::info('QBO webhook received', [
+            'realms' => $realmIds->all(),
+            'connections_queued' => $connections->count(),
+        ]);
+
+        return response()->json(['success' => true, 'connections_queued' => $connections->count()]);
     }
 
     private function verifySignature(string $rawBody, string $signature): bool

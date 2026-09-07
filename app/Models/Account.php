@@ -15,6 +15,7 @@ use Illuminate\Support\Collection;
 /**
  * @property int|null $team_id
  * @property string|null $xero_id
+ * @property string|null $sage_id
  * @property string|null $normal_balance
  * @property-read Collection<int, self> $children
  * @property-read self|null $parent
@@ -43,6 +44,7 @@ class Account extends Model
         'qbo_id',
         'qbo_sync_token',
         'xero_id',
+        'sage_id',
     ];
 
     #[\Override]

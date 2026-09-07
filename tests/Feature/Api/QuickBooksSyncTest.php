@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Tests\Feature\Api;
 
+use App\Models\CreditMemo;
 use App\Models\Customer;
+use App\Models\Estimate;
 use App\Models\Invoice;
 use App\Models\QboConnection;
 use App\Models\User;
@@ -133,6 +135,32 @@ class QuickBooksSyncTest extends TestCase
             'qbo_id' => '99',
             'invoice_number' => 'INV-099',
         ]);
+    }
+
+    public function test_qbo_estimates_and_credit_memos_round_trip(): void
+    {
+        Http::fake([
+            '*/v3/company/*/estimate' => Http::response(['Estimate' => ['Id' => 'estimate-1']], 200),
+            '*/v3/company/*/creditmemo' => Http::response(['CreditMemo' => ['Id' => 'credit-1']], 200),
+            '*/v3/company/*/query*' => Http::sequence()
+                ->push(['QueryResponse' => ['Estimate' => [['Id' => 'estimate-9', 'DocNumber' => 'EST-9', 'TotalAmt' => 80, 'TxnDate' => '2026-09-01', 'CustomerRef' => ['value' => 'customer-9', 'name' => 'QBO Customer']]]]])
+                ->push(['QueryResponse' => ['CreditMemo' => [['Id' => 'credit-9', 'DocNumber' => 'CM-9', 'TotalAmt' => 20, 'TxnDate' => '2026-09-02', 'CustomerRef' => ['value' => 'customer-9', 'name' => 'QBO Customer']]]]]),
+        ]);
+
+        $connection = $this->makeConnection();
+        $customer = Customer::factory()->create();
+        $estimate = Estimate::factory()->create(['customer_id' => $customer->id, 'total_amount' => 80]);
+        $creditMemo = CreditMemo::create(['customer_id' => $customer->id, 'credit_memo_date' => '2026-09-02', 'total_amount' => 20, 'subtotal_amount' => 20]);
+
+        app(QuickBooksService::class)->pushEstimate($estimate, $connection);
+        app(QuickBooksService::class)->pushCreditMemo($creditMemo, $connection);
+
+        $this->assertSame('estimate-1', $estimate->fresh()->qbo_id);
+        $this->assertSame('credit-1', $creditMemo->fresh()->qbo_id);
+        $this->assertSame(1, app(QuickBooksService::class)->pullEstimates($connection));
+        $this->assertSame(1, app(QuickBooksService::class)->pullCreditMemos($connection));
+        $this->assertDatabaseHas('estimates', ['qbo_id' => 'estimate-9', 'estimate_number' => 'EST-9']);
+        $this->assertDatabaseHas('credit_memos', ['qbo_id' => 'credit-9', 'credit_memo_number' => 'CM-9']);
     }
 
     private function makeConnection(): QboConnection

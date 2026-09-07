@@ -93,9 +93,20 @@ class QboController extends Controller
     {
         abort_unless($connection->team_id === $this->currentTeamId(), 403);
 
-        $count = $this->qbo->pullInvoices($connection);
+        $counts = $this->qbo->sync($connection);
 
-        return response()->json(['success' => true, 'invoices_synced' => $count]);
+        return response()->json([
+            'success' => true,
+            'customers_synced' => $counts['customers'],
+            'vendors_synced' => $counts['vendors'],
+            'invoices_synced' => $counts['invoices'],
+            'accounts_synced' => $counts['accounts'],
+            'bills_synced' => $counts['bills'],
+            'payments_synced' => $counts['payments'],
+            'estimates_synced' => $counts['estimates'],
+            'credit_memos_synced' => $counts['credit_memos'],
+            'transactions_synced' => $counts['transactions'],
+        ]);
     }
 
     public function removeConnection(Request $request, QboConnection $connection): JsonResponse

@@ -14,6 +14,9 @@ use Illuminate\Notifications\Notifiable;
 
 /**
  * @property string|null $qbo_id
+ * @property string|null $sage_id
+ * @property string|null $xero_id
+ * @property int|null $team_id
  * @property int $customer_id
  * @property string|null $password
  */
@@ -47,6 +50,10 @@ class Customer extends Authenticatable implements FilamentUser
         'customer_phone',
         'customer_city',
         'credit_hold',
+        'qbo_id',
+        'sage_id',
+        'xero_id',
+        'team_id',
     ];
 
     #[\Override]

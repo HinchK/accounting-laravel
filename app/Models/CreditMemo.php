@@ -14,6 +14,9 @@ use Illuminate\Support\Collection;
 
 /**
  * @property int|null $team_id
+ * @property string|null $qbo_id
+ * @property string|null $xero_id
+ * @property string|null $sage_id
  * @property-read TaxRate|null $taxRate
  * @property-read Collection<int, CreditMemoItem> $items
  */
@@ -41,6 +44,9 @@ class CreditMemo extends Model implements Documentable
         'reason',
         'notes',
         'document_path',
+        'qbo_id',
+        'xero_id',
+        'sage_id',
     ];
 
     #[\Override]

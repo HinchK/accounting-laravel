@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 /**
  * @property int|null $team_id
  * @property string|null $xero_id
+ * @property string|null $sage_id
  * @property-read Invoice|null $invoice
  * @property-read Team|null $team
  */
@@ -31,6 +32,7 @@ class Payment extends Model
         'qbo_id',
         'qbo_sync_token',
         'xero_id',
+        'sage_id',
         'journal_entry_id',
         'team_id',
     ];

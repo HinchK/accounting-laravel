@@ -23,6 +23,8 @@ use Illuminate\Support\Collection;
  * @property-read TaxRate|null $taxRate
  * @property-read Collection<int, BillItem> $items
  * @property string|null $xero_id
+ * @property string|null $sage_id
+ * @property-read Vendor|null $vendor
  */
 class Bill extends Model implements ApprovableRecord, Documentable
 {
@@ -65,6 +67,7 @@ class Bill extends Model implements ApprovableRecord, Documentable
         'qbo_id',
         'qbo_sync_token',
         'xero_id',
+        'sage_id',
     ];
 
     #[\Override]

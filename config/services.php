@@ -51,6 +51,7 @@ return [
         'token_url' => env('XERO_TOKEN_URL', 'https://identity.xero.com/connect/token'),
         'connections_url' => env('XERO_CONNECTIONS_URL', 'https://api.xero.com/connections'),
         'api_base_url' => env('XERO_API_BASE_URL', 'https://api.xero.com/api.xro/2.0'),
+        'webhook_key' => env('XERO_WEBHOOK_KEY'),
     ],
 
     'qbo' => [

@@ -16,31 +16,51 @@ use Illuminate\Support\Str;
  */
 trait ResolvesSyncedContacts
 {
-    protected function syncedCustomerId(string $name, string $tag): int
+    protected function syncedCustomerId(string $name, string $tag, ?int $teamId = null): int
     {
         $ref = Str::random(8);
 
+        $attributes = ['customer_name' => $name];
+        if ($teamId !== null) {
+            $attributes['team_id'] = $teamId;
+        }
+
+        $values = [
+            'customer_last_name' => '',
+            'customer_address' => 'Imported from '.$this->providerLabel($tag),
+            'customer_email' => Str::slug($name).'.'.$ref.'@'.$tag.'.imported',
+            'customer_phone' => $tag.'-'.$ref,
+            'customer_city' => 'Unknown',
+        ];
+        if ($teamId !== null) {
+            $values['team_id'] = $teamId;
+        }
+
         $customer = Customer::firstOrCreate(
-            ['customer_name' => $name],
-            [
-                'customer_last_name' => '',
-                'customer_address' => 'Imported from '.$this->providerLabel($tag),
-                'customer_email' => Str::slug($name).'.'.$ref.'@'.$tag.'.imported',
-                'customer_phone' => $tag.'-'.$ref,
-                'customer_city' => 'Unknown',
-            ],
+            $attributes,
+            $values,
         );
 
         return (int) $customer->getKey();
     }
 
-    protected function syncedVendorId(string $name, string $tag): int
+    protected function syncedVendorId(string $name, string $tag, ?int $teamId = null): int
     {
         $ref = Str::random(8);
 
+        $attributes = ['name' => $name];
+        if ($teamId !== null) {
+            $attributes['team_id'] = $teamId;
+        }
+
+        $values = ['email' => Str::slug($name).'.'.$ref.'@'.$tag.'.imported'];
+        if ($teamId !== null) {
+            $values['team_id'] = $teamId;
+        }
+
         $vendor = Vendor::firstOrCreate(
-            ['name' => $name],
-            ['email' => Str::slug($name).'.'.$ref.'@'.$tag.'.imported'],
+            $attributes,
+            $values,
         );
 
         return (int) $vendor->getKey();

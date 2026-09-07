@@ -6,8 +6,12 @@ namespace App\Services;
 
 use App\Models\Account;
 use App\Models\Bill;
+use App\Models\CreditMemo;
+use App\Models\Customer;
+use App\Models\Estimate;
 use App\Models\Invoice;
 use App\Models\Payment;
+use App\Models\Vendor;
 use App\Models\XeroConnection;
 use App\Services\Concerns\RequestsProviderTokens;
 use App\Services\Concerns\ResolvesSyncedContacts;
@@ -75,7 +79,9 @@ class XeroService
     {
         $payload = ['Invoices' => [[
             'Type' => 'ACCREC',
-            'Contact' => ['Name' => $invoice->customer->customer_name ?? ('Customer '.$invoice->customer_id)],
+            'Contact' => $invoice->customer?->xero_id
+                ? ['ContactID' => $invoice->customer->xero_id]
+                : ['Name' => 'Customer '.$invoice->customer_id],
             'LineItems' => [[
                 'Description' => 'Invoice '.($invoice->invoice_number ?? $invoice->id),
                 'Quantity' => 1,
@@ -84,6 +90,10 @@ class XeroService
             ]],
             'Status' => 'AUTHORISED',
         ]]];
+
+        if ($invoice->xero_id) {
+            $payload['Invoices'][0]['InvoiceID'] = $invoice->xero_id;
+        }
 
         $body = $this->client($connection)->post('/Invoices', $payload)->throw()->json();
 
@@ -94,22 +104,261 @@ class XeroService
 
     public function pullInvoices(XeroConnection $connection): int
     {
-        $rows = $this->client($connection)->get('/Invoices')->throw()->json()['Invoices'] ?? [];
+        $rows = $this->client($connection)
+            ->get('/Invoices', ['where' => 'Type=="ACCREC"'])
+            ->throw()
+            ->json()['Invoices'] ?? [];
 
         foreach ($rows as $row) {
             Invoice::updateOrCreate(
                 ['xero_id' => $row['InvoiceID']],
                 [
                     'invoice_number' => $row['InvoiceNumber'] ?? ('XERO-'.$row['InvoiceID']),
-                    'customer_id' => $this->resolveCustomerId($row['Contact'] ?? null),
+                    'customer_id' => $this->resolveCustomerId($row['Contact'] ?? null, $connection->team_id),
                     'total_amount' => $row['Total'] ?? 0,
                     'invoice_date' => $row['Date'] ?? now()->toDateString(),
                     'payment_status' => 'pending',
+                    'team_id' => $connection->team_id,
                 ],
             );
         }
 
         $connection->update(['last_synced_at' => now()]);
+
+        return count($rows);
+    }
+
+    /**
+     * Pull every accounting entity currently supported by the Xero adapter.
+     *
+     * @return array{customers:int,vendors:int,accounts:int,invoices:int,bills:int,payments:int,estimates:int,credit_memos:int,transactions:int}
+     */
+    public function sync(XeroConnection $connection): array
+    {
+        return [
+            'customers' => $this->pullCustomers($connection),
+            'vendors' => $this->pullVendors($connection),
+            'accounts' => $this->pullAccounts($connection),
+            'invoices' => $this->pullInvoices($connection),
+            'bills' => $this->pullBills($connection),
+            'payments' => $this->pullPayments($connection),
+            'estimates' => $this->pullEstimates($connection),
+            'credit_memos' => $this->pullCreditMemos($connection),
+            'transactions' => $this->pullTransactions($connection),
+        ];
+    }
+
+    public function pullTransactions(XeroConnection $connection): int
+    {
+        $rows = $this->client($connection)->get('/BankTransactions')->throw()->json()['BankTransactions'] ?? [];
+
+        return app(ProviderTransactionImporter::class)->handle($rows, $connection->team_id, function (array $row): array {
+            $type = strtoupper((string) ($row['Type'] ?? 'RECEIVE'));
+            $amount = (float) ($row['Total'] ?? 0);
+            if ($type === 'SPEND') {
+                $amount *= -1;
+            }
+
+            return [
+                'external_id' => 'xero:bank:'.(string) $row['BankTransactionID'],
+                'date' => (string) ($row['Date'] ?? now()->toDateString()),
+                'amount' => $amount,
+                'description' => (string) ($row['Reference'] ?? 'Xero bank transaction'),
+                'account_id' => app(ProviderTransactionImporter::class)->accountId('xero_id', $row['BankAccount']['AccountID'] ?? null),
+                'type' => strtolower($type),
+            ];
+        });
+    }
+
+    public function pushEstimate(Estimate $estimate, XeroConnection $connection): Estimate
+    {
+        $payload = ['Quotes' => [[
+            'QuoteNumber' => $estimate->estimate_number,
+            'Date' => optional($estimate->estimate_date)->format('Y-m-d') ?? (string) $estimate->estimate_date,
+            'ExpiryDate' => optional($estimate->expiration_date)->format('Y-m-d'),
+            'Contact' => ['ContactID' => Customer::whereKey($estimate->customer_id)->value('xero_id')],
+            'LineItems' => [[
+                'Description' => 'Estimate '.($estimate->estimate_number ?? $estimate->getKey()),
+                'Quantity' => 1,
+                'UnitAmount' => (float) $estimate->total_amount,
+                'AccountCode' => '200',
+            ]],
+            'Status' => 'DRAFT',
+        ]]];
+
+        if ($estimate->xero_id) {
+            $payload['Quotes'][0]['QuoteID'] = $estimate->xero_id;
+        }
+
+        $body = $this->client($connection)->post('/Quotes', $payload)->throw()->json();
+
+        $estimate->update(['xero_id' => $body['Quotes'][0]['QuoteID'] ?? $estimate->xero_id]);
+
+        return $estimate;
+    }
+
+    public function pullEstimates(XeroConnection $connection): int
+    {
+        $rows = $this->client($connection)->get('/Quotes')->throw()->json()['Quotes'] ?? [];
+
+        foreach ($rows as $row) {
+            if (! isset($row['QuoteID'])) {
+                continue;
+            }
+
+            Estimate::updateOrCreate(
+                ['xero_id' => (string) $row['QuoteID']],
+                [
+                    'customer_id' => $this->resolveCustomerId($row['Contact'] ?? null, $connection->team_id),
+                    'estimate_number' => $row['QuoteNumber'] ?? 'XERO-'.$row['QuoteID'],
+                    'estimate_date' => $row['Date'] ?? now()->toDateString(),
+                    'expiration_date' => $row['ExpiryDate'] ?? null,
+                    'total_amount' => $row['Total'] ?? 0,
+                    'subtotal_amount' => $row['SubTotal'] ?? $row['Total'] ?? 0,
+                    'tax_amount' => $row['TotalTax'] ?? 0,
+                    'status' => strtolower((string) ($row['Status'] ?? 'draft')),
+                    'team_id' => $connection->team_id,
+                ],
+            );
+        }
+
+        return count($rows);
+    }
+
+    public function pushCreditMemo(CreditMemo $creditMemo, XeroConnection $connection): CreditMemo
+    {
+        $payload = ['CreditNotes' => [[
+            'Type' => 'ACCRECCREDIT',
+            'Contact' => ['ContactID' => Customer::whereKey($creditMemo->customer_id)->value('xero_id')],
+            'Date' => optional($creditMemo->credit_memo_date)->format('Y-m-d') ?? (string) $creditMemo->credit_memo_date,
+            'CreditNoteNumber' => $creditMemo->credit_memo_number,
+            'LineItems' => [[
+                'Description' => 'Credit memo '.($creditMemo->credit_memo_number ?? $creditMemo->getKey()),
+                'Quantity' => 1,
+                'UnitAmount' => (float) $creditMemo->total_amount,
+                'AccountCode' => '200',
+            ]],
+            'Status' => 'AUTHORISED',
+        ]]];
+
+        if ($creditMemo->xero_id) {
+            $payload['CreditNotes'][0]['CreditNoteID'] = $creditMemo->xero_id;
+        }
+
+        $body = $this->client($connection)->post('/CreditNotes', $payload)->throw()->json();
+
+        $creditMemo->update(['xero_id' => $body['CreditNotes'][0]['CreditNoteID'] ?? $creditMemo->xero_id]);
+
+        return $creditMemo;
+    }
+
+    public function pullCreditMemos(XeroConnection $connection): int
+    {
+        $rows = $this->client($connection)->get('/CreditNotes')->throw()->json()['CreditNotes'] ?? [];
+
+        foreach ($rows as $row) {
+            if (! isset($row['CreditNoteID'])) {
+                continue;
+            }
+
+            CreditMemo::updateOrCreate(
+                ['xero_id' => (string) $row['CreditNoteID']],
+                [
+                    'customer_id' => $this->resolveCustomerId($row['Contact'] ?? null, $connection->team_id),
+                    'credit_memo_number' => $row['CreditNoteNumber'] ?? 'XERO-'.$row['CreditNoteID'],
+                    'credit_memo_date' => $row['Date'] ?? now()->toDateString(),
+                    'total_amount' => $row['Total'] ?? 0,
+                    'subtotal_amount' => $row['SubTotal'] ?? $row['Total'] ?? 0,
+                    'tax_amount' => $row['TotalTax'] ?? 0,
+                    'status' => 'open',
+                    'team_id' => $connection->team_id,
+                ],
+            );
+        }
+
+        return count($rows);
+    }
+
+    public function pushCustomer(Customer $customer, XeroConnection $connection): Customer
+    {
+        $body = $this->client($connection)->post('/Contacts', ['Contacts' => [[
+            'ContactID' => $customer->xero_id,
+            'Name' => trim($customer->customer_name.' '.$customer->customer_last_name),
+            'EmailAddress' => $customer->customer_email,
+            'Phones' => [['PhoneType' => 'DEFAULT', 'PhoneNumber' => $customer->customer_phone]],
+            'IsCustomer' => true,
+        ]]])->throw()->json();
+
+        $customer->update(['xero_id' => $body['Contacts'][0]['ContactID'] ?? $customer->xero_id]);
+
+        return $customer;
+    }
+
+    public function pullCustomers(XeroConnection $connection): int
+    {
+        $rows = $this->client($connection)->get('/Contacts')->throw()->json()['Contacts'] ?? [];
+        $rows = array_values(array_filter($rows, fn (array $row): bool => ($row['IsCustomer'] ?? true) === true));
+
+        foreach ($rows as $row) {
+            $id = $row['ContactID'] ?? null;
+            if ($id === null) {
+                continue;
+            }
+
+            Customer::updateOrCreate(
+                ['xero_id' => (string) $id],
+                [
+                    'customer_name' => $row['Name'] ?? 'Xero Customer '.$id,
+                    'customer_last_name' => '',
+                    'customer_email' => $row['EmailAddress'] ?? 'xero-'.$id.'@imported.invalid',
+                    'customer_phone' => $row['Phones'][0]['PhoneNumber'] ?? 'xero-'.$id,
+                    'customer_address' => $row['Addresses'][0]['AddressLine1'] ?? 'Imported from Xero',
+                    'customer_city' => $row['Addresses'][0]['City'] ?? 'Unknown',
+                    'team_id' => $connection->team_id,
+                ],
+            );
+        }
+
+        return count($rows);
+    }
+
+    public function pushVendor(Vendor $vendor, XeroConnection $connection): Vendor
+    {
+        $body = $this->client($connection)->post('/Contacts', ['Contacts' => [[
+            'ContactID' => $vendor->xero_id,
+            'Name' => $vendor->name,
+            'EmailAddress' => $vendor->email,
+            'Phones' => [['PhoneType' => 'DEFAULT', 'PhoneNumber' => $vendor->phone]],
+            'IsSupplier' => true,
+        ]]])->throw()->json();
+
+        $vendor->update(['xero_id' => $body['Contacts'][0]['ContactID'] ?? $vendor->xero_id]);
+
+        return $vendor;
+    }
+
+    public function pullVendors(XeroConnection $connection): int
+    {
+        $rows = $this->client($connection)->get('/Contacts')->throw()->json()['Contacts'] ?? [];
+        $rows = array_values(array_filter($rows, fn (array $row): bool => ($row['IsSupplier'] ?? true) === true));
+
+        foreach ($rows as $row) {
+            $id = $row['ContactID'] ?? null;
+            if ($id === null) {
+                continue;
+            }
+
+            Vendor::updateOrCreate(
+                ['xero_id' => (string) $id],
+                [
+                    'name' => $row['Name'] ?? 'Xero Vendor '.$id,
+                    'email' => $row['EmailAddress'] ?? 'xero-vendor-'.$id.'@imported.invalid',
+                    'phone' => $row['Phones'][0]['PhoneNumber'] ?? null,
+                    'address' => $row['Addresses'][0]['AddressLine1'] ?? 'Imported from Xero',
+                    'team_id' => $connection->team_id,
+                ],
+            );
+        }
 
         return count($rows);
     }
@@ -137,11 +386,24 @@ class XeroService
     {
         [$type] = self::XERO_ACCOUNT[$account->account_type] ?? ['CURRENT', 'ASSET'];
 
-        $body = $this->client($connection)->post('/Accounts', ['Accounts' => [[
+        $payload = ['Accounts' => [[
             'Code' => (string) $account->account_number,
             'Name' => $account->account_name,
             'Type' => $type,
-        ]]])->throw()->json();
+        ]]];
+
+        if ($account->xero_id) {
+            $payload['Accounts'][0]['AccountID'] = $account->xero_id;
+            $body = $this->client($connection)
+                ->post('/Accounts/'.$account->xero_id, $payload)
+                ->throw()
+                ->json();
+        } else {
+            $body = $this->client($connection)
+                ->put('/Accounts', $payload)
+                ->throw()
+                ->json();
+        }
 
         $account->update(['xero_id' => $body['Accounts'][0]['AccountID'] ?? $account->xero_id]);
 
@@ -161,6 +423,7 @@ class XeroService
                     'account_number' => isset($row['Code']) && is_numeric($row['Code'])
                         ? (int) $row['Code']
                         : 9000 + crc32((string) $row['AccountID']) % 1000,
+                    'team_id' => $connection->team_id,
                 ],
             );
         }
@@ -172,9 +435,11 @@ class XeroService
 
     public function pushBill(Bill $bill, XeroConnection $connection): Bill
     {
-        $body = $this->client($connection)->post('/Invoices', ['Invoices' => [[
+        $payload = ['Invoices' => [[
             'Type' => 'ACCPAY',
-            'Contact' => ['Name' => $bill->vendor->name ?? ('Vendor '.$bill->vendor_id)],
+            'Contact' => $bill->vendor?->xero_id
+                ? ['ContactID' => $bill->vendor->xero_id]
+                : ['Name' => 'Vendor '.$bill->vendor_id],
             'LineItems' => [[
                 'Description' => 'Bill '.($bill->bill_number ?? $bill->getKey()),
                 'Quantity' => 1,
@@ -182,7 +447,13 @@ class XeroService
                 'AccountCode' => '400',
             ]],
             'Status' => 'AUTHORISED',
-        ]]])->throw()->json();
+        ]]];
+
+        if ($bill->xero_id) {
+            $payload['Invoices'][0]['InvoiceID'] = $bill->xero_id;
+        }
+
+        $body = $this->client($connection)->post('/Invoices', $payload)->throw()->json();
 
         $bill->update(['xero_id' => $body['Invoices'][0]['InvoiceID'] ?? $bill->xero_id]);
 
@@ -200,10 +471,11 @@ class XeroService
             Bill::updateOrCreate(
                 ['xero_id' => $row['InvoiceID']],
                 [
-                    'vendor_id' => $this->resolveVendorId($row['Contact'] ?? null),
+                    'vendor_id' => $this->resolveVendorId($row['Contact'] ?? null, $connection->team_id),
                     'total_amount' => $row['Total'] ?? 0,
                     'bill_date' => $row['Date'] ?? now()->toDateString(),
                     'due_date' => $row['DueDate'] ?? ($row['Date'] ?? now()->toDateString()),
+                    'team_id' => $connection->team_id,
                 ],
             );
         }
@@ -217,12 +489,14 @@ class XeroService
     {
         $invoice = Invoice::find($payment->invoice_id);
 
-        $body = $this->client($connection)->post('/Payments', ['Payments' => [[
+        $payload = ['Payments' => [[
             'Invoice' => ['InvoiceID' => $invoice?->xero_id],
             'Account' => ['Code' => '090'],
             'Amount' => (float) $payment->payment_amount,
             'Date' => optional($payment->payment_date)->format('Y-m-d') ?? (string) $payment->payment_date,
-        ]]])->throw()->json();
+        ]]];
+
+        $body = $this->client($connection)->post('/Payments', $payload)->throw()->json();
 
         $payment->update(['xero_id' => $body['Payments'][0]['PaymentID'] ?? $payment->xero_id]);
 
@@ -234,14 +508,19 @@ class XeroService
         $rows = $this->client($connection)->get('/Payments')->throw()->json()['Payments'] ?? [];
 
         foreach ($rows as $row) {
-            $invoiceId = (int) (Invoice::where('xero_id', $row['Invoice']['InvoiceID'] ?? null)->value('id') ?? 0);
+            $invoiceId = Invoice::where('xero_id', $row['Invoice']['InvoiceID'] ?? null)->value('id');
+
+            if ($invoiceId === null) {
+                continue;
+            }
 
             Payment::updateOrCreate(
                 ['xero_id' => $row['PaymentID']],
                 [
-                    'invoice_id' => $invoiceId,
+                    'invoice_id' => (int) $invoiceId,
                     'payment_amount' => $row['Amount'] ?? 0,
                     'payment_date' => $row['Date'] ?? now()->toDateString(),
+                    'team_id' => $connection->team_id,
                 ],
             );
         }
@@ -254,24 +533,55 @@ class XeroService
     /**
      * @param  array<string, mixed>|null  $contact
      */
-    private function resolveVendorId(?array $contact): int
+    private function resolveVendorId(?array $contact, ?int $teamId = null): int
     {
-        return $this->syncedVendorId($contact['Name'] ?? 'Xero Vendor', 'xero');
+        if (isset($contact['ContactID']) && ($localId = Vendor::where('xero_id', $contact['ContactID'])->value('vendor_id')) !== null) {
+            return (int) $localId;
+        }
+
+        return $this->syncedVendorId($contact['Name'] ?? 'Xero Vendor', 'xero', $teamId);
     }
 
     private function client(XeroConnection $connection): PendingRequest
     {
+        $connection = $this->refreshIfNeeded($connection);
+
         return Http::withToken($connection->access_token)
             ->withHeaders(['Xero-tenant-id' => $connection->tenant_id])
             ->acceptJson()
             ->baseUrl($this->cfg['api_base_url']);
     }
 
+    private function refreshIfNeeded(XeroConnection $connection): XeroConnection
+    {
+        if ($connection->token_expires_at && $connection->token_expires_at->isFuture()) {
+            return $connection;
+        }
+
+        $tokens = $this->requestProviderTokens($this->cfg, [
+            'grant_type' => 'refresh_token',
+            'refresh_token' => (string) $connection->refresh_token,
+        ]);
+
+        $connection->update([
+            'access_token' => $tokens['access_token'],
+            'refresh_token' => $tokens['refresh_token'] ?? $connection->refresh_token,
+            'token_expires_at' => now()->addSeconds((int) ($tokens['expires_in'] ?? 1800)),
+            'status' => 'active',
+        ]);
+
+        return $connection;
+    }
+
     /**
      * @param  array<string, mixed>|null  $contact
      */
-    private function resolveCustomerId(?array $contact): int
+    private function resolveCustomerId(?array $contact, ?int $teamId = null): int
     {
-        return $this->syncedCustomerId($contact['Name'] ?? 'Xero Customer', 'xero');
+        if (isset($contact['ContactID']) && ($localId = Customer::where('xero_id', $contact['ContactID'])->value('id')) !== null) {
+            return (int) $localId;
+        }
+
+        return $this->syncedCustomerId($contact['Name'] ?? 'Xero Customer', 'xero', $teamId);
     }
 }

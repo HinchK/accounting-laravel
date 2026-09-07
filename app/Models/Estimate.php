@@ -17,6 +17,9 @@ use Illuminate\Support\Collection;
 
 /**
  * @property int|null $team_id
+ * @property string|null $qbo_id
+ * @property string|null $xero_id
+ * @property string|null $sage_id
  * @property-read TaxRate|null $taxRate
  * @property-read Collection<int, EstimateItem> $items
  * @property-read Invoice|null $invoice
@@ -51,6 +54,9 @@ class Estimate extends Model implements Documentable
         'terms',
         'document_path',
         'team_id',
+        'qbo_id',
+        'xero_id',
+        'sage_id',
     ];
 
     #[\Override]
