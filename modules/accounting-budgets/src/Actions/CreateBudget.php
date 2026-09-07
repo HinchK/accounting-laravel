@@ -13,7 +13,7 @@ final class CreateBudget
 {
     public function handle(array $attributes): Budget
     {
-        foreach (['team_id','name','period_start','period_end','currency'] as $field) {
+        foreach (['team_id', 'name', 'period_start', 'period_end', 'currency'] as $field) {
             if (blank($attributes[$field] ?? null)) {
                 throw new InvalidBudget("{$field} is required.");
             }
@@ -22,6 +22,6 @@ final class CreateBudget
             throw new InvalidBudget('The budget period is invalid.');
         }
 
-        return DB::transaction(fn (): Budget => Budget::create([...$attributes, 'currency'=>strtoupper((string) $attributes['currency']), 'status'=>BudgetStatus::Draft, 'version'=>1]));
+        return DB::transaction(fn (): Budget => Budget::create([...$attributes, 'currency' => strtoupper((string) $attributes['currency']), 'status' => BudgetStatus::Draft, 'version' => 1]));
     }
 }

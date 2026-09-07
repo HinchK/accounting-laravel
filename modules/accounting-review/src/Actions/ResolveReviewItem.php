@@ -12,8 +12,11 @@ final class ResolveReviewItem
 {
     public function handle(ReviewItem $item, int $actorId, array $resolution): ReviewItem
     {
-        if (! in_array($item->status, [ReviewStatus::Open, ReviewStatus::InProgress], true) || blank($resolution['summary'] ?? null)) throw new InvalidReviewItem('Only open review items with a resolution summary can be resolved.');
-        $item->update(['status'=>ReviewStatus::Resolved,'resolution'=>[...$resolution,'resolved_by'=>$actorId],'resolved_by'=>$actorId,'resolved_at'=>now()]);
+        if (! in_array($item->status, [ReviewStatus::Open, ReviewStatus::InProgress], true) || blank($resolution['summary'] ?? null)) {
+            throw new InvalidReviewItem('Only open review items with a resolution summary can be resolved.');
+        }
+        $item->update(['status' => ReviewStatus::Resolved, 'resolution' => [...$resolution, 'resolved_by' => $actorId], 'resolved_by' => $actorId, 'resolved_at' => now()]);
+
         return $item;
     }
 }

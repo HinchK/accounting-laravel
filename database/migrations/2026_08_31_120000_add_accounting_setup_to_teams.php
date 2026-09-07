@@ -12,7 +12,7 @@ return new class() extends Migration
     {
         Schema::table('teams', function (Blueprint $table): void {
             $table->text('accounting_setup')->nullable();
-            $table->timestamp('accounting_setup_completed_at')->nullable()->index();
+            $table->timestamp('accounting_setup_completed_at')->nullable();
         });
     }
 

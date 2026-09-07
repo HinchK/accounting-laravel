@@ -11,5 +11,9 @@ use Liberu\Accounting\ReviewApi\Policies\ReviewPolicy;
 
 final class ReviewApiServiceProvider extends ServiceProvider
 {
-    public function boot(): void { Gate::policy(ReviewItem::class,ReviewPolicy::class); $this->loadRoutesFrom(__DIR__.'/../routes/api.php'); }
+    public function boot(): void
+    {
+        Gate::policy(ReviewItem::class, ReviewPolicy::class);
+        $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
+    }
 }

@@ -15,7 +15,8 @@ final class SubmitBudget
         if ($budget->status !== BudgetStatus::Draft && $budget->status !== BudgetStatus::Revised || $budget->lines()->count() === 0) {
             throw new InvalidBudget('Only a draft or revised budget with lines can be submitted.');
         }
-        $budget->update(['status'=>BudgetStatus::Submitted,'submitted_by'=>$actorId]);
+        $budget->update(['status' => BudgetStatus::Submitted, 'submitted_by' => $actorId]);
+
         return $budget;
     }
 }

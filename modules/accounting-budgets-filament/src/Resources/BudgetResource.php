@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Liberu\Accounting\BudgetsFilament\Resources;
 
 use Filament\Actions\Action;
-use Filament\Resources\Resource;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\TextInput;
+use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -19,8 +19,11 @@ use Liberu\Accounting\Budgets\Models\Budget;
 final class BudgetResource extends Resource
 {
     protected static ?string $model = Budget::class;
+
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-calculator';
+
     protected static string|\UnitEnum|null $navigationGroup = 'Reports';
+
     protected static ?string $navigationLabel = 'Budgets';
 
     public static function form(Schema $schema): Schema
@@ -56,6 +59,6 @@ final class BudgetResource extends Resource
 
     public static function getPages(): array
     {
-        return ['index'=>Pages\ListBudgets::route('/'),'create'=>Pages\CreateBudget::route('/create')];
+        return ['index' => Pages\ListBudgets::route('/'), 'create' => Pages\CreateBudget::route('/create')];
     }
 }

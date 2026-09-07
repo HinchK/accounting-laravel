@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Liberu\Accounting\CopilotLivewire;
 
 use Illuminate\Support\ServiceProvider;
-use Livewire\Livewire;
 use Liberu\Accounting\CopilotLivewire\Livewire\Requests;
+use Livewire\Livewire;
 
 final class CopilotLivewireServiceProvider extends ServiceProvider
 {

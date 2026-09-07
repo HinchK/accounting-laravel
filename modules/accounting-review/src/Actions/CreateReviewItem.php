@@ -13,9 +13,12 @@ final class CreateReviewItem
 {
     public function handle(array $attributes): ReviewItem
     {
-        foreach (['team_id','item_type','title'] as $field) {
-            if (blank($attributes[$field] ?? null)) throw new InvalidReviewItem("{$field} is required.");
+        foreach (['team_id', 'item_type', 'title'] as $field) {
+            if (blank($attributes[$field] ?? null)) {
+                throw new InvalidReviewItem("{$field} is required.");
+            }
         }
-        return DB::transaction(fn (): ReviewItem => ReviewItem::create([...$attributes,'status'=>ReviewStatus::Open,'severity'=>$attributes['severity'] ?? 'medium']));
+
+        return DB::transaction(fn (): ReviewItem => ReviewItem::create([...$attributes, 'status' => ReviewStatus::Open, 'severity' => $attributes['severity'] ?? 'medium']));
     }
 }

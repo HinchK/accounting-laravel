@@ -11,6 +11,7 @@ final class AllocateBranchValue
     public function handle(Branch $branch, float $amount): array
     {
         abort_if($amount < 0, 422, 'Allocation amount must not be negative.');
+
         return ['branch_id' => $branch->getKey(), 'amount' => $amount, 'rule' => $branch->allocation_rule, 'status' => 'allocated'];
     }
 }

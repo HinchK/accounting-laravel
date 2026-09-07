@@ -35,16 +35,17 @@ class AppPanelProvider extends PanelProvider
             ->colors(app(ThemeColors::class)->forSite())
             ->navigationGroups([
                 'Overview',
-                'Accounting',
                 'Sales',
                 'Purchasing',
                 'Vendors',
                 'Banking',
+                'Accounting',
                 'Assets',
                 'Payroll',
                 'Tax & Compliance',
                 'Reports',
                 'Workspace & Integrations',
+                'Settings',
                 'Account',
             ])
             ->discoverResources(in: app_path('Filament/App/Resources'), for: 'App\Filament\App\Resources')

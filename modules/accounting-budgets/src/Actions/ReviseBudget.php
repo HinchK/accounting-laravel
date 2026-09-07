@@ -16,8 +16,10 @@ final class ReviseBudget
         if ($budget->status !== BudgetStatus::Approved) {
             throw new InvalidBudget('Only approved budgets can be revised.');
         }
+
         return DB::transaction(function () use ($budget, $attributes): Budget {
-            $budget->update([...$attributes, 'status'=>BudgetStatus::Revised, 'version'=>$budget->version + 1]);
+            $budget->update([...$attributes, 'status' => BudgetStatus::Revised, 'version' => $budget->version + 1]);
+
             return $budget;
         });
     }

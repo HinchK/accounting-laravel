@@ -18,7 +18,7 @@ it('guides a newly registered team to setup before showing the app dashboard', f
         ->assertRedirect('/app/account-setup');
 });
 
-it('keeps team setup credentials encrypted and does not expose them through the model cast', function (): void {
+it('keeps team setup credentials encrypted and hidden from the model cast', function (): void {
     $owner = User::factory()->create();
     $team = Team::forceCreate([
         'user_id' => $owner->id,

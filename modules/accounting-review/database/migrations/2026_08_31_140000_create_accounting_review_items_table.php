@@ -13,11 +13,11 @@ return new class() extends Migration
         Schema::create('accounting_review_items', function (Blueprint $table): void {
             $table->id();
             $table->unsignedBigInteger('team_id')->index();
-            $table->string('item_type',60)->index();
-            $table->string('source_type',120)->nullable();
-            $table->string('source_id',190)->nullable();
-            $table->string('severity',20)->default('medium')->index();
-            $table->string('status',20)->default('open')->index();
+            $table->string('item_type', 60)->index();
+            $table->string('source_type', 120)->nullable();
+            $table->string('source_id', 190)->nullable();
+            $table->string('severity', 20)->default('medium')->index();
+            $table->string('status', 20)->default('open')->index();
             $table->string('title');
             $table->json('details')->nullable();
             $table->json('resolution')->nullable();
@@ -28,9 +28,12 @@ return new class() extends Migration
             $table->timestamp('signed_off_at')->nullable();
             $table->timestamp('due_at')->nullable()->index();
             $table->timestamps();
-            $table->index(['team_id','source_type','source_id']);
+            $table->index(['team_id', 'source_type', 'source_id']);
         });
     }
 
-    public function down(): void { Schema::dropIfExists('accounting_review_items'); }
+    public function down(): void
+    {
+        Schema::dropIfExists('accounting_review_items');
+    }
 };

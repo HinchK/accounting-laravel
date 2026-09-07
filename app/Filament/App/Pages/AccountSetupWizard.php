@@ -38,6 +38,8 @@ class AccountSetupWizard extends Page
 
     protected static ?string $slug = 'account-setup';
 
+    protected static ?int $navigationSort = -1;
+
     protected string $view = 'filament.app.pages.account-setup-wizard';
 
     /** @var array<string, mixed>|null */
@@ -62,6 +64,7 @@ class AccountSetupWizard extends Page
             'currency' => $setup['currency'] ?? 'GBP',
             'fiscal_year_start' => $setup['fiscal_year_start'] ?? '01-01',
             'timezone' => $setup['timezone'] ?? config('app.timezone', 'UTC'),
+            'vonage_from' => $team->vonage_from,
             // Integration credentials are write-only. Existing secrets are
             // merged on save and are never sent back to the browser.
             'integrations' => [],
@@ -85,10 +88,12 @@ class AccountSetupWizard extends Page
                     Step::make('Connections')
                         ->description('Add credentials only for services you plan to use.')
                         ->schema([
-                            TextInput::make('integrations.plaid.client_id')->label('Plaid client ID')->maxLength(255),
+                            TextInput::make('integrations.plaid.client_id')->label('Plaid client ID')->helperText('Required for bank feeds.')->maxLength(255),
                             TextInput::make('integrations.plaid.secret')->label('Plaid secret')->password()->revealable()->maxLength(255),
+                            TextInput::make('integrations.plaid.webhook_verification_key')->label('Plaid webhook verification key')->password()->revealable()->maxLength(255),
                             TextInput::make('integrations.qbo.client_id')->label('QuickBooks client ID')->maxLength(255),
                             TextInput::make('integrations.qbo.client_secret')->label('QuickBooks client secret')->password()->revealable()->maxLength(255),
+                            TextInput::make('integrations.qbo.webhook_verifier_token')->label('QuickBooks webhook verifier token')->password()->revealable()->maxLength(255),
                             TextInput::make('integrations.xero.client_id')->label('Xero client ID')->maxLength(255),
                             TextInput::make('integrations.xero.client_secret')->label('Xero client secret')->password()->revealable()->maxLength(255),
                             TextInput::make('integrations.sage.client_id')->label('Sage client ID')->maxLength(255),
@@ -98,9 +103,18 @@ class AccountSetupWizard extends Page
                             TextInput::make('integrations.hmrc.server_token')->label('HMRC server token')->password()->revealable()->maxLength(255),
                             TextInput::make('integrations.revolut.client_id')->label('Revolut client ID')->maxLength(255),
                             TextInput::make('integrations.revolut.client_secret')->label('Revolut client secret')->password()->revealable()->maxLength(255),
+                            TextInput::make('integrations.revolut.webhook_secret')->label('Revolut webhook secret')->password()->revealable()->maxLength(255),
                             TextInput::make('integrations.wise.client_id')->label('Wise client ID')->maxLength(255),
                             TextInput::make('integrations.wise.client_secret')->label('Wise client secret')->password()->revealable()->maxLength(255),
+                            TextInput::make('integrations.wise.webhook_public_key')->label('Wise webhook public key')->password()->revealable()->maxLength(255),
                             TextInput::make('integrations.exchange_rate_api.key')->label('Exchange-rate API key')->password()->revealable()->maxLength(255),
+                        ])->columns(2),
+                    Step::make('Team settings')
+                        ->description('Add optional messaging credentials and keep your workspace secure.')
+                        ->schema([
+                            TextInput::make('vonage_key')->label('Vonage API key')->password()->revealable(false)->helperText('Optional. Used for SMS notifications.'),
+                            TextInput::make('vonage_secret')->label('Vonage API secret')->password()->revealable(false),
+                            TextInput::make('vonage_from')->label('SMS sender ID or number')->maxLength(255),
                         ])->columns(2),
                     Step::make('Ready to go')
                         ->description('Review the setup and finish when you are ready.')
@@ -120,7 +134,9 @@ class AccountSetupWizard extends Page
                 Action::make('finish')
                     ->label('Save setup')
                     ->color('primary')
-                    ->action(fn (): mixed => $this->save()),
+                    ->action(function (): void {
+                        $this->save();
+                    }),
             ]),
         ]);
     }
@@ -145,8 +161,19 @@ class AccountSetupWizard extends Page
                     is_array($state['integrations'] ?? null) ? $state['integrations'] : [],
                 ),
             ],
+            'vonage_from' => $state['vonage_from'] ?? null,
             'accounting_setup_completed_at' => now(),
         ])->save();
+
+        if (filled($state['vonage_key'] ?? null)) {
+            $team->vonage_key = $state['vonage_key'];
+        }
+
+        if (filled($state['vonage_secret'] ?? null)) {
+            $team->vonage_secret = $state['vonage_secret'];
+        }
+
+        $team->save();
 
         Notification::make()->title('Workspace setup saved')->body('Your team settings and integration credentials are encrypted. You can connect providers from the relevant Banking or Accounting screens.')->success()->send();
     }
@@ -161,13 +188,13 @@ class AccountSetupWizard extends Page
     private function mergeIntegrationCredentials(array $existing, array $submitted): array
     {
         $allowed = [
-            'plaid' => ['client_id', 'secret'],
-            'qbo' => ['client_id', 'client_secret'],
+            'plaid' => ['client_id', 'secret', 'webhook_verification_key'],
+            'qbo' => ['client_id', 'client_secret', 'webhook_verifier_token'],
             'xero' => ['client_id', 'client_secret'],
             'sage' => ['client_id', 'client_secret'],
             'hmrc' => ['client_id', 'client_secret', 'server_token'],
-            'revolut' => ['client_id', 'client_secret'],
-            'wise' => ['client_id', 'client_secret'],
+            'revolut' => ['client_id', 'client_secret', 'webhook_secret'],
+            'wise' => ['client_id', 'client_secret', 'webhook_public_key'],
             'exchange_rate_api' => ['key'],
         ];
 

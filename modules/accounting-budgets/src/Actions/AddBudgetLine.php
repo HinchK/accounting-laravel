@@ -17,7 +17,7 @@ final class AddBudgetLine
         if (! in_array($budget->status, [BudgetStatus::Draft, BudgetStatus::Revised], true)) {
             throw new InvalidBudget('Lines can only be added to draft or revised budgets.');
         }
-        foreach (['account_id','planned_amount'] as $field) {
+        foreach (['account_id', 'planned_amount'] as $field) {
             if (! array_key_exists($field, $attributes)) {
                 throw new InvalidBudget("{$field} is required.");
             }

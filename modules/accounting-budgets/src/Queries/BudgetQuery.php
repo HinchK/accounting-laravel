@@ -11,6 +11,6 @@ final class BudgetQuery
 {
     public function paginate(int $teamId, ?string $status = null, int $perPage = 25): LengthAwarePaginator
     {
-        return Budget::query()->where('team_id',$teamId)->when($status, fn ($query) => $query->where('status',$status))->with('lines')->latest()->paginate(min(max($perPage,1),100));
+        return Budget::query()->where('team_id', $teamId)->when($status, fn ($query) => $query->where('status', $status))->with('lines')->latest()->paginate(min(max($perPage, 1), 100));
     }
 }
